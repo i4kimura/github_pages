@@ -2,6 +2,12 @@
 
 ## TensorFlow + Keras + Keras2cpp
 
+- [TensorFlow+Kerasに入門(9. Keras2のMNISTサンプルに対応) (18/07/12)](http://msyksphinz.hatenablog.com/entry/2018/07/12/040000)
+- [TensorFlow+Kerasに入門(8. RISC-V Spike ISS でkeras2cppを動作させる) (18/07/10)](http://msyksphinz.hatenablog.com/entry/2018/07/09/040000)
+- [TensorFlow+Kerasに入門(7. Keras2cppをimage_data_formatに対応させる) (18/07/07)](http://msyksphinz.hatenablog.com/entry/2018/07/07/040000)
+- [TensorFlow+Kerasに入門(6. keras2cppによるC++でのCIFAR10推論実行) (18/07/06)](http://msyksphinz.hatenablog.com/entry/2018/07/06/040000)
+- [TensorFlow+Kerasに入門(5. keras2cppによる推論の試行→失敗の解析) (18/07/04)](http://msyksphinz.hatenablog.com/entry/2018/07/04/040000)
+- [TensorFlow+Kerasに入門(4. Keras2のConvolution2DとConv2Dの違い？) (18/07/03)](http://msyksphinz.hatenablog.com/entry/2018/06/19/040000)
 - [TensorFlow+Kerasに入門(3. Keras2cppでCIFAR10のモデルを変換してみる) (18/07/01)](http://msyksphinz.hatenablog.com/entry/2018/06/09/040000)
 - [TensorFlow+Kerasに入門(2. Keras2cppを試行) (18/07/01)](http://msyksphinz.hatenablog.com/entry/2018/06/06/040000)
 - [TensorFlow+Kerasに入門(1. 環境構築+サンプルコード実行) (18/07/01)](http://msyksphinz.hatenablog.com/entry/2018/06/04/000000)

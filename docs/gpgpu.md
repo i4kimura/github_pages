@@ -2,7 +2,7 @@
 
 ## GPUを支える技術
 
-- 「GPUを支える技術」を読了 (17/11/15)](http://msyksphinz.hatenablog.com/entry/2017/11/15/013500)
+- [「GPUを支える技術」を読了 (17/11/15)](http://msyksphinz.hatenablog.com/entry/2017/11/15/013500)
 - [「GPUを支える技術」を読む(第6章 GPUの周辺技術) (17/11/13)](http://msyksphinz.hatenablog.com/entry/2017/11/13/000000)
 - [「GPUを支える技術」を読む(第5章 GPUプログラミングの基本) (17/11/12)](http://msyksphinz.hatenablog.com/entry/2017/11/12/010000)
 - [「GPUを支える技術」を読む(第4章 後半) (17/11/10)](http://msyksphinz.hatenablog.com/entry/2017/11/10/003000)
@@ -10,8 +10,7 @@
 - [「GPUを支える技術」を読む(第3章) (17/11/08)](http://msyksphinz.hatenablog.com/entry/2017/11/08/003000)
 - [「GPUを支える技術」読む (第2章) (17/11/06)](http://msyksphinz.hatenablog.com/entry/2017/11/06/020000)
 - [「GPUを支える技術」読む (第1章) (17/11/05)](http://msyksphinz.hatenablog.com/entry/2017/11/05/020000)
-- 「GPUを支える技術」を購入 (17/07/03)](http://msyksphinz.hatenablog.com/entry/2017/07/03/010000)
-- 
+- [「GPUを支える技術」を購入 (17/07/03)](http://msyksphinz.hatenablog.com/entry/2017/07/03/010000)
 
 ## オープンソースGPGPU
 

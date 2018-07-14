@@ -1,10 +1,8 @@
-# FPGA開発日記 カテゴリ別記事インデックス
-
 ![](msyksphinz.png)
 
-## AWS F1インスタンス
+# AWS F1インスタンス
 
-### FireChip チュートリアル
+## FireChip チュートリアル
 
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : オリジナルデバイスをVerilog付きでシミュレーションする (18/06/28)](http://msyksphinz.hatenablog.com/entry/2018/06/28/040000)
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : Firechipにオリジナルデバイスを追加する (18/06/27)](http://msyksphinz.hatenablog.com/entry/2018/06/27/040000)
@@ -14,7 +12,7 @@
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 2. インスタンスの設定とAWSの起動 (18/06/18)](http://msyksphinz.hatenablog.com/entry/2018/06/18/040000)
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 1. 立ち上げと参考文献 (18/06/17)](http://msyksphinz.hatenablog.com/entry/2018/06/17/040000)
 
-### FireSimチュートリアル
+## FireSimチュートリアル
 
 - [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (11. 割り込み信号によるFPGAからホストへの通知機能) (18/05/31)](http://msyksphinz.hatenablog.com/entry/2018/05/31/040000)
 - [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (10. 整数行列計算回路の実装) (18/05/24)](http://msyksphinz.hatenablog.com/entry/2018/05/24/040000)
@@ -29,27 +27,27 @@
 - [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (2. cl_hello_worldの実行) (18/05/01)](http://msyksphinz.hatenablog.com/entry/2018/05/01/040000)
 - [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (1. HDKのセットアップ) (18/04/27)](http://msyksphinz.hatenablog.com/entry/2018/04/27/040000)
 
-## オペレーティングシステム
+# オペレーティングシステム
 
 [30日でできる！OS自作入門記事一覧](30os)
 
-## Bitcoin
+# Bitcoin
 
 [Mastering Bitcoinを読む 記事一覧](mastering_bitcoin)
 
-## 量子コンピュータ / Q#
+# 量子コンピュータ / Q#
 
 [量子コンピュータ記事一覧](quantum_computing)
 
-## 機械学習 / TensorFlow
+# 機械学習 / TensorFlow
 
 [機械学習 / TensorFlow](machine_learning)
 
-## GPGPU
+# GPGPU
 
 [GPGPU記事一覧](gpgpu)
 
-## RISC-V
+# RISC-V
 
 [RISC-V記事一覧](riscv)
 

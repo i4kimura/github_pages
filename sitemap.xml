@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/30os/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/cpu/</loc>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/gpgpu/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/machine_learning/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/mastering_bitcoin/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/quantum_computing/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/riscv/</loc>
-     <lastmod>2018-07-14</lastmod>
+     <lastmod>2018-09-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

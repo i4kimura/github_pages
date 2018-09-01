@@ -1,5 +1,12 @@
 # 機械学習 / TensorFlow
 
+## NVDLA
+
+- [NVDLAの内部構成調査(3. プログラミングシーケンス, Register Description Language) (18/09/01)](http://msyksphinz.hatenablog.com/entry/2018/09/01/040000)
+- [NVDLAの内部構成調査(2. BDMAの使用方法について) (18/08/31)](http://msyksphinz.hatenablog.com/entry/2018/08/31/040000)
+- [NVDLAの内部構成調査(1. NVDLAのテストパタンの調査) (18/08/30)](http://msyksphinz.hatenablog.com/entry/2018/08/29/040000)
+- [NVDLAv2のインストール試行 (18/07/28)](http://msyksphinz.hatenablog.com/entry/2018/07/28/040000)
+
 ## TensorFlow + Keras + Keras2cpp
 
 - [TensorFlow+Kerasに入門(9. Keras2のMNISTサンプルに対応) (18/07/12)](http://msyksphinz.hatenablog.com/entry/2018/07/12/040000)
@@ -43,6 +50,14 @@
 - [Googleの人工知能ライブラリTensorFlowを評価するための仮想環境を構築する (15/11/11)](http://msyksphinz.hatenablog.com/entry/2015/11/11/020229)
 
 ## 機械学習
+
+- [「ゼロから作るディープラーニング②」を読む (7. RNNによる文章生成) (18/08/19)](http://msyksphinz.hatenablog.com/entry/2018/08/13/040000)
+- [「ゼロから作るディープラーニング②」を読む (6. ゲート付きRNN) (18/08/12)](http://msyksphinz.hatenablog.com/entry/2018/08/12/040000)
+- [「ゼロから作るディープラーニング②」を読む (5. リカレントニューラルネットワーク(RNN)) (18/08/10)](http://msyksphinz.hatenablog.com/entry/2018/08/10/040000)
+- [「ゼロから作るディープラーニング②」を読む (4. 第4章 word2vecの高速化) (18/08/05)](http://msyksphinz.hatenablog.com/entry/2018/08/05/040000)
+- [「ゼロから作るディープラーニング②」を読む (3. 第3章 word2vec) (18/08/01)](http://msyksphinz.hatenablog.com/entry/2018/08/01/040000)
+- [「ゼロから作るディープラーニング②」を読む (2. 自然言語と単語の分散表現) (18/07/31)](http://msyksphinz.hatenablog.com/entry/2018/07/31/040000)
+- [「ゼロから作るディープラーニング②」を購入 (1. ニューラルネットワークの復習) (18/07/29)](http://msyksphinz.hatenablog.com/entry/2018/07/29/173306)
 
 - [「深層学習と機械学習 《C言語によるシミュレーション》」を読了 (17/06/21)](http://msyksphinz.hatenablog.com/entry/2017/06/21/004906)
 - [「機械学習と深層学習」をやってみる(7. 深層学習: 畳み込みニューラルネットワーク) (17/06/20)](http://msyksphinz.hatenablog.com/entry/2017/06/20/020000)

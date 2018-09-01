@@ -7,6 +7,20 @@
 
 ## RISC-V Spike ISS
 
+- [「Linuxのブートプロセスを見る」を購入 (18/08/14)](http://msyksphinz.hatenablog.com/entry/2018/08/14/040000)
+- [Freedom-U-SDKで生成したLinuxバイナリを自作RISC-Vシミュレータで実行 (3. シェル実行) (18/08/29)](http://msyksphinz.hatenablog.com/entry/2018/08/27/040000)
+- [Freedom-U-SDKで生成したLinuxバイナリを自作RISC-Vシミュレータで実行 (2. Linuxのブート成功) (18/08/19)](http://msyksphinz.hatenablog.com/entry/2018/08/19/040000)
+- [Freedom-U-SDKで生成したLinuxバイナリを自作RISC-Vシミュレータで実行 (18/08/07)](http://msyksphinz.hatenablog.com/entry/2018/08/07/040000)
+- [HiFive Unleashed向けのオープンソースRISC-V SDK Freedom-U-SDKの環境構築 (18/08/06)](http://msyksphinz.hatenablog.com/entry/2018/08/06/040000)
+
+- [RISC-Vシミュレータ改造のTips (18/08/16)](http://msyksphinz.hatenablog.com/entry/2018/08/16/091000)
+
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (11. 自作RISC-VシミュレータでBBLとvmlinuxを起動する2) (18/08/04)](http://msyksphinz.hatenablog.com/entry/2018/08/04/040000)
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (10. 自作RISC-VシミュレータでBBLとvmlinuxを起動する) (18/08/03)](http://msyksphinz.hatenablog.com/entry/2018/08/03/004454)
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (9. RISC-Vはデバイスアクセスをどのようにして実現するか) (18/08/02)](http://msyksphinz.hatenablog.com/entry/2018/08/02/040000)
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (8. RISC-Vのシステムコールを自作ISS上で実装) (18/07/30)](http://msyksphinz.hatenablog.com/entry/2018/07/30/040000)
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (7. RISC-Vのシステムコールとfesvr) (18/07/27)](http://msyksphinz.hatenablog.com/entry/2018/07/27/040000)
+- [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (6. ファイルシステムの呼び出し) (18/07/24)](http://msyksphinz.hatenablog.com/entry/2018/07/24/040000)
 - [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (5. システムコールの呼び出し) (18/06/16)](http://msyksphinz.hatenablog.com/entry/2018/06/16/130008)
 - [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (4. RISC-Vのプログラムロード) (18/06/14)](http://msyksphinz.hatenablog.com/entry/2018/06/14/040100)
 - [RISC-V SpikeシミュレータでC/C++のprintfを実現する仕組み (3. RISC-Vのブートシーケンス) (18/06/13)](http://msyksphinz.hatenablog.com/entry/2018/06/13/040000)
@@ -15,8 +29,10 @@
 
 ## RISC-V仕様
 
-- [RISC-VのCompressed命令のISS実装 (1) (28/06/07)](http://msyksphinz.hatenablog.com/entry/2018/06/07/040000)
+- [RISC-VのAtomic Operation命令について (18/08/18)](http://msyksphinz.hatenablog.com/entry/2018/08/18/040000)
+- [RISC-Vの割り込みとタイマの仕組み (18/08/09)](http://msyksphinz.hatenablog.com/entry/2018/08/09/040000)
 - [RISC-VのCompressed命令のISS実装 (2. RV64/RV32の両デコード対応) (18/06/08)](http://msyksphinz.hatenablog.com/entry/2018/06/08/040000)
+- [RISC-VのCompressed命令のISS実装 (1) (28/06/07)](http://msyksphinz.hatenablog.com/entry/2018/06/07/040000)
 
 ## Rocket-Chip / BOOM仕様調査
 
@@ -117,12 +133,25 @@
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : オリジナルデバイスをVerilog付きでシミュレーションする (18/06/28)](http://msyksphinz.hatenablog.com/entry/2018/06/28/040000)
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : Firechipにオリジナルデバイスを追加する (18/06/27)](http://msyksphinz.hatenablog.com/entry/2018/06/27/040000)
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : Firechipを試す (18/06/26)](http://msyksphinz.hatenablog.com/entry/2018/06/26/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 4. Single Core Roctket-Chipの動作 (18/06/23)](http://msyksphinz.hatenablog.com/entry/2018/06/23/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 3. ソフトウェアのビルドと環境設定 (18/06/22)](http://msyksphinz.hatenablog.com/entry/2018/06/22/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 2. インスタンスの設定とAWSの起動 (18/06/18)](http://msyksphinz.hatenablog.com/entry/2018/06/18/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 1. 立ち上げと参考文献 (18/06/17)](http://msyksphinz.hatenablog.com/entry/2018/06/17/040000)
 
+- [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (11. 割り込み信号によるFPGAからホストへの通知機能) (18/05/31)](http://msyksphinz.hatenablog.com/entry/2018/05/31/040000)
+- [AWS EC2 F1インスタンスを使ったハードウェア開発の勉強 (10. 整数行列計算回路の実装) (18/05/24)](http://msyksphinz.hatenablog.com/entry/2018/05/24/040000)
+- [Amazon AWS F1インスタンス上で動作するRISC-VプロセッサRocket-Chipの環境FireSimがオープンソース化 (18/05/23)](http://msyksphinz.hatenablog.com/entry/2018/05/22/035900)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 9. FireSim v1.3.1 でBOOMを動かす (18/08/23)](http://msyksphinz.hatenablog.com/entry/2018/08/23/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 8. FireSim v1.3を試す (18/08/17)](http://msyksphinz.hatenablog.com/entry/2018/08/17/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 7. FireSimのFPGAレベルシミュレーション (18/07/21)](http://msyksphinz.hatenablog.com/entry/2018/07/21/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 6. FireSimのシミュレーション環境解析 (18/07/20)](http://msyksphinz.hatenablog.com/entry/2018/07/20/040000)
+- [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 5. FireSim v1.2 を試行する (18/07/18)](http://msyksphinz.hatenablog.com/entry/2018/07/18/040000)
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 4. Single Core Roctket-Chipの動作 (18/06/23)](http://msyksphinz.hatenablog.com/entry/2018/06/23/005256)
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 3. ソフトウェアのビルドと環境設定 (18/06/22)](http://msyksphinz.hatenablog.com/entry/2018/06/22/040000)
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 2. インスタンスの設定とAWSの起動(18/06/18)](http://msyksphinz.hatenablog.com/entry/2018/06/18/040000)
 - [AWS上で動作するRISC-VチップFireSimのチュートリアルを試す 1. 立ち上げと参考文献(18/06/17)](http://msyksphinz.hatenablog.com/entry/2018/06/17/040000)
 
+- [FireSimのRTLシミュレーション環境を試す(1. MIDAS-Level環境でのベンチマークシミュレーション) (18/07/16)](http://msyksphinz.hatenablog.com/entry/2018/07/15/040000)
 - [Amazon EC2 F1インスタンスで動作するRISC-Vシミュレーション環境FireSimの論文を読む (18/05/29)](http://msyksphinz.hatenablog.com/entry/2018/05/29/040000)
 - [Amazon AWS F1インスタンス上で動作するRISC-VプロセッサRocket-Chipの環境FireSimがオープンソース化 (18/05/23)](http://msyksphinz.hatenablog.com/entry/2018/05/22/035900)
 - [FireSimを使ってRocket-ChipをAmazon F1インスタンスで動かす試行 (18/03/27)](http://msyksphinz.hatenablog.com/entry/2018/03/27/040000)

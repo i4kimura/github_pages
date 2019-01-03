@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -51,16 +51,17 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
     
     
   </head>
@@ -160,11 +161,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <span class="md-nav__button md-logo">
+    <a href=".." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     FPGA開発日記 カテゴリ別記事インデックス
   </label>
   
@@ -200,8 +201,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../cpu/" title="Cpu" class="md-nav__link">
-      Cpu
+    <a href="../cpu/" title="CPU" class="md-nav__link">
+      CPU
     </a>
   </li>
 
@@ -214,6 +215,18 @@
   <li class="md-nav__item">
     <a href="../gpgpu/" title="GPGPU 記事一覧" class="md-nav__link">
       GPGPU 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../llvm/" title="LLVM" class="md-nav__link">
+      LLVM
     </a>
   </li>
 
@@ -289,6 +302,13 @@
         <li class="md-nav__item">
   <a href="#chisel" title="Chisel" class="md-nav__link">
     Chisel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gem5" title="Gem5" class="md-nav__link">
+    Gem5
   </a>
   
 </li>
@@ -388,6 +408,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gem5" title="Gem5" class="md-nav__link">
+    Gem5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#risc-v-spike-iss" title="RISC-V Spike ISS" class="md-nav__link">
     RISC-V Spike ISS
   </a>
@@ -464,7 +491,36 @@
 <h2 id="chisel">Chisel</h2>
 <ul>
 <li><a href="http://msyksphinz.hatenablog.com/entry/2018/07/03/040000">Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (2. シミュレーションモデルの作成) (18/07/03)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/07/02/040000">Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (1. デザインの作成) (18/07/02)</a></li>
+<li>
+<p><a href="http://msyksphinz.hatenablog.com/entry/2018/07/02/040000">Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (1. デザインの作成) (18/07/02)</a></p>
+</li>
+<li>
+<p>[Chiselを使って波形を全く使わずにRISC-Vパイプラインプロセッサを設計した (18/12/25)] (http://msyksphinz.hatenablog.com/entry/2018/12/25/040000)</p>
+</li>
+<li>[Chiselを使ってCPUを作ろう(17. 5ステージにCPUにフォワーディングパスを追加する) (18/12/21)] (http://msyksphinz.hatenablog.com/entry/2018/12/21/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(16. 5ステージにCPUに拡張してみる) (18/12/16)] (http://msyksphinz.hatenablog.com/entry/2018/12/16/142615)</li>
+<li>[Chiselのパラメタライズについて調査(2. Advanced Parameterization Manualの続き) (18/12/10)] (http://msyksphinz.hatenablog.com/entry/2018/12/10/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(15. デザインのパラメタライズ) (18/12/09)] (http://msyksphinz.hatenablog.com/entry/2018/12/09/040000)</li>
+<li>[Chiselのパラメタライズについて調査(1. Advanced Parameterization Manualを読む) (18/12/06)] (http://msyksphinz.hatenablog.com/entry/2018/12/06/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(14. 2段パイプラインのデザインをGitHubに公開しました) (18/12/08)] (http://msyksphinz.hatenablog.com/entry/2018/12/08/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(13. リグレッションテストを流してみる) (18/12/05)] (http://msyksphinz.hatenablog.com/entry/2018/12/05/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(12. テスト終了コードの取り扱いについて) (18/11/30)] (http://msyksphinz.hatenablog.com/entry/2018/11/30/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(11. 例外やシステムコールでのCSRの取り扱いなど) (18/11/29)] (http://msyksphinz.hatenablog.com/entry/2018/11/29/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(10. Configurationを1つのcaseにまとめる) (18/11/28)] (http://msyksphinz.hatenablog.com/entry/2018/11/28/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(9. テストベンチを走らせる) (18/11/24)] (http://msyksphinz.hatenablog.com/entry/2018/11/24/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(8. CSR命令の実装方法調査) (18/11/23)] (http://msyksphinz.hatenablog.com/entry/2018/11/23/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(7. Load / Store命令の実装) (18/11/22)] (http://msyksphinz.hatenablog.com/entry/2018/11/22/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(6. パイプラインと分岐命令の実装) (18/11/21)] (http://msyksphinz.hatenablog.com/entry/2018/11/21/040000)</li>
+<li>[Chiselを使ってCPUを作ろう(5. トレース記述をどう作る？) (18/11/20)] (http://msyksphinz.hatenablog.com/entry/2018/11/20/040000)</li>
+<li>[Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (4. ALUの実装) (18/11/19)] (http://msyksphinz.hatenablog.com/entry/2018/11/19/040000)</li>
+<li>[Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (3. CPUのコアのDebug-Trace作成) (18/11/18)] (http://msyksphinz.hatenablog.com/entry/2018/11/18/040000)</li>
+<li>[Chiselで記述された教育用RISC-VプロセッサSodor (1. ビルドとセットアップ) (18/11/10)] (http://msyksphinz.hatenablog.com/entry/2018/11/10/040000)</li>
+</ul>
+<h2 id="gem5">Gem5</h2>
+<ul>
+<li>[Gem5 for RISC-Vのビルド試行 (3. Gem5でCoremarkをコンパイルして実行してみる) (18/12/04)] (http://msyksphinz.hatenablog.com/entry/2018/12/04/040000)</li>
+<li>[Gem5 for RISC-Vのビルド試行 (2. リグレッションテストの実行) (18/12/03)] (http://msyksphinz.hatenablog.com/entry/2018/12/03/040000)</li>
+<li>[Gem5 for RISC-Vのビルド試行 (1. ビルドとhelloを流す) (18/12/02)] (http://msyksphinz.hatenablog.com/entry/2018/12/02/040000)</li>
 </ul>
 <h2 id="risc-v-spike-iss">RISC-V Spike ISS</h2>
 <ul>
@@ -737,9 +793,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.a59e2a89.js"></script>
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
       
-      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
     

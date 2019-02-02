@@ -2,8 +2,13 @@
 
 ## Chisel
 
-- [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (2. シミュレーションモデルの作成) (18/07/03)](http://msyksphinz.hatenablog.com/entry/2018/07/03/040000)
-- [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (1. デザインの作成) (18/07/02)](http://msyksphinz.hatenablog.com/entry/2018/07/02/040000)
+- [Chiselで非同期クロック設計をしよう (19/01/22)](http://msyksphinz.hatenablog.com/entry/2019/01/22/040000)
+- [VerilogからChiselへ移行するためのTips(文法編) (19/01/19)](http://msyksphinz.hatenablog.com/entry/2019/01/19/060000)
+- [Chiselを使ったハードウェアデザインでトレイトを活用するためには(2. MultiIOModuleを使ったI/Oの追加) (19/01/16)](http://msyksphinz.hatenablog.com/entry/2019/01/16/040000)
+- [Chiselを使ったハードウェアデザインでトレイトを活用するためには (19/01/14)](http://msyksphinz.hatenablog.com/entry/2019/01/14/040000)
+- [Chiselで生成したVerilogをVivadoで論理合成試行する (19/01/13)](http://msyksphinz.hatenablog.com/entry/2019/01/13/040000)
+- [Chiselで設計したHWのコンパイルオプションで生成されるモジュールを切り替える方法 (19/01/08)](http://msyksphinz.hatenablog.com/entry/2019/01/08/040000)
+- [Chiselの中にVerilogを埋め込む方法 (19/01/05)](http://msyksphinz.hatenablog.com/entry/2019/01/05/142630)
 
 - [Chiselを使って波形を全く使わずにRISC-Vパイプラインプロセッサを設計した (18/12/25)](http://msyksphinz.hatenablog.com/entry/2018/12/25/040000)
 - [Chiselを使ってCPUを作ろう(17. 5ステージにCPUにフォワーディングパスを追加する) (18/12/21)](http://msyksphinz.hatenablog.com/entry/2018/12/21/040000)
@@ -24,6 +29,9 @@
 - [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (4. ALUの実装) (18/11/19)](http://msyksphinz.hatenablog.com/entry/2018/11/19/040000)
 - [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (3. CPUのコアのDebug-Trace作成) (18/11/18)](http://msyksphinz.hatenablog.com/entry/2018/11/18/040000)
 - [Chiselで記述された教育用RISC-VプロセッサSodor (1. ビルドとセットアップ) (18/11/10)](http://msyksphinz.hatenablog.com/entry/2018/11/10/040000)
+
+- [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (2. シミュレーションモデルの作成) (18/07/03)](http://msyksphinz.hatenablog.com/entry/2018/07/03/040000)
+- [Chisel-Templateを使ってオリジナルデザインを作ってみるチュートリアル (1. デザインの作成) (18/07/02)](http://msyksphinz.hatenablog.com/entry/2018/07/02/040000)
 
 ## Gem5
 
@@ -62,6 +70,9 @@
 - [RISC-VのCompressed命令のISS実装 (1) (28/06/07)](http://msyksphinz.hatenablog.com/entry/2018/06/07/040000)
 
 ## Rocket-Chip / BOOM仕様調査
+
+- [RVC命令に対応したRISC-VアウトオブオーダコアBOOM v2.2リリース (1. ビルド & シミュレーション試行) (19/01/28)](http://msyksphinz.hatenablog.com/entry/2019/01/28/040000)
+- [RISC-Vのアウトオブオーダコアで体験するSpectre/Meltdown (1. Variant-1を動かしてみる) (19/01/30)](http://msyksphinz.hatenablog.com/entry/2019/01/30/040000)
 
 - [SiFive社から発表されたローエンド用のRISC-VコアE21/E20 (18/06/28)](http://msyksphinz.hatenablog.com/entry/2018/06/28/040000_1)
 

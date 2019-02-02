@@ -2,6 +2,18 @@
 
 ## LLVM for RISC-V
 
+- [オリジナルLLVM Backendを追加しよう (16. RISC-Vオリジナルターゲットの作り直し) (19/01/31)](http://msyksphinz.hatenablog.com/entry/2019/01/31/040000)
+- [オリジナルLLVM Backendを追加しよう (14. RISC-V命令フィールド登録の見直し) (19/01/23)](http://msyksphinz.hatenablog.com/entry/2019/01/23/040000)
+- [RISC-V 64-bit LLVM Backendを試す (13. Return文生成の解析) (19/01/21)](http://msyksphinz.hatenablog.com/entry/2019/01/21/040000)
+- [RISC-V 64-bit LLVM Backendを試す (12. EmitPrologueとEmitEpilogueを実装したい) (19/01/20)](http://msyksphinz.hatenablog.com/entry/2019/01/20/040000)
+- [RISC-V 64-bit LLVM Backendを試す (11. 簡単なReturn命令を生成する) (19/01/17)](http://msyksphinz.hatenablog.com/entry/2019/01/17/040000)
+- [RISC-V 64-bit LLVM Backendを試す (10. サブターゲットのエラーを解析する) (19/01/15)](http://msyksphinz.hatenablog.com/entry/2019/01/15/040000)
+- [RISC-V 64-bit LLVM Backendを試す (9. IDAGtoDAGの実装) (19/01/12)](http://msyksphinz.hatenablog.com/entry/2019/01/12/135152)
+- [RISC-V 64-bit LLVM Backendを試す (7. AsmPrinterの実装) (19/01/11)](http://msyksphinz.hatenablog.com/entry/2019/01/11/040000)
+- [RISC-V 64-bit LLVM Backendを試す (6. Subtargetの確認とllcの動作確認) (19/01/10)](http://msyksphinz.hatenablog.com/entry/2019/01/10/040000)
+- [RISC-V 64-bit LLVM Backendを試す (5. 基本的なファイルの追加とビルド) (19/01/07)](http://msyksphinz.hatenablog.com/entry/2019/01/07/040000)
+- [RISC-V 64-bit LLVM Backendを試す (4. SubtargetとProcessor Model) (19/01/06)](http://msyksphinz.hatenablog.com/entry/2019/01/06/040000)
+- [RISC-V 64-bit LLVM Backendを試す (3. TargetMachineとTargetInfoを追加する) (19/01/04)](http://msyksphinz.hatenablog.com/entry/2019/01/04/040000)
 - [RISC-V 64-bit LLVM Backendを試す (2. 独自RISC-V実装を追加する。アーキテクチャの追加とレジスタ) (19/01/03)](http://msyksphinz.hatenablog.com/entry/2019/01/03/040000)
 - [RISC-V 64-bit LLVM Backendを試す (19/01/02)](http://msyksphinz.hatenablog.com/entry/2019/01/02/040000_1)
 

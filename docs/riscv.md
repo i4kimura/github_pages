@@ -1,5 +1,12 @@
 # RISC-V
 
+## Western Digital SweRV-EH1
+
+- [Western Digitalが拡充するOff-Chip向けのTileLink仕様"OmniXtend" (19/02/22)](http://msyksphinz.hatenablog.com/entry/2019/02/22/040000)
+- [Western DigitalのRISC-VコアSweRV-EH1 (4. テストベンチのコンパイル環境) (19/02/19)](http://msyksphinz.hatenablog.com/entry/2019/02/19/040000)
+- [Western DigitalのRISC-VコアSweRV-EH1 (3. オリジナルプログラムを動かす) (19/02/06)](http://msyksphinz.hatenablog.com/entry/2019/02/06/040000)
+- [Western DigitalのRISC-VコアSweRV-EH1 (2. テストベンチを動かす) (19/02/03)](http://msyksphinz.hatenablog.com/entry/2019/02/03/040000)
+
 ## Chisel
 
 - [Chiselで非同期クロック設計をしよう (19/01/22)](http://msyksphinz.hatenablog.com/entry/2019/01/22/040000)

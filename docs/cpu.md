@@ -1,5 +1,11 @@
 # CPU
 
+- [AXIスライサ・Skid Bufferの勉強 (19/02/09)](http://msyksphinz.hatenablog.com/entry/2019/02/09/040000)
+
+- [アウトオブオーダ実行の詳細を勉強する場合の資料には"Understanding the detailed Architecture of AMD's 64 bit Core"がとても良い (19/02/08)](http://msyksphinz.hatenablog.com/entry/2019/02/08/040000)
+- [マルチコアにおけるキャッシュコヒーレンシ方式の簡単なまとめ (2. ディレクトリベースのキャッシュコヒーレンシ) (19/02/07)](http://msyksphinz.hatenablog.com/entry/2019/02/07/040000)
+- [マルチコアにおけるキャッシュコヒーレンシ方式の簡単なまとめ (1. キャッシュスヌープ方式) (19/01/29)](http://msyksphinz.hatenablog.com/entry/2019/01/29/040000)
+
 ## Arm DesignStart Cortex-M3
 
 - [Arm DesignStart Cortex-M3を試す(5. オリジナルプログラムをビルドしてシミュレーションする試行) (18/10/28)](http://msyksphinz.hatenablog.com/entry/2018/10/28/200418)

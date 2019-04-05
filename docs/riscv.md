@@ -1,5 +1,15 @@
 # RISC-V
 
+## RISC-V Simulator in Rust
+
+- [RustでRISC-V命令セットシミュレータを作ろう (6. MMUの実装とテストパタンの実行) (19/03/27)](http://msyksphinz.hatenablog.com/entry/2019/03/27/040000)
+- [RustでRISC-V命令セットシミュレータを作ろう (5. シミュレータのトレースデータ出力機構の実装) (19/03/26)](http://msyksphinz.hatenablog.com/entry/2019/03/26/040000)
+- [RustでRISC-V命令セットシミュレータを作ろう (4. MMUとスーパバイザモードの実装検討) (19/03/15)](http://msyksphinz.hatenablog.com/entry/2019/03/15/040000)
+- [RustでRISC-V命令セットシミュレータを作ろう (3. 乗除算命令の実装とWrapping処理) (19/03/10)](http://msyksphinz.hatenablog.com/entry/2019/03/10/040000)
+- [RustでRISC-V命令セットシミュレータを作ろう (2. rv32ui-pのすべてのテストパタンをPassさせる) (19/03/03)](http://msyksphinz.hatenablog.com/entry/2019/03/03/040000)
+- [RustでRISC-V命令セットシミュレータを作ろう (1. 基本的なテストパタンを通す) (19/02/24)](http://msyksphinz.hatenablog.com/entry/2019/02/24/040000)
+
+
 ## Western Digital SweRV-EH1
 
 - [Western Digitalが拡充するOff-Chip向けのTileLink仕様"OmniXtend" (19/02/22)](http://msyksphinz.hatenablog.com/entry/2019/02/22/040000)
@@ -8,6 +18,11 @@
 - [Western DigitalのRISC-VコアSweRV-EH1 (2. テストベンチを動かす) (19/02/03)](http://msyksphinz.hatenablog.com/entry/2019/02/03/040000)
 
 ## Chisel
+
+- [Chiselでビットコインマイナーを設計してみる(3. Scala版とVerilog版の検証と速度比較) (19/03/25)](http://msyksphinz.hatenablog.com/entry/2019/03/25/040000)
+- [Chiselでビットコインマイナーを設計してみる(2. ScalaでSHA256の検証プログラムを書く) (19/03/23)](http://msyksphinz.hatenablog.com/entry/2019/03/23/040000)
+- [Chiselでビットコインマイナーを設計してみる(1. SHA256コアの開発) (19/03/22)](http://msyksphinz.hatenablog.com/entry/2019/03/22/040000)
+
 
 - [Chiselで非同期クロック設計をしよう (19/01/22)](http://msyksphinz.hatenablog.com/entry/2019/01/22/040000)
 - [VerilogからChiselへ移行するためのTips(文法編) (19/01/19)](http://msyksphinz.hatenablog.com/entry/2019/01/19/060000)
@@ -77,6 +92,9 @@
 - [RISC-VのCompressed命令のISS実装 (1) (28/06/07)](http://msyksphinz.hatenablog.com/entry/2018/06/07/040000)
 
 ## Rocket-Chip / BOOM仕様調査
+
+- [BOOM(Berkeley Out-Of Order) コアがfpga-zynqに対応したのでFPGAで動かしてみる(2. FPGAでの動作確認) (19/03/06)](http://msyksphinz.hatenablog.com/entry/2019/03/06/040000)
+- [BOOM(Berkeley Out-Of Order) コアがfpga-zynqに対応したのでFPGAで動かしてみる(1. プロジェクトのビルド) (19/03/05)](http://msyksphinz.hatenablog.com/entry/2019/03/05/040000)
 
 - [RVC命令に対応したRISC-VアウトオブオーダコアBOOM v2.2リリース (1. ビルド & シミュレーション試行) (19/01/28)](http://msyksphinz.hatenablog.com/entry/2019/01/28/040000)
 - [RISC-Vのアウトオブオーダコアで体験するSpectre/Meltdown (1. Variant-1を動かしてみる) (19/01/30)](http://msyksphinz.hatenablog.com/entry/2019/01/30/040000)
@@ -204,6 +222,8 @@
 - [最大8コアのRISC-V Rocket-ChipがAmazon F1インスタンスで動く (FireSim) (17/09/09)](http://msyksphinz.hatenablog.com/entry/2017/09/09/012344)
 
 # MIPSアーキテクチャ
+
+- [MIPS Openがリソース公開 (19/03/30)](http://msyksphinz.hatenablog.com/entry/2019/03/30/040000)
 
 - [MIPSのマルチスレッディング対応マルチコアプロセッサI7200 (18/05/02)](http://msyksphinz.hatenablog.com/entry/2018/05/02/040000)
 - [MIPSだって、Spectre & Meltdown (Meltdownはしない?) (18/01/20)](http://msyksphinz.hatenablog.com/entry/2018/01/20/130940)

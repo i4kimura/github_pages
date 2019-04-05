@@ -2,6 +2,7 @@
 
 ## CPU with Vivado-HLS
 
+- [Vivado-HLSを使って高位合成でCPUを作ってみる(9. HLSでAXIのバイトイネーブルはどう制御する？) (19/03/14)](http://msyksphinz.hatenablog.com/entry/2019/03/14/040000)
 - [Vivado-HLSを使って高位合成でCPUを作ってみる(8. RISC-VのテストベンチをすべてPassさせる) (19/03/01)](http://msyksphinz.hatenablog.com/entry/2019/03/01/040000)
 - [Vivado-HLSを使って高位合成でCPUを作ってみる(7. Cosimulationで波形をダンプして解析する) (19/02/27)](http://msyksphinz.hatenablog.com/entry/2019/02/27/040000)
 - [Vivado-HLSを使って高位合成でCPUを作ってみる(6. m_axiとs_axiliteの謎) (19/02/26)](http://msyksphinz.hatenablog.com/entry/2019/02/26/040000_1)

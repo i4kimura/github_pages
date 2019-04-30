@@ -2,6 +2,16 @@
 
 ## LLVM for RISC-V
 
+- [LLVMのバックエンドを作るための第一歩 (3. Target Descriptionの記述してレジスタを定義する) (19/04/30)](http://msyksphinz.hatenablog.com/entry/2019/04/30/040000)
+- [LLVMのバックエンドを作るための第一歩 (2. LLVMバックエンドにターゲットアーキテクチャを登録する) (19/04/27)](http://msyksphinz.hatenablog.com/entry/2019/04/27/040000)
+- [LLVMのバックエンドを作るための第一歩 (1. LLVMバックエンドの仕組みとRISC-V基本情報) (19/04/25)](http://msyksphinz.hatenablog.com/entry/2019/04/25/040000)
+
+- [オリジナルLLVM Backendを追加しよう (29. LLVMリグレッションテストの書き方) (19/04/20)](http://msyksphinz.hatenablog.com/entry/2019/04/20/040000)
+- [オリジナルLLVM Backendを追加しよう (28. C++のサポート) (19/04/16)](http://msyksphinz.hatenablog.com/entry/2019/04/16/040000)
+- [オリジナルLLVM Backendを追加しよう (28. Intrinsicのサポート2) (19/04/15)](http://msyksphinz.hatenablog.com/entry/2019/04/15/040000)
+- [オリジナルLLVM Backendを追加しよう (27. Intrinsicのサポート) (19/04/12)](http://msyksphinz.hatenablog.com/entry/2019/04/12/040000)
+- [オリジナルLLVM Backendを追加しよう (26. ELFのサポートとobjdump) (19/04/10)](http://msyksphinz.hatenablog.com/entry/2019/04/10/040000)
+- [オリジナルLLVM Backendを追加しよう (25. 可変引数・動的スタック割り当て) (19/04/08)](http://msyksphinz.hatenablog.com/entry/2019/04/08/040000)
 - [オリジナルLLVM Backendを追加しよう (25. 可変引数・動的スタック割り当て) (19/04/04)](http://msyksphinz.hatenablog.com/entry/2019/04/04/040000)
 - [オリジナルLLVM Backendを追加しよう (24. Tail call optimizationの実装) (19/04/03)](http://msyksphinz.hatenablog.com/entry/2019/04/03/040000)
 - [オリジナルLLVM Backendを追加しよう (23. llvm-projectを使ってテスト環境を構築する) (19/04/02)](http://msyksphinz.hatenablog.com/entry/2019/04/02/040000)

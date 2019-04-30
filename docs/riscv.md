@@ -1,7 +1,15 @@
 # RISC-V
 
+## HiFive Unleashed
+
+- [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (4. ベンチマークプログラムの実行) (19/04/29)](http://msyksphinz.hatenablog.com/entry/2019/04/29/040000)
+- [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (3. Debianのビルド試行) (19/04/24)](http://msyksphinz.hatenablog.com/entry/2019/04/24/040000)
+- [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (2. Buildroot Linuxのビルド) (19/04/22)](http://msyksphinz.hatenablog.com/entry/2019/04/22/040000)
+- [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (1. ボードのセットアップとBuildroot Linuxの起動) (19/04/21)](http://msyksphinz.hatenablog.com/entry/2019/04/21/040000)
+
 ## RISC-V Simulator in Rust
 
+- [RustでRISC-V命令セットシミュレータを作ろう (7. trait, generics, 64-bitモードへの拡張) (19/04/06)](http://msyksphinz.hatenablog.com/entry/2019/04/06/040000)
 - [RustでRISC-V命令セットシミュレータを作ろう (6. MMUの実装とテストパタンの実行) (19/03/27)](http://msyksphinz.hatenablog.com/entry/2019/03/27/040000)
 - [RustでRISC-V命令セットシミュレータを作ろう (5. シミュレータのトレースデータ出力機構の実装) (19/03/26)](http://msyksphinz.hatenablog.com/entry/2019/03/26/040000)
 - [RustでRISC-V命令セットシミュレータを作ろう (4. MMUとスーパバイザモードの実装検討) (19/03/15)](http://msyksphinz.hatenablog.com/entry/2019/03/15/040000)
@@ -192,6 +200,13 @@
 - [Rocket ChipのChiselを使ってアクセラレータを作る (行列積アクセラレータのアイデア出し) (17/09/16)](http://msyksphinz.hatenablog.com/entry/2017/09/16/020000)
 
 ## Rocket-Chip + AWS F1
+
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(5. オリジナルAFI(Amazon FPGA Image)の生成方法調査) (19/04/17)](http://msyksphinz.hatenablog.com/entry/2019/04/17/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(4. F1インスタンスの立ち上げとLinuxのブート) (19/04/11)](http://msyksphinz.hatenablog.com/entry/2019/04/11/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(3. FireSimリポジトリのセットアップとビルド) (19/04/09)](http://msyksphinz.hatenablog.com/entry/2019/04/09/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(2. マネージャインスタンスの立ち上げ) (19/04/07)](http://msyksphinz.hatenablog.com/entry/2019/04/07/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(1. 環境の立ち上げ) (19/04/05)](http://msyksphinz.hatenablog.com/entry/2019/04/05/040000)
+
 
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : オリジナルデバイスをVerilog付きでシミュレーションする (18/06/28)](http://msyksphinz.hatenablog.com/entry/2018/06/28/040000)
 - [AWSで動作するRISC-VデザインFireSimのカスタマイズ : Firechipにオリジナルデバイスを追加する (18/06/27)](http://msyksphinz.hatenablog.com/entry/2018/06/27/040000)

@@ -2,6 +2,7 @@
 
 ## HiFive Unleashed
 
+- [RISC-VボードHiFive UnleashedでWebサーバを立ち上げてみる (19/05/14)](http://msyksphinz.hatenablog.com/entry/2019/05/14/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (4. ベンチマークプログラムの実行) (19/04/29)](http://msyksphinz.hatenablog.com/entry/2019/04/29/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (3. Debianのビルド試行) (19/04/24)](http://msyksphinz.hatenablog.com/entry/2019/04/24/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (2. Buildroot Linuxのビルド) (19/04/22)](http://msyksphinz.hatenablog.com/entry/2019/04/22/040000)
@@ -26,6 +27,8 @@
 - [Western DigitalのRISC-VコアSweRV-EH1 (2. テストベンチを動かす) (19/02/03)](http://msyksphinz.hatenablog.com/entry/2019/02/03/040000)
 
 ## Chisel
+
+- [ChiselのParametersとConfigによるパラメタライズの方法 (19/05/17)](http://msyksphinz.hatenablog.com/entry/2019/05/17/040000)
 
 - [Chiselでビットコインマイナーを設計してみる(3. Scala版とVerilog版の検証と速度比較) (19/03/25)](http://msyksphinz.hatenablog.com/entry/2019/03/25/040000)
 - [Chiselでビットコインマイナーを設計してみる(2. ScalaでSHA256の検証プログラムを書く) (19/03/23)](http://msyksphinz.hatenablog.com/entry/2019/03/23/040000)
@@ -201,6 +204,11 @@
 
 ## Rocket-Chip + AWS F1
 
+- [AWS F1インスタンス上のFireSimを実行する(10. FireSimのワークロードを作成してプログラムを動かす) (19/05/13)](http://msyksphinz.hatenablog.com/entry/2019/05/13/040000)
+- [AWS F1インスタンス上のFireSimを実行する(9. カスタマイズしたFireSimのFPGAイメージを作成する) (19/05/12)](http://msyksphinz.hatenablog.com/entry/2019/05/12/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(8. カスタマイズしたアクセラレータをFireSimのプラットフォーム上に構築する) (19/05/11)](http://msyksphinz.hatenablog.com/entry/2019/05/11/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(7. Firechipでオリジナルデザインを設計してシミュレーションする) (19/05/09)](http://msyksphinz.hatenablog.com/entry/2019/05/09/040000)
+- [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(6. Firesimで生成されたDCPをVivadoで表示する) (19/05/07)](http://msyksphinz.hatenablog.com/entry/2019/05/07/040000)
 - [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(5. オリジナルAFI(Amazon FPGA Image)の生成方法調査) (19/04/17)](http://msyksphinz.hatenablog.com/entry/2019/04/17/040000)
 - [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(4. F1インスタンスの立ち上げとLinuxのブート) (19/04/11)](http://msyksphinz.hatenablog.com/entry/2019/04/11/040000)
 - [AWS F1インスタンス上のFireSimでBOOMコアをシミュレーションする試行(3. FireSimリポジトリのセットアップとビルド) (19/04/09)](http://msyksphinz.hatenablog.com/entry/2019/04/09/040000)

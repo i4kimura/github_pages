@@ -2,6 +2,21 @@
 
 ## LLVM for RISC-V
 
+- [LLVMのバックエンドを作るための第一歩 (36. 末尾関数呼び出し最適化を実装する2) (19/07/06)](http://msyksphinz.hatenablog.com/entry/2019/07/06/180000)
+- [LLVMのバックエンドを作るための第一歩 (35. 末尾関数呼び出し最適化を実装する1) (19/07/05)](http://msyksphinz.hatenablog.com/entry/2019/07/05/040000)
+- [LLVMのバックエンドを作るための第一歩 (34. 関数コールと戻り値に関するDAGを生成する) (19/07/04)](http://msyksphinz.hatenablog.com/entry/2019/07/04/040000)
+- [LLVMのバックエンドを作るための第一歩 (33. 関数コールに関するLLVM IRをDAGに変換する) (19/07/03)](http://msyksphinz.hatenablog.com/entry/2019/07/03/040000)
+- [LLVMのバックエンドを作るための第一歩 (32. 関数を呼び出す側のDAGの作成：ノードの定義) (19/07/01)](http://msyksphinz.hatenablog.com/entry/2019/07/01/040000)
+- [LLVMのバックエンドを作るための第一歩 (31. i32よりも小さな値を引数に渡すとどのようなDAGになるのか) (19/06/30)](http://msyksphinz.hatenablog.com/entry/2019/06/30/040000)
+- [LLVMのバックエンドを作るための第一歩 (29. 関数コールのサポート: Calling Conventionの定義) (19/06/27)](http://msyksphinz.hatenablog.com/entry/2019/06/27/050000)
+- [LLVMのバックエンドを作るための第一歩 (30. 関数コールのサポート: LowerFormalArgumentsの実装) (19/06/26)](http://msyksphinz.hatenablog.com/entry/2019/06/26/080000)
+- [LLVMのバックエンドを作るための第一歩 (28. 分岐の際に発生する不要なジャンプを削除するPassの追加) (19/06/25)](http://msyksphinz.hatenablog.com/entry/2019/06/25/080000)
+- [LLVMのバックエンドを作るための第一歩 (28. SELECTノードをMYRISCVXISD::SELECT_CCに変換する) (19/06/23)](http://msyksphinz.hatenablog.com/entry/2019/06/23/040000)
+- [LLVMのバックエンドを作るための第一歩 (27. 3項演算子のためのSELECTノードの処理) (19/06/22)](http://msyksphinz.hatenablog.com/entry/2019/06/22/080000)
+- [LLVMのバックエンドを作るための第一歩 (26. 制御構文の追加) (19/06/19)](http://msyksphinz.hatenablog.com/entry/2019/06/19/040000)
+- [LLVMのバックエンドを作るための第一歩 (25. int32型以外のサポート) (19/06/17)](http://msyksphinz.hatenablog.com/entry/2019/06/17/040000)
+- [LLVMのバックエンドを作るための第一歩 (24. ポインタのサポート) (19/06/15)](http://msyksphinz.hatenablog.com/entry/2019/06/15/000000)
+- [LLVMのバックエンドを作るための第一歩 (23. グローバル変数の取り扱い) (19/06/12)](http://msyksphinz.hatenablog.com/entry/2019/06/12/040000)
 - [LLVMのバックエンドを作るための第一歩 (22. RISC-Vに存在しないパタンをどのように命令生成するか) (19/06/10)](http://msyksphinz.hatenablog.com/entry/2019/06/08/182641)
 - [LLVMのバックエンドを作るための第一歩 (21. 演算命令の追加) (19/06/09)](http://msyksphinz.hatenablog.com/entry/2019/06/08/175417)
 - [LLVMのバックエンドを作るための第一歩 (20. 定数を生成させるパタンの追加) (19/06/08)](http://msyksphinz.hatenablog.com/entry/2019/06/08/040000)

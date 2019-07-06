@@ -2,6 +2,8 @@
 
 ## HiFive Unleashed
 
+- [SiFive社 Official ReleaseのCoremarkをHiFive Unleashedで動かす (19/06/13)](http://msyksphinz.hatenablog.com/entry/2019/06/13/040000)
+
 - [RISC-VボードHiFive UnleashedでWebサーバを立ち上げてみる (19/05/14)](http://msyksphinz.hatenablog.com/entry/2019/05/14/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (4. ベンチマークプログラムの実行) (19/04/29)](http://msyksphinz.hatenablog.com/entry/2019/04/29/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (3. Debianのビルド試行) (19/04/24)](http://msyksphinz.hatenablog.com/entry/2019/04/24/040000)
@@ -27,6 +29,9 @@
 - [Western DigitalのRISC-VコアSweRV-EH1 (2. テストベンチを動かす) (19/02/03)](http://msyksphinz.hatenablog.com/entry/2019/02/03/040000)
 
 ## Chisel
+
+- [Rocket Chip Generatorのバス生成技術を読み解く(2. Diplomacyの論文を読む2) (19/06/20)](http://msyksphinz.hatenablog.com/entry/2019/06/20/040000)
+- [Rocket Chip Generatorのバス生成技術を読み解く(1. Diplomacyの論文を読む) (19/06/18)](http://msyksphinz.hatenablog.com/entry/2019/06/18/040000)
 
 - [ChiselのParametersとConfigによるパラメタライズの方法 (19/05/17)](http://msyksphinz.hatenablog.com/entry/2019/05/17/040000)
 
@@ -97,6 +102,8 @@
 
 ## RISC-V仕様
 
+- [RISC-V Workshop Zurichで発表されたRISC-V Bit Manipulation Spec 0.90 (19/06/21)](http://msyksphinz.hatenablog.com/entry/2019/06/21/040000)
+- [RISC-V Workshop Zurichで発表されたRISC-V Vector Extension 0.7.1 (19/06/16)](http://msyksphinz.hatenablog.com/entry/2019/06/16/040000)
 - [RISC-VのAtomic Operation命令について (18/08/18)](http://msyksphinz.hatenablog.com/entry/2018/08/18/040000)
 - [RISC-Vの割り込みとタイマの仕組み (18/08/09)](http://msyksphinz.hatenablog.com/entry/2018/08/09/040000)
 - [RISC-VのCompressed命令のISS実装 (2. RV64/RV32の両デコード対応) (18/06/08)](http://msyksphinz.hatenablog.com/entry/2018/06/08/040000)

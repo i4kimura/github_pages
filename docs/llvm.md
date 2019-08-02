@@ -2,6 +2,22 @@
 
 ## LLVM for RISC-V
 
+- [LLVMのバックエンドを作るための第一歩 (50. 浮動小数点レジスタ向けのCalling Conventionの追加) (19/08/06)](http://msyksphinz.hatenablog.com/entry/2019/08/02/232053)
+- [LLVMのバックエンドを作るための第一歩 (49. 浮動小数点算術演算命令の追加) (19/08/05)](http://msyksphinz.hatenablog.com/entry/2019/08/02/231157)
+- [LLVMのバックエンドを作るための第一歩 (48. 浮動小数点メモリアクセスの追加) (19/08/04)](http://msyksphinz.hatenablog.com/entry/2019/08/01/230712)
+- [LLVMのバックエンドを作るための第一歩 (47. 浮動小数点レジスタの定義) (19/08/03)](http://msyksphinz.hatenablog.com/entry/2019/08/01/225308)
+- [LLVMのバックエンドを作るための第一歩 (46. LR/SCでアトミック操作を実現することを考える) (19/08/01)](http://msyksphinz.hatenablog.com/entry/2019/08/01/040000)
+- [LLVMのバックエンドを作るための第一歩 (45. Atomic命令を生成する) (19/07/31)](http://msyksphinz.hatenablog.com/entry/2019/07/31/040000)
+- [LLVMのバックエンドを作るための第一歩 (44. 拡張Inline Assemblyのサポート) (19/07/26)](http://msyksphinz.hatenablog.com/entry/2019/07/26/040000)
+- [LLVMのバックエンドを作るための第一歩 (43. インラインアセンブリをサポートする) (19/07/24)](http://msyksphinz.hatenablog.com/entry/2019/07/24/040000)
+- [LLVMのバックエンドを作るための第一歩 (42. LLVM IRをサポートするためのIntrinsicsを実装する) (19/07/23)](http://msyksphinz.hatenablog.com/entry/2019/07/23/040000)
+- [LLVMのバックエンドを作るための第一歩 (41. objdumpのコードを読み解く) (19/07/20)](http://msyksphinz.hatenablog.com/entry/2019/07/20/130000)
+- [LLVMのバックエンドを作るための第一歩 (40. objdumpのサポート) (19/07/18)](http://msyksphinz.hatenablog.com/entry/2019/07/18/040000)
+- [LLVMのバックエンドを作るための第一歩 (39. 可変長引数で生成されたアセンブリを見てみる) (19/07/12)](http://msyksphinz.hatenablog.com/entry/2019/07/12/040000)
+- [LLVMのバックエンドを作るための第一歩 (38. 可変長引数のサポート) (19/07/11)](http://msyksphinz.hatenablog.com/entry/2019/07/11/225319)
+- [LLVMのバックエンドを作るための第一歩 (38. 可変長引数のサポート) (19/07/11)](http://msyksphinz.hatenablog.com/entry/2019/07/11/040000)
+- [LLVMのバックエンドを作るための第一歩 (37. 構造体を値渡しするためのByval属性の引数 2) (19/07/10)](http://msyksphinz.hatenablog.com/entry/2019/07/10/040000)
+- [LLVMのバックエンドを作るための第一歩 (37. 構造体を値渡しするためのByval属性の引数 1) (19/07/07)](http://msyksphinz.hatenablog.com/entry/2019/07/07/040000)
 - [LLVMのバックエンドを作るための第一歩 (36. 末尾関数呼び出し最適化を実装する2) (19/07/06)](http://msyksphinz.hatenablog.com/entry/2019/07/06/180000)
 - [LLVMのバックエンドを作るための第一歩 (35. 末尾関数呼び出し最適化を実装する1) (19/07/05)](http://msyksphinz.hatenablog.com/entry/2019/07/05/040000)
 - [LLVMのバックエンドを作るための第一歩 (34. 関数コールと戻り値に関するDAGを生成する) (19/07/04)](http://msyksphinz.hatenablog.com/entry/2019/07/04/040000)

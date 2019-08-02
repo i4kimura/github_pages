@@ -102,6 +102,8 @@
 
 ## RISC-V仕様
 
+- [RISC-V Privileged ISAマニュアル20190608-Priv-MSU-Ratified版の変更点を読み解く (19/07/30)](http://msyksphinz.hatenablog.com/entry/2019/07/30/000000)
+- [RISC-V Unprivileged ISAマニュアル20190608-Base-Ratified版の変更点を読み解く (19/07/29)](http://msyksphinz.hatenablog.com/entry/2019/07/29/040000)
 - [RISC-V Workshop Zurichで発表されたRISC-V Bit Manipulation Spec 0.90 (19/06/21)](http://msyksphinz.hatenablog.com/entry/2019/06/21/040000)
 - [RISC-V Workshop Zurichで発表されたRISC-V Vector Extension 0.7.1 (19/06/16)](http://msyksphinz.hatenablog.com/entry/2019/06/16/040000)
 - [RISC-VのAtomic Operation命令について (18/08/18)](http://msyksphinz.hatenablog.com/entry/2018/08/18/040000)

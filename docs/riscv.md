@@ -10,6 +10,33 @@
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (2. Buildroot Linuxのビルド) (19/04/22)](http://msyksphinz.hatenablog.com/entry/2019/04/22/040000)
 - [SiFive社のRISC-Vボード HiFive Unleashedを使ってみる (1. ボードのセットアップとBuildroot Linuxの起動) (19/04/21)](http://msyksphinz.hatenablog.com/entry/2019/04/21/040000)
 
+## HiFive Unleashed
+
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(6. 高速化の検討) (17/09/08)](http://msyksphinz.hatenablog.com/entry/2017/09/08/024749)
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(6. MNISTの性能解析と高速化) (17/09/04)](http://msyksphinz.hatenablog.com/entry/2017/09/04/021941)
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(5. MNISTの実機動作確認) (17/09/03)](http://msyksphinz.hatenablog.com/entry/2017/09/03/020000)
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(4.実機を使ってテストデータを動作させる） (17/09/02)](http://msyksphinz.hatenablog.com/entry/2017/09/02/024049)
+- [プロセッサHiFive1で機械学習コードを動作させる(3. 推論コードの動作確認) (17/08/24)](http://msyksphinz.hatenablog.com/entry/2017/08/24/020000)
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(2. ニューラルネットのパラメータのロード) (17/08/22)](http://msyksphinz.hatenablog.com/entry/2017/08/22/020000)
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(1.MNISTのロード) (17/08/18)](http://msyksphinz.hatenablog.com/entry/2017/08/18/020000)
+
+- [(大昔の)ThinkPad にRISC-V実験環境を構築したが、HiFive1の調子がおかしい(続き) (17/07/22)](http://msyksphinz.hatenablog.com/entry/2017/07/22/131527)
+- [(大昔の)ThinkPad にRISC-V実験環境を構築したが、HiFive1の調子がおかしい (17/07/21)](http://msyksphinz.hatenablog.com/entry/2017/07/21/020000)
+
+- [RISC-VプロセッサHiFive1で機械学習コードを動作させる(1. コンパイル) (17/07/17)](http://msyksphinz.hatenablog.com/entry/2017/07/17/114702)
+- [HiFive1ボードの自作プログラムのアップロード方法 (17/07/16)](http://msyksphinz.hatenablog.com/entry/2017/07/16/020000)
+
+- [HiFive1のパフォーマンスカウンタについて (17/03/23)](http://msyksphinz.hatenablog.com/entry/2017/03/23/000304)
+- [HiFive1でベンチマークプログラム測定(Coremarkを動作させる) (17/03/22)](http://msyksphinz.hatenablog.com/entry/2017/03/22/014143)
+- [HiFive1のCPUコア性能を測定(ベンチマークプログラム作成) (17/03/21)](http://msyksphinz.hatenablog.com/entry/2017/03/21/225822)
+- [HiFive1向けのC/C++言語プログラムを開発するフロー構築 (17/03/20)](http://msyksphinz.hatenablog.com/entry/2017/03/20/235556)
+- [HiFive1のプログラムコンパイルをArduinoIDEを使わずに制御したい(2. OpenOCDを使ったHiFiveへのプログラム書き込み) (17/03/16)](http://msyksphinz.hatenablog.com/entry/2017/03/16/020000)
+- [HiFive1のプログラムコンパイルをArduinoIDEを使わずに制御したい(1. C/C++コードのコンパイル) (17/03/15)](http://msyksphinz.hatenablog.com/entry/2017/03/15/010122)
+- [HiFive1におけるシリアル通信 (17/03/14)](http://msyksphinz.hatenablog.com/entry/2017/03/14/221825)
+- [HiFive1のでのArduinoプログラム コンパイル結果の解析 (17/03/12)](http://msyksphinz.hatenablog.com/entry/2017/03/12/020000)
+- [ HiFive1 の環境セットアップとサンプル実行 (17/03/11)](http://msyksphinz.hatenablog.com/entry/2017/03/11/115556)
+
+
 ## RISC-V Simulator in Rust
 
 - [RustでRISC-V命令セットシミュレータを作ろう (7. trait, generics, 64-bitモードへの拡張) (19/04/06)](http://msyksphinz.hatenablog.com/entry/2019/04/06/040000)

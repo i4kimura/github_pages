@@ -1,5 +1,12 @@
 # RISC-V
 
+## Ariane
+
+- [SystemVerilogで記述されたRISC-VプロセッサArianeのフロントエンドの構成 (19/09/05)](http://msyksphinz.hatenablog.com/entry/2019/09/05/040000)
+- [SystemVerilogで記述されたRISC-VプロセッサArianeの回路面積解析 (19/09/04)](http://msyksphinz.hatenablog.com/entry/2019/09/04/040000)
+- [System Verilogで記述されたRISC-VコアArianeを試す (2. Arianeのキャッシュサブシステム) (19/08/15)](http://msyksphinz.hatenablog.com/entry/2019/08/15/040000)
+- [System Verilogで記述されたRISC-VコアArianeを試す (1. ビルドとシミュレーション) (19/08/07)](http://msyksphinz.hatenablog.com/entry/2019/08/07/040000)
+
 ## HiFive Unleashed
 
 - [SiFive社 Official ReleaseのCoremarkをHiFive Unleashedで動かす (19/06/13)](http://msyksphinz.hatenablog.com/entry/2019/06/13/040000)
@@ -56,6 +63,20 @@
 - [Western DigitalのRISC-VコアSweRV-EH1 (2. テストベンチを動かす) (19/02/03)](http://msyksphinz.hatenablog.com/entry/2019/02/03/040000)
 
 ## Chisel
+
+- [Chiselで再帰を使ってPopCountモジュールを実装する (19/09/07)](http://msyksphinz.hatenablog.com/entry/2019/09/07/000000)
+- [ChiselでMapやReduceを使ったいくつかのハードウェア記述Tips (19/09/06)](http://msyksphinz.hatenablog.com/entry/2019/09/06/040000)
+- ["Digital Design with Chisel"が正式発行 (19/09/02)](http://msyksphinz.hatenablog.com/entry/2019/09/02/040000)
+
+- [ハードウェア記述言語Chiselコンパイラの内部解析(3. Chiselコンパイルのフローを追いかける) (19/09/13)](http://msyksphinz.hatenablog.com/entry/2019/09/01/172813)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(2. Chiselコンパイルのフローを追いかける) (19/09/09)](http://msyksphinz.hatenablog.com/entry/2019/09/01/172526)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(1. カスタマイズ用のローカル環境を作る) (19/09/08)](http://msyksphinz.hatenablog.com/entry/2019/09/01/172458)
+
+- [Chisel3で生成されたVerilogのデバッグを捗らせるためのいくつかの技法 (19/09/12)](http://msyksphinz.hatenablog.com/entry/2019/09/01/172754)
+- [Chisel3で外部モジュールをロードする場合に必要なbuild.sbtの変更点 (19/09/10)](http://msyksphinz.hatenablog.com/entry/2019/09/01/172547)
+- [Chiselで部分代入を実現するためのいくつかのテクニック (19/08/23)](http://msyksphinz.hatenablog.com/entry/2019/08/23/040000)
+- [ChiselのパラメタライズによりGenericなモジュールを作成する手法 (19/08/21)](http://msyksphinz.hatenablog.com/entry/2019/08/21/040000)
+- [Chiselを使ってコンフィギャラブルなモジュール設計を行う (19/08/19)](http://msyksphinz.hatenablog.com/entry/2019/08/19/040000)
 
 - [Rocket Chip Generatorのバス生成技術を読み解く(2. Diplomacyの論文を読む2) (19/06/20)](http://msyksphinz.hatenablog.com/entry/2019/06/20/040000)
 - [Rocket Chip Generatorのバス生成技術を読み解く(1. Diplomacyの論文を読む) (19/06/18)](http://msyksphinz.hatenablog.com/entry/2019/06/18/040000)

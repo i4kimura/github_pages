@@ -2,6 +2,13 @@
 
 ## LLVM for RISC-V
 
+- [LLVMのバックエンドを作るための第一歩 (53. RV64 / RV32両方のサポート格闘中2) (19/08/26)](http://msyksphinz.hatenablog.com/entry/2019/08/26/013000)
+- [LLVMのバックエンドを作るための第一歩 (53. RV64 / RV32両方のサポート格闘中) (19/08/25)](http://msyksphinz.hatenablog.com/entry/2019/08/25/040000)
+- [LLVMのバックエンドを作るための第一歩 (54. Compressed命令を実装する検討) (19/08/22)](http://msyksphinz.hatenablog.com/entry/2019/08/22/040000)
+- [LLVMのバックエンドを作るための第一歩 (53. RV64 / RV32両方のサポート) (19/08/20)](http://msyksphinz.hatenablog.com/entry/2019/08/20/040000)
+- [LLVMのバックエンドを作るための第一歩 (52. 浮動小数点のその他の命令) (19/08/18)](http://msyksphinz.hatenablog.com/entry/2019/08/18/040000)
+- [LLVMのオリジナルバックエンド実装をRelease 9.0のブランチに移植してみる (19/08/17)](http://msyksphinz.hatenablog.com/entry/2019/08/17/040000)
+- [LLVMのバックエンドを作るための第一歩 (51. 浮動小数点比較命令の追加) (19/08/12)](http://msyksphinz.hatenablog.com/entry/2019/08/12/040000)
 - [LLVMのバックエンドを作るための第一歩 (50. 浮動小数点レジスタ向けのCalling Conventionの追加) (19/08/06)](http://msyksphinz.hatenablog.com/entry/2019/08/02/232053)
 - [LLVMのバックエンドを作るための第一歩 (49. 浮動小数点算術演算命令の追加) (19/08/05)](http://msyksphinz.hatenablog.com/entry/2019/08/02/231157)
 - [LLVMのバックエンドを作るための第一歩 (48. 浮動小数点メモリアクセスの追加) (19/08/04)](http://msyksphinz.hatenablog.com/entry/2019/08/01/230712)

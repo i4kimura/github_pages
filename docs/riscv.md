@@ -1,5 +1,44 @@
 # RISC-V
 
+## FIRRTL-Compiler
+
+- [FIRRTLに入門する (15. LowerType時に配列を分解せずにBundleを分解する手法の調査) (19/11/30)](http://msyksphinz.hatenablog.com/entry/2019/11/29/014242)
+- [FIRRTLに入門する (14. Bundleの改造と配列の解析) (19/11/28)](http://msyksphinz.hatenablog.com/entry/2019/11/28/040000)
+- [FIRRTLに入門する (13. Bundleの改造と配列の制約) (19/11/25)](http://msyksphinz.hatenablog.com/entry/2019/11/25/040000)
+- [FIRRTLに入門する (12. 配列参照のコードを残したままVerilogを出したい2) (19/11/24)](http://msyksphinz.hatenablog.com/entry/2019/11/24/040000)
+- [FIRRTLに入門する (11. 配列参照のコードを残したままVerilogを出したい) (19/11/23)](http://msyksphinz.hatenablog.com/entry/2019/11/23/040000)
+- [FIRRTLに入門する (10. 配列参照のコードはどこで除去される？) (19/11/19)](http://msyksphinz.hatenablog.com/entry/2019/11/19/040000)
+- [FIRRTLに入門する (9. Negative EdgeのAsynchronous Resetを追加してみる) (19/11/18)](http://msyksphinz.hatenablog.com/entry/2019/11/18/040000)
+- [FIRRTLに入門する (8. FIRRTLのレジスタアップデートの動作を確認する) (19/11/17)](http://msyksphinz.hatenablog.com/entry/2019/11/17/040000)
+- [FIRRTLに入門する (7. FIRRTLにSystemVerilogCompilerを追加してみる) (19/11/15)](http://msyksphinz.hatenablog.com/entry/2019/11/15/040000)
+- [FIRRTLに入門する (6. FIRRTLのコンパイルオプションについて違いを確認) (19/11/14)](http://msyksphinz.hatenablog.com/entry/2019/11/14/040000)
+- [FIRRTLに入門する (5. ANTLR4 用のFIRRTL.g4を使ってC++の簡易パーサを作ってみる) (19/11/13)](http://msyksphinz.hatenablog.com/entry/2019/11/13/040000)
+- [FIRRTLに入門する (4. FIRRTLの.firファイルの読み取り方法) (19/11/12)](http://msyksphinz.hatenablog.com/entry/2019/11/12/040000)
+- [FIRRTLに入門する (3. FIRRTLのざっくりとしたフローを追いかける) (19/11/09)](http://msyksphinz.hatenablog.com/entry/2019/11/09/040000)
+- [FIRRTLに入門する (2. FIRRTL解析のためのIntelliJ IDEAの立ち上げと最初の解析) (19/11/07)](http://msyksphinz.hatenablog.com/entry/2019/11/07/040000)
+- [FIRRTLに入門する (1. ビルドとVerilog生成テスト実行) (19/11/03)](http://msyksphinz.hatenablog.com/entry/2019/11/03/040000)
+
+## Chisel3-Compiler
+
+- [ハードウェア記述言語Chiselコンパイラの内部解析(7. FixedPoint型を使ったコードを書いてみる) (19/09/18)](http://msyksphinz.hatenablog.com/entry/2019/09/18/000000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(6. もう少し真面目にChiselの型を追加するコードを書く) (19/09/17)](http://msyksphinz.hatenablog.com/entry/2019/09/17/040000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(5. Chiselに新しい型と演算子を追加してみる) (19/09/16)](http://msyksphinz.hatenablog.com/entry/2019/09/16/040000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(4. Chiselで代入演算子がハードウェアに落ちるまで) (19/09/15)](http://msyksphinz.hatenablog.com/entry/2019/09/15/040000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(3. Chiselコンパイルのフローを追いかける) (19/09/13)](http://msyksphinz.hatenablog.com/entry/2019/09/13/040000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(2. Chiselコンパイルのフローを追いかける) (19/09/09)](http://msyksphinz.hatenablog.com/entry/2019/09/09/000000)
+- [ハードウェア記述言語Chiselコンパイラの内部解析(1. カスタマイズ用のローカル環境を作る) (19/09/08)](http://msyksphinz.hatenablog.com/entry/2019/09/08/040000)
+
+
+## HummingBird
+
+- [オープンソースRISC-VコアHummingBirdについて調査(7. FPGAでのビルドを試行する) (19/11/11)](http://msyksphinz.hatenablog.com/entry/2019/11/11/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(6. すべてのテストケースで確認) (19/11/10)](http://msyksphinz.hatenablog.com/entry/2019/11/10/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(5. パイプライントレーサを追加して内部情報を取得) (19/11/08)](http://msyksphinz.hatenablog.com/entry/2019/11/08/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(4. Verilatorビルドでの波形デバッグ) (19/11/06)](http://msyksphinz.hatenablog.com/entry/2019/11/06/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(3. Verilator用にビルドを追加できないか？) (19/11/04)](http://msyksphinz.hatenablog.com/entry/2019/11/04/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(2. Verilator用にビルドを追加できないか？) (19/11/01)](http://msyksphinz.hatenablog.com/entry/2019/11/01/040000)
+- [オープンソースRISC-VコアHummingBirdについて調査(1. ダウンロードとビルド) (19/10/31)](http://msyksphinz.hatenablog.com/entry/2019/10/31/040000)
+
 ## Ariane
 
 - [SystemVerilogで記述されたRISC-VプロセッサArianeのフロントエンドの構成 (19/09/05)](http://msyksphinz.hatenablog.com/entry/2019/09/05/040000)
@@ -64,6 +103,13 @@
 
 ## Chisel
 
+- [Chiselでクロックゲーティングを扱うための方法いろいろ (19/11/29)](http://msyksphinz.hatenablog.com/entry/2019/11/29/040000)
+- [BoringUtilsを使えばデバッグポートを開けずにChiselで内部信号を観察できる (19/11/22)](http://msyksphinz.hatenablog.com/entry/2019/11/22/040000_1)
+- [ScalaのインタプリタAmmoniteでChisel3を動作させる試行 (19/11/21)](http://msyksphinz.hatenablog.com/entry/2019/11/21/040000)
+- [Chisel-3.2 RC2でAsynchronous Resetを生成してみる (19/09/27)](http://msyksphinz.hatenablog.com/entry/2019/09/27/040000)
+- [Chiselでtypedef(のようなもの)を実現する方法 (19/09/14)](http://msyksphinz.hatenablog.com/entry/2019/09/14/040000)
+- [Chisel3で生成されたVerilogのデバッグを捗らせるためのいくつかの技法 (19/09/12)](http://msyksphinz.hatenablog.com/entry/2019/09/12/040000)
+- [Chisel3で外部モジュールをロードする場合に必要なbuild.sbtの変更点 (19/09/10)](http://msyksphinz.hatenablog.com/entry/2019/09/10/040000)
 - [Chiselで再帰を使ってPopCountモジュールを実装する (19/09/07)](http://msyksphinz.hatenablog.com/entry/2019/09/07/000000)
 - [ChiselでMapやReduceを使ったいくつかのハードウェア記述Tips (19/09/06)](http://msyksphinz.hatenablog.com/entry/2019/09/06/040000)
 - ["Digital Design with Chisel"が正式発行 (19/09/02)](http://msyksphinz.hatenablog.com/entry/2019/09/02/040000)

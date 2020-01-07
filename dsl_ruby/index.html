@@ -36,7 +36,7 @@
     
     
       
-        <title>CPU - FPGA開発日記 カテゴリ別記事インデックス</title>
+        <title>DSLでビルドツールを自作する - FPGA開発日記 カテゴリ別記事インデックス</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#cpu" tabindex="1" class="md-skip">
+      <a href="#dsl" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               FPGA開発日記 カテゴリ別記事インデックス
             </span>
             <span class="md-header-nav__topic">
-              CPU
+              DSLでビルドツールを自作する
             </span>
           
         </div>
@@ -198,6 +198,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../cpu/" title="CPU" class="md-nav__link">
+      CPU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -208,58 +220,10 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        CPU
-      </label>
-    
-    <a href="./" title="CPU" class="md-nav__link md-nav__link--active">
-      CPU
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#arm-designstart-cortex-m3" title="Arm DesignStart Cortex-M3" class="md-nav__link">
-    Arm DesignStart Cortex-M3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intel-software-guard-extension" title="Intel Software Guard Extension" class="md-nav__link">
-    Intel Software Guard Extension
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-nav__link">
+    <a href="./" title="DSLでビルドツールを自作する" class="md-nav__link md-nav__link--active">
       DSLでビルドツールを自作する
     </a>
+    
   </li>
 
     
@@ -364,29 +328,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#arm-designstart-cortex-m3" title="Arm DesignStart Cortex-M3" class="md-nav__link">
-    Arm DesignStart Cortex-M3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intel-software-guard-extension" title="Intel Software Guard Extension" class="md-nav__link">
-    Intel Software Guard Extension
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -398,56 +339,35 @@
               
                 
                 
-                <h1 id="cpu">CPU</h1>
+                <h1 id="dsl">DSLでビルドツールを自作する</h1>
+<p>2019年 Qiita アドベントカレンダー企画</p>
 <ul>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/02/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (7. 予測精度を上げるためのテクニック2) (19/08/02)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/16/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (9. ニューラル分岐予測器2) (19/08/16)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/13/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (8. ニューラル分岐予測器1) (19/08/13)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/11/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (10. 高速パスベースニューラル分岐予測器) (19/08/11)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/10/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (9. パーセプトロン分岐予測器の論文を読む2) (19/08/10)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/08/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (8. パーセプトロン分岐予測器の論文を読む) (19/08/08)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/08/02/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (7. 予測精度を上げるためのテクニック2) (19/08/02)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/28/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (7. 予測精度を上げるためのテクニック1) (19/07/28)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/27/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (5. ハイブリッド分岐予測器) (19/07/27)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/14/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (7. RISC-VのアウトオブオーダコアBOOMのGshare実装を見てみる) (19/07/14)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/13/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (6. RISC-VのアウトオブオーダコアBOOMのTAGE実装を見てみる) (19/07/13)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/09/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (4. 予測が難しい分岐のための分岐予測器 2) (19/07/09)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/08/081900">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (4. 予測が難しい分岐のための分岐予測器) (19/07/08)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/07/02/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (3. Biased分岐予測、TAGE分岐予測) (19/07/02)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/06/29/013000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (2. 2レベル分岐予測器の構成について) (19/06/29)</a></li>
-<li>
-<p><a href="http://msyksphinz.hatenablog.com/entry/2019/06/28/040000">高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (1. 分岐予測のサーベイと分類) (19/06/28)</a></p>
-</li>
-<li>
-<p><a href="http://msyksphinz.hatenablog.com/entry/2019/02/09/040000">AXIスライサ・Skid Bufferの勉強 (19/02/09)</a></p>
-</li>
-<li>
-<p><a href="http://msyksphinz.hatenablog.com/entry/2019/02/08/040000">アウトオブオーダ実行の詳細を勉強する場合の資料には"Understanding the detailed Architecture of AMD's 64 bit Core"がとても良い (19/02/08)</a></p>
-</li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/02/07/040000">マルチコアにおけるキャッシュコヒーレンシ方式の簡単なまとめ (2. ディレクトリベースのキャッシュコヒーレンシ) (19/02/07)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2019/01/29/040000">マルチコアにおけるキャッシュコヒーレンシ方式の簡単なまとめ (1. キャッシュスヌープ方式) (19/01/29)</a></li>
-</ul>
-<h2 id="arm-designstart-cortex-m3">Arm DesignStart Cortex-M3</h2>
-<ul>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/28/200418">Arm DesignStart Cortex-M3を試す(5. オリジナルプログラムをビルドしてシミュレーションする試行) (18/10/28)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/27/040000">Arm DesignStart Cortex-M3を試す(5. オリジナルプログラムをビルドしてシミュレーションする試行) (18/10/27)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/26/040000">Arm DesignStart Cortex-M3を試す(4. Modelsimを使ってCortex-M3の波形を観測する) (18/10/26)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/25/040000">Arm DesignStart Cortex-M3を試す(3. Modelsimを使ってDhrystoneを流す) (18/10/25)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/13/180000">Arm DesignStart Cortex-M1を試す(2. SoC環境のRTLシミュレーションを実行する) (18/10/13)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/10/11/040000">Arm DesignStart Cortex-M1を試す(1. リファレンスデザインを試す) (18/10/11)</a></li>
-</ul>
-<h2 id="intel-software-guard-extension">Intel Software Guard Extension</h2>
-<ul>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/08/28/040000">Intel Software Guard Extensionのチュートリアル サンプルプログラムを実行(Part-3 PasswordManagerCore) (18/08/28)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/08/24/040000">Intel Software Guard Extensionのチュートリアルを読む(2. Design an Application) (18/08/24)</a></li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/08/22/040000">Intel Software Guard Extensionのチュートリアルを読む(2. Application Design) (18/08/22)</a></li>
-<li>
-<p><a href="http://msyksphinz.hatenablog.com/entry/2018/08/21/040000">Intel Software Guard Extensionのチュートリアルを読む(1. SGX Foundation) (18/08/21)</a></p>
-</li>
-<li>
-<p><a href="http://msyksphinz.hatenablog.com/entry/2018/07/22/040000">Spectre 1.1 (CVE-2018-3693) の論文を読む (18/07/22)</a></p>
-</li>
-<li><a href="http://msyksphinz.hatenablog.com/entry/2018/07/17/040000">ROP(Return-Oriented Programming)についての勉強 (18/07/17)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/25/040000">DSLでビルドツールを自作する (25日目 最後のまとめ) (19/12/25)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/24/00000">DSLでビルドツールを自作する (24日目 EmacsプロジェクトをRumyでコンパイルしてみる試行 ～ひたすらルールファイルを書く～) (19/12/24)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/23/00000">DSLでビルドツールを自作する (23日目 EmacsプロジェクトをRumyでコンパイルしてみる試行 ～必要な機能は何か～) (19/12/23)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/22/00000">DSLでビルドツールを自作する (22日目 gitコマンドに埋め込む1) (19/12/22)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/21/00000">DSLでビルドツールを自作する (21日目 Rumy-Templateでお手軽プロジェクトテンプレート作成) (19/12/21)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/20/00000">DSLでビルドツールを自作する (20日目 Rumy-Makeのテスト結果を綺麗に管理しよう) (19/12/20)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/19/00000">DSLでビルドツールを自作する (19日目 Rumy-Makeでテストを制御しよう) (19/12/19)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/18/00000">DSLでビルドツールを自作する (18日目 コマンドラインの整備) (19/12/18)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/17/00000">DSLでビルドツールを自作する (17日目 ビルドルールをYAMLに書きたい 2. YAMLルールをもう少し便利に) (19/12/17)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/16/00000">DSLでビルドツールを自作する (16日目 ビルドルールをYAMLに書きたい) (19/12/16)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/15/00000">DSLでビルドツールを自作する (15日目 環境変数・ディレクトリに依存しないビルドを実現したい) (19/12/15)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/14/00000">DSLでビルドツールを自作する (14日目 並列実行についての検討) (19/12/14)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/13/00000">DSLでビルドツールを自作する (13日目 Rumyルールから外部Rumyルールを呼ぶ) (19/12/13)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/12/00000">DSLでビルドツールを自作する (12日目 C++プロジェクトビルド用のラッパーを作ろう) (19/12/12)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/11/00000">DSLでビルドツールを自作する (11日目 Rumy-Makeを実際のプロジェクトに適用してみる) (19/12/11)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/10/00000">DSLでビルドツールを自作する (10日目 もっとデバッグしやすくしたい！) (19/12/10)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/09/00000">DSLでビルドツールを自作する (9日目 テストについて考える) (19/12/09)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/08/040000">SC19で発表されたCerebrasを使用したシステムCS-1の発表資料を読む (19/12/08)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/08/00000">DSLでビルドツールを自作する (8日目 cleanコマンドを作る) (19/12/08)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/07/00000">DSLでビルドツールを自作する (7日目 タイムスタンプでルール実行をスキップする) (19/12/07)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/06/00000">DSLでビルドツールを自作する (6日目 細かな調整2) (19/12/06)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/05/00000">DSLでビルドツールを自作する (5日目 細かな調整) (19/12/05)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/04/040000">DSLでビルドツールを自作する (4日目 ターゲットの依存関係を作ろう) (19/12/04)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/03/00000">DSLでビルドツールを自作する (3日目 ターゲットを実行する) (19/12/03)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/02/00000">DSLでビルドツールを自作する (2日目 ターゲットを作ろう) (19/12/02)</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2019/12/01/00000">DSLでビルドツールを自作する (1. ビルドツールを作る動機・最初のプログラム) (19/12/01)</a></li>
 </ul>
                 
                   
@@ -469,7 +389,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../30os/" title="オペレーティングシステム" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../cpu/" title="CPU" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -478,19 +398,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                オペレーティングシステム
+                CPU
               </span>
             </div>
           </a>
         
         
-          <a href="../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../gpgpu/" title="GPGPU 記事一覧" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                DSLでビルドツールを自作する
+                GPGPU 記事一覧
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

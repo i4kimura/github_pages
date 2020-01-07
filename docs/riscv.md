@@ -2,6 +2,9 @@
 
 ## FIRRTL-Compiler
 
+- [FIRRTLに入門する (18. 多次元配列に対する処理の検討) (19/12/30)](https://msyksphinz.hatenablog.com/entry/2019/12/30/040000)
+- [FIRRTLに入門する (17. LowerType時に配列を分解せずにBundleを分解する手法の調査(3)) (19/12/27)](https://msyksphinz.hatenablog.com/entry/2019/12/27/040000)
+- [FIRRTLに入門する (16. LowerType時に配列を分解せずにBundleを分解する手法の調査(2)) (19/12/26)](https://msyksphinz.hatenablog.com/entry/2019/12/26/040000)
 - [FIRRTLに入門する (15. LowerType時に配列を分解せずにBundleを分解する手法の調査) (19/11/30)](http://msyksphinz.hatenablog.com/entry/2019/11/29/014242)
 - [FIRRTLに入門する (14. Bundleの改造と配列の解析) (19/11/28)](http://msyksphinz.hatenablog.com/entry/2019/11/28/040000)
 - [FIRRTLに入門する (13. Bundleの改造と配列の制約) (19/11/25)](http://msyksphinz.hatenablog.com/entry/2019/11/25/040000)

@@ -8,6 +8,11 @@
 
 [RISC-V記事一覧](riscv)
 
+
+# DSL with Ruby
+
+[DSLでビルドツールを自作する(2019年 Qiita アドベントカレンダー企画)](dsl_ruby)
+
 # LLVM
 
 [LLVM記事一覧](llvm)

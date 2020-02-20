@@ -8,6 +8,8 @@
 
 [RISC-V記事一覧](riscv)
 
+[【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿](cq/hifive_unleashed)
+
 
 # DSL with Ruby
 

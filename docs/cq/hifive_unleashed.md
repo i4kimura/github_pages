@@ -4,6 +4,10 @@ RISC-Vの評価ボードは、数は少ないですが様々なものがリリ�
 
 その中で、2018年の2月にCrowd Supplyというクラウドファンディングで発表された"HiFive Unleashed"という評価ボードは、本格的なマルチコアのRISC-Vボードとして大注目の評価ボードです(図[refs:hifive_unleashed])。
 
+![image-20200220225916813](figure/hifive_unleashed.PNG)
+
+<div align="center">図[refs:hifive_unleashed] SiFive社の販売しているHiFive Unleashed RISC-V開発ボード</div>
+
 基本的な仕様は、以下の通りです。
 
 - 4+1マルチコア構成。最大動作周波数1.5GHz (U54-MCのマニュアルは https://www.sifive.com/documentation/risc-v-core/u54-mc-risc-v-core-ip-manual/ から入手できる)
@@ -28,6 +32,10 @@ RISC-Vの評価ボードは、数は少ないですが様々なものがリリ�
 ### 拡張ボードでさらに本格的な評価ボードへ変身
 
 HiFive Unleashedには拡張ボードが提供されています(図[refs:unleashed_expansion_board])。拡張ボードはMicorsemiのFPGAが搭載されておりさらに多くの外部I/Oが使用できるようになっています。
+
+![image-20200220230029189](figure/unleashed_expansion_board.PNG)
+
+<div align="center">図[refs:unleashed_expansion_board] HiFive Unleashed Expansion Board. 写真は https://www.crowdsupply.com/microsemi/hifive-unleashed-expansion-board より抜粋。</div>
 
 https://www.crowdsupply.com/microsemi/hifive-unleashed-expansion-board
 
@@ -62,6 +70,12 @@ https://www.crowdsupply.com/microsemi/hifive-unleashed-expansion-board
 
 RISC-VデスクトップPCを作った人は、この拡張ボードまでを含んだ基板一式を格納できるケースを作成し、さらにFedora LinuxをインストールしてPC環境を構築しました(図[refs:unleashed_pc])。
 
+![image-20200220230156431](figure/unleashed_pc.PNG)
+
+<div align="center">HiFive UnleashedとExpansionボードを使えば、自作RISC-V PCだって構築できる(https://abopen.com/news/building-a-risc-v-pc/ より抜粋)</div>
+
+
+
 筆者は、このニュースに2つの驚きを感じました。
 
 - HiFive Unleashedボードは、RISC-V CPUが十分に成熟し、安定してLinuxを動作させる程に成長した。
@@ -74,6 +88,14 @@ RISC-Vがこの世に誕生したのは2011年ですが、それから10年も�
 HiFive UnleashdにはマイクロSDカードが付属しており、デフォルトでBuildrootのLinuxが立ち上がります(図[refs:unleashed_boot])。筆者は、HiFive UnleashdをWindows PCにUSBで接続し、USB経由でシリアルコンソールを立ち上げました。筆者はTera Termで接続し、ボーレートは115200bpsで接続します。電源を入れると、SiFiveのロゴが表示され、Linuxがブートしました。
 
 ユーザ名`root`、パスワード`sifive`でログインが可能です(図[refs:unleashed_login])。
+
+![image-20200220230255213](figure/unleashed_boot.PNG)
+
+<div align="center">図[refs:unleashed_boot] HiFive Unleashedに付属しているマイクロSDカードにはBuildrootが書き込まれており、デフォルトでLinuxを立ち上げることができる。</div>
+
+![image-20200220230619693](figure/unleashed_login.PNG)
+
+<div align="center">HiFive Unleashedに付属しているマイクロSDカードで立ち上げたLinuxでログインした様子。</div>
 
 `/proc/cpuinfo`でCPUの情報を確認できます。
 
@@ -239,7 +261,92 @@ dd if=/home/msyksphinz/work/riscv/freedom-u-sdk/work/hifive-unleashed-vfat.part 
 
 マイクロSDカードの構築が完了しました。HiFive Unleashedのボードに差し込んで起動します。このとき、HiFive Unleashed上のディップスイッチを図[refs:boot_dip_switch]のように変更する必要があります。
 
+![image-20200220230531824](figure/boot_dip_switch.PNG)
+
+<div align="center">図[refs:boot_dip_switch] HiFive UnleashedのDIPスイッチは、5番目のスイッチをONに変更しておく。</div>
+
 Linuxがブートすると、リスト[ファイル:list_hifive_boot]のようなメッセージが表示され、Buildroot Linuxが起動するはずです。
+
+```
+U-Boot 2018.09-gca05d26 (Apr 20 2019 - 01:40:29 +0900)
+
+DRAM:  2 GiB
+MMC:
+In:    serial
+Out:   serial
+Err:   serial
+Net:   gmac0
+Hit any key to stop autoboot:  0
+MMC_SPI: 0 at 0:1 hz 20000000 mode 0
+
+Partition Map for MMC device 0  --   Partition Type: EFI
+
+Part    Start LBA       End LBA         Name
+        Attributes
+        Type GUID
+...
+## Starting application at 0x80000000 ...
+bbl loader
+
+                SIFIVE, INC.
+
+         5555555555555555555555555
+        5555                   5555
+       5555                     5555
+      5555                       5555
+     5555       5555555555555555555555
+    5555       555555555555555555555555
+   5555                             5555
+  5555                               5555
+ 5555                                 5555
+5555555555555555555555555555          55555
+ 55555           555555555           55555
+   55555           55555           55555
+     55555           5           55555
+       55555                   55555
+         55555               55555
+           55555           55555
+             55555       55555
+               55555   55555
+                 555555555
+                   55555
+                     5
+
+           SiFive RISC-V Core IP
+[    0.000000] OF: fdt: Ignoring memory range 0x80000000 - 0x80200000
+[    0.000000] Linux version 4.19.0-sifive-1+ (msyksphinz@msyksphinz) (gcc version 8.3.0 (Buildroot 2019.02-07449-g4eddd28f99))
+...
+[    2.080000] Run /init as init process
+[    2.090000] mmc0: new SDHC card on SPI
+[    2.100000] mmcblk0: mmc0:0000 SPCC 14.8 GiB
+[    2.130000]  mmcblk0: p1 p2 p3 p4
+Starting syslogd: OK
+Starting klogd: OK
+Starting mdev...
+modprobe: can't change directory to '/lib/modules': No such file or directory
+Initializing random number generator... [    3.020000] random: dd: uninitialized urandom read (512 bytes read)
+done.
+Starting network: [    3.090000] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+udhcpc: started, v1.29.3
+udhcpc: sending discover
+[    6.240000] macb 10090000.ethernet eth0: link up (100/Full)
+[    6.240000] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+udhcpc: sending discover
+udhcpc: sending select for 192.168.11.17
+udhcpc: lease of 192.168.11.17 obtained, lease time 172800
+deleting routers
+adding dns 192.168.11.1
+OK
+Starting dropbear sshd: [    6.540000] random: dropbear: uninitialized urandom read (32 bytes read)
+OK
+
+Welcome to Buildroot
+buildroot login: root
+Password:
+#
+```
+
+
 
 ちなみに、筆者の環境ではLinuxのブート画面が現れるまで5～10分程度画面が固まっているように見えました。freedom-u-sdkの最新のリポジトリではブートローダにU-Bootを使っているのですが、そちらの完成度がまだ高くないようです。
 
@@ -394,6 +501,95 @@ HiFive UnleashedにDebianをインストールしたので、様々なプログ�
 
 ここでは、HiFive Unleashedで数値積分のプログラムをマルチコアで動かし、その性能を測定してみましょう。数値積分は、ある関数に対して区間$[a, b]$の間の積分を計算するわけですが、区間を分割してマルチコアで計算し、最後に加算しても特に積分結果に問題はないはずです(数値計算の専門家から言わせると厳密にもう少しケアしなければならない部分があるかもしれませんが、今回はあまり気にせず進めていきます)。例えば、$$f(x)=x^2$$の関数を積分する際に4コアで領域を分割する際のイメージを図[refs:integral_separate]に示します。今回はリスト[ファイル:hifive_integral_example.cpp]のようなプログラムを作成しました。
 
+![image-20200220230739025](figure/integral_separate.PNG)
+
+<div align="center">図[refs:integral_separate] 積分プログラムをマルチコアで実行した際の領域分割の様子。コア毎に異なる領域を計算して、最後にその結果を加算する。</div>
+
+- `hifive_integral_example.cpp`
+
+```cpp
+#include <assert.h>
+#include <chrono>
+#include <cstdio>
+#include <iostream>
+#include <limits.h>
+#include <mutex>
+#include <thread>
+#include <vector>
+
+std::mutex mtx_;
+double int_ans = 0.0;
+
+double f(double x)
+{
+  return x * x;
+}
+
+void add_count(double ans)
+{
+  std::lock_guard<std::mutex> lock(mtx_);
+  int_ans += ans;
+}
+
+void worker(double a, double b)
+{
+  static double step = 0.00000001;
+
+  double x = a;
+  double s = 0.0;
+
+  while(x < b) {
+    x = x + step;
+    s = s + f(x);
+  }
+
+  s = step * ((f(a) + f(b)) / 2.0 + s);
+  add_count(s);
+}
+
+
+int main (int argc, char **argv)
+{
+  size_t num_threads = 1;
+  if (argc != 2) {
+    std::cerr << "Error: multi_core [num_threads]\n";
+    exit (EXIT_FAILURE);
+  }
+
+  size_t val = strtoul (argv[1], NULL, 10);
+  if (val == 0) {
+  } else {
+    num_threads = val;
+    std::cout << "Number of threads " << num_threads << " : ";
+  }
+
+  double length = 1.0 / num_threads;
+  // start to measure
+  auto start = std::chrono::high_resolution_clock::now();
+
+  std::vector<std::thread> threads;
+
+  for(size_t i = 0; i < num_threads; ++i){
+    double start = static_cast<double>(i) / num_threads;
+    threads.emplace_back(std::thread(worker, start, start + length));
+  }
+
+  for(auto& thread : threads){
+    thread.join();
+  }
+
+  auto end = std::chrono::high_resolution_clock::now();
+  auto dur = end - start;
+  auto msec = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
+  std::cout << msec << "msec\n";
+  std::cout << "Answer = " << int_ans << '\n';
+
+  return 0;
+}
+```
+
+
+
 区間積分の対象範囲を$$[0, 1.0)$$に設定し、その間の区間をコア数によって分割しています。これをコンパイルし、さっそく1コア、2コア、4コアで実行して時間を測定します。
 
 ```sh
@@ -413,6 +609,10 @@ Answer = 0.333333
 ```
 
 グラフにプロットしてみると、図[refs:integral_performance]のようになりました。コア数を増やすと、順当に実行時間を削減することができました。HiFive Unleashedでマルチコアプログラミングの初歩を実現しました。
+
+![image-20200220230815217](figure/integral_performance.PNG)
+
+<div align="center">HiFive Unleashedで積分プログラムをマルチコアで実行したときの実行性能。使用コア数を増やすと、性能が向上していることが分かる。</div>
 
 ## HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう
 
@@ -438,4 +638,6 @@ service nginx start
 
 Debianに割り当てられているIPアドレスWebブラウザからアクセスすると、nginxが動作しているのが確認できました(図[refs:hifive_nginx])。ただし、様々なウェブサービスをインストールしようとしてみたのですが、まだRISC-Vに対応していないのか、MySQLがインストールできませんでした。この辺りは、各種パッケージがRISC-Vに対応するのを待つしかないようです。
 
+![image-20200220230901485](figure/hifive_nginx.PNG)
 
+<div align="center">図[refs:hifive_nginx] HiFive Unleashed上にnginxをインストールした。</div>

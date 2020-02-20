@@ -1,0 +1,980 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Hifive unleashed - FPGA開発日記 カテゴリ別記事インデックス</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#sifiverisc-v-hifive-unleashed" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              FPGA開発日記 カテゴリ別記事インデックス
+            </span>
+            <span class="md-header-nav__topic">
+              Hifive unleashed
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    FPGA開発日記 カテゴリ別記事インデックス
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../30os/" title="オペレーティングシステム" class="md-nav__link">
+      オペレーティングシステム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cpu/" title="CPU" class="md-nav__link">
+      CPU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-nav__link">
+      DSLでビルドツールを自作する
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gpgpu/" title="GPGPU 記事一覧" class="md-nav__link">
+      GPGPU 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../llvm/" title="LLVM" class="md-nav__link">
+      LLVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../machine_learning/" title="機械学習 / TensorFlow" class="md-nav__link">
+      機械学習 / TensorFlow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../mastering_bitcoin/" title="Bitcoin 記事一覧" class="md-nav__link">
+      Bitcoin 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quantum_computing/" title="量子コンピュータ / Q# 記事一覧" class="md-nav__link">
+      量子コンピュータ / Q# 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../riscv/" title="RISC-V" class="md-nav__link">
+      RISC-V
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vivado_hls/" title="Vivado-HLS" class="md-nav__link">
+      Vivado-HLS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+    
+    <label class="md-nav__link" for="nav-12">
+      Cq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Cq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hifive unleashed
+      </label>
+    
+    <a href="./" title="Hifive unleashed" class="md-nav__link md-nav__link--active">
+      Hifive unleashed
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sifiverisc-v-hifive-unleashed" title="SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる" class="md-nav__link">
+    SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="拡張ボードでさらに本格的な評価ボードへ変身" class="md-nav__link">
+    拡張ボードでさらに本格的な評価ボードへ変身
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedpc" title="HiFive Unleashedを使ってデスクトップPCを作る猛者が現れる" class="md-nav__link">
+    HiFive Unleashedを使ってデスクトップPCを作る猛者が現れる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedlinux" title="HiFive Unleashedを立ち上げてLinuxをブートさせるまで" class="md-nav__link">
+    HiFive Unleashedを立ち上げてLinuxをブートさせるまで
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedbuildroot-linux" title="HiFive Unleashedで動かすBuildroot Linuxの作成に挑戦" class="md-nav__link">
+    HiFive Unleashedで動かすBuildroot Linuxの作成に挑戦
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifive-unleasheddebian" title="HiFive UnleashedでDebianを立ち上げる" class="md-nav__link">
+    HiFive UnleashedでDebianを立ち上げる
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashed-debiancoremark" title="HiFive Unleashed DebianでCoremarkを動かそう" class="md-nav__link">
+    HiFive Unleashed DebianでCoremarkを動かそう
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashed" title="HiFive Unleashedでマルチコアプログラミングに挑戦" class="md-nav__link">
+    HiFive Unleashedでマルチコアプログラミングに挑戦
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifive-unleashednginxweb" title="HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう" class="md-nav__link">
+    HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sifiverisc-v-hifive-unleashed" title="SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる" class="md-nav__link">
+    SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="拡張ボードでさらに本格的な評価ボードへ変身" class="md-nav__link">
+    拡張ボードでさらに本格的な評価ボードへ変身
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedpc" title="HiFive Unleashedを使ってデスクトップPCを作る猛者が現れる" class="md-nav__link">
+    HiFive Unleashedを使ってデスクトップPCを作る猛者が現れる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedlinux" title="HiFive Unleashedを立ち上げてLinuxをブートさせるまで" class="md-nav__link">
+    HiFive Unleashedを立ち上げてLinuxをブートさせるまで
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashedbuildroot-linux" title="HiFive Unleashedで動かすBuildroot Linuxの作成に挑戦" class="md-nav__link">
+    HiFive Unleashedで動かすBuildroot Linuxの作成に挑戦
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifive-unleasheddebian" title="HiFive UnleashedでDebianを立ち上げる" class="md-nav__link">
+    HiFive UnleashedでDebianを立ち上げる
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashed-debiancoremark" title="HiFive Unleashed DebianでCoremarkを動かそう" class="md-nav__link">
+    HiFive Unleashed DebianでCoremarkを動かそう
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hifive-unleashed" title="HiFive Unleashedでマルチコアプログラミングに挑戦" class="md-nav__link">
+    HiFive Unleashedでマルチコアプログラミングに挑戦
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hifive-unleashednginxweb" title="HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう" class="md-nav__link">
+    HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Hifive unleashed</h1>
+                
+                <h2 id="sifiverisc-v-hifive-unleashed">SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる</h2>
+<p>RISC-Vの評価ボードは、数は少ないですが様々なものがリリースされています。中でも、RISC-VプロセッサのIP開発を手掛けるSiFive社は、個人でも購入できるRISC-V評価ボードを提供しています。</p>
+<p>その中で、2018年の2月にCrowd Supplyというクラウドファンディングで発表された"HiFive Unleashed"という評価ボードは、本格的なマルチコアのRISC-Vボードとして大注目の評価ボードです(図[refs:hifive_unleashed])。</p>
+<p>基本的な仕様は、以下の通りです。</p>
+<ul>
+<li>4+1マルチコア構成。最大動作周波数1.5GHz (U54-MCのマニュアルは https://www.sifive.com/documentation/risc-v-core/u54-mc-risc-v-core-ip-manual/ から入手できる)</li>
+<li>64ビットRISC-Vコア (RV64GC) x4、 Sv39仮想メモリサポート</li>
+<li>64ビットRISC-Vコア (RV64IMAC) マネージメントコア</li>
+<li>2MB コヒーレント L2キャッシュ</li>
+<li>ECC付き 64-bit DDR4</li>
+<li>1x ギガビット Ethernet</li>
+<li>28nm プロセスにて製造</li>
+</ul>
+<p>ボード全体の構成としては、</p>
+<ul>
+<li>SiFive U540 SoC (U540の正式な仕様書はまだ存在していない。 U500の仕様書は<a href="https://www.sifive.com/documentation/freedom-soc/freedom-u500-platform-brief/">こちら</a>から入手できる)</li>
+<li>ECC付き 8GB DDR4-SDRAM</li>
+<li>ギガビット Ethernet ポート</li>
+<li>32MB Quad SPI フラッシュメモリ</li>
+<li>MicroSDカードストレージ</li>
+<li>アドインカード接続用のFMCコネクタ</li>
+</ul>
+<p>と、かなり本格的です。実際 Linuxもブートすることができ、様々なベンチマークプログラムを動かしたり、はてはデスクトップPCとして使う事例もある、非常に面白い、将来性のあるボードです。</p>
+<h3 id="_1">拡張ボードでさらに本格的な評価ボードへ変身</h3>
+<p>HiFive Unleashedには拡張ボードが提供されています(図[refs:unleashed_expansion_board])。拡張ボードはMicorsemiのFPGAが搭載されておりさらに多くの外部I/Oが使用できるようになっています。</p>
+<p>https://www.crowdsupply.com/microsemi/hifive-unleashed-expansion-board</p>
+<p>お値段は、$1,999と、HiFive Unleashedよりもさらに高いですが、仕事でRISC-Vを評価したい方や、RISC-VでデスクトップPCを構築したいというようなマニアックな用途の場合は無くてはならない存在だと思います。</p>
+<p>こちらの拡張ボードには、</p>
+<ul>
+<li>300Kロジックエレメント相当の Microsemi製のPolarFire FPGA</li>
+<li>24レーンのPCI Expressスイッチ</li>
+<li>x1 PCI Expressカードコネクタ</li>
+<li>x16 PCI Expressカードコネクタ。4レーンのPCI Express Gen2が接続可能</li>
+<li>SSD M.2コネクタ</li>
+<li>SATAコネクタ</li>
+<li>HDMIコネクタ</li>
+<li>eMMC NAND Flash</li>
+<li>マイクロUSB カードスロット</li>
+<li>USB to UARTブリッジ</li>
+<li>4Gbit x16 DDR4 SDRAM</li>
+<li>リモートFPGAアップデート用のSPIフラッシュ、GPIOに接続されているQSPIフラッシュ</li>
+<li>CANトランシーバ x2</li>
+<li>FMCコネクタ</li>
+</ul>
+<p>と、何でもありなボードです。逆に使いこなし切るのが難しいくらいではないでしょうか。</p>
+<p>筆者はこの拡張ボードは持っていないのですが、入手できたら、ぜひとも活用してみたいです。</p>
+<h3 id="hifive-unleashedpc">HiFive Unleashedを使ってデスクトップPCを作る猛者が現れる</h3>
+<p>さらにネット上には、このHiFive Unleashedを使ってデスクトップPCに相当する環境を作ってしまった猛者まで現れました。上記のExpansionボードを使えば、PCI Expressコネクタを通じて様々なインタフェースを接続することが可能なため、デスクトップPCに相当するものは作ることが可能です。</p>
+<p><a href="https://abopen.com/news/building-a-risc-v-pc/">https://abopen.com/news/building-a-risc-v-pc/</a></p>
+<p>RISC-VデスクトップPCを作った人は、この拡張ボードまでを含んだ基板一式を格納できるケースを作成し、さらにFedora LinuxをインストールしてPC環境を構築しました(図[refs:unleashed_pc])。</p>
+<p>筆者は、このニュースに2つの驚きを感じました。</p>
+<ul>
+<li>HiFive Unleashedボードは、RISC-V CPUが十分に成熟し、安定してLinuxを動作させる程に成長した。</li>
+<li>HiFive Unleashedボードは、デスクトップPCとして使うことができるまでに安定している。</li>
+</ul>
+<p>RISC-Vがこの世に誕生したのは2011年ですが、それから10年も経たない間に、すっかり市民権を獲得し、そして一般的にユーザがPCとして活用することができる潜在的な能力まで示しました。この事例はオープンソースCPUが世界に普及する日が近いことを示しているように思えます。</p>
+<h3 id="hifive-unleashedlinux">HiFive Unleashedを立ち上げてLinuxをブートさせるまで</h3>
+<p>HiFive UnleashdにはマイクロSDカードが付属しており、デフォルトでBuildrootのLinuxが立ち上がります(図[refs:unleashed_boot])。筆者は、HiFive UnleashdをWindows PCにUSBで接続し、USB経由でシリアルコンソールを立ち上げました。筆者はTera Termで接続し、ボーレートは115200bpsで接続します。電源を入れると、SiFiveのロゴが表示され、Linuxがブートしました。</p>
+<p>ユーザ名<code>root</code>、パスワード<code>sifive</code>でログインが可能です(図[refs:unleashed_login])。</p>
+<p><code>/proc/cpuinfo</code>でCPUの情報を確認できます。</p>
+<pre><code># cat /proc/cpuinfo
+hart    : 1
+isa     : rv64imafdc
+mmu     : sv39
+uarch   : sifive,rocket0
+
+hart    : 2
+isa     : rv64imafdc
+mmu     : sv39
+uarch   : sifive,rocket0
+
+hart    : 3
+isa     : rv64imafdc
+mmu     : sv39
+uarch   : sifive,rocket0
+
+hart    : 4
+isa     : rv64imafdc
+mmu     : sv39
+uarch   : sifive,rocket0
+</code></pre>
+
+<p>本当にRISC-Vですね。64ビットのRISC-Vコアが4つも並んでいるのは、圧巻ですね。</p>
+<h3 id="hifive-unleashedbuildroot-linux">HiFive Unleashedで動かすBuildroot Linuxの作成に挑戦</h3>
+<p>HiFive Unleashedは、特に何もすることなくデフォルトで付属しているBuildroot Linuxを使ってLinuxを起動できます。</p>
+<p>しかし、これではあまり面白くないので、RISC-VのSDKを使って自分でLinuxをビルドし、カスタマイズするための環境を作ってみましょう。</p>
+<p>RISC-V Linuxのカスタマイズを行うためには、SiFive社が提供しているFreedom-u-sdkを使用します。このSDKはGitHub上で配布されており、HiFive Unleashedで動作セする64ビットLinuxをビルドする環境も入っています。
+実は、この<code>freedom-u-sdk</code>はダウンロードしてビルドするだけで、HiFive Unleashed上で動くLinuxをビルドできます。早速やってみましょう。</p>
+<pre><code class="sh"># リポジトリのすべてをダウンロードしてしまうととても重いので、最新のリリースのみダウンロードする。
+git clone https://github.com/sifive/freedom-u-sdk --depth 1 -b hifiveu-2.0-alpha --recurse-submodules
+cd freedom-u-sdk
+unset LD_LIBRARY_PATH
+make -j$(nprocs)
+</code></pre>
+
+<p>必要に応じてMakeには並列数を挿入してください。コンパイルにはしばらく時間(数10分～1時間？)がかかります。</p>
+<p>ビルドが完了すると、マイクロSDカードにLinuxのイメージを書き込みます。マイクロSDカードを用意して、まずはフォーマットしましょう。マイクロSDカードをPCに差し込むと、まずは認識されているデバイスを確認します。</p>
+<pre><code class="sh">lsblk
+</code></pre>
+
+<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+...
+sda      8:0    0   500G  0 disk
+└─sda1   8:1    0   500G  0 part /
+sdc      8:32   1  14.8G  0 disk
+├─sdc1   8:33   1    31M  0 part /mnt/sdcard
+├─sdc2   8:34   1   5.5G  0 part
+├─sdc3   8:35   1 460.5K  0 part
+└─sdc4   8:36   1    38K  0 part
+...
+</code></pre>
+
+<p>マイクロSDカードが<code>/dev/sdc</code>に認識されていることが分かります。そこで、<code>gdisk</code>を使ってSDカードの初期化を行います。</p>
+<pre><code class="sh">sudo gdisk /dev/sdc
+$ sudo gdisk /dev/sdc
+[sudo] password for msyksphinz:
+GPT fdisk (gdisk) version 1.0.3
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+Command (? for help): p  # デフォルトのパーティション情報を表示。次にパーティションをすべて削除する。
+Disk /dev/sdc: 30965760 sectors, 14.8 GiB
+Model: Mini SD Reader
+Sector size (logical/physical): 512/512 bytes
+Disk identifier (GUID): 81BDE1E5-C39D-4976-94A4-56C3AEA1E352
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 34, last usable sector is 30965726
+Partitions will be aligned on 4-sector boundaries
+Total free space is 19446682 sectors (9.3 GiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048           65502   31.0 MiB    0700  Vfat Boot
+   2          264192        11718750   5.5 GiB     8300  root
+   3            1100            2020   460.5 KiB   FFFF  uboot
+   4            1024            1099   38.0 KiB    FFFF  uboot-env
+
+Command (? for help): d  # パーティション2を削除
+Partition number (1-4): 2
+
+Command (? for help): d  # パーティション3を削除
+Partition number (1-4): 3
+
+Command (? for help): d  # パーティション4を削除
+Partition number (1-4): 4
+
+Command (? for help): o  # すべてのパーティションの情報を削除
+This option deletes all partitions and creates a new protective MBR.
+Proceed? (Y/N): Y # Yesを選択する
+
+Command (? for help): w  # ディスクへパーティション情報を書き込む。
+
+Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING
+PARTITIONS!!
+
+Do you want to proceed? (Y/N): Y
+OK; writing new GUID partition table (GPT) to /dev/sdc.
+Warning: The kernel is still using the old partition table.
+The new table will be used at the next reboot or after you
+run partprobe(8) or kpartx(8)
+The operation has completed successfully.
+
+</code></pre>
+
+<p>SDカードへのフォーマットが完了すると、次にLinuxの情報をSDカードに書き込みます。これは<code>make</code>コマンドで実行できます。以下のようにして書き込みましょう。</p>
+<pre><code class="sh">sudo make DISK=/dev/sdc format-boot-loader
+</code></pre>
+
+<pre><code>$ sudo make DISK=/dev/sdc format-boot-loader
+/sbin/sgdisk --clear  \
+        --new=1:2048:65502  --change-name=1:&quot;Vfat Boot&quot; --typecode=1:EBD0A0A2-B9E5-4433-87C0-68B6B72699C7   \
+        --new=2:264192:11718750 --change-name=2:root    --typecode=2:0FC63DAF-8483-4772-8E79-3D69D8477DE4 \
+        --new=3:1100:2020   --change-name=3:uboot       --typecode=3:5B193300-FC78-40CD-8002-E86C45580B47 \
+        --new=4:1024:1099  --change-name=4:uboot-env    --typecode=4:a09354ac-cd63-11e8-9aff-70b3d592f0fa \
+        /dev/sdc
+Setting name!
+partNum is 0
+Setting name!
+partNum is 1
+Setting name!
+partNum is 2
+Setting name!
+partNum is 3
+Warning: The kernel is still using the old partition table.
+The new table will be used at the next reboot or after you
+run partprobe(8) or kpartx(8)
+The operation has completed successfully.
+/sbin/partprobe
+dd if=/home/msyksphinz/work/riscv/freedom-u-sdk/work/HiFive_U-Boot/u-boot.bin of=/dev/sdc3 bs=4096
+113+1 records in
+113+1 records out
+464973 bytes (465 kB, 454 KiB) copied, 0.310722 s, 1.5 MB/s
+dd if=/home/msyksphinz/work/riscv/freedom-u-sdk/work/hifive-unleashed-vfat.part of=/dev/sdc1 bs=4096
+7931+1 records in
+7931+1 records out
+32488448 bytes (32 MB, 31 MiB) copied, 0.0255919 s, 1.3 GB/s
+
+</code></pre>
+
+<p>マイクロSDカードの構築が完了しました。HiFive Unleashedのボードに差し込んで起動します。このとき、HiFive Unleashed上のディップスイッチを図[refs:boot_dip_switch]のように変更する必要があります。</p>
+<p>Linuxがブートすると、リスト[ファイル:list_hifive_boot]のようなメッセージが表示され、Buildroot Linuxが起動するはずです。</p>
+<p>ちなみに、筆者の環境ではLinuxのブート画面が現れるまで5～10分程度画面が固まっているように見えました。freedom-u-sdkの最新のリポジトリではブートローダにU-Bootを使っているのですが、そちらの完成度がまだ高くないようです。</p>
+<h2 id="hifive-unleasheddebian">HiFive UnleashedでDebianを立ち上げる</h2>
+<p>HiFive UnleashedはBuildrootだけでなく、それ以外にもDebian / Fedora Linuxをサポートしています。Debianの起動は、Makefileの記述によると簡単に実行できるようです。</p>
+<pre><code class="sh">cd freedom-u-sdk
+sudo make DISK=/dev/sdd format-demo-image -j$(nproc)
+</code></pre>
+
+<p>これでしばらく待っていると、Debianのディスクイメージをダウンロードしてビルドが行われます。CPU数にもよりますが、数分～数10分でビルドが完了します。DebianのディスクイメージはマイクロSDカードのパーティション2に展開されます。BuildrootでLinuxを起動後、パーティション2をマウントし、Debianの環境に入る必要があります。</p>
+<p>マイクロSDカードを挿入し、HiFive Unleashedを立ち上げるとBuildrootが立ち上がり、Linuxにログインします。その後、パーティション2をマウントします。</p>
+<pre><code>udhcpc: sending discover
+udhcpc: sending select for 192.168.11.17
+udhcpc: lease of 192.168.11.17 obtained, lease time 172800
+deleting routers
+adding dns 192.168.11.1
+OK
+Starting dropbear sshd: [    7.030000] random: dropbear: uninitialized urandom r                                         ead (32 bytes read)
+OK
+
+Welcome to Buildroot
+buildroot login: root
+Password: [sifive]
+# mount /dev/mmcblk0p2 /mnt
+# mount -t proc /proc /mnt/proc
+# cp /etc/resolv.conf /mnt/etc/resolv.conf
+# chroot /mnt/ /bin/bash
+</code></pre>
+
+<p><code>/etc/debian_version</code>を確認します。</p>
+<pre><code class="sh"># cat /etc/debian_version
+10.0
+</code></pre>
+
+<p>パッケージシステムを更新して、Debianでパッケージを管理できるようにします。</p>
+<pre><code>ntpdate ntp.nict.jp
+export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
+export LC_ALL=C LANGUAGE=C LANG=C
+dpkg --configure -a
+</code></pre>
+
+<p>マニュアルには<code>dash.preinst</code>を実行するように指示がありましたが、これはなぜか存在しなかったので、スキップしました。</p>
+<pre><code class="sh">/var/lib/dpkg/info/dash.preinst install
+</code></pre>
+
+<pre><code class="sh">dpkg --configure -a
+apt update
+apt upgrade
+</code></pre>
+
+<p>これで、<code>apt</code>なども使えるようになっているはずです。試してみましょう。</p>
+<pre><code class="sh">apt install build-essential ccache gawk texinfo bison flex libmpfr-dev libgmp-dev libmpc-dev zlib1g-dev bc unzip libssl-dev python wget gdisk libncurses5-dev emacs git
+</code></pre>
+
+<pre><code>Setting up texinfo (6.5.0.dfsg.1-5) ...
+Setting up zlib1g-dev:riscv64 (1:1.2.11.dfsg-1) ...
+Setting up g++-8 (8.3.0-6) ...
+Setting up libncurses5-dev:riscv64 (6.1+20181013-2) ...
+Setting up g++ (4:8.3.0-1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.6) ...
+Processing triggers for man-db (2.8.5-2) ...
+Processing triggers for libc-bin (2.28-9) ...
+</code></pre>
+
+<p>無事に<code>apt</code>することができました。</p>
+<h3 id="hifive-unleashed-debiancoremark">HiFive Unleashed DebianでCoremarkを動かそう</h3>
+<p>次に、ベンチマークプログラムを動かして、HiFive UnleashedのRISC-Vコアの性能を見てみましょう。今回はCoremarkベンチマークプログラムを使用します。</p>
+<p><code>linux64/core_portme.mak</code>を変更して、<code>CFLAGS</code>の最適化オプションを<code>-O3</code>に変えておきました。</p>
+<pre><code class="diff">diff --git a/linux64/core_portme.mak b/linux64/core_portme.mak
+index 5cfabee..68fdb3d 100755
+--- a/linux64/core_portme.mak
++++ b/linux64/core_portme.mak
+@@ -24,7 +24,7 @@ OUTFLAG= -o
+ CC = gcc
+ # Flag: CFLAGS
+ #      Use this flag to define compiler options. Note, you can add compiler opt
+ions from the command line using XCFLAGS=&quot;other flags&quot;
+-PORT_CFLAGS = -O2
++PORT_CFLAGS = -O3
+ FLAGS_STR = &quot;$(PORT_CFLAGS) $(XCFLAGS) $(XLFLAGS) $(LFLAGS_END)&quot;
+ CFLAGS = $(PORT_CFLAGS) -I$(PORT_DIR) -I. -DFLAGS_STR=\&quot;$(FLAGS_STR)\&quot;
+ #Flag: LFLAGS_END
+</code></pre>
+
+<pre><code class="sh">git clone https://github.com/eembc/coremark.git
+cd coremark/
+make TARGET=linux64
+</code></pre>
+
+<pre><code>echo Loading done ./coremark.exe
+Loading done ./coremark.exe
+make port_postload
+...
+make port_prerun
+...
+./coremark.exe  0x3415 0x3415 0x66 0 7 1 2000  &gt; ./run2.log
+make port_postrun
+...
+</code></pre>
+
+<p>無事にコンパイルとベンチマーク実行がうまくいったようです。</p>
+<pre><code class="sh">root@buildroot:~/work/riscv/coremark# less ./run2.log
+2K validation run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 13323
+Total time (secs): 13.323000
+Iterations/Sec   : 2251.745102
+Iterations       : 30000
+Compiler version : GCC8.3.0
+Compiler flags   : -O3 -DPERFORMANCE_RUN=1  -lrt
+Memory location  : Please put data memory location here
+                        (e.g. code in flash, data on heap etc)
+seedcrc          : 0x18f2
+[0]crclist       : 0xe3c1
+[0]crcmatrix     : 0x0747
+[0]crcstate      : 0x8d84
+[0]crcfinal      : 0xff48
+Correct operation validated. See README.md for run and reporting rules.
+</code></pre>
+
+<p>HiFive Unleashedの動作周波数は1500MHzなので、Coremark/MHzは [tex: 2251.745102 / 1000 = 2.25] となります。HiFive UnleashedのU54のCoremarkスコアは2.75 Coremark/MHzなので、公称値よりも低下してしまいました。OSによるパフォーマンスの低下の可能性もあります。</p>
+<h3 id="hifive-unleashed">HiFive Unleashedでマルチコアプログラミングに挑戦</h3>
+<p>HiFive UnleashedにDebianをインストールしたので、様々なプログラミングの幅が広がりました。また、HiFive Unleashedはマルチコアであることが特徴です。RISC-Vのマルチコアは、C++のpthreadなどのライブラリを使えば簡単に活用できます。ここでは、C++でpthreadのプログラムを記述して、HiFive Unleashedでマルチコアの性能を見てみましょう。</p>
+<p>ここでは、HiFive Unleashedで数値積分のプログラムをマルチコアで動かし、その性能を測定してみましょう。数値積分は、ある関数に対して区間$[a, b]$の間の積分を計算するわけですが、区間を分割してマルチコアで計算し、最後に加算しても特に積分結果に問題はないはずです(数値計算の専門家から言わせると厳密にもう少しケアしなければならない部分があるかもしれませんが、今回はあまり気にせず進めていきます)。例えば、$$f(x)=x^2$$の関数を積分する際に4コアで領域を分割する際のイメージを図[refs:integral_separate]に示します。今回はリスト[ファイル:hifive_integral_example.cpp]のようなプログラムを作成しました。</p>
+<p>区間積分の対象範囲を$$[0, 1.0)$$に設定し、その間の区間をコア数によって分割しています。これをコンパイルし、さっそく1コア、2コア、4コアで実行して時間を測定します。</p>
+<pre><code class="sh"># g++ multi_core.cpp -lpthread
+# ./a.out 1
+Number of threads 1 : 6905msec
+Answer = 0.333333
+# ./a.out 2
+Number of threads 2 : 3453msec
+Answer = 0.333333
+# ./a.out 4
+Number of threads 4 : 1727msec
+Answer = 0.333333
+# ./a.out 8
+Number of threads 8 : 1729msec
+Answer = 0.333333
+</code></pre>
+
+<p>グラフにプロットしてみると、図[refs:integral_performance]のようになりました。コア数を増やすと、順当に実行時間を削減することができました。HiFive Unleashedでマルチコアプログラミングの初歩を実現しました。</p>
+<h2 id="hifive-unleashednginxweb">HiFive Unleashedでnginxを立ち上げてWebサーバを作ろう</h2>
+<p>HiFive Unleashd上でDebian GNU/Linuxが動いてしまえば、あとは様々なことが可能です。ウェブサービスを立ち上げたり、各種アプリケーションを立ち上げることも可能です。</p>
+<p>例として、ngnixをインストールして、簡単なウェブサーバを立ち上げてみましょう。といってもDebianが動いていますのでインストールはaptコマンドを入力するだけです。</p>
+<pre><code class="shell">sudo apt install -y nginx ufw net-tools
+nginx -v
+</code></pre>
+
+<pre><code>nginx version: nginx/1.14.2
+</code></pre>
+
+<p>nginxがインストールされました。</p>
+<pre><code class="sh">systemctl enable ufw
+service nginx start
+</code></pre>
+
+<p>Debianに割り当てられているIPアドレスWebブラウザからアクセスすると、nginxが動作しているのが確認できました(図[refs:hifive_nginx])。ただし、様々なウェブサービスをインストールしようとしてみたのですが、まだRISC-Vに対応していないのか、MySQLがインストールできませんでした。この辺りは、各種パッケージがRISC-Vに対応するのを待つしかないようです。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../vivado_hls/" title="Vivado-HLS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Vivado-HLS
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

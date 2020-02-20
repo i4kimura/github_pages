@@ -1,3 +1,5 @@
+# 【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+
 ## SiFive社のマルチコア本格RISC-Vボード HiFive Unleashedを使ってみる
 
 RISC-Vの評価ボードは、数は少ないですが様々なものがリリースされています。中でも、RISC-VプロセッサのIP開発を手掛けるSiFive社は、個人でも購入できるRISC-V評価ボードを提供しています。
@@ -193,7 +195,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
    2          264192        11718750   5.5 GiB     8300  root
    3            1100            2020   460.5 KiB   FFFF  uboot
    4            1024            1099   38.0 KiB    FFFF  uboot-env
-   
+
 Command (? for help): d  # パーティション2を削除
 Partition number (1-4): 2
 

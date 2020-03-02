@@ -10,6 +10,9 @@
 
 [【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿](cq/hifive_unleashed)
 
+# Rust
+
+[プログラミング言語Rust](rust)
 
 # DSL with Ruby
 

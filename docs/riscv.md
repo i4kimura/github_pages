@@ -32,6 +32,21 @@
 
 ## Diplomacy and TileLink
 
+- [Diplomacyを使ってOCPバスを作成する(11. インタフェースのデバッグ) (20/03/04)](https://msyksphinz.hatenablog.com/entry/2020/02/27/202439)
+- [Diplomacyを使ってOCPバスを作成する (9. Xbarの作成) (20/02/24)](https://msyksphinz.hatenablog.com/entry/2020/02/24/040000)
+- [Diplomacyを使ってOCPバスを作成する (10. OCP Bufferの動作確認) (20/03/02)](https://msyksphinz.hatenablog.com/entry/2020/02/22/130121)
+- [Diplomacyを使ってOCPバスを作成する (8. PatternPusherの改良) (20/02/22)](https://msyksphinz.hatenablog.com/entry/2020/02/22/040000)
+- [Diplomacyを使ってOCPバスを作成する(7. Bundleの改善) (20/02/20)](https://msyksphinz.hatenablog.com/entry/2020/02/20/040000)
+- [Diplomacyを使ってOCPバスを作成する(6. Delayerの実装) (20/02/15)](https://msyksphinz.hatenablog.com/entry/2020/02/15/040000)
+- [Diplomacyを使ってOCPバスを作成する(5. OCP SRAMのデバッグ) (20/02/14)](https://msyksphinz.hatenablog.com/entry/2020/02/14/040000)
+- [Diplomacyを使ってOCPバスを作成する方法の検討(4. OCP Pusherの生成) (20/02/09)](https://msyksphinz.hatenablog.com/entry/2020/02/09/040000)
+- [Diplomacyを使ってOCPバスを作成する方法の検討(3. OCP SRAMを作る) (20/02/08)](https://msyksphinz.hatenablog.com/entry/2020/02/08/040000)
+- [Diplomacyを使ってOCPバスを作成する方法の検討(2. PatternPusherを作る) (20/02/07)](https://msyksphinz.hatenablog.com/entry/2020/02/07/040000)
+- [Diplomacyを使ってOCPバスを作成する方法の検討 (20/02/06)](https://msyksphinz.hatenablog.com/entry/2020/02/06/040000)
+- [Diplomacyを使ってAXI4スレーブを接続する回路を作成する (20/02/05)](https://msyksphinz.hatenablog.com/entry/2020/02/05/040000)
+- [Diplomacyを使って独自のTileLinkマスターノードを作成してみる (20/02/04)](https://msyksphinz.hatenablog.com/entry/2020/02/04/040000)
+- [Diplomacyを使って独自のTileLinkスレーブノードを作成してみる (20/02/03)](https://msyksphinz.hatenablog.com/entry/2020/02/03/040000)
+- [TileLinkのDiplomacyデザインの解析 (2. TileLinkのSourceIdの計算方法について) (20/02/02)](https://msyksphinz.hatenablog.com/entry/2020/02/02/040000)
 - [TileLinkのDiplomacyデザインの解析 (1. AddressDecoderによるアドレス重複チェック) (20/01/28)](https://msyksphinz.hatenablog.com/entry/2020/01/28/040000)
 - [TileLinkのDiplomacyを使った実際のデザインを試してみる (7. TLXbarによる複数のスレーブを使ったデザイン) (20/01/26)](https://msyksphinz.hatenablog.com/entry/2020/01/26/040000)
 - [TileLinkのDiplomacyを使った実際のデザインを試してみる (6. TLPatternPusherを使ったテストベンチの作成) (20/01/25)](https://msyksphinz.hatenablog.com/entry/2020/01/25/040000)

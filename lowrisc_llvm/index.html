@@ -1,0 +1,1723 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>RISC-V LLVMバックエンドのステップバイステップガイド - FPGA開発日記 カテゴリ別記事インデックス</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#risc-v-llvm" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              FPGA開発日記 カテゴリ別記事インデックス
+            </span>
+            <span class="md-header-nav__topic">
+              RISC-V LLVMバックエンドのステップバイステップガイド
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    FPGA開発日記 カテゴリ別記事インデックス
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../30os/" title="オペレーティングシステム" class="md-nav__link">
+      オペレーティングシステム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cpu/" title="CPU" class="md-nav__link">
+      CPU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-nav__link">
+      DSLでビルドツールを自作する
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gpgpu/" title="GPGPU 記事一覧" class="md-nav__link">
+      GPGPU 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../llvm/" title="LLVM" class="md-nav__link">
+      LLVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RISC-V LLVMバックエンドのステップバイステップガイド
+      </label>
+    
+    <a href="./" title="RISC-V LLVMバックエンドのステップバイステップガイド" class="md-nav__link md-nav__link--active">
+      RISC-V LLVMバックエンドのステップバイステップガイド
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="序章" class="md-nav__link">
+    序章
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm" title="LLVMの構築" class="md-nav__link">
+    LLVMの構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm_1" title="LLVMテストスイートの実行" class="md-nav__link">
+    LLVMテストスイートの実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="レポの設定" class="md-nav__link">
+    レポの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="新しいバックエンドの開始" class="md-nav__link">
+    新しいバックエンドの開始
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-triple" title="Target tripleのサポートを追加" class="md-nav__link">
+    Target tripleのサポートを追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-elf" title="RISC-V ELF ファイルのサポート" class="md-nav__link">
+    RISC-V ELF ファイルのサポート
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="スケルトンバックエンドの追加" class="md-nav__link">
+    スケルトンバックエンドの追加
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risc-v" title="RISC-V アセンブリの解析サポートの実装" class="md-nav__link">
+    RISC-V アセンブリの解析サポートの実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablegen" title="TableGenファイルの追加" class="md-nav__link">
+    TableGenファイルの追加
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riscvregisterinfotd" title="RISCVRegisterInfo.tdの追加" class="md-nav__link">
+    RISCVRegisterInfo.tdの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrformatstd" title="RISCVInstrFormats.tdの追加" class="md-nav__link">
+    RISCVInstrFormats.tdの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrinfotd" title="RISCVInstrInfo.td の追加" class="md-nav__link">
+    RISCVInstrInfo.td の追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvtd" title="RISCV.tdの追加と記述の確認" class="md-nav__link">
+    RISCV.tdの追加と記述の確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-mctargetdesc" title="RISC-V MCTargetDescの追加" class="md-nav__link">
+    RISC-V MCTargetDescの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvasmparser" title="RISCVAsmParserの実装" class="md-nav__link">
+    RISCVAsmParserの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instruction-printing" title="Instruction Printingとテストの実装" class="md-nav__link">
+    Instruction Printingとテストの実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="命令プリンタの追加" class="md-nav__link">
+    命令プリンタの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="テストの実装" class="md-nav__link">
+    テストの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="ディスアセンブリのサポート" class="md-nav__link">
+    ディスアセンブリのサポート
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixup" title="リロケーション・Fixup対応の実施" class="md-nav__link">
+    リロケーション・Fixup対応の実施
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixup_1" title="Fixupの導入" class="md-nav__link">
+    Fixupの導入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="アセンブラの変更点" class="md-nav__link">
+    アセンブラの変更点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="リロケーション" class="md-nav__link">
+    リロケーション
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen" title="codegen サポートへの最初のステップ" class="md-nav__link">
+    codegen サポートへの最初のステップ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="新たに追加されたサポートコードの概要" class="md-nav__link">
+    新たに追加されたサポートコードの概要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrinfotd_1" title="RISCVInstrInfo.tdでのパターンの指定" class="md-nav__link">
+    RISCVInstrInfo.tdでのパターンの指定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvisellowering" title="RISCVISelLowering" class="md-nav__link">
+    RISCVISelLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calling-convention" title="Calling Conventionの指定" class="md-nav__link">
+    Calling Conventionの指定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="テストの指定" class="md-nav__link">
+    テストの指定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_1" title="メモリ操作のためのCodegenサポート" class="md-nav__link">
+    メモリ操作のためのCodegenサポート
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="前提条件: 定数の具体化" class="md-nav__link">
+    前提条件: 定数の具体化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codegen_2" title="メモリ操作のためのCodegenサポート" class="md-nav__link">
+    メモリ操作のためのCodegenサポート
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_3" title="ブランチと関数呼び出しのためのCodegen" class="md-nav__link">
+    ブランチと関数呼び出しのためのCodegen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowering" title="分岐のLowering" class="md-nav__link">
+    分岐のLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codegen_4" title="関数コールのCodegen" class="md-nav__link">
+    関数コールのCodegen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_5" title="フレーム処理のためのCodeGen" class="md-nav__link">
+    フレーム処理のためのCodeGen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowering_1" title="フレームインデックスのLowering" class="md-nav__link">
+    フレームインデックスのLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prologepilog" title="PrologとEpilogの挿入" class="md-nav__link">
+    PrologとEpilogの挿入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risc-v_1" title="RISC-Vの呼び出し規約をサポート" class="md-nav__link">
+    RISC-Vの呼び出し規約をサポート
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../machine_learning/" title="機械学習 / TensorFlow" class="md-nav__link">
+      機械学習 / TensorFlow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mastering_bitcoin/" title="Bitcoin 記事一覧" class="md-nav__link">
+      Bitcoin 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quantum_computing/" title="量子コンピュータ / Q# 記事一覧" class="md-nav__link">
+      量子コンピュータ / Q# 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../riscv/" title="RISC-V" class="md-nav__link">
+      RISC-V
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../rust/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../vivado_hls/" title="Vivado-HLS" class="md-nav__link">
+      Vivado-HLS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Cq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Cq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cq/hifive_unleashed/" title="【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿" class="md-nav__link">
+      【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="序章" class="md-nav__link">
+    序章
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm" title="LLVMの構築" class="md-nav__link">
+    LLVMの構築
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llvm_1" title="LLVMテストスイートの実行" class="md-nav__link">
+    LLVMテストスイートの実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="レポの設定" class="md-nav__link">
+    レポの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="新しいバックエンドの開始" class="md-nav__link">
+    新しいバックエンドの開始
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#target-triple" title="Target tripleのサポートを追加" class="md-nav__link">
+    Target tripleのサポートを追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-elf" title="RISC-V ELF ファイルのサポート" class="md-nav__link">
+    RISC-V ELF ファイルのサポート
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="スケルトンバックエンドの追加" class="md-nav__link">
+    スケルトンバックエンドの追加
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risc-v" title="RISC-V アセンブリの解析サポートの実装" class="md-nav__link">
+    RISC-V アセンブリの解析サポートの実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablegen" title="TableGenファイルの追加" class="md-nav__link">
+    TableGenファイルの追加
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riscvregisterinfotd" title="RISCVRegisterInfo.tdの追加" class="md-nav__link">
+    RISCVRegisterInfo.tdの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrformatstd" title="RISCVInstrFormats.tdの追加" class="md-nav__link">
+    RISCVInstrFormats.tdの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrinfotd" title="RISCVInstrInfo.td の追加" class="md-nav__link">
+    RISCVInstrInfo.td の追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvtd" title="RISCV.tdの追加と記述の確認" class="md-nav__link">
+    RISCV.tdの追加と記述の確認
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-mctargetdesc" title="RISC-V MCTargetDescの追加" class="md-nav__link">
+    RISC-V MCTargetDescの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvasmparser" title="RISCVAsmParserの実装" class="md-nav__link">
+    RISCVAsmParserの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instruction-printing" title="Instruction Printingとテストの実装" class="md-nav__link">
+    Instruction Printingとテストの実装
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="命令プリンタの追加" class="md-nav__link">
+    命令プリンタの追加
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="テストの実装" class="md-nav__link">
+    テストの実装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="ディスアセンブリのサポート" class="md-nav__link">
+    ディスアセンブリのサポート
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixup" title="リロケーション・Fixup対応の実施" class="md-nav__link">
+    リロケーション・Fixup対応の実施
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixup_1" title="Fixupの導入" class="md-nav__link">
+    Fixupの導入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="アセンブラの変更点" class="md-nav__link">
+    アセンブラの変更点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="リロケーション" class="md-nav__link">
+    リロケーション
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen" title="codegen サポートへの最初のステップ" class="md-nav__link">
+    codegen サポートへの最初のステップ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="新たに追加されたサポートコードの概要" class="md-nav__link">
+    新たに追加されたサポートコードの概要
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvinstrinfotd_1" title="RISCVInstrInfo.tdでのパターンの指定" class="md-nav__link">
+    RISCVInstrInfo.tdでのパターンの指定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riscvisellowering" title="RISCVISelLowering" class="md-nav__link">
+    RISCVISelLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calling-convention" title="Calling Conventionの指定" class="md-nav__link">
+    Calling Conventionの指定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="テストの指定" class="md-nav__link">
+    テストの指定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_1" title="メモリ操作のためのCodegenサポート" class="md-nav__link">
+    メモリ操作のためのCodegenサポート
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="前提条件: 定数の具体化" class="md-nav__link">
+    前提条件: 定数の具体化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codegen_2" title="メモリ操作のためのCodegenサポート" class="md-nav__link">
+    メモリ操作のためのCodegenサポート
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_3" title="ブランチと関数呼び出しのためのCodegen" class="md-nav__link">
+    ブランチと関数呼び出しのためのCodegen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowering" title="分岐のLowering" class="md-nav__link">
+    分岐のLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codegen_4" title="関数コールのCodegen" class="md-nav__link">
+    関数コールのCodegen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codegen_5" title="フレーム処理のためのCodeGen" class="md-nav__link">
+    フレーム処理のためのCodeGen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lowering_1" title="フレームインデックスのLowering" class="md-nav__link">
+    フレームインデックスのLowering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prologepilog" title="PrologとEpilogの挿入" class="md-nav__link">
+    PrologとEpilogの挿入
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risc-v_1" title="RISC-Vの呼び出し規約をサポート" class="md-nav__link">
+    RISC-Vの呼び出し規約をサポート
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="risc-v-llvm">RISC-V LLVMバックエンドのステップバイステップガイド</h1>
+<p>[toc]</p>
+<h3 id="_1">序章</h3>
+<p>新しいコンパイラ・バックエンドを作成することは、時に乗り越えられないほどの困難に思えることがあります。複雑なコンパイラ・ツールチェーンにコードを統合するという課題だけでなく、不安定なアセンブラ、リンカ、ランタイム・ライブラリ、さらにはシミュレータにも悩まされることがあります。私の考えでは、バックエンド開発にインクリメンタルなアプローチを取ることが、この複雑さにうまく対処する唯一の方法です。他のバックエンドからコードをコピーして、納得のいく出力が得られるまでFixupすることで、初期の開発を迅速に進めることができますが、問題を切り分けてデバッグすることは非常に困難な場合があります。</p>
+<p>このドキュメントでは、RISC-Vバックエンドを実装するためのアプローチを説明します。LLVMバックエンドの開発を検討している方の参考になれば幸いです。</p>
+<p>注意: このドキュメントは作業中のものです。HTMLレンダリングされた "v1 "は、まもなくlowrisc.orgに掲載される予定です。</p>
+<h3 id="llvm">LLVMの構築</h3>
+<p>他のことをする前に、変更されていない LLVM をチェックアウトしてビルドできることを確認しておきましょう。</p>
+<pre><code class="sh">git clone https://git.llvm.org/git/llvm.git
+cd llvm
+</code></pre>
+
+<p>この説明書は、LLVMを構築するための非常に凝縮されたレシピを提供しています。必要であれば、公式のドキュメントに詳細が記載されています。</p>
+<p>まず、必要な依存関係を確認してください。LLVMのドキュメントには、より完全なリストがありますが、ninja、CMake、最近のホストコンパイラ(Clangなど)があることを確認するのが良い出発点です。</p>
+<pre><code class="sh">sudo apt-get install clang ninja cmake
+</code></pre>
+
+<p>LLVM開発では、膨大な数のインクリメンタルリビルド（小さな変更を加えた後にコンパイルすること）が必要になります。この時間を短縮するのに役立つコンパイラオプションを選択することは、生産性の向上に非常に役立ちます。このブログ記事では、いくつかの有用なガイダンスを提供しています。</p>
+<pre><code class="sh">mkdir build
+cd build
+cmake -G Ninja -DCMAKE_BUILD_TYPE=&quot;Debug&quot; \
+  -DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
+  -DLLVM_OPTIMIZED_TABLEGEN=True \
+  -DLLVM_BUILD_TESTS=True \
+  -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
+  -DLLVM_TARGETS_TO_BUILD=&quot;X86&quot; ../
+cmake --build .
+</code></pre>
+
+<p>これらのオプションのいくつかを説明します。</p>
+<ul>
+<li><code>cmake -G Ninja</code>はCMakeがNinjaビルドシステムを使用し、Makefilesではなくbuild.ninjaファイルを生成します。</li>
+<li><code>-DBUILD_SHARED_LIBS=True</code>および<code>-DLLVM_USE_SPLIT_DWARF=True</code>は、最終的にファイルI/Oを削減することで、ビルド時間のインクリメンタルな短縮を実現します。</li>
+<li><code>-DLLVM_TARGETS_TO_BUILD="X86"</code>は、X86ターゲットのみをビルドすることを指定します。これはビルドを高速化するための一つの方法です。</li>
+<li><code>-DCMAKE_BUILD_TYPE="Debug"</code>は、アサーションとバックトレースを有効にしたデバッグビルドを生成することを意味します。バイナリはリリースビルドよりも大きく、遅くなります。</li>
+<li><code>-DLLVM_OPTIMIZED_TABLEGEN=True は</code>、tblgen のリリースバイナリがビルドされて使用されることを意味します。これにより、デバッグビルドのビルド時間を短縮することができます。</li>
+<li><code>-DLLVM_BUILD_TESTS=True</code>は、オプション名が示すように、デフォルトでユニットテストがビルドされます。
+  <code>-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++</code>の場合、システムのClangコンパイラが使用されます。これは一般的にGCCよりも高速で、より良いエラーメッセージを出力することができます。</li>
+</ul>
+<h3 id="llvm_1">LLVMテストスイートの実行</h3>
+<p>LLVMには、大規模なテストインフラストラクチャがあります。コーディングに没頭する前に、基本的なことをよく理解し、テストスイートを呼び出すことができることを確認する価値があります。</p>
+<p>LLVMのリグレッションテストは、<code>test/</code>と<code>unittest/</code>のサブディレクトリにあります。<code>llvm-lit</code>ツールを使って、これらすべてのテストを呼び出すことができます。ビルドディレクトリから <code>./bin/llvm-lit test -s</code> を実行してください。これはすべてのテストを実行し、素敵なプログレスバーを表示します。<code>./bin/llvm-lit --show-suites test</code> で自分自身で確認できるように、lit ツールは両方のテストセットを発見します。完全なスイートは合理的に迅速に実行されますが、テストのサブセットだけを実行するのも便利です。例えば、<code>./bin/llvm-lit -s --filter 'ScalarEvolution' test</code> は、名前に ScalarEvolution が含まれるテストのみを実行します。edit-compile-testサイクルを高速化するのに役立つもう一つの便利なパラメータは <code>-i</code> で、これはFixupされたテストと最近失敗したテストを最初に実行する。これは、以前に失敗したテストをFixupしたのか、最近Fixupしたテストがまだ合格しているのかを迅速に判断したい場合によく使われます。</p>
+<h3 id="_2">レポの設定</h3>
+<p>これでLLVMをビルドしてテストスイートを実行できるようになりました。あとはGitリポジトリをセットアップして、変更をコミットしたり、アップストリームからの変更を簡単に取り込むことができるようにするだけです。これにはいろいろな方法がありますが、私が最も有用だと感じた方法を以下に示します。</p>
+<p>まず、'origin' の名前を 'upstream' に変更します。</p>
+<pre><code class="sh">git remote rename origin upstream
+git config --unset branch.master.remote
+</code></pre>
+
+<p>そして、新しい 'origin' を git remote で設定し、コードをホストするようにします (GitHub アカウントのリポジトリなど)。</p>
+<pre><code class="sh">git remote add origin your@gitrepo.org:here.git
+git push -u origin master
+</code></pre>
+
+<p>今後この新しい 'origin' からのチェックアウトでは、上流のリモートを明示的に追加する必要があります。</p>
+<pre><code class="sh">git remote add upstream http://llvm.org/git/llvm.git
+</code></pre>
+
+<p>上流からの変更をいつでもリベースするには</p>
+<pre><code class="sh">git fetch upstream
+git rebase upstream/master
+</code></pre>
+
+<h2 id="_3">新しいバックエンドの開始</h2>
+<h3 id="target-triple">Target tripleのサポートを追加</h3>
+<p>最初のステップは、ターゲットに依存しない"triple"解析コードでアーキテクチャ名を認識するサポートを追加することです。tripleは、アーキテクチャ、ベンダ、オペレーティングシステム、場合によっては環境を識別するために使用されます。RISC-Vでは、認識するアーキテクチャ名は2つあります - riscv32とriscv64です。</p>
+<p>必要な変更には、riscv32 と riscv64 の追加が含まれます。</p>
+<ul>
+<li><code>Triple::ArchType</code> enum</li>
+<li><code>Triple::getArchTypeName</code>、<code>Triple::getArchTypePrefix</code>、<code>Triple::getArchTypeForLLVMName</code>、<code>Triple::parseArch</code></li>
+<li><code>Triple::getDefaultFormat</code>（<code>Triple::ELF</code>を返す）、<code>Triple::getArchPointerBitWidth</code>、<code>Triple::isLittleEndian</code>などのヘルパー関数。</li>
+<li>最も重要なのは、<code>unittests/ADT/TripleTest.cpp</code> をFixupして上記のすべてをテストすることです。
+  完全なリストはパッチを参照してください。</li>
+</ul>
+<p>{{% showpatch "recognise riscv32 riscv64 triple parsing" %}}</p>
+<p>これで、(このチュートリアルの最初の部分で説明したように) lit を使ってテストを実行し、パッチをコミットできるようになりました。</p>
+<h3 id="risc-v-elf">RISC-V ELF ファイルのサポート</h3>
+<p>バックエンド自体を始める前の最後のステップは、RISC-V ELFファイルに必要な定義を追加することです。これには以下が含まれます。</p>
+<ul>
+<li>リロケーションタイプを<code>include/llvm/BinaryFormat/ELFRelocs/RISCV.def</code>に追加します。</li>
+<li><code>EM_RISCV</code>マシン定義の追加（参考リストは<a href="http://www.sco.com/developers/gabi/latest/ch4.eheader.html">こちら</a>を参照</li>
+<li><code>include/llvm/Object/ELFObjectFile.h</code>の様々なcase文に<code>EM_RISCV</code>を追加しました。いくつかのアーキテクチャでは、32ビット対64ビットで異なる<code>EM_*</code>定数を持っていますが、RISC-V（MIPSのような）では、オブジェクトファイルが64ビットマシンの32ビット用であるかどうかを判断するために<code>EI_CLASS</code> ELFフィールドを使用しています。</li>
+<li>ELFYAML、llvm-objdump、llvm-readobjのcase文に<code>EM_RISCV</code>を追加しました。
+  詳細はパッチを参照してください。</li>
+</ul>
+<p>{{% showpatch "add RISC-V ELF defines" %}}</p>
+<h3 id="_4">スケルトンバックエンドの追加</h3>
+<p>次のステップは，「スケルトン」バックエンドを追加することです。これには以下が含まれます。</p>
+<ul>
+<li>LLVM ビルドシステムに RISC-V バックエンドを登録します。</li>
+<li>スタブ <code>RISCVTargetMachine.{cpp,h}</code> を追加します。</li>
+<li>ターゲットを登録するスタブ <code>RISCVTargetInfo.cpp</code> を追加します。</li>
+</ul>
+<p><code>RISCVTargetMachine</code> の最も興味深い部分は，おそらく <code>computeDataLayout</code> ヘルパーでしょう。これは，マシン（riscv32 または riscv64）に適したデータレイアウト文字列を返します。例えば、riscv32のデータレイアウト文字列は <code>"e-m:e-p:32:32-i64:64-n32-S128 "</code>です。これを引き離すと、この文字列は次のような意味になります。</p>
+<ul>
+<li><code>e</code>: リトルエンディアン</li>
+<li><code>m:e</code>: ELF マングリングモード</li>
+<li><code>p:32:32</code>: ポインタは32ビット幅で、32ビットのアラインメントを持っています。</li>
+<li><code>i64:64</code>: ビット整数は 64 ビットのアラインメントを持つ</li>
+<li><code>n32</code>: ネイティブの整数型は32ビットです。</li>
+<li><code>S128</code>: スタックのナチュラルアライメントは128ビット(16バイト)です。</li>
+</ul>
+<p>これでバックエンドをビルドできるようになりました。LLVM_EXPERIMENTAL_TARGETS_TO_BUILDでRISCVを指定して、CMakeを再実行する必要があります。</p>
+<pre><code class="sh">cmake -G Ninja -DCMAKE_BUILD_TYPE=&quot;Debug&quot; \
+  -DBUILD_SHARED_LIBS=True -DLLVM_USE_SPLIT_DWARF=True \
+  -DLLVM_OPTIMIZED_TABLEGEN=True \
+  -DLLVM_BUILD_TESTS=True \
+  -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
+  -DLLVM_TARGETS_TO_BUILD=&quot;X86&quot; \
+  -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=&quot;RISCV&quot; ../
+cmake --build .
+</code></pre>
+
+<p><code>./bin/llvm/as --version</code> のようなコマンドの出力を確認することで、ターゲットが正しく登録されているかどうかを確認することができ、登録されたターゲットとして riscv32 と riscv64 がリストアップされているはずです。もちろん、RISC-Vバックエンドはこの時点では単なるスタブなので、<code>./bin/llc -march=riscv64 ../test/Object/Inputs/trivial.ll</code>のようなことを試しても、アサーションですぐに失敗します。</p>
+<h2 id="risc-v">RISC-V アセンブリの解析サポートの実装</h2>
+<h3 id="_5">概要</h3>
+<p>警告。残念ながら、アセンブラがテスト可能になる前に書かなければならないコードがかなり多いです。</p>
+<p>必要なステップは以下の通りです。</p>
+<ul>
+<li>RISC-Vのレジスタ、命令フォーマット、命令を記述した最小限のTableGenファイルを追加します。</li>
+<li>MC層(マシンコード層)を正しく初期化するために、RISC-VのMCTargetDescを追加しました。</li>
+<li>単純なRISC-Vアセンブリファイルを解析できるRISCVAsmParserを追加しました。</li>
+<li>全体をテスト可能にするために，RISCVInstPrinter を追加します（これはこのシリーズの次のパートで行います）。</li>
+</ul>
+<p>既に動作するアセンブラを持っているアーキテクチャをターゲットにしている場合、MC層のサポートを完全に実装することを避けて、外部のアセンブラに頼ることができます。しかし、MC層から始めることは、バックエンドを段階的に構築するのに有効な方法です。</p>
+<h3 id="tablegen">TableGenファイルの追加</h3>
+<p><a href="http://llvm.org/docs/TableGen/">TableGen</a>は、レコードを指定するための簡潔で読みやすい構文を提供するドメイン固有の言語です。LLVMバックエンドの場合、これらのレコードにはレジスタ、命令フォーマット、命令定義が含まれます。<a href="https://riscv.org/specifications/">RISC-Vの仕様書</a>は，このための参考文献として有用です。</p>
+<h4 id="riscvregisterinfotd">RISCVRegisterInfo.tdの追加</h4>
+<p>RISCVRegisterInfo.tdは，各レジスタを<code>x1</code>のような名前とABIの名前<code>ra</code>で定義します。各レジスタの定義は，<code>include/llvm/Target/Target.td</code>で定義されている<code>Register</code>からサブクラス化されています。代替名をサポートするために、一意の <code>RegAltNameIndex</code> を定義する必要があります。</p>
+<pre><code>def ABIRegAltName : RegAltNameIndex
+</code></pre>
+
+<p>次に、各レジスタについて、有効なRegAltNameIndicesと同様に代替名のリストを指定します。例えば、以下の例では、"zero"は<code>ABIRegAltName</code>です。</p>
+<pre><code>let RegAltNameIndices = [ABIRegAltName] in {.
+  def X0_32 : RISCVReg32&lt;0, &quot;x0&quot;, [&quot;ゼロ&quot;]&gt;, DwarfRegNum&lt;[0]&gt;.
+</code></pre>
+
+<p>レジスタは，適切な<code>RegisterClass</code>に集められます。クラス内のレジスタの順序は，好ましいレジスタ割り当て順序を反映しています。しかし、ここではMC層だけに焦点を当てているので、今のところは昇順に追加しても構いません。</p>
+<pre><code>def GPR : RegisterClass&lt;&quot;RISCV&quot;, [i32], 32, (add
+  (sequence &quot;X%u_32&quot;, 0, 31)
+)&gt;;
+</code></pre>
+
+<h4 id="riscvinstrformatstd">RISCVInstrFormats.tdの追加</h4>
+<p>各命令フォーマットの定義は、個々のRISC-V命令のスーパークラスとして機能します。命令フォーマットは，その型の命令がどのようにエンコードされるべきかを指定します。例えば、'I' フォーマットの命令は、3 ビットの funct フィールド、7 ビットの opcode フィールド、2 つのレジスタ、12 ビットの immediate フィールドを持っています。</p>
+<pre><code>class FI&lt;bits&lt;3&gt; funct3, bits&lt;7&gt; opcode, dag outs, dag ins, string asmstr, 
+    list&lt;dag&gt; pattern&gt;
+    : RISCVInst&lt;outs, ins, asmstr, pattern&gt;
+{
+  bits&lt;12&gt; imm12;
+  bits&lt;5&gt; rs1;
+  bits&lt;5&gt; rd;
+
+  let Inst{31-20} = imm12;
+  let Inst{19-15} = rs1;
+  let Inst{14-12} = funct3;
+  let Inst{11-7} = rd;
+  let Opcode = opcode;
+}
+</code></pre>
+
+<h4 id="riscvinstrinfotd">RISCVInstrInfo.td の追加</h4>
+<p>フォーマットが定義されているので，命令を追加するのは比較的簡単です。例えば，以下のようになります。</p>
+<pre><code>def simm12 : Operand&lt;i32&gt;;
+
+class ALU_ri&lt;bits&lt;3&gt; funct3, string OpcodeStr&gt; :
+      FI&lt;funct3, 0b0010011, (outs GPR:$rd), (ins GPR:$rs1, simm12:$imm12),
+         OpcodeStr#&quot;\t$rd, $rs1, $imm12&quot;, []&gt; {}
+
+def ADDI  : ALU_ri&lt;0b000, &quot;addi&quot;&gt;;
+</code></pre>
+
+<p><code>ALU_ri</code>クラスを定義することで、同様に定義されたreg-imm ALU命令群を指定する際に、繰り返しを避けることができます。</p>
+<p>文字列<code>"\t$rd, $rs1, $imm12"</code>は、命令のオペランドがテキストアセンブリでどのように表現されるかを指定します。</p>
+<h4 id="riscvtd">RISCV.tdの追加と記述の確認</h4>
+<p>RISCV.tdは，最上位のTableGenファイルです。インクルードを介してレジスタや命令の定義を組み込むだけでなく，プロセッサのモデルや機能の定義，その他のバックエンドの雑多な設定が含まれています。</p>
+<p>生成されたTableGenレコードは、以下のように実行することで確認することができます。</p>
+<pre><code class="sh">./bin/llvm-tblgen -I ../lib/Target/RISCV/ -I ../include/ -I ../lib/Target/ ../lib/Target/RISCV/RISCV.td
+</code></pre>
+
+<p>そして、<code>lib/Target/RISCV/CMakeLists.txt</code>にtablegen呼び出しを追加して、.tdの内容に基づいてバックエンドのC++コードを生成することができます。</p>
+<pre><code>set(LLVM_TARGET_DEFINITIONS RISCV.td)
+
+tablegen(LLVM RISCVGenRegisterInfo.inc -gen-register-info)
+tablegen(LLVM RISCVGenInstrInfo.inc -gen-instr-info)
+
+add_public_tablegen_target(RISCVCommonTableGen)
+</code></pre>
+
+<h3 id="risc-v-mctargetdesc">RISC-V MCTargetDescの追加</h3>
+<p>次のステップは，RISCVMCTargetDescサブディレクトリに最小限のクラス群を追加することです。これにより、RISC-V ELFを出力するのに十分な機能が提供されます。</p>
+<p>ボトムアップではなくトップダウンで始めた方が簡単なので，<code>RISCVMCTargetDesc.cpp</code>から始めてください。これは主に必要なMC層のクラスを登録するためのものです。</p>
+<pre><code class="cpp">extern &quot;C&quot; void LLVMInitializeRISCVTargetMC() {
+  for (Target *T : {&amp;getTheRISCV32Target(), &amp;getTheRISCV64Target()}) {
+    TargetRegistry::RegisterMCAsmInfo(*T, createRISCVMCAsmInfo);
+    TargetRegistry::RegisterMCInstrInfo(*T, createRISCVMCInstrInfo);
+    TargetRegistry::RegisterMCRegInfo(*T, createRISCVMCRegisterInfo);
+    TargetRegistry::RegisterMCAsmBackend(*T, createRISCVAsmBackend);
+    TargetRegistry::RegisterMCCodeEmitter(*T, createRISCVMCCodeEmitter);
+  }
+}
+</code></pre>
+
+<p>この登録プロセスを理解するために、LLVM <code>TargetRegistry</code>がどのように動作するかを見る価値があります。典型的なLLVMフロントエンドやツール（llvm-mcなど）は、Targetのインスタンスを取得し、与えられた型のインスタンスを取得するために<code>createMCRegInfo</code>などのメソッドを呼び出します。<code>LLVMInitializeRISCVTargetMC</code>は，後で取得できるように，これらのインスタンスを登録する役割を果たします。実装すべき最小限のMCクラスを見つける最も簡単な方法は，それらのクラスを1つずつ調べて，<code>./bin/llvm-mc -arch=riscv64 -filetype=obj foo.s</code>を実行したときに何が失敗するかを確認することです。</p>
+<ul>
+<li><code>RISCVMCAsmInfo</code></li>
+<li>MCAsmInfoELFを継承しています。コメント文字列のようないくつかの重要な詳細を指定する必要があります。</li>
+<li>'anchor'メソッドは <a href="http://llvm.org/docs/CodingStandards.html#provide-a-virtual-method-anchor-for-classes-in-headers">LLVM のコーディング標準</a>に従って提供されています。
+    この<a href="https://stackoverflow.com/questions/16801222/out-of-line-virtual-method">StackOverflowの回答</a>で説明したように、このようなダミーの仮想メソッドを作成することで、vtableが1つの.oファイルだけで出力されるようになります。</li>
+<li><code>RISCVMCInstrInfo</code><ul>
+<li>tablegenによって生成される<code>InitRISCVMCInstrInfo</code>を呼び出す必要があるだけです。</li>
+</ul>
+</li>
+<li>RISCVAsmBackend</li>
+<li><code>RISCVAsmBackend::writeNopData</code>を除いて、すべてのメソッドはスタブアウトされています。RISC-V の標準的な NOP は <code>addi x0, x0, 0</code> (0x13) です。</li>
+<li>RISCVELFObjectWriter<ul>
+<li><code>MCELFObjectTargetWriter</code>からの派生で、メソッドはすべてスタブアウトされています。</li>
+</ul>
+</li>
+<li>RISCVMCCodeEmitter<ul>
+<li>RISC-V命令(MCInst)をエンコードされた命令に変換します。ほとんどの作業はTableGenによって生成される<code>getBinaryCodeForInstr</code>によって行われます。</li>
+</ul>
+</li>
+</ul>
+<p>最後に、<code>lib/Target/RISCV/CMakeLists.txt</code>に<code>MCTargetDesc</code>を追加し、<code>lib/Target/RISCV/MCTargetDesc/CMakeLists.txt</code>を作成します。</p>
+<p>この時点で、<code>./bin/llvm-mc -arch=riscv64 -filetype=obj foo.s</code> を実行してみてください。進歩しました。</p>
+<h3 id="riscvasmparser">RISCVAsmParserの実装</h3>
+<p>次は，<code>lib/Target/RISCV/AsmParser/RISCVAsmParser.cpp</code>の実装です。<code>MatchRegisterName</code>, <code>MatchRegisterAltName</code>, <code>MatchInstructionImpl</code>など、多くの関数がRISCVInstrInfo.tdから自動生成されます。</p>
+<p>RISCVAsmParserには3つの主要なコンポーネントがあります。</p>
+<ul>
+<li>命令オペランド（トークン、レジスタ、または即時）を表す<code>RISCVOperand</code>。</li>
+<li>トップレベルの <code>MatchAndEmitInstruction</code>です。これは主に<code>MatchEmitInstructionImpl</code>を呼び出します。しかし、適切な診断を発しながら、様々な障害状態を処理するコードを書く必要があります。</li>
+<li>命令やオペランドを解析するためのメソッド。</li>
+</ul>
+<p>これらのメソッドの実装の中には、混乱を招く可能性があります。bool を返すものもあれば、MatchResult を返すものもあります。通常、戻り値が false の場合は成功を示します。</p>
+<p>この時点で、<code>llvm-mc</code>を使って簡単なファイルを組み立てることができるはずです。<code>stats</code> と <code>-as-lex</code> オプションは、何が起こっているのかを追跡するのに便利です。</p>
+<h2 id="instruction-printing">Instruction Printingとテストの実装</h2>
+<p>必要なインフラストラクチャの大部分が整ったので、アセンブラのテストに必要な最後の部品を追加することができます。</p>
+<h3 id="_6">命令プリンタの追加</h3>
+<p>RISCVInstPrinter は，<code>MCInst</code> を文字列に変換するために必要です。このクラスを実装すると，<code>llvm-m</code>c の <code>-show-encoding</code> オプションを利用して，解析された命令の印刷方法が期待通りであるか，エンコーディングが正しいかをチェックすることができます。</p>
+<p>MC レイヤーの多くと同様に，「作業」の大部分は TableGen を用いて生成されたコードによって行われます。</p>
+<pre><code class="cpp">void RISCVInstPrinter::printInst(const MCInst *MI, raw_ostream &amp;O,
+                                 StringRef Annot, const MCSubtargetInfo &amp;ST
+  printInstruction(MI, O);
+  printAnnotation(O, Annot);
+}
+
+void RISCVInstPrinter::printRegName(raw_ostream &amp;O, unsigned RegNo) const {
+  O &lt;&lt; getRegisterName(RegNo);
+}
+
+void RISCVInstPrinter::printOperand(const MCInst *MI, unsigned OpNo,
+                                    raw_ostream &amp;O, const char *Modifier) {
+  assert((Modifier == 0 || Modifier[0] == 0) &amp;&amp; &quot;No modifiers supported&quot;);
+  const MCOperand &amp;MO = MI-&gt;getOperand(OpNo);
+
+  if (MO.isReg()) {
+    printRegName(O, MO.getReg());
+    return;
+  }
+
+  if (MO.isImm()) {
+    O &lt;&lt; MO.getImm();
+    return;
+  }
+
+  assert(MO.isExpr() &amp;&amp; &quot;Unknown operand kind in printOperand&quot;);
+  MO.getExpr()-&gt;print(O, &amp;MAI);
+}
+</code></pre>
+
+<h3 id="_7">テストの実装</h3>
+<p><code>test/MC/RISCV</code> ディレクトリを作成した後、以下の内容を含む <code>lit.local.cfg</code> ファイルを作成する必要があります。</p>
+<pre><code>if not 'RISCV' in config.root.targets:
+    config.unsupported = True
+</code></pre>
+
+<p>これにより，LLVMがRISCVをサポートしてビルドされている場合にのみ，テストが実行されるようになります。</p>
+<p>LLVMのテストは、通常、<a href="http://llvm.org/docs/CommandGuide/FileCheck.html">FileCheck</a>ユーティリティを利用して、ツール出力のパターンをチェックします。テストの構成方法には柔軟性がありますが、有効なRISC-V命令が正しく組み立てられているかどうかをチェックするために<code>rv32i-valid.s</code>を作成し、無効な命令の診断をチェックするために<code>rv32i-invalid.s</code>を作成することをお勧めします。</p>
+<p>例えば、<code>rv32i-valid.s</code>には以下のようなコードが含まれているかもしれません。</p>
+<pre><code># RUN: llvm-mc %s -triple=riscv32 -show-encoding \
+# RUN:     | FileCheck -check-prefixes=CHECK,CHECK-INST %s
+# RUN: llvm-mc %s -triple=riscv64 -show-encoding \
+# RUN:     | FileCheck -check-prefixes=CHECK,CHECK-INST %s
+
+# CHECK-INST: addi ra, sp, 2
+# CHECK: encoding: [0x93,0x00,0x21,0x00]
+addi ra, sp, 2
+# CHECK-INST: slti a0, a2, -20
+# CHECK: encoding: [0x13,0x25,0xc6,0xfe]
+slti a0, a2, -20
+</code></pre>
+
+<p>一方で<code>rv32i-invalid.s</code>は以下のようなコードが含まれているかもしれません。</p>
+<pre><code># RUN: not llvm-mc -triple riscv32 &lt; %s 2&gt;&amp;1 | FileCheck %s
+
+# Out of range immediates
+ori a0, a1, -2049 # CHECK: :[[@LINE]]:13: error: immediate must be an integer in the range [-2048, 2047]
+andi ra, sp, 2048 # CHECK: :[[@LINE]]:14: error: immediate must be an integer in the range [-2048, 2047]
+</code></pre>
+
+<p>この時点で、すべてのRV32I命令が<code>RISCVInstrInfo.td</code>で定義されており、正しく組み立てることができることを確認することができます。</p>
+<h2 id="_8">ディスアセンブリのサポート</h2>
+<p>RISCVDisassemblerは、適切な<code>MCOperand</code>インスタンスにイミディエイトとレジスタをデコードするメソッドを提供します。これは<code>getInstruction</code>によって駆動され、TableGenが生成する<code>decodeInstruction</code>に依存します。</p>
+<p>例えば、以下のようになります。</p>
+<pre><code class="cpp">template &lt;unsigned N&gt;
+static DecodeStatus decodeSImmOperand(MCInst &amp;Inst, uint64_t Imm,
+                                      int64_t Address, const void *Decoder)
+  assert(isUInt&lt;N&gt;(Imm) &amp;&amp; &quot;Invalid immediate&quot;);
+  // Sign-extend the number in the bottom N bits of Imm
+  Inst.addOperand(MCOperand::createImm(SignExtend64&lt;N&gt;(Imm)));
+  return MCDisassembler::Success;
+}
+</code></pre>
+
+<p>これらの<code>decode*</code>メソッドは <code>RISCVInstrInfo.td</code> で指定されています。</p>
+<p>つまり、<code>llvm-mc -show-encoding</code> と <code>llvm-objdump -d</code> を使用してオブジェクトファイルを分解する際に、<code>CHECK-INST</code> 行が正しいかどうかをチェックします。</p>
+<p>このディスアセンブリは<code>rv32i-valid.s</code>を拡張してすべてのテストをサポートすることができます。つまり、<code>llvm-mc -show-encoding</code> と <code>llvm-objdump -d</code> を使ってオブジェクトファイルを分解する際に <code>CHECK-INST</code> 行が正しいかどうかをチェックすることです。</p>
+<h2 id="fixup">リロケーション・Fixup対応の実施</h2>
+<p>リロケーションは、未解決のシンボル参照（例えば、別のコンパイルユニット内の関数への参照）がある場合に発生します。LLVMでは、未知の情報が参照された場合(例えば、未解決のシンボル参照)に「Fixup」が生成されます。Fixupの中には、ELFが生成される前に解決できるものもあれば、リロケーションに変換しなければならないものもあります。すべてのリロケーションはかつてはFixupであったが、すべてのFixupがリロケーションになるわけではない。</p>
+<p>これの実装が完了すると、MC層が実装され、コード生成に移る準備が整います。</p>
+<h3 id="fixup_1">Fixupの導入</h3>
+<p>まず，<code>RISCVFixupKinds.h</code> を導入し，<code>RISCVAsmBackend::getFixupKindInfo</code> を実装します。これは，サポートされているFixupと，各Fixupに関するメタデータ（命令内のオフセット，長さ，プログラムカウンタに対する相対値の有無）を定義します。次に、<code>RISCVAsmBackend::applyFixup</code> を実装します。<code>applyFixup</code>が呼ばれた時点でFixup値がわかっている場合、このメソッドはエンコードされた命令をFixupする役割を担っています。必要に応じて値をFixupするヘルパー関数、例えば <code>adjustFixupValue</code> を導入すると便利です。これは、ビットレイアウトがターゲットのRISC-V命令に必要なものと一致するように値を操作するために必要です。</p>
+<p>このようなロジックができたので、次のステップは、1) アセンブリパーサからのFixup生成のサポートを実装し、2) Fixupが解決されていない場合のリロケーションのサポートを実装することです。</p>
+<h3 id="_9">アセンブラの変更点</h3>
+<p>アセンブリパーサからFixupを生成するには，<code>RISCVMCExpr</code> の実装が必要です。アセンブリパーサが <code>%pcrel_hi()</code> のような修飾子を持つオペランドを記録できるようにするために，このインスタンスが作成されます。<code>RISCVMCExpr</code>は，もう一つの概念，<code>VariantKinds</code>を導入しています。これは、オペランド修飾子がFixupされない場合、例えば<code>%lo()</code>が定数値に適用される場合などに必要となります。</p>
+<p>RISCVAsmParserはシンボルが解析できるようにFixupされなければなりません。さらに、オペランド修飾子を正常に解析しなければなりません。通常のLLVMアセンブリパーサと同様に、正しい形式の修飾子を認識し、その後、オペランド修飾子がRISC-Vで有効かどうかを検証します。</p>
+<p>VariantKindからfixupに変換する場合、RISC-V命令フォーマットの中には12ビットのimmediateのエンコーディングが2つあることを考えると、<code>RISCVMCExpr::VK_RISCV_LO</code>をどのように変換するかという問題があります（I-format命令とS-format命令ではimmediateビットの配置が異なります）。これは、I型オペコードのリストとS型オペコードのリストをハードコーディングすることで対応できますが、このようなハードコーディングは避けた方が良いでしょう。命令フォーマットを各命令のプロパティとして追加することで、現在の命令のフォーマットを確認して適切なFixupを選択することができます。</p>
+<h3 id="_10">リロケーション</h3>
+<p>最後に、<code>RISCVELFObjectWriter::getRelocType</code>を変更して、Fixupタイプを適切なリロケーションタイプにマッピングすることができます。</p>
+<h2 id="codegen">codegen サポートへの最初のステップ</h2>
+<p>次の実装課題は、基本的なコード生成のサポートを追加することです。これを行うために必要なボイラプレートコードはそれなりの量がありますが、これはほとんどの困難さが必要なサポートコードの最小セットを特定することから来ていることを意味します。本当に最低限の出発点は、引数なしで void を返す関数の codegen を実装することでしょう。しかし、単純な算術演算のためのcodegenをサポートすることの難易度は非常に低く、余分な作業を行うことで実装が正しいことをはるかに保証してくれます。したがって、RV32I ALU演算のサポートを実装することから始めてください。</p>
+<h3 id="_11">新たに追加されたサポートコードの概要</h3>
+<ul>
+<li>
+<p><code>RISCVAsmPrinter</code>と<code>RISCVMCInstLower</code></p>
+</li>
+<li>
+<p>これは，単にオペコードを設定し，入力<code>MachineInstr</code>のレジスタまたは即時オペランドに対応する<code>MCOperands</code>を追加するだけの<code>llvm::LowerRISCVMachineInstrToMCInst</code>によって処理されます。</p>
+</li>
+<li>
+<p><code>RISCVInstrInfo</code></p>
+<ul>
+<li>この段階では，手書きのコードは必要ありません。RISCVInstrInfo.{h,cpp}には，RISCVInstrInfo.tdから生成されるRISCVGenInstrInfo.incが含まれています。これは，<code>RISCV::ADDI</code>などの定義されたすべてのRISCV命令を含むenumを定義します。</li>
+<li>
+<p><code>RISCVRegisterInfo</code></p>
+</li>
+<li>
+<p><code>RISCVInstrInfo</code> と同様に，テーブル生成コードに大きく依存します。</p>
+</li>
+<li>戻り値のレジスタを <code>RISCVGenRegisterInfo</code> コンストラクタに渡す必要があります。</li>
+<li><code>getReservedRegs</code> は，予約されているとみなされ，レジスタアロケータによって無視されるべきすべてのレジスタを示さなければなりません。</li>
+<li><code>getFrameRegister</code> は，単にフレームインデックスに使用されるレジスタを返します。まだフレームポインタの消去が実装されていないので，常に RISCV::X8 を返してください。</li>
+<li><code>eliminateFrameIndex</code> は存在する必要がありますが，今のところは <code>report_fatal_error</code> を呼び出すだけのスタブです。</li>
+<li><code>RISCVSubtarget</code></li>
+<li>実装したクラスのインスタンスに対する多数のアクセサが含まれています。</li>
+<li><code>RISCVPassConfig</code></li>
+<li><code>RISCVISelDAGToDAG</code></li>
+<li>これは、各SelectionDAGノードに対して適切なRISC-V命令を選択する処理を行います。<code>RISCVDAGToDAGISel::Select</code>はこの処理のメインエントリーポイントであり、テーブル生成された<code>SelectCode</code>関数を呼び出すだけです。この処理を制御するパターンの指定については，以下を参照してください。</li>
+<li><code>RISCVISelLowering</code></li>
+<li>最終的にLLVMコードをSelectionDAGに落とします。この変換を実行するコードの大部分はターゲットに依存しないため、このプロセスに影響を与えるためにいくつかのフックを実装する必要があります。詳細は以下を参照してください。</li>
+</ul>
+<h3 id="riscvinstrinfotd_1">RISCVInstrInfo.tdでのパターンの指定</h3>
+</li>
+</ul>
+<p>RISC-V バックエンドは RISCVInstrInfo.td を構造化しているので，命令選択パターンは命令定義とは別に指定されます。add のパターンは簡単に指定できます。</p>
+<pre><code>def : Pat&lt;(add GPR:$rs1, GPR:$rs2), (ADD GPR:$rs1, GPR:$rs2)&gt;;
+</code></pre>
+
+<p>Patへの最初のパラメータは、マッチするSelectionDAGノードを指定します。そのようなノードの完全なリストは<code>include/llvm/Target/TargetSelectionDAG.td</code>を参照してください。2番目のパラメータは、それをLoweringするRISC-V命令を指定します。</p>
+<p>add (<code>addi</code>) のregiste-immediateフォーマットは以下のようにマッチします。</p>
+<pre><code>def : Pat&lt;(add GPR:$rs1, simm12:$imm12), (ADDI GPR:$rs1, simm12:$imm12)&gt;;
+</code></pre>
+
+<p>ADDIをLoweringするために、同じSelectionDAGノード(<code>add</code>)を、異なる制約（即時オペランド）でマッチングしていることに注意してください。LLVM SelectionDAGインフラストラクチャは、各パターンの前提条件のチェックを処理します。上記のパターンが動作するためには、<code>simm12</code>もまた、SelectionDAGが理解できる方法で制約を与えなければなりません。以前のように、<code>Operand</code>に加えて<code>ImmLeaf</code>から派生させます。</p>
+<pre><code>def simm12 : Operand&lt;XLenVT&gt;, ImmLeaf&lt;XLenVT, [{return isInt&lt;12&gt;(Imm);}]&gt; {
+...
+}
+</code></pre>
+
+<h3 id="riscvisellowering">RISCVISelLowering</h3>
+<p>コンストラクタは，Loweringに影響を与えるいくつかのヘルパー関数を呼び出します。重要なのは，<code>addRegisterClass(XLenVT, &amp;RISCV::GPRRegClass);</code> によって，<code>XLenVT</code>（RV32の場合は<code>i32</code>）が正当な型とみなされるようになります。将来のパッチでは，例えば，どの操作を直接下げるのではなく，意味的に等価なものに展開すべきかを指定するなど，より多くのコードが追加される予定です。</p>
+<p>現段階で実装すべき2つの主要なメソッドは、<code>LowerFormalArguments</code>と<code>LowerReturn</code>です。前者は、各引数がどのレジスタに渡されるかを判断し、適切な仮想レジスタを作成します。<code>LowerReturn</code>は戻り値を、ターゲットの呼び出し規約に適したレジスタにコピーします。</p>
+<h3 id="calling-convention">Calling Conventionの指定</h3>
+<p>この段階では、<a href="https://github.com/riscv/riscv-elf-psabi-doc/blob/master/riscv-elf.md">RISC-Vの呼び出し規約</a>の完全な詳細をサポートしようとはしません。代わりに，RISCVCallingConv.td で基本的なレジスタの割り当てを指定します：</p>
+<pre><code>// RISCV 32-bit C return-value convention.
+def RetCC_RISCV32 : CallingConv&lt;[CCIfType&lt;[i32], CCAssignToReg&lt;[X10, X11]&gt;&gt;]&gt;;
+
+// RISCV 32-bit C Calling convention.
+def CC_RISCV32 : CallingConv&lt;[
+    // Promote i8/i16 args to i32
+    CCIfType&lt;[ i8, i16 ], CCPromoteToType&lt;i32&gt;&gt;,
+
+    // All arguments get passed in integer registers if there is space.
+    CCIfType&lt;[i32], CCAssignToReg&lt;[ X10, X11, X12, X13, X14, X15, X16, X17]&gt;&gt;,
+
+    // Could be assigned to the stack in 8-byte aligned units, but unsupported
+    CCAssignToStack&lt;8, 8&gt;
+]&gt;;
+</code></pre>
+
+<p>これにより，RISCVISelLowering.cpp で利用できる関数 <code>CC_RISCV32</code> と <code>RetCC_RISCV32</code> が生成されます。</p>
+<p>また，コール保存されているレジスタもリストアップしておきます。</p>
+<pre><code>def CSR : CalleeSavedRegs&lt;(add X1, X3, X4, X8, X9, (sequence &quot;X%u&quot;, 18, 27))&gt;;
+</code></pre>
+
+<h3 id="_12">テストの指定</h3>
+<p>MC層のテストは <code>test/MC/RISCV</code> に書き、<code>FileCheck</code> を利用しています。 テストは <code>test/CodeGen/RISCV</code> に配置することで，再び <code>FileCheck</code> を用いて codegen 用のテストを書くことができます。 これらのテストはLLVM IRで書かれた単純な関数の形をしており、<code>llc</code>でコンパイルした後に生成されたアセンブリのチェックを含んでいます。 チェック行の生成を自動化するには、<code>update_llc_test_checks.py</code>を使うことを強くお勧めします。</p>
+<h2 id="codegen_1">メモリ操作のためのCodegenサポート</h2>
+<h3 id="_13">前提条件: 定数の具体化</h3>
+<p>このドキュメントのセットでは、各実装タスクが必要とされた順にリストアップされています。LLVMバックエンドを自分で書く場合、次のステップが何であるかは必ずしも明らかではありません。多くの場合、新しい機能を実装しようとし始め、その時点で前提条件を発見することになります。この場合、メモリ演算の実装を開始すると、定数を具現化する機能（レジスタに定数をロードする）を必要とするテストケースがすぐに見つかるでしょう。</p>
+<p>良いニュースは，定数を実体化する機能を実装するのは簡単で，<code>RISCVInstrInfo.td</code>を修正するだけで実現できるということです。まず，符号付き12ビットのイミディエイトにマッチするパターンを指定します。</p>
+<pre><code>def : Pat&lt;(simm12:$imm), (ADDI X0, simm12:$imm)&gt;;
+</code></pre>
+
+<p>これは簡単です - 12 ビットのイミディエイトは <code>ADDI</code> への有効なオペランドです。より大きなイミディエイトの場合は、より多くの作業が必要です。addiとluiの組み合わせを生成したいのですが、addiは低い12ビットを取り、luiは20ビットを取ります。<code>ADDI</code>オペランドが符号拡張されるという事実を補償する必要があるので、実際にはそれよりも少し複雑です。パターンは次のようになります。</p>
+<pre><code>def : Pat&lt;(simm32:$imm), (ADDI (LUI (HI20 imm:$imm)), (LO12Sext imm:$imm))&gt;;
+</code></pre>
+
+<p>ここで、HI20とLO12Sextは、正しいオペランドを生成するための即値の変換です。</p>
+<pre><code>// 即値から最下位の12ビットを抽出し、符号を拡張し、使用しています。
+    def LO12Sext : SDNodeXForm&lt;imm, [{
+      return CurDAG-&gt;getTargetConstant(SignExtend64&lt;12&gt;(N-&gt;getZExtValue()),
+                                       SDLoc(N), N-&gt;getValueType(0));
+    }]&gt;;
+
+// 即値から最上位の20ビットを抽出します。ビット 11 が 1 の場合は 1 を加算し、一致する即値の下位 12 ビットが負の値であることを補正します。
+    def HI20 : SDNodeXForm&lt;imm, [{
+      return CurDAG-&gt;getTargetConstant(((N-&gt;getZExtValue()+0x800) &gt;&gt; 12) &amp; 0xfffff,
+                                       SDLoc(N), N-&gt;getValueType(0));
+    }]&gt;;
+</code></pre>
+<h3 id="codegen_2">メモリ操作のためのCodegenサポート</h3>
+<p>1)オフセットのないアドレスのロード/ストアと、2)オフセットのあるアドレスのロード/ストアの2つのパターンを一致させるために、ロードとストアには2つのパターンが必要です。後者は、ロード/ストアへのオペランドとしてaddノードを持つ<code>SelectionDAG</code>サブツリーで表現されます。以下のmulticlassはこれを示しています。</p>
+<pre><code>multiclass LdPat&lt;PatFrag LoadOp, RVInst Inst&gt; {
+  def : Pat&lt;(LoadOp GPR:$rs1), (Inst GPR:$rs1, 0)&gt;;
+  def : Pat&lt;(LoadOp (add GPR:$rs1, simm12:$imm12)),
+            (Inst GPR:$rs1, simm12:$imm12)&gt;;
+}
+</code></pre>
+
+<p>RISC-V の特徴は、ワードサイズよりも小さいデータ値のシグネクストおよびゼロエクステンディングロード（「符号なし」）です。シグネクスト、ゼロエクステンド、anyext（気にしない）ロードのパターンを指定しなければなりません。以下のようなテストは、これら3つのケースをカバーしています。</p>
+<pre><code>; RV32I-LABEL: lh:
+; RV32I:       # %bb.0:
+; RV32I-NEXT:    lh a1, 0(a0)
+; RV32I-NEXT:    lh a0, 4(a0)
+; RV32I-NEXT:    jalr zero, ra, 0
+  %1 = getelementptr i16, i16* %a, i32 2
+  %2 = load i16, i16* %1
+  %3 = sext i16 %2 to i32
+  ; the unused load will produce an anyext for selection
+  %4 = load volatile i16, i16* %a
+  ret i32 %3
+}
+</code></pre>
+
+<h2 id="codegen_3">ブランチと関数呼び出しのためのCodegen</h2>
+<h3 id="lowering">分岐のLowering</h3>
+<p><code>include/llvm/CodeGen/ISDOpcodes.h</code>を見直すと、条件分岐の2つの表現があることがわかります。<code>BR_CC</code>は、条件コード、比較するノード、そして条件が真であれば分岐するブロックを取るcompare+branchです。<code>BR_CC</code>はRISC-Vのcompare+branch命令に近いですが、<code>BRCOND</code>形式の方がテーブルゲンパターンを書きやすくマッチします。そのため、BR_CCの拡張を要求します。</p>
+<pre><code class="cpp">setOperationAction(ISD::BR_CC, XLenVT, Expand);
+</code></pre>
+
+<p>以下のパターンを定義します。</p>
+<pre><code>// Match `(brcond (CondOp ..), ..)` and lower to the appropriate RISC-V branch
+// instruction.
+class BccPat&lt;PatFrag CondOp, RVInstB Inst&gt;
+    : Pat&lt;(brcond (i32 (CondOp GPR:$rs1, GPR:$rs2)), bb:$imm12),
+          (Inst GPR:$rs1, GPR:$rs2, simm13_lsb0:$imm12)&gt;;
+
+def : BccPat&lt;seteq, BEQ&gt;;
+</code></pre>
+
+<p>多くの<code>setcc</code>条件コードは、直接一致するRISC-V命令を持っていませんが、入力オペランドをスワップすることでサポートすることができます。</p>
+<pre><code>class BccSwapPat&lt;PatFrag CondOp, RVInst InstBcc&gt;
+    : Pat&lt;(brcond (i32 (CondOp GPR:$rs1, GPR:$rs2)), bb:$imm12),
+          (InstBcc GPR:$rs2, GPR:$rs1, bb:$imm12)&gt;;
+
+// マッチするRISC-V分岐命令を持たない条件コードは、2つの入力オペランドを入れ替えることで
+// 簡単にサポートされます。
+def : BccSwapPat&lt;setgt, BLT&gt;;
+def : BccSwapPat&lt;setle, BGE&gt;;
+def : BccSwapPat&lt;setugt, BLTU&gt;;
+def : BccSwapPat&lt;setule, BGEU&gt;;
+</code></pre>
+
+<p>分岐テスト関数が動作するためには，生成されたレジスタのこぼれが必要な<code>RISCVInstrInfo::storeRegToStackSlot</code> と <code>RISCVInstrInfo::loadRegFromStackSlot</code> が実装されている必要があります。これらの関数は，単に適切なロードまたはストアを生成する必要があります。</p>
+<h3 id="codegen_4">関数コールのCodegen</h3>
+<p><code>JALR</code> に展開する call の疑似命令を定義します。</p>
+<pre><code>let isCall = 1, Defs=[X1] in
+def PseudoCALL : Pseudo&lt;(outs), (ins GPR:$rs1), [(Call GPR:$rs1)]&gt;,
+                 PseudoInstExpansion&lt;(JALR X1, GPR:$rs1, 0)&gt;;
+</code></pre>
+
+<p>実装する必要のある主なコンポーネントが<code>RISCVTargetLowering::LowerCall</code> です。これは，適切なSelectionDAG ノードである <code>call_start</code>, <code>CALL</code>, <code>callseq_end</code> への呼び出しをLoweringします。これは，引数のコピーと結果のコピーを行います。</p>
+<h2 id="codegen_5">フレーム処理のためのCodeGen</h2>
+<p>RISC-Vバックエンドは、関数呼び出しをLoweringすることができるようになりましたが、関数prolog/epilogを生成したり、FrameIndex参照を正しく下げたりすることはまだできません。</p>
+<h3 id="lowering_1">フレームインデックスのLowering</h3>
+<p>まず、ダミーの「アドレッシングモード」を定義します。これはFrameIndexにマッチするもので、パターンではFrameIndexを直接マッチさせることができないので必要です。</p>
+<pre><code>def AddrFI : ComplexPattern&lt;iPTR, 1, &quot;SelectAddrFI&quot;, [frameindex], []&gt;;
+
+def : Pat&lt;(LoadOp (add AddrFI:$rs1, simm12:$imm12)),
+          (Inst AddrFI:$rs1, simm12:$imm12)&gt;;
+def : Pat&lt;(LoadOp (IsOrAdd AddrFI:$rs1, simm12:$imm12)),
+          (Inst AddrFI:$rs1, simm12:$imm12)&gt;;
+</code></pre>
+
+<p><code>ISD::FrameIndex</code>を適切なオペランドを持つ<code>ADDI</code>にLoweringするように<code>RISCVDAGToDAGISel::Select</code>を変更します。</p>
+<pre><code class="cpp">if (Opcode == ISD::FrameIndex) {
+  SDLoc DL(Node);
+  SDValue Imm = CurDAG-&gt;getTargetConstant(0, DL, XLenVT);
+  int FI = dyn_cast&lt;FrameIndexSDNode&gt;(Node)-&gt;getIndex();
+  EVT VT = Node-&gt;getValueType(0);
+  SDValue TFI = CurDAG-&gt;getTargetFrameIndex(FI, VT);
+  ReplaceNode(Node, CurDAG-&gt;getMachineNode(RISCV::ADDI, DL, VT, TFI, Imm));
+  return;
+}
+</code></pre>
+
+<p>最後に，<code>RISCVFrameLowering::getFrameIndexReference</code> を実装する必要があります．これは正しいフレームレジスタとオフセットを選択しなければなりません。Callee-saveレジスタはスタックポインタから相対的に参照され、それ以外の場合はフレームポインタが使用されます。</p>
+<h3 id="prologepilog">PrologとEpilogの挿入</h3>
+<p><code>RISCVFrameLowering::emitPrologue</code> と <code>RISCVFrameLowering::emitEpilogue</code> は，以前はスタブアウトされていましたが，スタック上のスペースを確保・解放し，フレームポインタを適切に操作しなければなりません．</p>
+<h2 id="risc-v_1">RISC-Vの呼び出し規約をサポート</h2>
+<p>tablegen指定の呼び出し規則は，単純なケースでは動作しますが，<a href="https://github.com/riscv/riscv-elf-psabi-doc/blob/master/riscv-elf.md">RISC-Vの呼び出し規則</a>を記述する規則の完全なセットを表すものではありません．</p>
+<p><code>CC_RISCV</code>は，RISC-Vの呼び出し規則を実装しています．<code>CC_RISCV</code>は、各引数が正規化された後、断片的に渡されます。例えば，<code>i64</code>は<code>i32</code>のペアに分割されます．したがって，<code>CC_RISCV</code> は，そのような分割値を追跡して，元の引数のサイズがレジスタに渡すべきか，スタックに渡すべきかを判断するロジックを含んでいます．</p>
+<p>フロントエンドのABI低下に対する期待値は、ターゲットによって異なります。理想的には、LLVMフロントエンドが多くのABIの詳細を気にせずに済むようにすることができますが、これは長期的な目標です。今のところは、フロントエンドの役割をできる限りシンプルかつ明確に定義しておくようにしています。ルールは以下のようにまとめることができます。</p>
+<ul>
+<li>大きなスカラー引数は決して分割しないこと。ここではそれらを扱います。</li>
+<li>ハードフロートの呼び出し規約を使用していて、構造体がレジスタのペア(fp+fp, int+fp)で渡され、両方のレジスタが利用可能な場合は、2つの別々の引数として渡します。GPR または FPR のいずれかが枯渇している場合は、以下のルールに従って渡してください。</li>
+<li>構造体がレジスタやスタックスロットに直接渡すことができなかった場合（<code>2*XLEN</code>よりも大きく、浮動小数点ルールが適用されないため）、byval属性を持つポインタを使用して渡します。</li>
+<li>構造体が <code>2*XLEN</code> より小さい場合は、2 要素のワードサイズの配列か <code>2*XLEN</code> スカラ（アライメントに応じて）のどちらかに強制的に渡します。</li>
+<li>フロントエンドは、構造体が参照によって返されるかどうかを、そのサイズとフィールドに基づいて判断することができます。構造体が参照で返される場合、フロントエンドはプロトタイプを修正して、第一引数に sret アノテーションを持つポインタを渡すようにしなければなりません。これは大きなスカラ値を返す場合には必要ありません。</li>
+<li>構造体の戻り値と varargs は、固定引数の場合と同じ状況で、レジスタサイズのフィールドを含む構造体に強制されるべきです。</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../llvm/" title="LLVM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                LLVM
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../machine_learning/" title="機械学習 / TensorFlow" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                機械学習 / TensorFlow
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,5 +1,12 @@
 # LLVM
 
+## RISC-V LLVMのドキュメント翻訳
+
+[https://github.com/lowRISC/riscv-llvm/tree/master/docs](https://github.com/lowRISC/riscv-llvm/tree/master/docs)
+
+- [RISC-V LLVM Backend](../lowrisc_llvm)
+
+
 ## LLVM for RISC-V
 
 - [オリジナルLLVMバックエンド実装をまとめる(30. llvm-litによるテストの追加) (19/10/30)](http://msyksphinz.hatenablog.com/entry/2019/10/30/040000)

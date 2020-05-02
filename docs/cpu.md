@@ -1,5 +1,18 @@
 # CPU
 
+## Fugaku
+
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(9. セクタキャッシュとハードウェアバリア) (20/04/10)](https://msyksphinz.hatenablog.com/entry/2020/04/10/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(8. データプリフェッチ) (20/04/08)](https://msyksphinz.hatenablog.com/entry/2020/04/08/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(7. TLB / キャッシュ / MAC) (20/04/07)](https://msyksphinz.hatenablog.com/entry/2020/04/07/000000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(5. 命令実行) (20/04/06)](https://msyksphinz.hatenablog.com/entry/2020/04/06/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(4. 命令ディスパッチ) (20/04/05)](https://msyksphinz.hatenablog.com/entry/2020/04/05/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(3. 命令デコード) (20/04/04)](https://msyksphinz.hatenablog.com/entry/2020/04/04/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(2. 命令フェッチ) (20/04/03)](https://msyksphinz.hatenablog.com/entry/2020/04/03/040000)
+- [富岳のプロセッサA64FXのマイクロアーキテクチャマニュアルを読む(1. パイプラインの概要) (20/04/02)](https://msyksphinz.hatenablog.com/entry/2020/04/02/040000)
+
+## High-Performance CPU
+
 - [高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (7. 予測精度を上げるためのテクニック2) (19/08/02)](http://msyksphinz.hatenablog.com/entry/2019/08/02/040000)
 - [高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (9. ニューラル分岐予測器2) (19/08/16)](http://msyksphinz.hatenablog.com/entry/2019/08/16/040000)
 - [高性能プロセッサの分岐予測のサーベイ論文を読んで分岐予測について学ぶ (8. ニューラル分岐予測器1) (19/08/13)](http://msyksphinz.hatenablog.com/entry/2019/08/13/040000)

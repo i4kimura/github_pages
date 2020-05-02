@@ -1,5 +1,18 @@
 # RISC-V
 
+
+## Freedom-u-sdk Linux
+
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(4. デバイスの初期化について) (20/04/30)](https://msyksphinz.hatenablog.com/entry/2020/04/30/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(3. printmにより文字が画面に表示されるまでの仕組み) (20/04/29)](https://msyksphinz.hatenablog.com/entry/2020/04/29/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(2. init_first_hart()で実行される処理) (20/04/28)](https://msyksphinz.hatenablog.com/entry/2020/04/28/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(1. シミュレータの立ち上げ方法とブートシーケンス) (20/04/24)](https://msyksphinz.hatenablog.com/entry/2020/04/24/040000)
+- [RISC-VのLinuxをビルドするためのfreedom-u-sdkの確認 (2. シミュレータのビルドと動作確認) (20/04/19)](https://msyksphinz.hatenablog.com/entry/2020/04/19/040000)
+- [RISC-VのLinuxをビルドするためのfreedom-u-sdkの確認 (20/04/16)](https://msyksphinz.hatenablog.com/entry/2020/04/16/040000)
+- [SiFive Freedom-u-SDKのアップデート試行 (2. native Linux環境で再試行) (20/04/13)](https://msyksphinz.hatenablog.com/entry/2020/04/13/040000)
+- [SiFive Freedom-u-SDKのアップデート試行 (1. bitbakeでのビルド試行) (20/04/12)](https://msyksphinz.hatenablog.com/entry/2020/04/12/040000)
+
+
 ## FIRRTL-Compiler
 
 - [FIRRTLに入門する (24. FIRRTLにおけるメモリの生成を調査する) (20/01/18)](https://msyksphinz.hatenablog.com/entry/2020/01/18/040000)

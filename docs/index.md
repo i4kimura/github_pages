@@ -1,5 +1,12 @@
 ![](msyksphinz.png)
 
+# Verilator
+
+- [Verilatorの使い方(4. DPI-Cを使ったC/C++との連携) (20/05/12)](https://msyksphinz.hatenablog.com/entry/2020/05/12/040000)
+- [Verilatorの使い方(3. Lintとして活用する) (20/05/10)](https://msyksphinz.hatenablog.com/entry/2020/05/10/000000)
+- [Verilatorの使い方(2. 波形ダンプの方法) (20/05/08)](https://msyksphinz.hatenablog.com/entry/2020/05/08/040000)
+- [Verilatorの使い方(1. Verilatorの考え方と基本的なシミュレーション実行方法) (20/05/06)](https://msyksphinz.hatenablog.com/entry/2020/05/06/040000)
+
 # Vivado-HLS
 
 [Vivado-HLS記事一覧](vivado_hls)
@@ -45,6 +52,7 @@
 # 機械学習 / TensorFlow
 
 [機械学習 / TensorFlow](machine_learning)
+[ゼロから作るDeep Learning ③](zero_deep_3)
 
 # GPGPU
 

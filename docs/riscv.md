@@ -3,6 +3,10 @@
 
 ## Freedom-u-sdk Linux
 
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(8. start_kernel(void)の処理) (20/05/07)](https://msyksphinz.hatenablog.com/entry/2020/05/07/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(7. 物理アドレスモードから仮想アドレスモードへの変更) (20/05/03)](https://msyksphinz.hatenablog.com/entry/2020/05/03/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(6. CPU0が実行する`boot_loader(dtb)`の流れ) (20/05/02)](https://msyksphinz.hatenablog.com/entry/2020/05/02/040000)
+- [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(5. ブート時にコア0以外はどのような動作をするのか) (20/05/01)](https://msyksphinz.hatenablog.com/entry/2020/05/01/040000)
 - [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(4. デバイスの初期化について) (20/04/30)](https://msyksphinz.hatenablog.com/entry/2020/04/30/040000)
 - [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(3. printmにより文字が画面に表示されるまでの仕組み) (20/04/29)](https://msyksphinz.hatenablog.com/entry/2020/04/29/040000)
 - [freedom-u-sdkのLinuxを立ち上げながらLinuxのブートプロセスを学ぶ(2. init_first_hart()で実行される処理) (20/04/28)](https://msyksphinz.hatenablog.com/entry/2020/04/28/040000)

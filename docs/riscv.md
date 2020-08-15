@@ -256,6 +256,12 @@
 
 ## RISC-V仕様
 
+- [RISC-V Vector命令をサポートした自作命令セットシミュレータの実装検討 (4. Unit Strideメモリアクセスの実装) (20/07/27)](https://msyksphinz.hatenablog.com/entry/2020/07/27/040000)
+- [RISC-V Vector命令をサポートした自作命令セットシミュレータの実装検討 (3. メモリアクセス命令の実装検討) (20/07/07)](https://msyksphinz.hatenablog.com/entry/2020/07/07/040000)
+
+- [RISC-V Vector Extension v0.9のCSR仕様2 (20/07/26)](https://msyksphinz.hatenablog.com/entry/2020/07/26/040000)
+- [RISC-V Vector Extension v0.9のCSR仕様1 (20/07/25)](https://msyksphinz.hatenablog.com/entry/2020/07/25/040000)
+
 - [RISC-V Privileged ISAマニュアル20190608-Priv-MSU-Ratified版の変更点を読み解く (19/07/30)](http://msyksphinz.hatenablog.com/entry/2019/07/30/000000)
 - [RISC-V Unprivileged ISAマニュアル20190608-Base-Ratified版の変更点を読み解く (19/07/29)](http://msyksphinz.hatenablog.com/entry/2019/07/29/040000)
 - [RISC-V Workshop Zurichで発表されたRISC-V Bit Manipulation Spec 0.90 (19/06/21)](http://msyksphinz.hatenablog.com/entry/2019/06/21/040000)
@@ -266,6 +272,11 @@
 - [RISC-VのCompressed命令のISS実装 (1) (28/06/07)](http://msyksphinz.hatenablog.com/entry/2018/06/07/040000)
 
 ## Rocket-Chip / BOOM仕様調査
+
+- [RISC-VのオープンソースプロセッサBOOMv3(SonicBOOM)を試す(4. GCC10を使用して再計測) (20/07/08)](https://msyksphinz.hatenablog.com/entry/2020/07/08/040000)
+- [RISC-VのオープンソースプロセッサBOOMv3(SonicBOOM)を試す(3. Verilogを読みながらブロックダイアグラムを作る) (20/07/04)](https://msyksphinz.hatenablog.com/entry/2020/07/04/040000)
+- [RISC-VのオープンソースプロセッサBOOMv3(SonicBOOM)を試す(2. Coremark値の測定) (20/07/03)](https://msyksphinz.hatenablog.com/entry/2020/07/03/040000)
+- [RISC-VのオープンソースプロセッサBOOMv3を試す (20/07/02)](https://msyksphinz.hatenablog.com/entry/2020/07/02/040000)
 
 - [BOOM(Berkeley Out-Of Order) コアがfpga-zynqに対応したのでFPGAで動かしてみる(2. FPGAでの動作確認) (19/03/06)](http://msyksphinz.hatenablog.com/entry/2019/03/06/040000)
 - [BOOM(Berkeley Out-Of Order) コアがfpga-zynqに対応したのでFPGAで動かしてみる(1. プロジェクトのビルド) (19/03/05)](http://msyksphinz.hatenablog.com/entry/2019/03/05/040000)

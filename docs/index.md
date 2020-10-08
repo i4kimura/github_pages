@@ -7,52 +7,9 @@
 - [CIRCTのcirct-translateの内部構造を解析する (FIRParserの解析) (20/08/22)](https://msyksphinz.hatenablog.com/entry/2020/08/22/040000)
 - [ Circuit IRコンパイラのCIRCTを試す (20/08/07)](https://msyksphinz.hatenablog.com/entry/2020/08/07/040000)
 
-# QEMU by Rust
-
-- [JIT型エミュレータを作る(レジスタ+レジスタ /レジスタ+即値 演算の実装) (20/08/31)](https://msyksphinz.hatenablog.com/entry/2020/08/31/040000)
-- [JIT型のエミュレータを作る(条件分岐命令の実装) (20/09/08)](https://msyksphinz.hatenablog.com/entry/2020/08/31/004855)
-- [JIT型エミュレータを作る(ELFローダの組み込み) (20/08/30)](https://msyksphinz.hatenablog.com/entry/2020/08/30/040000)
-- [JIT型エミュレータを作る(レジスタアクセスを実現する) (20/08/29)](https://msyksphinz.hatenablog.com/entry/2020/08/29/040000)
-- [プログラム中に埋め込んだ機械語命令を実行するプログラムをRustで書く (20/08/26)](https://msyksphinz.hatenablog.com/entry/2020/08/26/040000)
-- [Rustで作ったRISC-VシミュレータにELFロード機能を追加する (20/08/14)](https://msyksphinz.hatenablog.com/entry/2020/08/14/040000)
-- [RustでELFファイルを開く方法を調査する (5. ディスアセンブル機能を実装する) (20/08/12)](https://msyksphinz.hatenablog.com/entry/2020/08/12/000000)
-- [RustでELFファイルを開く方法を調査する (4. リファクタリング) (20/08/11)](https://msyksphinz.hatenablog.com/entry/2020/08/11/040000)
-- [RustでELFファイルを開く方法を調査する (3. Section Headerを読み取る) (20/08/10)](https://msyksphinz.hatenablog.com/entry/2020/08/10/040000)
-- [RustでELFファイルを開く方法を調査する (2. Program Headerを読み取る) (20/08/09)](https://msyksphinz.hatenablog.com/entry/2020/08/09/040000)
-- [RustでELFファイルを開く方法を調査する (1. ELFファイルをRustで開く方法) (20/08/08)](https://msyksphinz.hatenablog.com/entry/2020/08/08/040000)
-
-
 # QEMU
 
-- [QEMUが分岐命令を処理する仕組み(Relocationによるラベルの解決) (20/09/06)](https://msyksphinz.hatenablog.com/entry/2020/08/29/143259)
-- [QEMUを作る(TCGからx86へのDynamic Translation) (20/08/28)](https://msyksphinz.hatenablog.com/entry/2020/08/28/040000)
-- [QEMUを作る(RISC-VからTCGへのDynamic Translation) (20/08/27)](https://msyksphinz.hatenablog.com/entry/2020/08/27/040000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く(6. QEMUのTCGが生成される仕組み) (20/08/21)](https://msyksphinz.hatenablog.com/entry/2020/08/21/000000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く(5. x86のアプリケーションブートコードの解析) (20/08/20)](https://msyksphinz.hatenablog.com/entry/2020/08/20/040000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く(4. QEMUがカーネルを呼ぶ際に実行するPrologueコードを読み解く) (20/08/19)](https://msyksphinz.hatenablog.com/entry/2020/08/19/040000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く(3. TCGContextによりホスト命令がターゲット命令に変換される流れ) (20/08/18)](https://msyksphinz.hatenablog.com/entry/2020/08/18/040000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く(2. TCGが生成したx86機械語を読む) (20/08/06)](https://msyksphinz.hatenablog.com/entry/2020/08/06/040000)
-- [QEMUのTCG(Tiny Code Generator)を読み解く (20/08/05)](https://msyksphinz.hatenablog.com/entry/2020/08/05/040000)
-- [QEMUに入門してみる(20. CSRレジスタの追加) (20/08/04)](https://msyksphinz.hatenablog.com/entry/2020/08/04/040000)
-- [QEMUに入門してみる(19. 分岐命令の実装方法) (20/08/03)](https://msyksphinz.hatenablog.com/entry/2020/08/03/040000)
-- [QEMUに入門してみる(18. ディスアセンブル機能の実装) (20/08/02)](https://msyksphinz.hatenablog.com/entry/2020/08/02/040000)
-- [QEMUに入門してみる(17. CSR操作命令が実行される手順の解析) (20/08/01)](https://msyksphinz.hatenablog.com/entry/2020/08/01/040000)
-- [QEMUに入門してみる(16. 命令デコーダの追加) (20/07/31)](https://msyksphinz.hatenablog.com/entry/2020/07/31/040000)
-- [QEMUに入門してみる(15. QEMUにおけるリセットベクタの追加方法) (20/07/30)](https://msyksphinz.hatenablog.com/entry/2020/07/30/040000)
-- [QEMUに入門してみる(14. トレース関数の自動生成方法) (20/07/29)](https://msyksphinz.hatenablog.com/entry/2020/07/29/040000)
-- [QEMUに入門してみる(13. 割り込み・例外ハンドラの実装) (20/07/28)](https://msyksphinz.hatenablog.com/entry/2020/07/28/040000)
-- [QEMUに入門してみる(12. QEMUでのコールバック関数追加方法の調査) (20/07/19)](https://msyksphinz.hatenablog.com/entry/2020/07/19/040000)
-- [QEMUに入門してみる(11. QEMUでのコールバック関数追加方法の調査) (20/07/18)](https://msyksphinz.hatenablog.com/entry/2020/07/18/040000)
-- [QEMUに入門してみる(10. QEMUでのベアメタルバイナリの実行方法調査) (20/07/17)](https://msyksphinz.hatenablog.com/entry/2020/07/17/040000)
-- [QEMUに入門してみる(9. QEMUでの詳細トレースの出し方) (20/07/16)](https://msyksphinz.hatenablog.com/entry/2020/07/16/000000)
-- [QEMUに入門してみる(8. translateに必要な関数の確認) (20/07/15)](https://msyksphinz.hatenablog.com/entry/2020/07/15/040000)
-- [QEMUに入門してみる(7. translateに必要な関数の確認) (20/07/14)](https://msyksphinz.hatenablog.com/entry/2020/07/14/040000)
-- [QEMUに入門してみる(6. translateに必要な関数の確認) (20/07/13)](https://msyksphinz.hatenablog.com/entry/2020/07/13/040000)
-- [QEMUに入門してみる(5. translateに必要な関数の確認) (20/07/12)](https://msyksphinz.hatenablog.com/entry/2020/07/12/040000)
-- [QEMUに入門してみる(4. 独自コンフィグレーションを用意して必要なファイルを確認) (20/07/11)](https://msyksphinz.hatenablog.com/entry/2020/07/11/040000)
-- [QEMUに入門してみる(3. 独自コンフィグレーションを用意して必要なファイルを確認) (20/07/10)](https://msyksphinz.hatenablog.com/entry/2020/07/10/040000)
-- [QEMUに入門してみる(2. 独自コンフィグレーションを用意して必要なファイルを確認) (20/07/09)](https://msyksphinz.hatenablog.com/entry/2020/07/09/040000)
-- [QEMUに入門してみる(2. 独自コンフィグレーションを用意して必要なファイルを確認) (20/07/05)](https://msyksphinz.hatenablog.com/entry/2020/07/05/040000)
+[QEMU](qemu)
 
 # Verilator
 

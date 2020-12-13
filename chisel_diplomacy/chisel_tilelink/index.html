@@ -1,0 +1,1059 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>9. TileLinkとDiplomacyリファレンス - FPGA開発日記 カテゴリ別記事インデックス</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#9-tilelinkdiplomacy" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              FPGA開発日記 カテゴリ別記事インデックス
+            </span>
+            <span class="md-header-nav__topic">
+              9. TileLinkとDiplomacyリファレンス
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    FPGA開発日記 カテゴリ別記事インデックス
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../30os/" title="オペレーティングシステム" class="md-nav__link">
+      オペレーティングシステム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cpu/" title="CPU" class="md-nav__link">
+      CPU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-nav__link">
+      DSLでビルドツールを自作する
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gpgpu/" title="GPGPU 記事一覧" class="md-nav__link">
+      GPGPU 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../isca_2019/" title="Isca 2019" class="md-nav__link">
+      Isca 2019
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../llvm/" title="LLVM" class="md-nav__link">
+      LLVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../lowrisc_llvm/" title="RISC-V LLVMバックエンドのステップバイステップガイド" class="md-nav__link">
+      RISC-V LLVMバックエンドのステップバイステップガイド
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../machine_learning/" title="機械学習 / TensorFlow" class="md-nav__link">
+      機械学習 / TensorFlow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../mastering_bitcoin/" title="Bitcoin 記事一覧" class="md-nav__link">
+      Bitcoin 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../qemu/" title="QEMU" class="md-nav__link">
+      QEMU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quantum_computing/" title="量子コンピュータ / Q# 記事一覧" class="md-nav__link">
+      量子コンピュータ / Q# 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../riscv/" title="RISC-V" class="md-nav__link">
+      RISC-V
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vivado_hls/" title="Vivado-HLS" class="md-nav__link">
+      Vivado-HLS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../zero_deep_3/" title="ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる" class="md-nav__link">
+      ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17" checked>
+    
+    <label class="md-nav__link" for="nav-17">
+      Chisel diplomacy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        Chisel diplomacy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="9. TileLinkとDiplomacyリファレンス" class="md-nav__link md-nav__link--active">
+      9. TileLinkとDiplomacyリファレンス
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Cq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        Cq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cq/hifive_unleashed/" title="【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿" class="md-nav__link">
+      【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="9-tilelinkdiplomacy">9. TileLinkとDiplomacyリファレンス</h1>
+<p>TileLinkはRocketChipおよび他のChipyardジェネレータで使用されているキャッシュコヒーレンスとメモリプロトコルである。これらは、キャッシュ、メモリ、周辺機器、DMAデバイスなどの異なるモジュールとどのように互いに通信を行うかを規定している。</p>
+<p>RocketChipのTilelinkの実装はDiplomacyとよばれる、Chiselジェネレータ内で構成情報を交換して行われる2段階のエラボレーション方式を使用している。Diplomacyの詳細に関しては、<a href="https://carrv.github.io/2017/papers/cook-diplomacy-carrv2017.pdf">Cook, Terpstra, Leeの論文</a>を参考にすること。</p>
+<p>シンプルなTileLinkのウィジェットを追加する方法の概要については、<a href="https://chipyard.readthedocs.io/en/latest/Customization/Adding-An-Accelerator.html#adding-an-accelerator">アクセラレータデバイスを追加するセクション</a>を参考にすること。このセクションでは、RocketChipにより提供されているTilelinkおよびDiplomacyの機能について説明する。</p>
+<p>TileLink 1.7プロトコルの詳細な仕様については<a href="https://sifive.cdn.prismic.io/sifive%2F57f93ecf-2c42-46f7-9818-bcdd7d39400a_tilelink-spec-1.7.1.pdf">SiFiveのウェブサイト</a>を参考にすること。</p>
+<h1 id="91-tilelink">9.1. TileLinkのノードタイプ</h1>
+<p>DiplomacyはSoC内の異なるコンポーネントをDirected Acyclic Graphのノードとして表現する。TileLinkのノードは異なるタイプを持つことができる。</p>
+<h2 id="911-client">9.1.1. Clientノード</h2>
+<p>TileLinkのClientはTileLinkのトランザクションを、まずはAチャネルを通じてリクエストを発行し、Dチャネルを通じてレスポンスを受け取る。Clientの種類がTL-Cであれば、ProbeリクエストをBチャネルを通じて受け取り、ReleaseコマンドをCチャネルを通じて発行し、Eチャネルを通じてGrantメッセージを発行する。</p>
+<p>RocketChip/ChipyardのL1キャッシュ及びDMAデバイスはClientノードである。</p>
+<p>TileLinkClientを追加するためには、testchippipから、LazyModuleにTLHelperオブジェクトを以下のように追加することで実現できる:</p>
+<pre><code class="scala">class MyClient(implicit p: Parameters) extends LazyModule {
+  val node = TLHelper.makeClientNode(TLClientParameters(
+    name = &quot;my-client&quot;,
+    sourceId = IdRange(0, 4),
+    requestFifo = true,
+    visibility = Seq(AddressSet(0x10000, 0xffff))))
+
+  lazy val module = new LazyModuleImp(this) {
+    val (tl, edge) = node.out(0)
+
+    // 残りのコードをここに追加する。
+  }
+}
+</code></pre>
+
+<p><code>name</code>引数はDiplomacyグラフの中でのノードの名前をIdentityする。この引数はTLClientParametersの中で唯一必須の引数である。</p>
+<p><code>SourceI</code>引数はこのClientが使用するソースIDの範囲を指定する。ここでは[0, 4)までのIDを使用しているので、このClientは同時に4つまでのリクエストをインフライトに発行することができる。各リクエストはsourceフィールドにおいてそれぞれ異なる値を設定される。このフィールドのデフォルト値は<code>IdRange(0, 1)</code>であり、これは単一のリクエストのみがインフライトすることができることを意味する。</p>
+<p><code>requestFifo</code>引数はBooleanのオプションでありデフォルトではfalseである。この引数をtrueに設定すると、ClientノードはダウンストリームのManagerに対してレスポンスをFIFOの順序で送ることを要求する(つまり、当該リクエストが送信されるのと同じ順番にリクエストが返ってくることを期待する)</p>
+<p><code>visibility</code> 引数はClientがアクセスするアドレス領域を指定する。デフォルトの値はすべてのアドレスを含んでいる。例えば、1つのアドレス領域<code>AddressSet(0x10000, 0xffff)</code>を指定した場合、Clientは0x10000から0x1fffffまでの領域のみアクセスできる。通常はこの設定は使用しないが、ダウンストリームのクロスバージェネレータがハードウェアを最適化するために使用することができる。つまり、ClientとManagerのアービトレーションにおいて、visibilityが重ならないアドレス領域におけるクロスバーの最適化を実施することができる。</p>
+<p>Lazyモジュールの実装において、<code>node.out</code>という表記はbundle/edgeのペアのリストを取得するために使用する。TLHelperを使用しているならば、単一のClientエッジのみが指定され、単一のペアのみが返される。</p>
+<p><code>tl</code>バンドルはChiselのハードウェアバンドルであり、このモジュールのIOポートを接続する。このバンドルにはTL-ULおよびTL-UHの場合2種類のTileLinkチャネルのDecoupleバンドルが含まれており、TL-Cの場合は5種類である。ここまでで、TileLinkにメッセージを送受信するために必要なハードウェアを接続するための準備が整った。</p>
+<p><code>edge</code>オブジェクトには、Diplomacyグラフのエッジが示されている。エッジには<a href="https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/EdgeFunctions.html#tilelink-edge-object-methods">TileLinkのエッジオブジェクトメソッド</a>に示された様々な便利な関数が含まれている。</p>
+<h2 id="912-manager">9.1.2. Managerノード</h2>
+<p>TileLinkのManagerはClientのAチャネルからリクエストを受け取り、Dチャネルにレスポンスを返す。ManagerノードはTLHelperを使用して以下のようにして作成できる。</p>
+<pre><code class="scala">class MyManager(implicit p: Parameters) extends LazyModule {
+  val device = new SimpleDevice(&quot;my-device&quot;, Seq(&quot;tutorial,my-device0&quot;))
+  val beatBytes = 8
+  val node = TLHelper.makeManagerNode(beatBytes, TLManagerParameters(
+    address = Seq(AddressSet(0x20000, 0xfff)),
+    resources = device.reg,
+    regionType = RegionType.UNCACHED,
+    executable = true,
+    supportsArithmetic = TransferSizes(1, beatBytes),
+    supportsLogical = TransferSizes(1, beatBytes),
+    supportsGet = TransferSizes(1, beatBytes),
+    supportsPutFull = TransferSizes(1, beatBytes),
+    supportsPutPartial = TransferSizes(1, beatBytes),
+    supportsHint = TransferSizes(1, beatBytes),
+    fifoId = Some(0)))
+
+  lazy val module = new LazyModuleImp(this) {
+    val (tl, edge) = node.in(0)
+  }
+}
+</code></pre>
+
+<p>The <code>makeManagerNode</code> method takes two arguments. The first is <code>beatBytes</code>, which is the physical width of the TileLink interface in bytes. The second is a TLManagerParameters object.</p>
+<p><code>makeManagerNode</code> メソッドは2つの引数を取る。1つ目は<code>beatBytes</code>であり、これはTileLinkインタフェースの物理的な幅をバイト単位で返す。2番目の引数はTLManagerParametersオブジェクトである。</p>
+<p><code>TLManagerParameters</code>における必須の引数は<code>address</code>のみであり、これはManagerが管理するアドレスの領域を指定する。この情報はClientからのリクエストをルーティングするために使用される。この例では、Managerは0x20000から0x20fffまでの領域からのリクエストを受け取る。<code>AddressSet</code> の2番目の引数はマスクであり、サイズではない。したがってこのアドレス領域の設定は2の累乗の範囲内で行わなければならない。そうでなければ、アドレッシングの設定は設定の意図とは異なるように動作してしまう。</p>
+<p>2番目の引数は<code>resources</code>であり、<code>Device</code>オブジェクトから値を設定する。この場合には<code>SimpleDevice</code>を指定している。この引数はエントリをBootROM上に書き込まれるデバイスツリーに追加したい場合には必須である。デバイスツリーの情報はLinuxのドライバにより読み込まれる。<code>SimpleDevice</code>に設定されている2つの引数は名前およびデバイスツリーのエントリの互換性に関する情報のリストである。このManagerでは、デバイスツリーの情報は以下のようになる:</p>
+<pre><code>L12: my-device@20000 {
+    compatible = &quot;tutorial,my-device0&quot;;
+    reg = &lt;0x20000 0x1000&gt;;
+};
+</code></pre>
+
+<p>次の引数は<code>regionType</code>である。この引数はManagerのキャッシュの動作について示している。この引数は、以下の7つの内どれかの値を設定できる:</p>
+<ol>
+<li><code>CACHED</code> - 中間エージェントはその領域におけるキャッシュされたコピーを保持する。</li>
+<li><code>TRACKED</code> - この領域は別のマスターによりキャッシュされるが、コヒーレンスの機能は提供される。</li>
+<li><code>UNCACHED</code> - この領域はキャッシュされない。しかし可能ならばキャッシュされるべきである。</li>
+<li><code>IDEMOTENT</code> - 最近Putされた内容を返すが、内容はキャッシュされるべきではない。</li>
+<li><code>VOLATILE</code> - 内容はPut操作無しで変更される可能性があるが、PutおよびGetでは副作用は発生しない。</li>
+<li><code>PUT_EFFECTS</code> - Putにより副作用が発生するため、コマンドを複合したり、遅延させるべきではない。</li>
+<li><code>GET_EFFECTS</code> - Getは副作用を発生させるため、投機的に発行させるべきではない。</li>
+</ol>
+<p>次は<code>executable</code>引数であり、CPUがフェッチ命令をこのManagerから発行することができるかを示している。デフォルトではfalseであり、MMIOなどの周辺機器では設定すべきである。</p>
+<p>次の6つの引数は<code>support</code>から始まり、異なるAチャネルのメッセージタイプについて、受付可能かを決めている。メッセージタイプの定義については、<a href="https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/EdgeFunctions.html#tilelink-edge-object-methods">TileLinkエッジオブジェクトのメソッド</a>を参照のこと。<code>TransferSizes</code> のケースクラスには、各メッセージタイプについてManagerが受け付けることのできる論理サイズがバイト単位で指定されている。これは内包的な領域であり、すべての論理サイズは2の累乗である必要がある。したがってこの場合には、Managerは1, 2, 4, 8バイトのリクエストを受け付けることができる。</p>
+<p>最後の引数は<code>fifoId</code> 設定であり、FIFOのドメインにManagerが入っているかを示している。この引数をNoneに設定(デフォルトである)すると、Managerはレスポンスの順序を保証しない。<code>fifoId</code>を設定すると、同じ<code>fifoId</code> が設定された他のすべてのManagerと共有され、つまりそのFIFOドメイン内のClientからのリクエストはすべて同じ順序で帰ってくることを意味する。</p>
+<h2 id="913-register">9.1.3. Registerノード</h2>
+<p>Managerノードを直接指定してTileLinkリクエストを処理する論理をすべて書いたとしても、通常はRegisterノードを使用した方が簡単である。このタイプのノードは<code>regmap</code>メソッドを提供し制御/状態Registerを自動的に生成しTileLinkプロトコルを処理するための論理も生成する。Registerノードの使用方法について野依詳細については<a href="https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/Register-Router.html#register-router">Registerノード</a>を参照のこと。</p>
+<h2 id="914-identity">9.1.4. Identityノード</h2>
+<p>これまでのノードは入力もしくは出力が定義されていたが、Identityノードは両方を持っている。名前が示しているように、入力と出力を単純に接続するだけである。このノードは複数のノードを複数のエッジをもつ単一のノードに接続するために使用される。例えば、2つのClientLazyモジュールがあったとして、これを1つのClientノードに接続している。</p>
+<pre><code class="scala">class MyClient1(implicit p: Parameters) extends LazyModule {
+  val node = TLHelper.makeClientNode(&quot;my-client1&quot;, IdRange(0, 1))
+
+  lazy val module = new LazyModuleImp(this) {
+    // ...
+  }
+}
+
+class MyClient2(implicit p: Parameters) extends LazyModule {
+  val node = TLHelper.makeClientNode(&quot;my-client2&quot;, IdRange(0, 1))
+
+  lazy val module = new LazyModuleImp(this) {
+    // ...
+  }
+}
+</code></pre>
+
+<p>2つの異なるLazyモジュールをインスタンスして、この2つのノードを1つのノードに見せている。</p>
+<pre><code class="scala">class MyClientGroup(implicit p: Parameters) extends LazyModule {
+  val client1 = LazyModule(new MyClient1)
+  val client2 = LazyModule(new MyClient2)
+  val node = TLIdentityNode()
+
+  node := client1.node
+  node := client2.node
+
+  lazy val module = new LazyModuleImp(this) {
+    // Nothing to do here
+  }
+}
+</code></pre>
+
+<p>Managerに対しても同様の処理が可能である。</p>
+<pre><code class="scala">class MyManager1(beatBytes: Int)(implicit p: Parameters) extends LazyModule {
+  val node = TLHelper.makeManagerNode(beatBytes, TLManagerParameters(
+    address = Seq(AddressSet(0x0, 0xfff))))
+
+  lazy val module = new LazyModuleImp(this) {
+    // ...
+  }
+}
+
+class MyManager2(beatBytes: Int)(implicit p: Parameters) extends LazyModule {
+  val node = TLHelper.makeManagerNode(beatBytes, TLManagerParameters(
+    address = Seq(AddressSet(0x1000, 0xfff))))
+
+  lazy val module = new LazyModuleImp(this) {
+    // ...
+  }
+}
+
+class MyManagerGroup(beatBytes: Int)(implicit p: Parameters) extends LazyModule {
+  val man1 = LazyModule(new MyManager1(beatBytes))
+  val man2 = LazyModule(new MyManager2(beatBytes))
+  val node = TLIdentityNode()
+
+  man1.node := node
+  man2.node := node
+
+  lazy val module = new LazyModuleImp(this) {
+    // Nothing to do here
+  }
+}
+</code></pre>
+
+<p>ClientとManagerのグループを接続したい場合、以下のように接続できる。</p>
+<pre><code class="scala">class MyClientManagerComplex(implicit p: Parameters) extends LazyModule {
+  val client = LazyModule(new MyClientGroup)
+  val manager = LazyModule(new MyManagerGroup(8))
+
+  manager.node :=* client.node
+
+  lazy val module = new LazyModuleImp(this) {
+    // Nothing to do here
+  }
+}
+</code></pre>
+
+<p><code>:=*</code>演算子の意味については<a href="https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/Diplomacy-Connectors.html#diplomacy-connectors">Diplomacy コネクタ</a>の章を確認してほしい。つまり、複数のエッジを持つノードをたがいに接続したのである。Identityノードのエッジは順番に接続され、従ってこの場合は<code>client1.node</code>は<code>manager1.node</code>に接続され、<code>client2.node</code>は<code>manager2.node</code>に接続される。</p>
+<p>Identityノードの入力ノードと出力ノードの数は一致していなければならない。そうでなければ、エラボレーション時にエラーが発生する。</p>
+<h2 id="915-adapter">9.1.5. Adapterノード</h2>
+<p>Identityノードと同様に、Adapterノードは複数の入力を受け付け、同じだけの出力を生成する。しかしIdentityノードと異なるのはAdapterノードは単純にノードを接続するわけではない。入力と出力の論理と物理的なインタフェースを変更し、メッセージを変更することができる。RocketChipはAdapterのライブラリを<a href="https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/Widgets.html#diplomatic-widgets">Diplomaticウィジェット</a>で提供している。</p>
+<p>Adapterノードを自分で作成する必要性はあまりないが、必要であれば以下のようにして作成できる。</p>
+<pre><code class="scala">val node = TLAdapterNode(
+  clientFn = { cp =&gt;
+    // ..
+  },
+  managerFn = { mp =&gt;
+    // ..
+  })
+</code></pre>
+
+<p><code>clientFn</code> は入力の<code>TLClientPortParameters</code> を受け付ける関数であり、出力のための該当するパラメータを生成する。<code>managerFn</code> は出力の<code>TLManagerPortParameters</code> を受け付ける関数であり、入力のための該当するパラメータを生成する。</p>
+<h2 id="916-nexus">9.1.6. Nexusノード</h2>
+<p>NexusノードはAdapterノードと似ているが出力インタフェースが異なる。しかし同様に出力ノードの数と入力ノードの数は異なっていても良い。このノードタイプはTileLinkのクロスバージェネレータを提供している<code>TLXbar</code>ウィジェットに使用される。このノードを手動で作成する必要性はあまりないが、必要に応じて以下のように生成できる。</p>
+<pre><code class="scala">val node = TLNexusNode(
+  clientFn = { seq =&gt;
+    // ..
+  },
+  managerFn = { seq =&gt;
+    // ..
+  })
+</code></pre>
+
+<p>Adapterノードのコンストラクタと似ているが、単一のパラメータオブジェクトを渡して単一の結果を返すのではなく、複数のパラメータを受け取る関数を取る。さらに、入力シーケンスの数と出力シーケンスの数は同一でなくても良い。</p>
+<h1 id="diplomacy">Diplomacyコネクタ</h1>
+<p>Diplomacyのグラフは互いにエッジを使って接続されている。Diplomacyのライブラリは4つの演算子を使ってノードを接続している。</p>
+<ul>
+<li><code>:=</code></li>
+</ul>
+<p>基本的な演算子である。Chiselの単方向の接続コネクタと同じ記法であるが、意味が異なる。この演算子はDiplomacyノードを接続するための演算子であり、バンドルを接続する演算子ではない。</p>
+<p>基本的な接続演算子は、2つのノードを接続するための1つのエッジを生成する。</p>
+<ul>
+<li><code>:=*</code></li>
+</ul>
+<p>「クエリ」タイプの接続演算子である。ノード間の複数のエッジにおいて、Clientノード(演算子の右側)によりエッジの数が決められている場合に、エッジの接続する。</p>
+<ul>
+<li><code>:*=</code></li>
+</ul>
+<p>「スター」タイプの接続演算子である。複数のエッジを作成するが、エッジの数はClientではなくManager(演算子の左側)により決めらる。複数エッジのManagerノードに対してNexusノードを接続する場合に有益である。</p>
+<ul>
+<li><code>:*=*</code></li>
+</ul>
+<p>「フレックス」タイプの接続演算子である。 演算子のどちらの側に既知の数のエッジがあるかに基づいて、複数のエッジを作成する。 これは、どちらかの側のノードのタイプが実行時までわからないジェネレーターで使用できる。</p>
+<h1 id="diplomatic">Diplomaticウィジェット</h1>
+<p>RocketChipはDiplomaticなTileLinkとAXI4のウィジェットをライブラリとして提供している。共通部品として最も多く使用されるウィジェットを以下に示す。TileLinkのウィジェットは<code>freechips.rocketchip.tilelink</code>から入手できる。また、AXI4のウィジェットは<code>freechips.rocketchip.amba.axi4</code>から入手できる。</p>
+<h2 id="tlbuffer">TLBuffer</h2>
+<p>TileLinkのトランザクションをバッファリングするためのウィジェットである。TL-C以外の場合は2つのキューをインスタンス化し、TL-Cの場合は5つのキューをインスタンス化するだけである。各チャンネルのキューを柔軟に設定するために、<code>freechips.rocketchip.diplomacy.BufferParams</code>をコンストラクタに渡すことができる。case classの引数は以下のとおりである。</p>
+<ul>
+<li><code>depth: Int</code> - キューのエントリ数</li>
+<li><code>flow: Boolean</code> - Trueの場合、Valid信号は組み合わせ回路で構成されるためエンキューと同じサイクルで消費される。</li>
+<li><code>pipe: Boolean</code> - Trueの場合、Ready信号は組み合わせ回路で構成されるため、1エントリのキューは最大のレートで使用される。</li>
+</ul>
+<p>コンストラクタには<code>Int</code>型の整数のみを渡すことができる。<code>BufferParams</code>オブジェクトの代わりに整数を渡すことによって、整数で渡されたdepthのキューが生成され、<code>flow</code>と<code>pipe</code>はfalseに設定される。</p>
+<p>また、以下のあらかじめ定義された<code>BufferParams</code>オブジェクトを使用することができる。</p>
+<ul>
+<li><code>BufferParams.default</code> = <code>BufferParams(2, false, false)</code></li>
+<li><code>BufferParams.none</code> = <code>BufferParams(0, false, false)</code></li>
+<li><code>BufferParams.flow</code> = <code>BufferParams(1, true, false)</code></li>
+<li><code>BufferParams.pipe</code> = <code>BufferParams(1, false, true)</code></li>
+</ul>
+<p><strong>引数:</strong></p>
+<p>4種類のコンストラクタがある。引数が0, 1, 2, 5つ取るバリエーションである。</p>
+<p>0個の引数を持つコストラクタはすべてのチャネルで<code>BufferParams.default</code>を使用する。</p>
+<p>1つの引数を持つコンストラクタはすべてのチャネルで<code>BufferParams</code>オブジェクトを使用する。</p>
+<p>2つの引数を持つコンストラクタは、それぞれ以下のように引数が適用される。</p>
+<ul>
+<li><code>ace: BufferParams</code> - A, C, Eチャネルに使用されるパラメータである。</li>
+<li><code>bd: BufferParams</code>  - B, Dチャネルに使用されるパラメータである。</li>
+</ul>
+<p>5つの引数を持つコンストラクタはそれぞれ以下のように引数が適用される。</p>
+<ul>
+<li><code>a: BufferParams</code> - Aチャネルに使用されるパラメータである。</li>
+<li><code>b: BufferParams</code> - Bチャネルに使用されるパラメータである。</li>
+<li><code>c: BufferParams</code> - Cチャネルに使用されるパラメータである。</li>
+<li><code>d: BufferParams</code> - Dチャネルに使用されるパラメータである。</li>
+<li><code>e: BufferParams</code> - Eチャネルに使用されるパラメータである。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// デフォルトの設定
+manager0.node := TLBuffer() := client0.node
+
+// 暗黙的にチャネル当たり8エントリのキューを挿入する。
+manager1.node := TLBuffer(8) := client1.node
+
+// Aチャネルではデフォルト設定を使用し、Dチャネルではパイプを使用する。
+manager2.node := TLBuffer(BufferParams.default, BufferParams.pipe) := client2.node
+
+// AチャネルとDチャネルにキューを挿入する。
+manager3.node := TLBuffer(
+  BufferParams.default,
+  BufferParams.none,
+  BufferParams.none,
+  BufferParams.default,
+  BufferParams.none) := client3.node
+</code></pre>
+
+<h2 id="axi4buffer">AXI4Buffer</h2>
+<p><code>TLBuffer</code>と同様だがAXI4用である。<code>BufferParams</code>オブジェクトを引数に取る。</p>
+<p><strong>引数:</strong></p>
+<p>TLBufferと同様に、AXI4Bufferにも4種類のコンストラクタがある。引数が0, 1, 2, 5つ取るバリエーションである。</p>
+<p>0個の引数を持つコストラクタはすべてのチャネルで<code>BufferParams.default</code>を使用する。</p>
+<p>1つの引数を持つコンストラクタはすべてのチャネルで<code>BufferParams</code>オブジェクトを使用する。</p>
+<p>2つの引数を持つコンストラクタは、それぞれ以下のように引数が適用される。</p>
+<ul>
+<li><code>aw: BufferParams</code> - AR, AW, Wチャネルに使用されるパラメータである。</li>
+<li><code>br: BufferParams</code>  - B, Rチャネルに使用されるパラメータである。</li>
+</ul>
+<p>5つの引数を持つコンストラクタはそれぞれ以下のように引数が適用される。</p>
+<ul>
+<li><code>aw: BufferParams</code> - AWチャネルに使用されるパラメータである。</li>
+<li><code>w: BufferParams</code> - Wチャネルに使用されるパラメータである。</li>
+<li><code>b: BufferParams</code> - Bチャネルに使用されるパラメータである。</li>
+<li><code>ar: BufferParams</code> - ARチャネルに使用されるパラメータである。</li>
+<li><code>r: BufferParams</code> - Rチャネルに使用されるパラメータである。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// デフォルト設定
+slave0.node := AXI4Buffer() := master0.node
+
+// 暗黙的にチャネル当たり8エントリのキューを挿入する
+slave1.node := AXI4Buffer(8) := master1.node
+
+// AW/W/ARチャネルではデフォルト設定を使用し、B/Rチャネルではパイプを使用する。
+slave2.node := AXI4Buffer(BufferParams.default, BufferParams.pipe) := master2.node
+
+// AW/B/ARチャネルに1エントリのキューを挿入し、W/Rチャネルにキューを挿入する。
+// Single-entry queues for aw, b, and ar but two-entry queues for w and r
+slave3.node := AXI4Buffer(1, 2, 1, 1, 2) := master3.node
+</code></pre>
+
+<h2 id="axi4useryanker">AXI4UserYanker</h2>
+<p>このウィジェットはユーザフィールドを持つAXIポートを受け取り、そのユーザフィールドを取り払う。ARとAWリクエストチャネルのユーザフィールドは内部のキューによりARID/AWIDに関連付けられて保持される。このユーザフィールドはレスポンス時に付け加えられる。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>capMaxFlight: Option[Int]</code> - (任意) インフライトなIDを保持することのできるリクエストの数。None(デフォルト)の場合、UserYankerはインフライトなリクエストの最大数までサポートする。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">nouser.node := AXI4UserYanker(Some(1)) := hasuser.node
+</code></pre>
+
+<h2 id="axi4deinterleaver">AXI4Deinterleaver</h2>
+<p>異なるIDを持つ複数ビートのAXIリードレスポンスはインタリーブされる可能性がある。このウィジェットはスレーブからのリードレスポンスを並び替え、すべてのビートが単一のトランザクションになるように調整する。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>maxReadBytes: Int</code> - 単一のトランザクションでの最大バイト数。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">interleaved.node := AXI4Deinterleaver() := consecutive.node
+</code></pre>
+
+<h2 id="tlfragmenter">TLFragmenter</h2>
+<p>TLFragmenterウィジェットはTileLinkインタフェースの最大論理転送サイズを縮小するために、大きな大きなトランザクションをより小さなトランザクションに分割する。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>minSize: Int</code> - 接続されるManagerの最小転送サイズ</li>
+<li><code>maxSize: Int</code> - Fragmenterが適用された後の最大転送サイズ</li>
+<li><code>alwaysMin: Boolean</code> - (オプション)すべてのリクエストをminSizeに分割するか(そうでない場合、Managerでサポートされる最大サイズに分割する) (デフォルトではfalse)。</li>
+<li><code>earlyAck: EarlyAck.T</code> - (オプション)複数ビートのPutコマンドにおいて、最初のビートでAcknowledgeするか、最後のビットでAckowledgeするか？取りうる値は以下である(デフォルト : <code>EarlyAck.None</code>)<ul>
+<li><code>EarlyAck.AllPuts</code> - 常に最初のビートでAckowledgeを返す。</li>
+<li><code>EarlyAck.PutFulls</code> - PutFullの場合は最初のビートでAckowledgeを返す。そうでなければ最後のビートでAckowledgeを返す。</li>
+<li><code>EarlyAck.None</code>  - 常に最後のビートでAckowledgeを返す。</li>
+</ul>
+</li>
+<li><code>holdFirstDenied: Boolean</code> - (optional) Allow the Fragmenter to unsafely combine multibeat Gets by taking the first denied for the whole burst. (default: false)</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">val beatBytes = 8
+val blockBytes = 64
+
+single.node := TLFragmenter(beatBytes, blockBytes) := multi.node
+
+axi4lite.node := AXI4Fragmenter() := axi4full.node
+</code></pre>
+
+<p><strong>Additional Notes</strong></p>
+<ul>
+<li>TLFragmenterは PutFull, PutPartial, LogicalData, Get, Hint に対して変更を加える。</li>
+<li>TLFragmenterはArithmeticDataはそのまま通過させる(alwaysMinが有効の場合は<code>minSize</code>まで縮小させる)</li>
+<li>TLFragmenterはacqureコマンドを変更できない(livelockを発生させる可能性がある)。したがって、両サイドにキャッシュを配置するのは危険である。</li>
+</ul>
+<h2 id="axi4fragmenter">AXI4Fragmenter</h2>
+<p>AXI4Fragmenterは<code>TLFragmenter</code>と似ているが、TileLinkではなく複数ビートのAXI4トランザクションを分割する。これはAXI4からAXI4-Liteへの効率的な変換の機能も持っている。このウィジェットのコンストラクタは引数を取らない。</p>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">axi4lite.node := AXI4Fragmenter() := axi4full.node
+</code></pre>
+
+<h2 id="tlsourceshrinker">TLSourceShrinker</h2>
+<p>Managerが管理するソースIDは、通常は接続されるClientの情報により計算される。いくつかの場合には、ソースのIDの数を固定したいときがある。例えばTileLinkのポートをVerilogのブラックボックスにエクスポートしたいときなどが挙げられる。このような問題を解決するために、Clientがより多くのソースIDを必要とする場合にはTLSourceShrinkerを使用できる。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>maxInFlight: Int</code> - The maximum number of source IDs that will be sent from the TLSourceShrinker to the manager.</li>
+<li><code>maxInFlight: Int</code>  - TLSourceShrinkerからManagerに転送されるソースIDの最大数。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// ClientノードはおそらくソースIDを16以上持っている。
+// ManagerノードはIDを16個までしか管理できない。
+manager.node := TLSourceShrinker(16) := client.node
+</code></pre>
+
+<h2 id="axi4idindexer">AXI4IdIndexer</h2>
+<p><code>TLSourceShrinker</code>のAXI4番である。スレーブAXI4インタフェースのAWID/ARIDのビット数を制限する。AXI4ポートを外部インタフェース・もしくはブラックボックスに接続する場合に有益である。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>idBits: Int</code> - スレーブインタフェース上のIDビット数</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// マスターノードはおおそらく16以上のIDを持っている。
+// スレーブノードは4つのIDまでしか管理できない。
+slave.node := AXI4IdIndexer(4) := master.node
+</code></pre>
+
+<p><strong>注意:</strong></p>
+<p>AXI4IDIndexerはスレーブインタフェースに<code>user</code>フィールドを追加し、マスターリクエストのIDをフィールドにストアする。<code>user</code>フィールドを持たないAXI4インタフェースに接続する場合、<code>AXI4UserYanker</code>を使用する必要がある。</p>
+<h2 id="tlwidthwidget">TLWidthWidget</h2>
+<p>TileLinkの物理的なインタフェースビット幅を変更する。TileLinkインタフェースのビット幅はManagerにより構成されるが、Client側が特定のビット幅を持っていたい場合がある。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>innerBeatBytes: Int</code> - Client側から見た物理的なビット幅(バイト単位)</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// ManagerノードがbeatBytesを8に設定している。
+// WidthWidgetにより、ClientはbeatByetsが4に設定されている。
+manager.node := TLWidthWidget(4) := client.node
+</code></pre>
+
+<h2 id="tlfifofixer">TLFIFOFixer</h2>
+<p>FIFOドメインを宣言したTileLinkManagerは、Clientから到達する、そのドメインへのすべてのFIFOオーダリングなリクエストがリクエストの順番通りに返されることを保証しなければならない。しかし、そのレスポンスの順序を制御するだけでは、同じFIFOドメイン内の他のManagerからのインタリーブされたレスポンスを制御することができない。FIFOの順序を保証するための責任はTLFIFOFixerにより達成される。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>policy: TLFIFOFixer.Policy</code> - (オプション) どのManagerがTLFIFOFixerにオーダリングを行わせるか？(デフォルト: <code>TLFIFOFixer.all</code>) </li>
+</ul>
+<p><code>policy</code>が取ることのできる引数は以下のとおりである。</p>
+<ul>
+<li><code>TLFIFOFixer.all</code> - すべてのManager(FIFOドメイン以外のManagerも含む)のオーダリングが保証される。</li>
+<li><code>TLFIFOFixer.allFIFO</code> - All managers that define a FIFO domain will have ordering guaranteed</li>
+<li><code>TLFIFOFixer.allFIFO</code> - FIFOドメインを定義するすべてのManagerがオーダリングを保証される。</li>
+<li><code>TLFIFOFixer.allVolatile</code> - <code>VOLATILE</code>, <code>PUT_EFFECTS</code>, <code>GET_EFFECTS</code>のリージョンタイプを持つすべてのManagerがオーダリングを保証させる(リージョンタイプについては<code>Manager Node</code>を参照すること)。</li>
+</ul>
+<h2 id="tlxbar-axi4xbar">TLXbar と AXI4Xbar</h2>
+<p>TileLinkおよびAXI4のクロスバージェネレータであり、TL/AXIClientからのリクエストを、Manager・スレーブのアドレス定義に基づいてTL/AXIのスレーブに転送する。通常はこのウィジェットは引数無しで生成される。しかし、アービタ内でどのClientポートが優先権を手に入れるかなどのアービトレーションのポリシーを変更することができる。デフォルトのポリシーは<code>TLArbiter.roundRobin</code>であるが、優先権洗濯ポリシーを変更したい場合は<code>TLArbiter.lowestIndexFirst</code>に変更することができる。</p>
+<p><strong>引数:</strong></p>
+<p>All arguments are optional.</p>
+<p>すべての引数はオプションである。</p>
+<ul>
+<li><code>arbitrationPolicy: TLArbiter.Policy</code> - 使用するアービトレーションのポリシー</li>
+<li><code>maxFlightPerId: Int</code> - (AXI4のみ) 同じIDにおいて同時にインフライトになれるIDの数(デフォルト: 7)。</li>
+<li><code>awQueueDepth: Int</code> - (AXI4のみ) ライトアドレスキューのサイズ(デフォルト: 2)</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">// lazyモジュールでクロスバーをインスタンス化する。
+val tlBus = LazyModule(new TLXbar)
+
+// 単一の入力エッジの接続。
+tlBus.node := tlClient0.node
+// 複数の入力エッジの接続。
+tlBus.node :=* tlClient1.node
+
+// 単一の出力エッジの接続。
+tlManager0.node := tlBus.node
+// 複数の出力エッジの接続。
+tlManager1.node :*= tlBus.node
+
+// クロスバーをlowestIndexFirstのアービトレーションポリシーで宣言する。
+// TLArbiterのsingletonを使用しているが、実際にはAXI4である。
+val axiBus = LazyModule(new AXI4Xbar(TLArbiter.lowestIndexFirst))
+
+// TLと同様に接続される。
+axiBus.node := axiClient0.node
+axiBus.node :=* axiClient1.node
+axiManager0.node := axiBus.node
+axiManager1.node :*= axiBus.node
+</code></pre>
+
+<h2 id="tltoaxi4-axi4totl">TLToAXI4 と AXI4ToTL</h2>
+<p>TileLinkとAXI4プロトコルのコンバータである。TLToAXI4はClientにTileLinkを持ち、AXI4スレーブに接続する。AXI4ToTLはAXI4マスターをTileLinkのManagerに接続する。通常はデフォルトの引数をオーバライドすることはない。</p>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">axi4slave.node :=
+    AXI4UserYanker() :=
+    AXI4Deinterleaver(64) :=
+    TLToAXI4() :=
+    tlclient.node
+
+tlmanager.node :=
+    AXI4ToTL() :=
+    AXI4UserYanker() :=
+    AXI4Fragmenter() :=
+    axi4master.node
+</code></pre>
+
+<p>TLToAXI4コンバータの後には、<code>AXI4Deinterleaver</code> を挿入する必要がある。なぜなら、TLToAXI4コンバータはインタリーブされたリードレスポンスを取り扱うことができないからだ。TLToAXI4コンバータはAXI4のユーザフィールドを使用していくつかの情報を格納する。したがってユーザフィールドの存在しないAXI4ポートに接続する場合には<code>AXI4UserYanker</code>を接続する必要がある。</p>
+<p>AXI4ポートをAXI4ToTLウィジェットに接続する場合、<code>AXI4Fragmenter</code>と<code>AXI4UserYanker</code>を接続する必要がある。なぜならば、コンバータはユーザフィールドおよび複数ビートのトランザクションを扱うことができないからである。</p>
+<h2 id="tlrom">TLROM</h2>
+<p>The TLROM widget provides a read-only memory that can be accessed using
+TileLink. Note: this widget is in the <code>freechips.rocketchip.devices.tilelink</code>
+package, not the <code>freechips.rocketchip.tilelink</code> package like the others.</p>
+<p>TLROMウィジェットはTileLink経由でアクセスすることのできるRead-Onlyのメモリである。このウィジェットは<code>freechips.rocketchip.devices.tilelink</code>パッケージに含まれており、<code>freechips.rocketchip.tilelink</code>ではないことに注意が必要である。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>base: BigInt</code> - メモリのベースアドレス</li>
+<li><code>size: Int</code> - バイト単位でのメモリサイズ</li>
+<li><code>contentsDelayed: =&gt; Seq[Byte]</code>  - ROMのバイト内容を生成するための関数。</li>
+<li><code>executable: Boolean</code> - (オプション) CPUがこのROMの内容をフェッチすることができるかを示す(デフォルト: <code>true</code>)</li>
+<li><code>beatBytes: Int</code> - (オプション) バイト単位でのインタフェースのビット幅。(デフォルト: 4)</li>
+<li><code>resources: Seq[Resource]</code> - (オプション) デバイスツリーに接続されるリソースのシーケンス</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">val rom = LazyModule(new TLROM(
+  base = 0x100A0000,
+  size = 64,
+  contentsDelayed = Seq.tabulate(64) { i =&gt; i.toByte },
+  beatBytes = 8))
+rom.node := TLFragmenter(8, 64) := client.node
+</code></pre>
+
+<p><strong>サポートされる操作:</strong></p>
+<p>TLROMは単一ビートの読み込みのみサポートされる。複数ビートの読み込みを行う場合、TLFragmenterをROMの前に配置する必要がある。</p>
+<h2 id="tlram-axi4ram">TLRAM と AXI4RAM</h2>
+<p>The TLRAM and AXI4RAM widgets provide read-write memories implemented as SRAMs.</p>
+<p>TLRAMとAXI4RAMウィジェットはSRAMとして実装されるRead-Writeメモリである。</p>
+<p><strong>引数:</strong></p>
+<ul>
+<li><code>address: AddressSet</code> - RAMがカバーするアドレス範囲。</li>
+<li><code>cacheable: Boolean</code> - (オプション) RAMのコンテンツをキャッシュできるかを示す(デフォルト: <code>true</code>)。</li>
+<li><code>executable: Boolean</code> - (オプション) RAMのコンテンツが命令としてフェッチできるかを示す(デフォルト: <code>true</code>)</li>
+<li><code>beatBytes: Int</code> - (オプション) TL/AXI4インタフェースの幅をバイト単位で示す(デフォルト: 4)。</li>
+<li><code>atomics: Boolean</code> - (オプション, TileLinkのみ) RAMがアトミック操作をサポートするかを示す(デフォルト: <code>false</code>)。</li>
+</ul>
+<p><strong>使用例:</strong></p>
+<pre><code class="scala">val xbar = LazyModule(new TLXbar)
+
+val tlram = LazyModule(new TLRAM(
+  address = AddressSet(0x1000, 0xfff)))
+
+val axiram = LazyModule(new AXI4RAM(
+  address = AddressSet(0x2000, 0xfff)))
+
+tlram.node := xbar.node
+axiram := TLToAXI4() := xbar.node
+</code></pre>
+
+<p><strong>サポートされている操作:</strong></p>
+<p>TLRAMはTL-ULリクエストの単一ビートのみをサポートしている。<code>atomics</code>をtrueに設定すると、LogicalとArithmeticの操作をサポートする。複数ビートのRead/Writeを行いたい場合は<code>TLFragmenter</code>を接続すること。</p>
+<p>AXI4RAMはAXI4-Liteの操作のみをサポートするため、複数ビートのRead/Writeおよび最大サイズよりも小さなRead/Writeはサポートされない。フルのAXI4プロトコルを使用したい場合は <code>AXI4Fragmenter</code>を使用すること。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../zero_deep_3/" title="ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../cq/hifive_unleashed/" title="【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

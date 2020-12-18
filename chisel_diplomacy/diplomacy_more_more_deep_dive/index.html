@@ -565,7 +565,7 @@ cond(no)-&gt;op1
 <li>→ この結果Verilogエンジニアには<span style="color:red">一見理解できない意味不明な記述が時々登場する</span></li>
 </ul>
 <h2 id="fir">例：FIRフィルタ</h2>
-<p><img src="fir_filter.PNG" alt="image-20201130103837053" style="zoom:50%;" /></p>
+<p><img alt="fir_filter.PNG" src="../fir_filter.PNG" /></p>
 <h3 id="1">解答例1. 初心者が書いた</h3>
 <pre><code class="scala">// stage size is temporary 4
 class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
@@ -662,7 +662,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 </code></pre>
 
 <h1 id="chisel_2">本題に戻って：なぜChiselを使うの？</h1>
-<p><img src="msyksphinz_chisel_tweet.PNG" alt="image-20201130110219979" style="zoom:67%;" /></p>
+<p><img alt="msyksphinz_chisel_tweet.PNG" src="../msyksphinz_chisel_tweet.PNG" /></p>
 <h4 id="verilog"><span style="color:red">暴論：普通にハードウェア作りたいなら、Verilogの方が便利に決まっている！！！！</span></h4>
 <ul>
 <li>テストが書きやすい？ → UVMの方が高機能じゃない？</li>
@@ -685,7 +685,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li>Parameter Negotiation Framework for generating parameterized protocol implementation.</li>
 </ul>
-<p><img src="diplomacy.PNG" alt="diplomacy" style="zoom:67%;" /></p>
+<p><img alt="diplomacy.PNG" src="../diplomacy.PNG" /></p>
 <h1 id="diplomacy">Diplomacyはどこから来たの？</h1>
 <ul>
 <li>Andrew Watermanの博士論文：</li>
@@ -714,14 +714,14 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li><a href="https://scs.sifive.com/core-designer/">https://scs.sifive.com/core-designer/</a></li>
 </ul>
-<p><img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" /></p>
+<p><img alt="coreip_generator.PNG" src="../coreip_generator.PNG" /></p>
 <h1 id="chisel-diplomacyintellij-idea">閑話休題：Chisel + Diplomacyを使って開発したいならIntelliJ IDEAを使おう</h1>
 <p><span style="color:red">マジでAuto Completionの機能が無いと死ぬ。</span></p>
 <p><img alt="image-20201212012922069" src="../intellij_auto_completion.PNG" /></p>
 <h1 id="diplomacytilelink">誤解：DiplomacyはTileLinkを使わないと使えないの？</h1>
 <p>そんなことはない。DiplomacyはChiselのライブラリなのでTileLinkを使わなくても使える。</p>
 <h2 id="diplomacymultiple-inputsadder">例: Diplomacyで繋げたMultiple InputsのAdder</h2>
-<p><img src="multiple_inputs_adder.PNG" alt="image-20201202110535440" style="zoom:67%;" /></p>
+<p><img alt="multiple_inputs_adder.PNG" src="../multiple_inputs_adder.PNG" /></p>
 <p>ここで読み解かなければならないのは以下の3つのモジュール：</p>
 <ul>
 <li><code>AdderDriver</code> : 加算器に対してランダム値を送信するためのドライバー</li>
@@ -805,13 +805,13 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </code></pre>
 
 <h3 id="diplomacyyed">Diplomacyを使う場合は、yEdを使ってノードグラフ図を確認しよう</h3>
-<p><img src="yed_adder_node_graph.PNG" alt="yed_adder_node_graph" style="zoom:50%;" /></p>
+<p><img alt="yed_adder_node_graph.PNG" src="../yed_adder_node_graph.PNG" /></p>
 <div align="center">図. yEdによりAdderグラフを生成した図</div>
 
 <ul>
 <li>もっと複雑な例：Freedom-SoCで4コア構成作成時のノード接続関係図</li>
 </ul>
-<p><img src="freedom_diplomacy_node.PNG" alt="freedom_diplomacy_" style="zoom:67%;" /></p>
+<p><img alt="freedom_diplomacy_node.PNG" src="../freedom_diplomacy_node.PNG" /></p>
 <div align="center">図. freedom SoC ノード接続関係図</div>
 
 <h1 id="tilelinkcpu">TileLinkを使った自作CPU＋多彩なバス接続を実現</h1>
@@ -918,7 +918,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 <ul>
 <li>4コア構成にした場合のDiplomacyノード構成の例</li>
 </ul>
-<p><img src="multicore_diplomacy_node.PNG" alt="multicore_diplomacy_node" style="zoom:50%;" /></p>
+<p><img alt="multicore_diplomacy_node.PNG" src="../multicore_diplomacy_node.PNG" /></p>
 <div align="center">図. 4コア構成でのDiplomacy接続関係図</div>
 
 <h1 id="rockettile">RocketTileを例にバスの繋げ方を学ぼう</h1>
@@ -932,7 +932,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </ul>
 <h2 id="rocket-chipdefaultconfigdiplomacy">Rocket-Chipの<code>DefaultConfig</code>のDiplomacy構成を見てみよう</h2>
 <p>Rocket-Chipのバス接続は基本的にTileLinkとDiplomacyを使って構成されている。</p>
-<p><img src="rocket_chip_diplomacy_node.PNG" alt="image-20201213114731343" style="zoom:60%;" /></p>
+<p><img alt="rocket_chip_diplomacy_node.PNG" src="../rocket_chip_diplomacy_node.PNG" /></p>
 <p>もう少し噛み砕いてみる。</p>
 <p>バス接続部を見てみる。</p>
 <h2 id="rockettilediplomacy">RocketTileで学ぶDiplomacyによるデバイスの接続</h2>
@@ -1026,7 +1026,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </code></pre>
 
 <p>重要な部分を抜粋して図を作ってみた。<span style="color:blue">青がLazyModule</span>、<span style="color:red">赤が通常Module</span>。</p>
-<p><img src="rocket_tile.PNG" alt="image-20201211233635970" style="zoom:67%;" /></p>
+<p><img alt="rocket_tile.PNG" src="../rocket_tile.PNG" /></p>
 <p>これをScalaから同読み解けばいいのさ？という話で、いくつか例を挙げてどのようにしてノード間が接続されているのか見てみよう。</p>
 <ul>
 <li><code>RocketTile.scala</code>で当該部分を見てみよう。</li>
@@ -1076,7 +1076,7 @@ class RocketTileModuleImp(outer: RocketTile) extends BaseTileModuleImp(outer)
 <ul>
 <li>FPUを接続する部分（ここはDiplomacyを使っていない）</li>
 </ul>
-<p><img src="fpu_diplomacy.PNG" alt="image-20201211235345464" style="zoom:67%;" /></p>
+<p><img alt="fpu_diplomacy.PNG" src="../fpu_diplomacy.PNG" /></p>
 <ul>
 <li>DCacheを接続する部分</li>
 </ul>
@@ -1268,7 +1268,7 @@ case object PSDTestModeBroadcastKey extends Field(
 <ul>
 <li><code>DualCoreConfig</code>は<code>Config</code>クラスを継承したもの。<code>Config</code>クラスはViewに基づいた辞書テーブルの変換関数の集合と考えて良い。これらの辞書テーブルの変換関数の集合は、最終的に<code>Parameter</code>として集約されデザインに渡される。</li>
 </ul>
-<p><img src="dualcoreconfig.PNG" alt="dualcoreconfig" style="zoom:67%;" /></p>
+<p><img alt="dualcoreconfig.PNG" src="../dualcoreconfig.PNG" /></p>
 <p>各モジュールで、ここで定義したパラメータを呼び出して具体的な値を入手する。</p>
 <ul>
 <li><code>src/main/scala/rocket/RocketCore.scala</code></li>

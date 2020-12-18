@@ -63,7 +63,7 @@ cond(no)->op1
 
 ## 例：FIRフィルタ
 
-<img src="fir_filter.PNG" alt="image-20201130103837053" style="zoom:50%;" />
+![fir_filter.PNG](fir_filter.PNG)
 
 ### 解答例1. 初心者が書いた
 
@@ -175,7 +175,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 # 本題に戻って：なぜChiselを使うの？
 
-<img src="msyksphinz_chisel_tweet.PNG" alt="image-20201130110219979" style="zoom:67%;" />
+![msyksphinz_chisel_tweet.PNG](msyksphinz_chisel_tweet.PNG)
 
 #### <span style="color:red">暴論：普通にハードウェア作りたいなら、Verilogの方が便利に決まっている！！！！</span>
 
@@ -204,7 +204,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 - Parameter Negotiation Framework for generating parameterized protocol implementation.
 
-<img src="diplomacy.PNG" alt="diplomacy" style="zoom:67%;" />
+![diplomacy.PNG](diplomacy.PNG)
 
 
 
@@ -237,7 +237,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 - [https://scs.sifive.com/core-designer/](https://scs.sifive.com/core-designer/)
 
-<img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" />
+![coreip_generator.PNG](coreip_generator.PNG)
 
 
 
@@ -255,7 +255,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 ## 例: Diplomacyで繋げたMultiple InputsのAdder
 
-<img src="multiple_inputs_adder.PNG" alt="image-20201202110535440" style="zoom:67%;" />
+![multiple_inputs_adder.PNG](multiple_inputs_adder.PNG)
 
 ここで読み解かなければならないのは以下の3つのモジュール：
 
@@ -347,13 +347,13 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 
 ### Diplomacyを使う場合は、yEdを使ってノードグラフ図を確認しよう
 
-<img src="yed_adder_node_graph.PNG" alt="yed_adder_node_graph" style="zoom:50%;" />
+![yed_adder_node_graph.PNG](yed_adder_node_graph.PNG)
 
 <div align="center">図. yEdによりAdderグラフを生成した図</div>
 
 - もっと複雑な例：Freedom-SoCで4コア構成作成時のノード接続関係図
 
-<img src="freedom_diplomacy_node.PNG" alt="freedom_diplomacy_" style="zoom:67%;" />
+![freedom_diplomacy_node.PNG](freedom_diplomacy_node.PNG)
 
 <div align="center">図. freedom SoC ノード接続関係図</div>
 
@@ -476,7 +476,7 @@ class core_complex[Conf <: RVConfig]
 
 - 4コア構成にした場合のDiplomacyノード構成の例
 
-<img src="multicore_diplomacy_node.PNG" alt="multicore_diplomacy_node" style="zoom:50%;" />
+![multicore_diplomacy_node.PNG](multicore_diplomacy_node.PNG)
 
 <div align="center">図. 4コア構成でのDiplomacy接続関係図</div>
 
@@ -497,7 +497,7 @@ class core_complex[Conf <: RVConfig]
 
 Rocket-Chipのバス接続は基本的にTileLinkとDiplomacyを使って構成されている。
 
-<img src="rocket_chip_diplomacy_node.PNG" alt="image-20201213114731343" style="zoom:60%;" />
+![rocket_chip_diplomacy_node.PNG](rocket_chip_diplomacy_node.PNG)
 
 もう少し噛み砕いてみる。
 
@@ -557,8 +557,7 @@ module RocketTile( // @[:freechips.rocketchip.system.DefaultConfig.fir@200426.2]
 重要な部分を抜粋して図を作ってみた。<span style="color:blue">青がLazyModule</span>、<span style="color:red">赤が通常Module</span>。
 
 
-
-<img src="rocket_tile.PNG" alt="image-20201211233635970" style="zoom:67%;" />
+![rocket_tile.PNG](rocket_tile.PNG)
 
 これをScalaから同読み解けばいいのさ？という話で、いくつか例を挙げてどのようにしてノード間が接続されているのか見てみよう。
 
@@ -609,7 +608,7 @@ class RocketTileModuleImp(outer: RocketTile) extends BaseTileModuleImp(outer)
 
 - FPUを接続する部分（ここはDiplomacyを使っていない）
 
-<img src="fpu_diplomacy.PNG" alt="image-20201211235345464" style="zoom:67%;" />
+![fpu_diplomacy.PNG](fpu_diplomacy.PNG)
 
 - DCacheを接続する部分
 
@@ -803,7 +802,7 @@ case class RocketCoreParams(
 
 - `DualCoreConfig`は`Config`クラスを継承したもの。`Config`クラスはViewに基づいた辞書テーブルの変換関数の集合と考えて良い。これらの辞書テーブルの変換関数の集合は、最終的に`Parameter`として集約されデザインに渡される。
 
-<img src="dualcoreconfig.PNG" alt="dualcoreconfig" style="zoom:67%;" />
+![dualcoreconfig.PNG](dualcoreconfig.PNG)
 
 各モジュールで、ここで定義したパラメータを呼び出して具体的な値を入手する。
 

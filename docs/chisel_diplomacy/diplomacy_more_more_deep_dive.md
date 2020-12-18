@@ -1,36 +1,10 @@
-# ハードウェア記述言語Chiselを
-
-# <span style="color: red">もっともっと</span>活用するためのDiplomacy概説
+# ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
 
 
 
 - 発表者：msyksphinz (FPGA開発日記著者)
 - @msyksphinz_dev
-- https://msyksphinz.hatenablog.com
-
-
-
-# 発表者について
-
-- 好きなコト：コンピュータアーキテクチャ・低レイヤプログラミング
-  - X86 (QEMUをRustで再実装しながら勉強中)
-  - MIPS (趣味の命令セットシミュレータ作りはMIPSから始まった)
-  - ARM (勉強中...)
-  - <span style="color: red">RISC-V</span> (一応、黎明期からのウォッチャー)
-  
-- ハードウェア開発が一応本業
-  - 汎用CPU・アクセラレータ、など...
-  - 使えるハードウェア記述言語 : Verilog, SystemVerilog (UVM除く), Chisel
-  - 学生の時に最初に勉強したHDLはVHDL (もう忘れた)
-  - 学生の頃はXilinxのSpartan-3 にMIPSを自作しては載せて遊んでいた(そういう世代)。
-- 低レイヤプログラミング
-  - 仕事は最初汎用CPUの性能解析と検証から始めたので、低レイヤプログラミングはある程度できる(つもり)
-  - <span style="color:red">QEMU、LLVM</span>あたりが好き
-  - 新しいISAを覚えるときは、<span style="color:blue">まず命令セットシミュレータを作るところから！</span>
-- その他
-  - プログラミング言語：C++ / Ruby / Rust
-  - Rustに最近ハマっている... <span style="color:red">あれ、低レイヤ的なこと書いてたら`unsafe`だらけじゃない？(笑)</span>
-  - FPGA：Xilinxしか知らない & ここ数年触っていない (FPGA開発日記なのに)
+- [https://msyksphinz.hatenablog.com](https://msyksphinz.hatenablog.com)
 
 
 
@@ -43,10 +17,10 @@
 - Scalaをベースとしたハードウェア構築言語.
   - 高位合成言語ではない
 - SiFiveのRISC-V IPで採用されている
-- Rocket-Chip : https://github.com/chipsalliance/rocket-chip
-- BOOM : https://github.com/riscv-boom/riscv-boom
+- Rocket-Chip : [https://github.com/chipsalliance/rocket-chip](https://github.com/chipsalliance/rocket-chip)
+- BOOM : [https://github.com/riscv-boom/riscv-boom](https://github.com/riscv-boom/riscv-boom)
 
-- Chiselの基礎 : 「Chiselを始めたい人に読んで欲しい本」https://nextpublishing.jp/book/12162.html
+- Chiselの基礎 : 「Chiselを始めたい人に読んで欲しい本」 [https://nextpublishing.jp/book/12162.html](https://nextpublishing.jp/book/12162.html)
 
 
 
@@ -64,7 +38,7 @@
 
   - FIRRTLもScalaで記述してある (FIRはScalaのDSLではないので、Scalaで作る必要はないと思うけど...)[^circt]
 
-  
+
 
 ```flow
 st=>inputoutput: Chisel(Scala)
@@ -78,7 +52,7 @@ cond(yes)->e
 cond(no)->op1
 ```
 
-[^circt]: FIRRTLの置き換えとして、Chris Lattner主導でLLVMとMLIRを使用した「CIRCT」というツールが開発されている https://github.com/llvm/circt
+[^circt]: FIRRTLの置き換えとして、Chris Lattner主導でLLVMとMLIRを使用した「CIRCT」というツールが開発されている [https://github.com/llvm/circt](https://github.com/llvm/circt)
 
 
 
@@ -104,7 +78,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val x_n1 = RegNext(io.in, 0.U)
   val x_n2 = RegNext(x_n1, 0.U)
   val x_n3 = RegNext(x_n2, 0.U)
-  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) + 
+  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) +
              x_n2 * b2.U(8.W) + x_n3 * b3.U(8.W)
 }
 ```
@@ -121,7 +95,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
     val out = Output(UInt(8.W))
     val consts = Input(Vec(length, UInt(8.W)))
   })
-  
+
   val taps = Reg(Vec(length, UInt(8.W)));
   for (i <- 0 until length) {
     if (i == 0) { when(io.valid) { taps(i) := io.in     } }
@@ -144,7 +118,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 - <span style="color:red">一見じゃ理解できねーぞ？</span>
 
-https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb
+[https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb](https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb)
 
 ```scala
 class MyManyDynamicElementVecFir(length: Int) extends Module {
@@ -154,7 +128,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
     val out = Output(UInt(8.W))
     val consts = Input(Vec(length, UInt(8.W)))
   })
-  
+
   val taps = Seq(io.in) ++ Seq.fill(io.consts.length - 1)(RegInit(0.U(8.W)))
   taps.zip(taps.tail).foreach { case (a, b) => when (io.valid) { b := a } }
 
@@ -238,14 +212,14 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 - Andrew Watermanの博士論文：
   - Design of the RISC-V Instruction Set Architecture
-  - https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf
+  - [https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf](https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf)
 - Yunsup Leeの博士論文：
   - Decoupled Vector-Fetch Architecture with a Scalarizing Compiler
-  - https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf
+  - [https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf](https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf)
 - Henry Cookの博士論文：
   - <span style="color:red">Productive Design of Extensible On-Chip Memory Hierarchies</span>
   - Diplomacyの基本的なアイデアがこの論文に書いてある
-  - https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf
+  - [https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf)
 
 
 
@@ -261,7 +235,7 @@ class MyManyDynamicElementVecFir(length: Int) extends Module {
 
 ### 一つの実現例：SiFiveのCore IP Generator
 
-- https://scs.sifive.com/core-designer/
+- [https://scs.sifive.com/core-designer/](https://scs.sifive.com/core-designer/)
 
 <img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" />
 
@@ -338,11 +312,11 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
   def edge(pd: DownwardParam, pu: UpwardParam, p: Parameters, sourceInfo: SourceInfo) = {
     if (pd.width < pu.width) EdgeParam(pd.width) else EdgeParam(pu.width)
   }
-    
+
   // Diplomacyによって接続されるI/Oポートが含まれている。
   // UInt(e.width.W) : eはEdgeParam,つまりエッジのパラメータ
   def bundle(e: EdgeParam) = UInt(e.width.W)
-    
+
   def render(e: EdgeParam) = RenderedEdge("blue", s"width = ${e.width}")
 }
 ```
@@ -359,7 +333,7 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
     val negotiatedWidths = node.edges.out.map(_.width)
     // すべてのノード間接続線のビット数が一致するか？
     require(negotiatedWidths.forall(_ == negotiatedWidths.head), "outputs must all have agreed on same width")
-    
+
     // いつぃているならば、先頭ノードの情報を使用する (まあどのノードの情報を使っても同じだけど)
     val finalWidth = negotiatedWidths.head
 
@@ -395,15 +369,15 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 
 まともに検証していないけどとりあえず`riscv-tests`程度は動くCPUコアを作った。
 
-https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core
+[https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core](https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core)
 
 <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/m/msyksphinz/20181224/20181224131915.png" alt="Chiselを使って波形を全く使わずにRISC-Vパイプラインプロセッサを設計した - FPGA開発日記" style="zoom:50%;" />
 
 - フェッチバス・データバスは非常に単純なもの（非TileLink / 非AXIバス）
 
-https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17 (`InstBus`へのリンク)
+[https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17](https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17) (`InstBus`へのリンク)
 
-https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30 (`DataBus`へのリンク)
+[https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30](https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30) (`DataBus`へのリンク)
 
 ### 自作CPUをどのようにしてTileLinkに組み込んでSoCを構築するか？
 
@@ -456,8 +430,8 @@ https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_
 `CoreTop`とメモリモジュールを持つ`CoreComplex`モジュールを作成してこれらを接続する。
 
 ```scala
-class core_complex[Conf <: RVConfig] 
-  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters) 
+class core_complex[Conf <: RVConfig]
+  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters)
   extends LazyModule {
   // 外部からメモリにデータアクセスするためのデータローダ
   val loader = LazyModule(new loader("loader"))
@@ -512,7 +486,7 @@ class core_complex[Conf <: RVConfig]
 
 # RocketTileを例にバスの繋げ方を学ぼう
 
-- RISC-V の CPU実装代表格：Rocket-Chip https://github.com/chipsalliance/rocket-chip
+- RISC-V の CPU実装代表格：Rocket-Chip [https://github.com/chipsalliance/rocket-chip](https://github.com/chipsalliance/rocket-chip)
 
 ### Rocket-Chip Generator：なぜ「Generator」と名前が付けられているのか分かりますか？
 
@@ -553,31 +527,31 @@ Rocket-Chipのバス接続は基本的にTileLinkとDiplomacyを使って構成�
 ```verilog
 module RocketTile( // @[:freechips.rocketchip.system.DefaultConfig.fir@200426.2]
 
-  TLXbar_8 tlMasterXbar (); 
-  
-  IntXbar_4 intXbar (); 
+  TLXbar_8 tlMasterXbar ();
 
-  DCache dcache (); 
+  IntXbar_4 intXbar ();
 
-  Frontend frontend (); 
+  DCache dcache ();
+
+  Frontend frontend ();
 
   TLBuffer_9 buffer ();
-    
-  IntSyncCrossingSink intsink (); 
 
-  IntSyncCrossingSink_1 intsink_1 (); 
+  IntSyncCrossingSink intsink ();
 
-  IntSyncCrossingSink_2 intsink_2 (); 
-  
-  IntSyncCrossingSink_2 intsink_3 (); 
-  
-  FPU fpuOpt (); 
-  
-  HellaCacheArbiter dcacheArb (); 
-  
-  PTW ptw (); 
-  
-  Rocket core (); 
+  IntSyncCrossingSink_1 intsink_1 ();
+
+  IntSyncCrossingSink_2 intsink_2 ();
+
+  IntSyncCrossingSink_2 intsink_3 ();
+
+  FPU fpuOpt ();
+
+  HellaCacheArbiter dcacheArb ();
+
+  PTW ptw ();
+
+  Rocket core ();
 ```
 
 重要な部分を抜粋して図を作ってみた。<span style="color:blue">青がLazyModule</span>、<span style="color:red">赤が通常Module</span>。
@@ -875,7 +849,7 @@ class MulDiv(cfg: MulDivParams, width: Int, nXpr: Int = 32) extends Module {
   def minLatency: Int = (minDivLatency ++ minMulLatency).min
 
   val io = IO(new MultiplierIO(width, log2Up(nXpr)))
-... 
+...
   val req = Reg(chiselTypeOf(io.req.bits))
   val count = Reg(UInt(log2Ceil(
     ((cfg.divUnroll != 0).option(w/cfg.divUnroll + 1).toSeq ++
@@ -1068,4 +1042,3 @@ endmodule
 - Diplomacyを使って自作CPUのバスネットワークに接続する
 - Rocket-Chipのバス部分は大量のDiplomacyバス構成で構築されている
 - `Config`/`Parameter`でより柔軟なパラメタライズを行う
-

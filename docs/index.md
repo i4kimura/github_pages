@@ -28,7 +28,7 @@
 
 - [【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿](cq/hifive_unleashed)
 
-- [# ハードウェア記述言語Chiselをもっともっと活用するためのDiplomacy概説](chisel_diplomacy/diplomacy_more_more_deep_dive.md)
+- [ハードウェア記述言語Chiselをもっともっと活用するためのDiplomacy概説](chisel_diplomacy/diplomacy_more_more_deep_dive.md)
 
 - [Chipyard Document - TileLinkとDiplomacyリファレンスの翻訳 (https://chipyard.readthedocs.io/en/latest/TileLink-Diplomacy-Reference/index.html)](chisel_diplomacy/chisel_tilelink.md)
 

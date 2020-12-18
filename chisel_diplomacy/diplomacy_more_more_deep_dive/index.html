@@ -36,7 +36,7 @@
     
     
       
-        <title>ハードウェア記述言語Chiselを - FPGA開発日記 カテゴリ別記事インデックス</title>
+        <title>ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説 - FPGA開発日記 カテゴリ別記事インデックス</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#chisel" tabindex="1" class="md-skip">
+      <a href="#chiseldiplomacy" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               FPGA開発日記 カテゴリ別記事インデックス
             </span>
             <span class="md-header-nav__topic">
-              ハードウェア記述言語Chiselを
+              ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
             </span>
           
         </div>
@@ -421,8 +421,8 @@
       
     
     
-    <a href="./" title="ハードウェア記述言語Chiselを" class="md-nav__link md-nav__link--active">
-      ハードウェア記述言語Chiselを
+    <a href="./" title="ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説" class="md-nav__link md-nav__link--active">
+      ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
     </a>
     
   </li>
@@ -509,50 +509,24 @@
               
                 
                 
-                <h1 id="chisel">ハードウェア記述言語Chiselを</h1>
-<h1 id="diplomacy"><span style="color: red">もっともっと</span>活用するためのDiplomacy概説</h1>
+                <h1 id="chiseldiplomacy">ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説</h1>
 <ul>
 <li>発表者：msyksphinz (FPGA開発日記著者)</li>
 <li>@msyksphinz_dev</li>
-<li>https://msyksphinz.hatenablog.com</li>
+<li><a href="https://msyksphinz.hatenablog.com">https://msyksphinz.hatenablog.com</a></li>
 </ul>
-<h1 id="_1">発表者について</h1>
-<ul>
-<li>好きなコト：コンピュータアーキテクチャ・低レイヤプログラミング</li>
-<li>X86 (QEMUをRustで再実装しながら勉強中)</li>
-<li>MIPS (趣味の命令セットシミュレータ作りはMIPSから始まった)</li>
-<li>ARM (勉強中...)</li>
-<li>
-<p><span style="color: red">RISC-V</span> (一応、黎明期からのウォッチャー)</p>
-</li>
-<li>
-<p>ハードウェア開発が一応本業</p>
-</li>
-<li>汎用CPU・アクセラレータ、など...</li>
-<li>使えるハードウェア記述言語 : Verilog, SystemVerilog (UVM除く), Chisel</li>
-<li>学生の時に最初に勉強したHDLはVHDL (もう忘れた)</li>
-<li>学生の頃はXilinxのSpartan-3 にMIPSを自作しては載せて遊んでいた(そういう世代)。</li>
-<li>低レイヤプログラミング</li>
-<li>仕事は最初汎用CPUの性能解析と検証から始めたので、低レイヤプログラミングはある程度できる(つもり)</li>
-<li><span style="color:red">QEMU、LLVM</span>あたりが好き</li>
-<li>新しいISAを覚えるときは、<span style="color:blue">まず命令セットシミュレータを作るところから！</span></li>
-<li>その他</li>
-<li>プログラミング言語：C++ / Ruby / Rust</li>
-<li>Rustに最近ハマっている... <span style="color:red">あれ、低レイヤ的なこと書いてたら<code>unsafe</code>だらけじゃない？(笑)</span></li>
-<li>FPGA：Xilinxしか知らない &amp; ここ数年触っていない (FPGA開発日記なのに)</li>
-</ul>
-<h1 id="chisel_1">Chisel使ってますか？</h1>
+<h1 id="chisel">Chisel使ってますか？</h1>
 <p><img src="https://community.cadence.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-06/Screen-Shot-2016_2D00_12_2D00_01-at-1.14.14-PM.jpg" alt="RISC-V 5th Workshop Highlights - Breakfast Bytes - Cadence Blogs - Cadence  Community" style="zoom:33%;" /></p>
 <ul>
 <li>Scalaをベースとしたハードウェア構築言語.</li>
 <li>高位合成言語ではない</li>
 <li>SiFiveのRISC-V IPで採用されている</li>
-<li>Rocket-Chip : https://github.com/chipsalliance/rocket-chip</li>
+<li>Rocket-Chip : <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
 <li>
-<p>BOOM : https://github.com/riscv-boom/riscv-boom</p>
+<p>BOOM : <a href="https://github.com/riscv-boom/riscv-boom">https://github.com/riscv-boom/riscv-boom</a></p>
 </li>
 <li>
-<p>Chiselの基礎 : 「Chiselを始めたい人に読んで欲しい本」https://nextpublishing.jp/book/12162.html</p>
+<p>Chiselの基礎 : 「Chiselを始めたい人に読んで欲しい本」 <a href="https://nextpublishing.jp/book/12162.html">https://nextpublishing.jp/book/12162.html</a></p>
 </li>
 </ul>
 <h1 id="chiselverilog">ChiselがVerilogを生成するまで</h1>
@@ -584,8 +558,8 @@ cond(yes)-&gt;e
 cond(no)-&gt;op1
 </code></pre>
 
-<p>[^circt]: FIRRTLの置き換えとして、Chris Lattner主導でLLVMとMLIRを使用した「CIRCT」というツールが開発されている https://github.com/llvm/circt</p>
-<h1 id="chisel_2">Chiselの何が良いのか？</h1>
+<p>[^circt]: FIRRTLの置き換えとして、Chris Lattner主導でLLVMとMLIRを使用した「CIRCT」というツールが開発されている <a href="https://github.com/llvm/circt">https://github.com/llvm/circt</a></p>
+<h1 id="chisel_1">Chiselの何が良いのか？</h1>
 <ul>
 <li>Scalaというソフトウェア記述言語の機能が使える</li>
 <li>→ この結果Verilogエンジニアには<span style="color:red">一見理解できない意味不明な記述が時々登場する</span></li>
@@ -603,7 +577,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val x_n1 = RegNext(io.in, 0.U)
   val x_n2 = RegNext(x_n1, 0.U)
   val x_n3 = RegNext(x_n2, 0.U)
-  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) + 
+  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) +
              x_n2 * b2.U(8.W) + x_n3 * b3.U(8.W)
 }
 </code></pre>
@@ -638,7 +612,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li><span style="color:red">一見じゃ理解できねーぞ？</span></li>
 </ul>
-<p>https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</p>
+<p><a href="https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb">https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</a></p>
 <pre><code class="scala">class MyManyDynamicElementVecFir(length: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -687,7 +661,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   }
 </code></pre>
 
-<h1 id="chisel_3">本題に戻って：なぜChiselを使うの？</h1>
+<h1 id="chisel_2">本題に戻って：なぜChiselを使うの？</h1>
 <p><img src="msyksphinz_chisel_tweet.PNG" alt="image-20201130110219979" style="zoom:67%;" /></p>
 <h4 id="verilog"><span style="color:red">暴論：普通にハードウェア作りたいなら、Verilogの方が便利に決まっている！！！！</span></h4>
 <ul>
@@ -697,7 +671,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <li><span style="color:blue">Rocket-Chipが使っているからやむを得ず</span></li>
 <li><span style="color:blue">新しい言語で何かを書いて皆に「すごい」って言ってほしい</span></li>
 </ul>
-<h4 id="chisel_4"><span style="color:red">じゃあChiselの使いどころってどこよ？</span></h4>
+<h4 id="chisel_3"><span style="color:red">じゃあChiselの使いどころってどこよ？</span></h4>
 <ul>
 <li><span style="color:blue">技術の進化が、ハードウェア設計の周期をはるかに上回ってきた</span></li>
 <li>ハードウェアエンジニア、技術の進化に追いついてきている？</li>
@@ -707,25 +681,25 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <li>ハードウェアの「複雑性」どのように管理する？</li>
 </ul>
 <p><img alt="hardware_difficulty" src="../hardware_difficulty.PNG" /></p>
-<h1 id="chiseldiplomacy">Chiselの使いどころ一例：<span style="color:red">Diplomacy</span></h1>
+<h1 id="chiseldiplomacy_1">Chiselの使いどころ一例：<span style="color:red">Diplomacy</span></h1>
 <ul>
 <li>Parameter Negotiation Framework for generating parameterized protocol implementation.</li>
 </ul>
 <p><img src="diplomacy.PNG" alt="diplomacy" style="zoom:67%;" /></p>
-<h1 id="diplomacy_1">Diplomacyはどこから来たの？</h1>
+<h1 id="diplomacy">Diplomacyはどこから来たの？</h1>
 <ul>
 <li>Andrew Watermanの博士論文：</li>
 <li>Design of the RISC-V Instruction Set Architecture</li>
-<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</li>
+<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</a></li>
 <li>Yunsup Leeの博士論文：</li>
 <li>Decoupled Vector-Fetch Architecture with a Scalarizing Compiler</li>
-<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</li>
+<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</a></li>
 <li>Henry Cookの博士論文：</li>
 <li><span style="color:red">Productive Design of Extensible On-Chip Memory Hierarchies</span></li>
 <li>Diplomacyの基本的なアイデアがこの論文に書いてある</li>
-<li>https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</li>
+<li><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</a></li>
 </ul>
-<h1 id="diplomacy_2">Diplomacyの実現したいこと</h1>
+<h1 id="diplomacy_1">Diplomacyの実現したいこと</h1>
 <ul>
 <li>一つのデザインを使って柔軟なコンフィグレーションを実現する</li>
 <li>一つのデザインから</li>
@@ -738,7 +712,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <p><img alt="image-20201130123338375" src="../diplomacy_SoC_variation.PNG" /></p>
 <h3 id="sifivecore-ip-generator">一つの実現例：SiFiveのCore IP Generator</h3>
 <ul>
-<li>https://scs.sifive.com/core-designer/</li>
+<li><a href="https://scs.sifive.com/core-designer/">https://scs.sifive.com/core-designer/</a></li>
 </ul>
 <p><img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" /></p>
 <h1 id="chisel-diplomacyintellij-idea">閑話休題：Chisel + Diplomacyを使って開発したいならIntelliJ IDEAを使おう</h1>
@@ -847,13 +821,13 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </ul>
 <h4 id="cpu-rv645">作ったCPUコア: RV64の簡単な5段パイプライン</h4>
 <p>まともに検証していないけどとりあえず<code>riscv-tests</code>程度は動くCPUコアを作った。</p>
-<p>https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core">https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</a></p>
 <p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/m/msyksphinz/20181224/20181224131915.png" alt="Chiselを使って波形を全く使わずにRISC-Vパイプラインプロセッサを設計した - FPGA開発日記" style="zoom:50%;" /></p>
 <ul>
 <li>フェッチバス・データバスは非常に単純なもの（非TileLink / 非AXIバス）</li>
 </ul>
-<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17 (<code>InstBus</code>へのリンク)</p>
-<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30 (<code>DataBus</code>へのリンク)</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17</a> (<code>InstBus</code>へのリンク)</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30</a> (<code>DataBus</code>へのリンク)</p>
 <h3 id="cputilelinksoc">自作CPUをどのようにしてTileLinkに組み込んでSoCを構築するか？</h3>
 <ol>
 <li>自作CPUをLazyModuleでラップする</li>
@@ -901,8 +875,8 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 
 <h3 id="tilelinkcoretopsoc">TileLinkモジュールを持っCoreTopを使ってSoCを作る</h3>
 <p><code>CoreTop</code>とメモリモジュールを持つ<code>CoreComplex</code>モジュールを作成してこれらを接続する。</p>
-<pre><code class="scala">class core_complex[Conf &lt;: RVConfig] 
-  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters) 
+<pre><code class="scala">class core_complex[Conf &lt;: RVConfig]
+  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters)
   extends LazyModule {
   // 外部からメモリにデータアクセスするためのデータローダ
   val loader = LazyModule(new loader(&quot;loader&quot;))
@@ -949,7 +923,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 
 <h1 id="rockettile">RocketTileを例にバスの繋げ方を学ぼう</h1>
 <ul>
-<li>RISC-V の CPU実装代表格：Rocket-Chip https://github.com/chipsalliance/rocket-chip</li>
+<li>RISC-V の CPU実装代表格：Rocket-Chip <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
 </ul>
 <h3 id="rocket-chip-generatorgenerator">Rocket-Chip Generator：なぜ「Generator」と名前が付けられているのか分かりますか？</h3>
 <ul>
@@ -1024,31 +998,31 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 <h2 id="rockettile_1">RocketTileの中身</h2>
 <pre><code class="verilog">module RocketTile( // @[:freechips.rocketchip.system.DefaultConfig.fir@200426.2]
 
-  TLXbar_8 tlMasterXbar (); 
+  TLXbar_8 tlMasterXbar ();
 
-  IntXbar_4 intXbar (); 
+  IntXbar_4 intXbar ();
 
-  DCache dcache (); 
+  DCache dcache ();
 
-  Frontend frontend (); 
+  Frontend frontend ();
 
   TLBuffer_9 buffer ();
 
-  IntSyncCrossingSink intsink (); 
+  IntSyncCrossingSink intsink ();
 
-  IntSyncCrossingSink_1 intsink_1 (); 
+  IntSyncCrossingSink_1 intsink_1 ();
 
-  IntSyncCrossingSink_2 intsink_2 (); 
+  IntSyncCrossingSink_2 intsink_2 ();
 
-  IntSyncCrossingSink_2 intsink_3 (); 
+  IntSyncCrossingSink_2 intsink_3 ();
 
-  FPU fpuOpt (); 
+  FPU fpuOpt ();
 
-  HellaCacheArbiter dcacheArb (); 
+  HellaCacheArbiter dcacheArb ();
 
-  PTW ptw (); 
+  PTW ptw ();
 
-  Rocket core (); 
+  Rocket core ();
 </code></pre>
 
 <p>重要な部分を抜粋して図を作ってみた。<span style="color:blue">青がLazyModule</span>、<span style="color:red">赤が通常Module</span>。</p>
@@ -1335,7 +1309,7 @@ class Rocket(tile: RocketTile)(implicit p: Parameters) extends CoreModule()(p)
   def minLatency: Int = (minDivLatency ++ minMulLatency).min
 
   val io = IO(new MultiplierIO(width, log2Up(nXpr)))
-... 
+...
   val req = Reg(chiselTypeOf(io.req.bits))
   val count = Reg(UInt(log2Ceil(
     ((cfg.divUnroll != 0).option(w/cfg.divUnroll + 1).toSeq ++
@@ -1507,7 +1481,7 @@ module Mul(
 endmodule
 </code></pre>
 
-<h1 id="_2">まとめ</h1>
+<h1 id="_1">まとめ</h1>
 <ul>
 <li>Chiselの活用ポイント → コア中ではなくネットワーク部。柔軟性が求められる部分。</li>
 <li>Diplomacyを使って自作CPUのバスネットワークに接続する</li>

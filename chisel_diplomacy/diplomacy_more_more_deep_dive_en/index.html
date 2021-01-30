@@ -36,7 +36,7 @@
     
     
       
-        <title>ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説 - FPGA開発日記 カテゴリ別記事インデックス</title>
+        <title>Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive - FPGA開発日記 カテゴリ別記事インデックス</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#chiseldiplomacy" tabindex="1" class="md-skip">
+      <a href="#hardware-description-language-chisel-diplomacy-deeper-dive" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
               FPGA開発日記 カテゴリ別記事インデックス
             </span>
             <span class="md-header-nav__topic">
-              ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
+              Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive
             </span>
           
         </div>
@@ -411,6 +411,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../diplomacy_more_more_deep_dive/" title="ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説" class="md-nav__link">
+      ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -421,22 +433,10 @@
       
     
     
-    <a href="./" title="ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説" class="md-nav__link md-nav__link--active">
-      ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
-    </a>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../diplomacy_more_more_deep_dive_en/" title="Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive" class="md-nav__link">
+    <a href="./" title="Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive" class="md-nav__link md-nav__link--active">
       Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive
     </a>
+    
   </li>
 
         
@@ -521,42 +521,67 @@
               
                 
                 
-                <h1 id="chiseldiplomacy">ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説</h1>
+                <h1 id="hardware-description-language-chisel-diplomacy-deeper-dive">Hardware Description Language Chisel &amp; Diplomacy <span style="color:red">Deeper</span> dive</h1>
 <ul>
-<li>発表者：msyksphinz (FPGA開発日記著者)</li>
+<li>Presenter：msyksphinz (Author of FPGA development diary)</li>
 <li>@msyksphinz_dev</li>
-<li><a href="https://msyksphinz.hatenablog.com">https://msyksphinz.hatenablog.com</a></li>
+<li>https://msyksphinz.hatenablog.com</li>
 </ul>
-<h1 id="chisel">Chisel使ってますか？</h1>
+<h1 id="about-presenter">About Presenter</h1>
+<ul>
+<li>Interesting Topic: Computer Architecture, Low-Layer Programming</li>
+<li>X86 (Studying via implementation of QEMU with Rust)</li>
+<li>MIPS (Studied through implementation Instruction Set Simulator)</li>
+<li>ARM (Studying ...)</li>
+<li><span style="color: red">RISC-V</span> </li>
+<li>My work : Hardware development</li>
+<li>General Processor, Accelerator, and so on ...</li>
+<li>HDL skill: Verilog, System Verilog (except UVM), Chisel</li>
+<li>My first HDL I studied is VHDL (already I forget)</li>
+<li>When I was a student, I implemented MIPS CPU by myself and run it on Spartan-3 FPGA.</li>
+<li>
+<p>Low Layer Programming</p>
+</li>
+<li>
+<p>I started my work by analyzing and verifying the performance of general-purpose CPUs, so I can do some low-layer programming (I think).</p>
+</li>
+<li>I like QEMU and LLVM.</li>
+<li>When I learn a new ISA, I start by building an instruction set simulator!</li>
+<li>Other</li>
+<li>Programming Languages: C++ / Ruby / Rust</li>
+<li>I'm addicted to Rust lately... <span style="color:red">Hey, isn't it full of <code>unsafe</code> when you write low-layer stuff? :)</span>.</li>
+<li>FPGA: I only know Xilinx &amp; haven't touched it for a few years now (even though this is an FPGA development diary)</li>
+</ul>
+<h1 id="are-you-using-chisel">Are you using Chisel?</h1>
 <p><img src="https://community.cadence.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-06/Screen-Shot-2016_2D00_12_2D00_01-at-1.14.14-PM.jpg" alt="RISC-V 5th Workshop Highlights - Breakfast Bytes - Cadence Blogs - Cadence  Community" style="zoom:33%;" /></p>
 <ul>
-<li>Scalaをベースとしたハードウェア構築言語.</li>
-<li>高位合成言語ではない</li>
-<li>SiFiveのRISC-V IPで採用されている</li>
-<li>Rocket-Chip : <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
+<li>A hardware building language based on Scala.</li>
+<li>Not a high-level synthesis language.</li>
+<li>SiFive's RISC-V IP use Chisel</li>
+<li>Rocket-Chip : https://github.com/chipsalliance/rocket-chip</li>
 <li>
-<p>BOOM : <a href="https://github.com/riscv-boom/riscv-boom">https://github.com/riscv-boom/riscv-boom</a></p>
+<p>BOOM : https://github.com/riscv-boom/riscv-boom</p>
 </li>
 <li>
-<p>Chiselの基礎 : 「Chiselを始めたい人に読んで欲しい本」 <a href="https://nextpublishing.jp/book/12162.html">https://nextpublishing.jp/book/12162.html</a></p>
+<p>Chisel Basics : "Chiselを始めたい人に読んで欲しい本" https://nextpublishing.jp/book/12162.html</p>
 </li>
 </ul>
-<h1 id="chiselverilog">ChiselがVerilogを生成するまで</h1>
+<h1 id="how-chisel-generates-verilog">How Chisel generates Verilog</h1>
 <ul>
 <li>
-<p>ChiselはScalaのDSLなので、Chisel CompilerはScalaで記述してある</p>
+<p>Chisel is a Scala DSL, so the Chisel Compiler is written in Scala.</p>
 </li>
 <li>
-<p>Chisel Compilerは<span style="color:red">FIR (Flexible Interpretation Representation)</span>と呼ばれる中間言語を生成する</p>
+<p>Chisel Compiler generates an intermediate language called <span style="color:red">FIR (Flexible Interpretation Representation)</span>.</p>
 </li>
 <li>
-<p>FIRはScalaの文法と関係ない</p>
+<p>FIR has nothing to do with Scala's syntax</p>
 </li>
 <li>
-<p>FIRをFIRRTLという変換器を使ってVerilogに変換する</p>
+<p>FIR is converted to Verilog using a converter called FIRRTL</p>
 </li>
 <li>
-<p>FIRRTLもScalaで記述してある (FIRはScalaのDSLではないので、Scalaで作る必要はないと思うけど...)[^circt]</p>
+<p>FIRRTL is also written in Scala (FIR is not a Scala DSL, so I don't think it needs to be written in Scala...) [^circt].</p>
 </li>
 </ul>
 <pre><code class="flow">st=&gt;inputoutput: Chisel(Scala)
@@ -568,18 +593,24 @@ cond=&gt;inputoutput: Verilog
 st(right)-&gt;op1(right)-&gt;io(right)-&gt;sub1(right)-&gt;cond
 cond(yes)-&gt;e
 cond(no)-&gt;op1
-</code></pre>
+````
 
-<p>[^circt]: FIRRTLの置き換えとして、Chris Lattner主導でLLVMとMLIRを使用した「CIRCT」というツールが開発されている <a href="https://github.com/llvm/circt">https://github.com/llvm/circt</a></p>
-<h1 id="chisel_1">Chiselの何が良いのか？</h1>
-<ul>
-<li>Scalaというソフトウェア記述言語の機能が使える</li>
-<li>→ この結果Verilogエンジニアには<span style="color:red">一見理解できない意味不明な記述が時々登場する</span></li>
-</ul>
-<h2 id="fir">例：FIRフィルタ</h2>
-<p><img alt="fir_filter.PNG" src="../fir_filter.PNG" /></p>
-<h3 id="1">解答例1. 初心者が書いた</h3>
-<pre><code class="scala">// stage size is temporary 4
+[^circt]: As a replacement for FIRRTL, a Chris Lattner-led tool called &quot;CIRCT&quot; has been developed using LLVM and MLIR https://github.com/llvm/circt
+
+
+# What's good about Chisel?
+
+- You can use the features of Scala, a software description language.
+- → This results in Verilog engineers &lt;span style=&quot;color:red&quot;&gt;sometimes having to write seemingly incomprehensible and unintelligible statements&lt;/span&gt;.
+
+## Example: FIR Filter
+
+&lt;img src=&quot;fir_filter.PNG&quot; alt=&quot;image-20201130103837053&quot; style=&quot;zoom:50%;&quot; /&gt;
+
+### Answer 1. By beginner
+
+```scala
+// stage size is temporary 4
 class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -589,13 +620,13 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val x_n1 = RegNext(io.in, 0.U)
   val x_n2 = RegNext(x_n1, 0.U)
   val x_n3 = RegNext(x_n2, 0.U)
-  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) +
+  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) + 
              x_n2 * b2.U(8.W) + x_n3 * b3.U(8.W)
 }
 </code></pre>
 
-<h3 id="2-msyksphinz">解答例2. 私(@msyksphinz)が書いた</h3>
-<p><span style="color:red">ほぼVerilogじゃねーか！</span></p>
+<h3 id="answer-2-written-by-me-hardware-enginner">Answer 2. Written by me (hardware enginner)</h3>
+<p><span style="color:red">Almost Verilog!</span></p>
 <pre><code class="scala">class MyManyDynamicElementVecFir(length: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -620,11 +651,11 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 }
 </code></pre>
 
-<h2 id="3-chisel">解答例3. 頭のおかしなChiselエンジニアが書いた</h2>
+<h3 id="answer-3-written-by-chisel-expert">Answer 3. Written by Chisel Expert</h3>
 <ul>
-<li><span style="color:red">一見じゃ理解できねーぞ？</span></li>
+<li><span style="color:red">Can't understand?</span></li>
 </ul>
-<p><a href="https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb">https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</a></p>
+<p>https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</p>
 <pre><code class="scala">class MyManyDynamicElementVecFir(length: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -639,16 +670,16 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   io.out := taps.zip(io.consts).map { case (a, b) =&gt; a * b }.reduce(_ + _)
 </code></pre>
 
-<h1 id="chiselscala">閑話休題：なぜChiselは<span style="color:green">Scala</span>を選んだか？</h1>
+<h1 id="btw-why-did-chisel-choose-scala">BTW, Why did Chisel choose <span style="color:green">Scala</span>?</h1>
 <ul>
-<li>ウワサ：UCBでChiselの初期版を作った時、<span style="color:red">Ruby</span>を使ったらコンパイルが劇遅であきらめた</li>
+<li>Rumor: When we built the first version of Chisel at UCB, we used <span style="color:red">Ruby</span> and it compiled so slowly that we gave up.</li>
 <li>
-<p>まあScalaのコンパイルも速くないと思うけどね</p>
+<p>Well, I don't think Scala compiles fast either.</p>
 </li>
 <li>
-<p>Scalaの特徴：頭がおかしいくらい演算子のオーバライドができる</p>
+<p>Scala's feature: crazy operator overrides</p>
 </li>
-<li>例1 : 通常のChisel記述での<code>A := B</code>と、TileLink内における<code>A := B</code>は意味が違う</li>
+<li>Example 1 : <code>A := B</code> in normal Chisel description and <code>A := B</code> in TileLink have different meanings</li>
 </ul>
 <pre><code class="scala"> /** Connect this $coll to that $coll mono-directionally and element-wise.
     *
@@ -661,7 +692,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 </code></pre>
 
 <ul>
-<li>例2：頭のおかしなAXIバス接続 (<code>src/main/scala/subsystem/Ports.scala</code>)</li>
+<li>Example 2. Crazy AXI Bus connection (<code>src/main/scala/subsystem/Ports.scala</code>)</li>
 </ul>
 <pre><code class="scala"> mbus.coupleTo(s&quot;memory_controller_port_named_$portName&quot;) {
     (memAXI4Node
@@ -673,85 +704,85 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   }
 </code></pre>
 
-<h1 id="chisel_2">本題に戻って：なぜChiselを使うの？</h1>
-<p><img alt="msyksphinz_chisel_tweet.PNG" src="../msyksphinz_chisel_tweet.PNG" /></p>
-<h4 id="verilog"><span style="color:red">暴論：普通にハードウェア作りたいなら、Verilogの方が便利に決まっている！！！！</span></h4>
+<h1 id="back-on-topic-why-use-chisel">Back on topic: Why use Chisel?</h1>
+<p><img src="msyksphinz_chisel_tweet.PNG" alt="image-20201130110219979" style="zoom:67%;" /></p>
+<h4 id="rant-if-you-want-to-make-regular-hardware-verilog-is-definitely-more-convenient"><span style="color:red">Rant: If you want to make regular hardware, Verilog is definitely more convenient: ！！！！ </span>.</h4>
 <ul>
-<li>テストが書きやすい？ → UVMの方が高機能じゃない？</li>
-<li>エラー検出が優れている？ → 一般的な書き間違えのエラーならシミュレータで十分検出できる</li>
-<li>私から見えているクラスタのChiselを使うための「<span style="color:red">言い訳</span>」</li>
-<li><span style="color:blue">Rocket-Chipが使っているからやむを得ず</span></li>
-<li><span style="color:blue">新しい言語で何かを書いて皆に「すごい」って言ってほしい</span></li>
+<li>Easier to write tests? → Isn't UVM more sophisticated?</li>
+<li>Does it have better error detection? → The simulator is good enough to detect common writing errors.</li>
+<li><span style="color:red">Reason</span> for using Chisel in the cluster as seen by me</li>
+<li><span style="color:blue">It's unavoidable because Rocket-Chip is using it</span>.</li>
+<li><span style="color:blue">I want to write something in a new language and have everyone say "wow"</span>.</li>
 </ul>
-<h4 id="chisel_3"><span style="color:red">じゃあChiselの使いどころってどこよ？</span></h4>
+<h4 id="so-whats-the-use-of-chisel"><span style="color:red">So what's the use of Chisel? </span></h4>
 <ul>
-<li><span style="color:blue">技術の進化が、ハードウェア設計の周期をはるかに上回ってきた</span></li>
-<li>ハードウェアエンジニア、技術の進化に追いついてきている？</li>
-<li>チップ作るのに2～3年かかる。これで最先端AIチップ作れますか？</li>
-<li>DSAの時代、<span style="color:red">少量多品種</span>で作り上げなければならない</li>
-<li>(関係ないけど)少量多品種で弱者が簡単にチップを起こす時代が来るべき</li>
-<li>ハードウェアの「複雑性」どのように管理する？</li>
+<li><span style="color:blue">The evolution of technology has far outpaced the cycle of hardware design</span>.</li>
+<li>Hardware engineers, are you catching up with the evolution of technology?</li>
+<li>It takes two to three years to make a chip. It takes two to three years to make a chip. Can you make a cutting-edge AI chip with this?</li>
+<li>In the age of DSA, we have to build in <span style="color:red">low volume, high variety</span>.</li>
+<li>(Not that it matters.) The time should come when chips can be easily woken up by the weak in small quantities and high variety.</li>
+<li>How do you manage the "complexity" of hardware?</li>
 </ul>
 <p><img alt="hardware_difficulty" src="../hardware_difficulty.PNG" /></p>
-<h1 id="chiseldiplomacy_1">Chiselの使いどころ一例：<span style="color:red">Diplomacy</span></h1>
+<h1 id="an-example-of-how-to-use-chisel-diplomacy">An example of how to use Chisel: <span style="color:red">Diplomacy</span></h1>
 <ul>
 <li>Parameter Negotiation Framework for generating parameterized protocol implementation.</li>
 </ul>
-<p><img alt="diplomacy.PNG" src="../diplomacy.PNG" /></p>
-<h1 id="diplomacy">Diplomacyはどこから来たの？</h1>
+<p><img src="diplomacy.PNG" alt="diplomacy" style="zoom:67%;" /></p>
+<h1 id="where-did-diplomacy-come-from">Where did Diplomacy come from?</h1>
 <ul>
-<li>Andrew Watermanの博士論文：</li>
+<li>Andrew Waterman's PhD Thesis</li>
 <li>Design of the RISC-V Instruction Set Architecture</li>
-<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</a></li>
-<li>Yunsup Leeの博士論文：</li>
+<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</li>
+<li>Yunsup Lee's PhD Thesis</li>
 <li>Decoupled Vector-Fetch Architecture with a Scalarizing Compiler</li>
-<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</a></li>
-<li>Henry Cookの博士論文：</li>
-<li><span style="color:red">Productive Design of Extensible On-Chip Memory Hierarchies</span></li>
-<li>Diplomacyの基本的なアイデアがこの論文に書いてある</li>
-<li><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</a></li>
+<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</li>
+<li>Henry Cook's PhD Thesis</li>
+<li><span style="color:red">Productive Design of Extensible On-Chip Memory Hierarchies</span>.</li>
+<li>The basic idea of Diplomacy is described in this paper</li>
+<li>https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</li>
 </ul>
-<h1 id="diplomacy_1">Diplomacyの実現したいこと</h1>
+<h1 id="what-we-want-to-achieve-with-diplomacy">What we want to achieve with Diplomacy</h1>
 <ul>
-<li>一つのデザインを使って柔軟なコンフィグレーションを実現する</li>
-<li>一つのデザインから</li>
-<li>複数のCPUコンフィグレーション (RV64 / RV32)</li>
-<li>複数のバス構成・キャッシュ構成<ul>
-<li>コア数・バス幅、キャッシュサイズ、SoC構成</li>
+<li>Flexible configuration using a single design</li>
+<li>Multiple CPU configurations (RV64 / RV32) from a single design</li>
+<li>Multiple CPU configurations (RV64 / RV32)</li>
+<li>Multiple bus and cache configurations<ul>
+<li>Number of cores, bus width, cache size, SoC configuration</li>
 </ul>
 </li>
 </ul>
 <p><img alt="image-20201130123338375" src="../diplomacy_SoC_variation.PNG" /></p>
-<h3 id="sifivecore-ip-generator">一つの実現例：SiFiveのCore IP Generator</h3>
+<h3 id="one-example-sifives-core-ip-generator">One example: SiFive's Core IP Generator</h3>
 <ul>
-<li><a href="https://scs.sifive.com/core-designer/">https://scs.sifive.com/core-designer/</a></li>
+<li>https://scs.sifive.com/core-designer/</li>
 </ul>
-<p><img alt="coreip_generator.PNG" src="../coreip_generator.PNG" /></p>
-<h1 id="chisel-diplomacyintellij-idea">閑話休題：Chisel + Diplomacyを使って開発したいならIntelliJ IDEAを使おう</h1>
-<p><span style="color:red">マジでAuto Completionの機能が無いと死ぬ。</span></p>
+<p><img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" /></p>
+<h1 id="if-you-want-to-develop-with-chisel-diplomacy-use-intellij-idea">If you want to develop with Chisel + Diplomacy, use IntelliJ IDEA!</h1>
+<p><span style="color:red">Auto Completion feature is mandatory.</span></p>
 <p><img alt="image-20201212012922069" src="../intellij_auto_completion.PNG" /></p>
-<h1 id="diplomacytilelink">誤解：DiplomacyはTileLinkを使わないと使えないの？</h1>
-<p>そんなことはない。DiplomacyはChiselのライブラリなのでTileLinkを使わなくても使える。</p>
-<h2 id="diplomacymultiple-inputsadder">例: Diplomacyで繋げたMultiple InputsのAdder</h2>
-<p><img alt="multiple_inputs_adder.PNG" src="../multiple_inputs_adder.PNG" /></p>
-<p>ここで読み解かなければならないのは以下の3つのモジュール：</p>
+<h1 id="misunderstandings-diplomacy-can-only-be-used-with-tilelink">Misunderstandings: Diplomacy can only be used with TileLink?</h1>
+<p>No, Diplomacy is a Chisel library, so you don't need to use TileLink to use it.</p>
+<h2 id="example-adder-for-multiple-inputs-connected-with-diplomacy">Example: Adder for Multiple Inputs connected with Diplomacy</h2>
+<p><img src="multiple_inputs_adder.PNG" alt="image-20201202110535440" style="zoom:67%;" /></p>
+<p>Here are the three modules that we need to decipher</p>
 <ul>
-<li><code>AdderDriver</code> : 加算器に対してランダム値を送信するためのドライバー</li>
-<li><code>AdderNode</code> : 加算器本体。2つ以上の<code>AdderDriver</code>が接続されその値をすべて足し合わせ、結果を出力する</li>
-<li><code>AdderMonitor</code> : モニタ。<code>AdderDriver</code>の発信した値と<code>AdderNode</code>が生成した加算結果を突き合わせ、答え合わせをする機能を持つ</li>
+<li><code>AdderDriver</code> : A driver to send random values to the adder.</li>
+<li><code>AdderNode</code> : The adder itself, to which two or more <code>AdderDrivers</code> are connected to add all their values together and output the result.</li>
+<li><code>AdderMonitor</code> : A monitor. Monitor<code>: A monitor that checks the values sent out by the</code>AdderDriver<code>against the results of addition generated by the</code>AdderNode`.</li>
 </ul>
-<h3 id="adderdriver">AdderDriver</h3>
-<p>加算器に対してランダム値を送信するためのドライバー。<code>AdderDriver</code>を読み解くためのポイント：</p>
+<h3 id="adderdriver">AdderDriver.</h3>
+<p>Driver to send random values to the adder. Key points for reading and understanding <code>AdderDriver</code>: 1.</p>
 <ol>
-<li><span style="color:red"><code>val node = new AdderDriverNode</code> って何？</span></li>
-<li><span style="color:red"><code>new LazyModuleImp(this)</code>って何？</span></li>
+<li><span style="color:red">What is <code>val node = new AdderDriverNode</code>? </span>.</li>
+<li>what is <span style="color:red"><code>new LazyModuleImp(this)</code>? </span> 3.</li>
 </ol>
-<pre><code class="scala">// class モジュール名 extends LazyModule はDiplomacy経由で接続するためのモジュールだと思ってもらえれば.
+<pre><code class="scala">// class ModuleName extends LazyModule If you think of it as a module for connecting via Diplomacy.
 class AdderDriver(width: Int, numOutputs: Int)(implicit p: Parameters) extends LazyModule {
-    // 1. AdderDriverNodeとは何か、そもそも&quot;node&quot;はどのような役割を持つのか？
+    // 1. what is AdderDriverNode and what is the role of &quot;node&quot; in the first place?
     val node = new AdderDriverNode(Seq.fill(numOutputs)(DownwardParam(width)))
 
-    // 2. LazyModuleImp()とは何か、Diplomacy内でどのような役割を持つのか
+    // 2. What is LazyModuleImp() and what role does it have in Diplomacy?
     lazy val module = new LazyModuleImp(this) {
         ...
         // drive signals
@@ -759,104 +790,106 @@ class AdderDriver(width: Int, numOutputs: Int)(implicit p: Parameters) extends L
     }
 }
 
-// AdderDriverNode は SourceNode クラスを継承して作成されたもの
+// AdderDriverNode is created by inheriting from the SourceNode class
 class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
   extends SourceNode(AdderNodeImp)(widths)
-</code></pre>
+````
 
-<ul>
-<li><code>SourceNode</code>はマスターとなるノードに使用する。</li>
-<li><code>SinkNode</code>はスレーブとなるノードに使用する。</li>
-<li><code>AdapterNode</code>は複数のマスターと複数のスレーブを接続する。マスターとスレーブの数は同一でなければならない。</li>
-<li><code>NexusNode</code>は複数のマスターと複数のスレーブを接続する。マスターとスレーブの数は同一でなくても良い。</li>
-</ul>
-<h4 id="1-node">1. node : モジュール間を接続するためのもの</h4>
-<p><code>node</code>はDiplomacyにおいてモジュール間で通信を行うための通信ポート。<code>node</code>間で様々なパラメータをやり取りし、パラメータの調停を行う役割を持つ。</p>
-<p><code>node</code>には2つの重要な要素がある。</p>
-<ul>
-<li>
-<p><code>bundle</code> : Diplomacyによって接続されるI/Oポートが含まれている。今回の場合はランダム値を送信するための信号が一束入っているだけ</p>
-</li>
-<li>
-<p><code>edge</code> : Diplomacyのノード間を接続するためのパラメータ群が入っている。これらのパラメータをノード間で通信し最終的なノード間パラメータ調整（Diplomacy）を行う。</p>
-</li>
-</ul>
-<pre><code class="scala">object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam, UInt] {
-  // edge : Diplomacyのノード間を接続するためのパラメータ群が入っている。
+- `SourceNode` is used for the node that will be the master.
+- `SinkNode` is used for nodes that are slaves.
+- `AdapterNode` connects multiple masters and multiple slaves. The number of masters and slaves should be the same.
+- `NexusNode` is used to connect multiple masters and multiple slaves. The number of masters and slaves does not have to be the same.
+
+#### 1. node : for connecting between modules
+
+`node` is a communication port for communication between modules in Diplomacy. It has the role of exchanging various parameters between `nodes` and mediating the parameters.
+
+There are two important elements in `node`.
+
+- `bundle` : Contains the I/O ports connected by Diplomacy. In this case, it just contains a bundle of signals for sending random values.
+
+- `edge` : Contains a set of parameters for connecting nodes of Diplomacy. These parameters are communicated between the nodes to make the final inter-node parameter adjustment (Diplomacy).
+
+````scala
+object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam, UInt] {
+  // Edge : Contains a set of parameters for connecting Diplomacy nodes.
   def edge(pd: DownwardParam, pu: UpwardParam, p: Parameters, sourceInfo: SourceInfo) = {
     if (pd.width &lt; pu.width) EdgeParam(pd.width) else EdgeParam(pu.width)
   }
 
-  // Diplomacyによって接続されるI/Oポートが含まれている。
-  // UInt(e.width.W) : eはEdgeParam,つまりエッジのパラメータ
+  // Contains the I/O ports connected by Diplomacy.
+  // UInt(e.width.W) : e is the EdgeParam, i.e. the edge parameter
   def bundle(e: EdgeParam) = UInt(e.width.W)
 
-  def render(e: EdgeParam) = RenderedEdge(&quot;blue&quot;, s&quot;width = ${e.width}&quot;)
+  def render(e: EdgeParam) = RenderedEdge(&quot;blue&quot;, s &quot;width = ${e.width}&quot;)
 }
-</code></pre>
+````
 
-<h4 id="2-lazymoduleimp-node">2. <code>LazyModuleImp</code> : nodeの情報をもとに回路を実装する部分</h4>
-<p><code>node</code>とのデータ通信をしつつ実際の処理を行うためのデジタル処理部。</p>
-<pre><code class="scala">  val node = new AdderDriverNode(Seq.fill(numOutputs)(DownwardParam(width)))
+#### 2. `LazyModuleImp` : The part that implements the circuit based on the information of node.
+
+2. `LazyModuleImp` : The part that implements the circuit based on the information of `node`.
+
+```scala
+  val node = new AdderDriverNode(Seq.fill(numOutputs)(DownwardParam(width)))
 
   lazy val module = new LazyModuleImp(this) {
-    // すべてのノードのエッジからビット幅情報を取り出す
+    // Extract bit width information from all node edges
     val negotiatedWidths = node.edges.out.map(_.width)
-    // すべてのノード間接続線のビット数が一致するか？
+    // Do all inter-node connection lines have the same number of bits?
     require(negotiatedWidths.forall(_ == negotiatedWidths.head), &quot;outputs must all have agreed on same width&quot;)
 
-    // いつぃているならば、先頭ノードの情報を使用する (まあどのノードの情報を使っても同じだけど)
+    // Use the head node's information if it is available (well, it doesn't matter which node's information is used)
     val finalWidth = negotiatedWidths.head
 
-    // FibonacciLFSRモジュールにより乱数を生成
+    // generate random numbers by FibonacciLFSR module
     val randomAddend = FibonacciLFSR.maxPeriod(finalWidth)
 
-    // 乱数をすべての出力ノードに対して送り込む
+    // send random numbers to all output nodes
     node.out.foreach { case (addend, _) =&gt; addend := randomAddend }
   }
 </code></pre>
 
-<h3 id="diplomacyyed">Diplomacyを使う場合は、yEdを使ってノードグラフ図を確認しよう</h3>
-<p><img alt="yed_adder_node_graph.PNG" src="../yed_adder_node_graph.PNG" /></p>
-<div align="center">図. yEdによりAdderグラフを生成した図</div>
+<h3 id="if-you-use-diplomacy-use-yed-to-check-the-node-graph-diagram">If you use Diplomacy, use yEd to check the node graph diagram!</h3>
+<p><img src="yed_adder_node_graph.PNG" alt="yed_ adder_node_graph" style="zoom:50%;" /></p>
+<div align="center">Figure. Diagram of the Adder graph generated by yEd.</div>
 
 <ul>
-<li>もっと複雑な例：Freedom-SoCで4コア構成作成時のノード接続関係図</li>
+<li>A more complex example: Node connection diagram for a 4-core configuration in Freedom-SoC.</li>
 </ul>
-<p><img alt="freedom_diplomacy_node.PNG" src="../freedom_diplomacy_node.PNG" /></p>
-<div align="center">図. freedom SoC ノード接続関係図</div>
+<p><img src="freedom_diplomacy_node.PNG" alt="freedom_diplomacy_" style="zoom:67%;" /></p>
+<div align="center">Figure. Connection diagram of freedom SoC nodes</div>
 
-<h1 id="tilelinkcpu">TileLinkを使った自作CPU＋多彩なバス接続を実現</h1>
-<h3 id="cpu">ちょっと自作CPUしてみる</h3>
+<h1 id="home-made-cpu-using-tilelink-various-bus-connections">Home-made CPU using TileLink + various bus connections</h1>
+<h3 id="try-to-make-your-own-cpu">Try to make your own CPU.</h3>
 <ul>
-<li>Chiselを使って自作CPUして、それにTileLinkを接続して簡単なマルチコアシステムを作ってみる。</li>
+<li>I made my own CPU using Chisel, and connected it to TileLink to make a simple multi-core system.</li>
 </ul>
-<h4 id="cpu-rv645">作ったCPUコア: RV64の簡単な5段パイプライン</h4>
-<p>まともに検証していないけどとりあえず<code>riscv-tests</code>程度は動くCPUコアを作った。</p>
-<p><a href="https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core">https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</a></p>
-<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/m/msyksphinz/20181224/20181224131915.png" alt="Chiselを使って波形を全く使わずにRISC-Vパイプラインプロセッサを設計した - FPGA開発日記" style="zoom:50%;" /></p>
+<h4 id="cpu-core-i-made-rv64-with-simple-5-stage-pipeline">CPU core I made: RV64 with simple 5-stage pipeline.</h4>
+<p>I made a CPU core that can run <code>riscv-tests</code> for now, though I haven't tested it properly.</p>
+<p>https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/m/msyksphinz/20181224/20181224131915.png" alt="RISC-V pipeline processor designed with Chisel without any waveforms. I designed a pipeline processor - FPGA development diary" style="zoom:50%;" /></p>
 <ul>
-<li>フェッチバス・データバスは非常に単純なもの（非TileLink / 非AXIバス）</li>
+<li>The fetch bus / data bus is very simple (non-TileLink / non-AXI bus)</li>
 </ul>
-<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17</a> (<code>InstBus</code>へのリンク)</p>
-<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30</a> (<code>DataBus</code>へのリンク)</p>
-<h3 id="cputilelinksoc">自作CPUをどのようにしてTileLinkに組み込んでSoCを構築するか？</h3>
+<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17 (link to <code>InstBus</code>)</p>
+<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30 (link to <code>DataBus</code>)</p>
+<h3 id="how-do-i-integrate-my-homebrew-cpu-into-tilelink-to-build-a-soc">How do I integrate my homebrew CPU into TileLink to build a SoC?</h3>
 <ol>
-<li>自作CPUをLazyModuleでラップする</li>
-<li><code>TileLink</code>のノードを定義する</li>
-<li>TileLinkのノードと自作CPUのノードを接続する</li>
+<li>wrap your own CPU with LazyModule. 2.</li>
+<li>define a node of <code>TileLink</code>. 3.</li>
+<li>connect the node of TileLink to the node of your CPU.</li>
 </ol>
 <p><img alt="image-20201212151257774" src="../cpu_configuration.PNG" /></p>
-<div align="center">図. 自作CPUのインタフェース構成</div>
+<div align="center">Figure. Interface configuration of home-made CPU</div>
 
 <ul>
-<li>TileLinkのノードは2つ用意している。</li>
-<li>命令フェッチ用</li>
-<li>データアクセス用</li>
-<li>どちらもTileLinkだが、自作CPUは独自バスプロトコルなので無理やり置き換えている。</li>
-<li>これで、<code>CoreTop</code>モジュールはTileLinkのインタフェースを2つ持ったモジュールに置き換わる</li>
+<li>There are two TileLink nodes available.</li>
+<li>For instruction fetching</li>
+<li>For data access</li>
+<li>Both of them are TileLink, but I was forced to replace them because my own CPU has its own bus protocol.</li>
+<li>Now, the <code>CoreTop</code> module is replaced with a module that has two TileLink interfaces.</li>
 </ul>
-<pre><code class="scala">    // TileLinkで定義した命令・データバスのClientNodeを内部に引っ張ってくる
+<pre><code class="scala">    // Pull the ClientNode of the instruction/data bus defined in TileLink into the internal
     val (inst_out, inst_edge) = inst_node.out(0)
     val (data_out, data_edge) = data_node.out(0)
     val baseEnd = 0
@@ -864,10 +897,10 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
     val (sourceEnd, sourceOff) = (inst_edge.bundle.sourceBits + sizeEnd, sizeEnd)
     val beatBytes = inst_edge.bundle.dataBits
 
-    // 自作CPUのインスタンス定義
+    // Define the instance of your own CPU
     val cpu = Module(new Cpu(conf, hartid))
 
-    // TileLinkのフェッチポートの信号と、自作CPUのフェッチポート(独自プロトコル)を接続
+    // Connect TileLink's fetch port signal to the fetch port of the home-made CPU (proprietary protocol)
     inst_out.a.valid := cpu.io.inst_bus.req
     inst_out.a.bits.address := cpu.io.inst_bus.addr
     inst_out.a.bits.opcode := TLMessages.Get
@@ -876,7 +909,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
     cpu.io.inst_bus.ack := inst_out.d.valid
     cpu.io.inst_bus.rddata := inst_out.d.bits.data.asSInt
 
-    // TileLinkのデータアクセスポートの信号と、自作CPUのデータアクセスポート(独自プロトコル)を接続
+    // Connect TileLink's data access port signal to the data access port (proprietary protocol) of the home-made CPU
     data_out.a.valid := cpu.io.data_bus.req
     data_out.a.bits.address := cpu.io.data_bus.addr
     data_out.a.bits.opcode := TLMessages.Get
@@ -885,74 +918,74 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
     cpu.io.data_bus.rddata := data_out.d.bits.data.asSInt
 </code></pre>
 
-<h3 id="tilelinkcoretopsoc">TileLinkモジュールを持っCoreTopを使ってSoCを作る</h3>
-<p><code>CoreTop</code>とメモリモジュールを持つ<code>CoreComplex</code>モジュールを作成してこれらを接続する。</p>
-<pre><code class="scala">class core_complex[Conf &lt;: RVConfig]
-  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters)
+<h3 id="create-a-soc-using-coretop-with-tilelink-module">Create a SoC using CoreTop with TileLink module.</h3>
+<p>Create a <code>CoreTop</code> and a <code>CoreComplex</code> module with a memory module and connect them.</p>
+<pre><code class="scala">class core_complex[Conf &lt;: RVConfig] 
+  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters) 
   extends LazyModule {
-  // 外部からメモリにデータアクセスするためのデータローダ
+  // Data loader for data access to memory from outside.
   val loader = LazyModule(new loader(&quot;loader&quot;))
 
-  // CPUコア(numCore分だけ複数個インスタンス化する)
+  // CPU cores (instantiate multiple for numCore)
   val core   = Seq.tabulate(numCores) { case i =&gt; LazyModule(new CoreTop(conf, i, &quot;core&quot; + i.toString)) }
-  // TileLinkのクロスバ
+  // TileLink crossbar
   val xbar   = LazyModule(new TLXbar)
-  // TileLinkインタフェースを持つメモリ
+  // memory with TileLink interface
   val memory = LazyModule(new TLRAM(AddressSet(0x80000000L, 0x0ffff), beatBytes = ramBeatBytes))
 
-  // クロスバにデータローダを接続する
+  // Connect the instruction fetch port and data port of the CPU core to the crossbar
   xbar.node := loader.node
   core.foreach { case (core) =&gt; {
-    // クラスバにCPUコアの命令フェッチポートとデータポートを接続する
+    // 
     xbar.node := TLDelayer(0.1) := core.inst_node
     xbar.node := TLDelayer(0.1) := core.data_node
   }
   }
-  // クロスバをメモリに接続する
+  // Connect the data loader to the crossbar
   memory.node := xbar.node
 
 </code></pre>
 
 <p><img alt="image-20201212152847526" src="../core_complex_core1.PNG" /></p>
-<div align="center">図. 自作CPUをTileLinkを通じてメモリに接続し、簡単なSoCを構成する</div>
+<div align="center">Figure. Connecting a home-made CPU to memory through TileLink to configure a simple SoC.</div>
 
-<h3 id="numcores1"><code>numCores</code>を&gt;1にして簡単にマルチコア構成を実現</h3>
-<p>上記のChiselの記述ならば、簡単にマルチコアにできる。<code>nCores</code>に2, 3, ... を設定するだけで自動的にクロスバに複数のCPUが接続されるようになる。</p>
+<h3 id="set-numcores-to-1-for-easy-multi-core-configuration">Set <code>numCores</code> to &gt;1 for easy multi-core configuration.</h3>
+<p>With the above description of Chisel, you can easily make it multi-core. Just set <code>nCores</code> to 2, 3, ... to <code>nCores</code>, and multiple CPUs will be connected to the crossbar automatically.</p>
 <p><img alt="image-20201212153430326" src="../core_complex_coreN.PNG" /></p>
-<div align="center">図. 自作CPUをTileLinkを通じてメモリに接続する。コア数=4の場合</div>
+<div align="center">Figure. Connecting a home-made CPU to memory through TileLink. When connection=4</div>
 
 <ul>
-<li>簡単にシミュレーションしてみた例。とりあえず4コアが同時にリクエストしても上手くメモリアクセスをArbitrationできている。</li>
+<li>A simple simulation example. At first, the memory access is well arbitrated even when 4 cores request at the same time.</li>
 </ul>
 <p><img alt="multicore_memory_access" src="../multicore_memory_access.PNG" /></p>
-<div align="center">図. 4コア構成でのRTLシミュレーションの様子</div>
+<div align="center">Figure . RTL simulation in a four-core configuration.</div>
 
 <ul>
-<li>4コア構成にした場合のDiplomacyノード構成の例</li>
+<li>Example of Diplomacy node configuration with 4-core configuration</li>
 </ul>
-<p><img alt="multicore_diplomacy_node.PNG" src="../multicore_diplomacy_node.PNG" /></p>
-<div align="center">図. 4コア構成でのDiplomacy接続関係図</div>
+<p><img src="multicore_diplomacy_node.PNG" alt="multicore_diplomacy_node" style="zoom:50%;" /></p>
+<div align="center">Figure. Diplomacy connection diagram for a four-core configuration.</div>
 
-<h1 id="rockettile">RocketTileを例にバスの繋げ方を学ぼう</h1>
+<h1 id="lets-learn-how-to-connect-the-bus-using-rockettile-as-an-example">Let's learn how to connect the bus using RocketTile as an example.</h1>
 <ul>
-<li>RISC-V の CPU実装代表格：Rocket-Chip <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
+<li>Typical CPU implementation of RISC-V: Rocket-Chip https://github.com/chipsalliance/rocket-chip</li>
 </ul>
-<h3 id="rocket-chip-generatorgenerator">Rocket-Chip Generator：なぜ「Generator」と名前が付けられているのか分かりますか？</h3>
+<h3 id="rocket-chip-generator-do-you-know-why-its-named-generator">Rocket-Chip Generator: Do you know why it's named "Generator"?</h3>
 <ul>
-<li>Rocket-Chipはデザインだけでなく、デザイン間の調整を行うためのDiplomacyや、Chisel実装・FIRRTL実装自体も含まれている総合パッケージとなっている。</li>
-<li>Scalaによる実装だけでなくハードウェアを生成するためのすべてのエンジンを含んでいるため、「Generator」と呼ばれている。</li>
+<li>Rocket-Chip is a comprehensive package that includes not only the design, but also Diplomacy for coordination between designs, Chisel implementation, and FIRRTL implementation itself.</li>
+<li>It is called "Generator" because it includes not only the Scala implementation but also all the engines to generate the hardware.</li>
 </ul>
-<h2 id="rocket-chipdefaultconfigdiplomacy">Rocket-Chipの<code>DefaultConfig</code>のDiplomacy構成を見てみよう</h2>
-<p>Rocket-Chipのバス接続は基本的にTileLinkとDiplomacyを使って構成されている。</p>
-<p><img alt="rocket_chip_diplomacy_node.PNG" src="../rocket_chip_diplomacy_node.PNG" /></p>
-<p>もう少し噛み砕いてみる。</p>
-<p>バス接続部を見てみる。</p>
-<h2 id="rockettilediplomacy">RocketTileで学ぶDiplomacyによるデバイスの接続</h2>
+<h2 id="lets-look-at-the-diplomacy-configuration-of-defaultconfig-of-rocket-chip">Let's look at the Diplomacy configuration of <code>DefaultConfig</code> of Rocket-Chip.</h2>
+<p>The bus connection of Rocket-Chip is basically configured using TileLink and Diplomacy.</p>
+<p><img src="rocket_chip_diplomacy_node.PNG" alt="image-20201213114731343" style="zoom:60%;" /></p>
+<p>Let's break down little more.</p>
+<p>Let's take a look at the bus connections.</p>
+<h2 id="connect-devices-using-diplomacy-with-rockettile">Connect devices using Diplomacy with RocketTile</h2>
 <ul>
-<li>RocketTile : RocketChipとDCacheなどの基本的な構成をすべて含んだ基本的なCPUコア1要素。</li>
-<li>CPUベンダの中では、"CoreComplex"とも言ったりするかなあ... なんで"Core Complex"って言うんだろう？良く分からん。</li>
+<li>RocketTile : One basic CPU core element that contains all the basic components such as RocketChip and DCache.</li>
+<li>In CPU vendors, it is also called "CoreComplex"... Why do they call it "Core Complex"? I'm not sure.</li>
 </ul>
-<h3 id="rocket-chip">Rocket-Chipによる(簡単な)メモリマップ</h3>
+<h3 id="simple-memory-map-by-rocket-chip">(Simple) memory map by Rocket-Chip.</h3>
 <table>
 <thead>
 <tr>
@@ -1007,41 +1040,41 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </tr>
 </tbody>
 </table>
-<h2 id="rockettile_1">RocketTileの中身</h2>
+<h2 id="verilog-structure-of-rockettile">Verilog structure of RocketTile</h2>
 <pre><code class="verilog">module RocketTile( // @[:freechips.rocketchip.system.DefaultConfig.fir@200426.2]
 
-  TLXbar_8 tlMasterXbar ();
+  TLXbar_8 tlMasterXbar (); 
 
-  IntXbar_4 intXbar ();
+  IntXbar_4 intXbar (); 
 
-  DCache dcache ();
+  DCache dcache (); 
 
-  Frontend frontend ();
+  Frontend frontend (); 
 
   TLBuffer_9 buffer ();
 
-  IntSyncCrossingSink intsink ();
+  IntSyncCrossingSink intsink (); 
 
-  IntSyncCrossingSink_1 intsink_1 ();
+  IntSyncCrossingSink_1 intsink_1 (); 
 
-  IntSyncCrossingSink_2 intsink_2 ();
+  IntSyncCrossingSink_2 intsink_2 (); 
 
-  IntSyncCrossingSink_2 intsink_3 ();
+  IntSyncCrossingSink_2 intsink_3 (); 
 
-  FPU fpuOpt ();
+  FPU fpuOpt (); 
 
-  HellaCacheArbiter dcacheArb ();
+  HellaCacheArbiter dcacheArb (); 
 
-  PTW ptw ();
+  PTW ptw (); 
 
-  Rocket core ();
+  Rocket core (); 
 </code></pre>
 
-<p>重要な部分を抜粋して図を作ってみた。<span style="color:blue">青がLazyModule</span>、<span style="color:red">赤が通常Module</span>。</p>
-<p><img alt="rocket_tile.PNG" src="../rocket_tile.PNG" /></p>
-<p>これをScalaから同読み解けばいいのさ？という話で、いくつか例を挙げてどのようにしてノード間が接続されているのか見てみよう。</p>
+<p>I made a diagram by extracting the important parts. <span style="color:blue">Blue is LazyModule</span>, <span style="color:red">Red is NormalModule</span>.</p>
+<p><img src="rocket_tile.PNG" alt="image-20201211233635970" style="zoom:100%;" /></p>
+<p>So, how can we decipher this from Scala? Let's take a look at some examples to see how the nodes are connected.</p>
 <ul>
-<li><code>RocketTile.scala</code>で当該部分を見てみよう。</li>
+<li>Let's take a look at <code>RocketTile.scala</code>.</li>
 </ul>
 <pre><code class="scala">class RocketTile private(
       val rocketParams: RocketTileParams,
@@ -1063,9 +1096,9 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </code></pre>
 
 <ul>
-<li><code>RocketTileModuleImp</code>はどのような実装になっているのか？</li>
+<li>What is the implementation of <code>RocketTileModuleImp</code>?</li>
 </ul>
-<pre><code class="scala">// &quot;outer&quot; は 上記の RocketTile に相当する
+<pre><code class="scala">// &quot;outer&quot; corresponds to the RocketTile above
 class RocketTileModuleImp(outer: RocketTile) extends BaseTileModuleImp(outer)
     with HasFpuOpt
     with HasLazyRoCCModule
@@ -1076,56 +1109,60 @@ class RocketTileModuleImp(outer: RocketTile) extends BaseTileModuleImp(outer)
   outer.frontend.module.io.cpu &lt;&gt; core.io.imem
   dcachePorts += core.io.dmem // TODO outer.dcachePorts += () =&gt; module.core.io.dmem ??
 
-  /* FPUについてはオプションによっては接続する */
+  /* For FPU, depending on options, connect */
   fpuOpt foreach { fpu =&gt; core.io.fpu &lt;&gt; fpu.io }
 
-  /* DCacheをデータキャッシュのアービタに接続する */
+  /* Connect DCache to the data cache arbiter */
   dcacheArb.io.requestor &lt;&gt; dcachePorts
   ptw.io.requestor &lt;&gt; ptwPorts
 
 </code></pre>
 
 <ul>
-<li>FPUを接続する部分（ここはDiplomacyを使っていない）</li>
+<li>FPU Connection  (we are not using Diplomacy here)</li>
 </ul>
-<p><img alt="fpu_diplomacy.PNG" src="../fpu_diplomacy.PNG" /></p>
+<p><img src="fpu_diplomacy.PNG" alt="image-20201211235345464" style="zoom:67%;" /></p>
 <ul>
-<li>DCacheを接続する部分</li>
+<li>DCache Connection</li>
 </ul>
 <p><img alt="image-20201212001639688" src="../dcache_diplomacy.PNG" /></p>
-<h2 id="rocket-chipsoc">Rocket-ChipのSoC部分の構成を読み解こう</h2>
+<h2 id="lets-read-and-understand-the-configuration-of-the-soc-part-of-rocket-chip">Let's read and understand the configuration of the SoC part of Rocket-Chip.</h2>
 <ul>
-<li>Rocket-Chip GeneratorでVerilogを生成すると、<code>TestHarness</code>というトップモジュールが生成されるが、これがテスト実行用のモジュールとなる。</li>
-<li>これもVerilogの力を借りずすべてChiselから生成されている。</li>
-<li><code>src/main/scala/system/TestHarness.scala</code></li>
+<li>When Verilog is generated by Rocket-Chip Generator, a top module called <code>TestHarness</code> is generated, which is a module for test execution.</li>
+<li>
+<p>This is also all generated from Chisel without the help of Verilog.</p>
+</li>
+<li>
+<p><code>src/main/scala/system/TestHarness.scala</code></p>
+</li>
 </ul>
 <pre><code class="scala">class TestHarness()(implicit p: Parameters) extends Module {
   val io = new Bundle {
     val success = Bool(OUTPUT)
   }
 
-  val ldut = LazyModule(new ExampleRocketSystem) // ExampleRocketSystemのインスタンス化.
-  val dut = Module(ldut.module)  // ExmapleRocketSystemはLazyModuleなので、その内部にある実体をdutとして取り出す
+  val ldut = LazyModule(new ExampleRocketSystem) // Instantiate ExampleRocketSystem.
+  val dut = Module(ldut.module) // ExmapleRocketSystem is a LazyModule, so extract the entity inside it as dut.
 
   dut.dontTouchPorts()
   dut.tieOffInterrupts()
-  SimAXIMem.connectMem(ldut)        // object SimAXIMemをインスタンス化してldutのメモリポートを接続
-  SimAXIMem.connectMMIO(ldut)       // object SimAXIMemをインスタンス化してldutのMMIOポートを接続
-  ldut.l2_frontend_bus_axi4.foreach(_.tieoff)   // ldutのフロントエンドポートはTie Zeroする
+  SimAXIMem.connectMem(ldut) // instantiate the object SimAXIMem and connect the memory port of ldut
+  SimAXIMem.connectMMIO(ldut) // object Instantiate SimAXIMem and connect ldut's MMIO port
+  ldut.l2_frontend_bus_axi4.foreach(_.tioff) // ldut's frontend port should be Tie Zero
 </code></pre>
 
 <ul>
 <li><code>SimAXIMem.connectMem(ldut)</code>の部分を除いてみる</li>
 </ul>
 <pre><code class="scala">  def connectMem(dut: CanHaveMasterAXI4MemPort)(implicit p: Parameters): Seq[SimAXIMem] = {
-    // ExampleRocketSystemのmem_axi4はioポートを示している
-    // dut.memAXI4Node.inはLazyModuleのSlavePortノード
+    // mem_axi4 in ExampleRocketSystem shows the io port
+    // dut.memAXI4Node.in is the SlavePort node of the LazyModule
     dut.mem_axi4.zip(dut.memAXI4Node.in).map { case (io, (_, edge)) =&gt;
-      // 新たにAXI4メモリをインスタンス化する
-      // メモリのサイズはAXIノードのedge情報に依存する
+      // Newly instantiate AXI4 memory
+      // The size of the memory depends on the edge information of the AXI node
       val mem = LazyModule(new SimAXIMem(edge, size = p(ExtMem).get.master.size))
       Module(mem.module).suggestName(&quot;mem&quot;)
-      // メモリインスタンスのI/OポートとldutのAXIポートを接続する
+      // Connect the I/O port of the memory instance to the AXI port of the ldut
       mem.io_axi4.head &lt;&gt; io
       mem
     }
@@ -1141,21 +1178,21 @@ trait CanHaveMasterAXI4MemPort { this: BaseSubsystem =&gt;
   private val portName = &quot;axi4&quot;
   private val device = new MemoryDevice
   private val idBits = memPortParamsOpt.map(_.master.idBits).getOrElse(1)
-  // AXI4のDiplomacy スレーブノードを作る。
-  // なぜスレーブなのかは、内部のTileLink (master) がマスターで、AXI4ノードがスレーブだから
+  // Create a Diplomacy slave node for AXI4.
+  // The reason why it is a slave is because the internal TileLink (master) is the master and the AXI4 node is the slave.
   val memAXI4Node = AXI4SlaveNode(memPortParamsOpt.map({ case MemoryPortParams(memPortParams, nMemoryChannels) =&gt;
     Seq.tabulate(nMemoryChannels) { channel =&gt;
       val base = AddressSet.misaligned(memPortParams.base, memPortParams.size)
       val filter = AddressSet(channel * mbus.blockBytes, ~((nMemoryChannels-1) * mbus.blockBytes))
 ...
-  // mbus (memory bus) に対してノードの接続を行う。
+  // Connect the node to the mbus (memory bus).
   mbus.coupleTo(s&quot;memory_controller_port_named_$portName&quot;) {
-    (memAXI4Node                            // AXIのメモリノード
-      :*= AXI4UserYanker()                  // ↑ AXI4プロトコルにUserフィールドを付加する
-      :*= AXI4IdIndexer(idBits)             // ↑ AXI4のIDビットを拡張する
-      :*= TLToAXI4()                        // ↑ AXI4にプロトコルを変更する
-      :*= TLWidthWidget(mbus.beatBytes)     // ↑ mbus(TileLink)のバス幅を変更する
-      :*= _)                                // ↑ これはmbusの意味
+    (memAXI4Node                        // AXI memory node
+      :*= AXI4UserYanker()              // ↑ Add a User field to the AXI4 protocol
+      :*= AXI4IdIndexer(idBits)         // ↑ Extend the ID bits of AXI4
+      :*= TLToAXI4()                    // ↑ Change the protocol to AXI4
+      :*= TLWidthWidget(mbus.beatBytes) // ↑ Change bus width of mbus(TileLink)
+      :*= _)                            //  this means mbus
   }
 
   val mem_axi4 = InModuleBody { memAXI4Node.makeIOs() }
@@ -1163,25 +1200,27 @@ trait CanHaveMasterAXI4MemPort { this: BaseSubsystem =&gt;
 </code></pre>
 
 <ul>
-<li>注 : MMIOまで何でメモリに繋がってるの？と思わるかもしれないが、これはテスト環境なので自動的にメモリが接続されている。</li>
+<li>Note : Why is the MMIO connected to the memory? This is a test environment, so the memory is automatically connected.</li>
 </ul>
 <p><img alt="image-20201212135420935" src="../TestHarness.PNG" /></p>
-<h1 id="config-parameterconfigurable">Config / Parameterを使ったConfigurableなモジュールの作り方</h1>
-<h2 id="rocket-chipverilog"><span style="color:blue">モチベーション：Rocket-Chipはなんでこんなに生成できるVerilogのバリエーションが多いの？</span></h2>
-<pre><code class="sh">$ make CONFIG=DefaultConfig     # RV64GC構成を生成
-$ make CONFIG=RV32Config        # RV32GC構成を生成
-$ make CONFIG=DualCoreConfig    # 2コア構成のSoCを生成
-$ make CONFIG=RoCCExampleConfig # RoCC (Rocket Custom Coprocessor) 付きの構成を生成
-</code></pre>
+<h2 id="how-to-create-a-configurable-module-using-config-parameter">How to create a configurable module using Config / Parameter.</h2>
+<h2 id="motivation-why-does-rocket-chip-have-so-many-variations-of-verilog-that-can-be-generated"><span style="color:blue">Motivation: Why does Rocket-Chip have so many variations of Verilog that can be generated? </span></h2>
+<pre><code class="sh">$ make CONFIG=DefaultConfig         # Generate RV64GC configuration.
+$ make CONFIG=RV32Config            # generate RV32GC configuration
+$ make CONFIG=DualCoreConfig        # Generate SoC with 2-core configuration.
+$ make CONFIG=RoCCExampleConfig     # Generate a configuration with RoCC (Rocket Custom Coprocessor).
+````
 
-<h3 id="modularity">各機能がModularityを維持しつつ分割されているから</h3>
-<p><img alt="image-20201213122345167" src="../rocket_chip_configurabilty.PNG" /></p>
-<div align="center">図. Rocket-Chip + SoCの構成は各モジュールが非常に独立性高く設計されている</div>
+### Because each function is divided while maintaining Modularity.
 
-<ul>
-<li><code>src/main/scala/system/Configs.scala</code></li>
-</ul>
-<pre><code class="scala">class BaseConfig extends Config(
+![image-20201213122345167](rocket_chip_configurabilty.PNG)
+
+&lt;div align=&quot;center&quot;&gt;Figure. In the Rocket-Chip + SoC configuration, each module is designed to be highly independent.&lt;/div&gt;&lt;/div&gt;
+
+- `src/main/scala/system/Configs.scala`
+
+```scala
+class BaseConfig extends Config(
   new WithDefaultMemPort() ++
   new WithDefaultMMIOPort() ++
   new WithDefaultSlavePort() ++
@@ -1209,14 +1248,14 @@ class DualChannelDualBankConfig extends Config(
 class RoccExampleConfig extends Config(new WithRoccExample ++ new DefaultConfig)
 </code></pre>
 
-<p>上記の<code>class DualBankConfig extends Config(new WithNBanks(2) ++ new DefaultConfig)</code>はどういう意味か？ <code>Config</code>と<code>Parameter</code>について見る。</p>
-<h2 id="config">パラメータを渡すためのいくつかのテクニック: Config</h2>
-<h3 id="config_1">Configの考え方：「<span style="color:blue">このモジュールに対してはこのパラメータを適用する</span>」の参照テーブル（マップ関数）を構築する</h3>
-<h3 id="verilogpackage">⇔ Verilogの場合「<span style="color:red">パラメータをトップから降ろしていく/packageによる一元管理</span>」</h3>
+<p>What does the above <code>class DualBankConfig extends Config(new WithNBanks(2) ++ new DefaultConfig)</code> mean? See about <code>Config</code> and <code>Parameter</code>.</p>
+<h2 id="some-techniques-for-passing-parameters-config">Some techniques for passing parameters: Config</h2>
+<h3 id="concept-of-config-build-a-reference-table-map-function-of-apply-this-parameter-to-this-module">Concept of Config: build a reference table (map function) of "<span style="color:blue">apply this parameter to this module</span>".</h3>
+<h3 id="verilog-put-parameters-down-from-the-top-centralized-management-by-package">⇔ Verilog: "<span style="color:red">Put parameters down from the top / centralized management by package</span>".</h3>
 <p><img alt="image-20201213142616432" src="../verilog_parameter_structure.PNG" /></p>
 <div align="center">図. Verilogのパラメータを階層で降ろしていく（なんとなくの）イメージ</div>
 
-<h4 id="chiselconfigkeykey">ChiselのConfigの場合：Keyに対する辞書を作って、モジュール内で必要なKeyからパラメータを取得</h4>
+<h4 id="in-the-case-of-chisels-config-create-a-dictionary-of-keys-and-get-parameters-from-the-keys-you-need-in-the-module">In the case of Chisel's Config: Create a dictionary of keys and get parameters from the keys you need in the module.</h4>
 <pre><code class="sh">$ grep -h -R Key | grep Field
 </code></pre>
 
@@ -1236,14 +1275,14 @@ case object PeripheryMaskROMKey extends Field[Seq[MaskROMParams]](Nil)
 case object PSDTestModeBroadcastKey extends Field(
 </code></pre>
 
-<p>辞書を作っているような感覚だと思ってもらえればよい：</p>
+<p>You can think of it as being like making a dictionary:.</p>
 <table>
 <thead>
 <tr>
-<th>検索元</th>
+<th>Key</th>
 <th></th>
-<th>検索先の型</th>
-<th>補足</th>
+<th>Type</th>
+<th>Explain</th>
 </tr>
 </thead>
 <tbody>
@@ -1257,7 +1296,7 @@ case object PSDTestModeBroadcastKey extends Field(
 <td><code>RocketTilesKey</code></td>
 <td>→</td>
 <td><code>Seq[RocketTileParams]]</code></td>
-<td>何故<code>Seq</code>で囲まれているのか→<br />RocketTileはマルチコア構成だと複数配置されるので、それぞれTileのために<code>RocketTileParams</code>が複製されている</td>
+<td>Why are they enclosed in <code>Seq</code> -&gt; <br />RocketTiles are placed in multiple locations in multi-core configurations, so <code>RocketTileParams</code> are duplicated for each Tile.</td>
 </tr>
 <tr>
 <td><code>PeripheryMaskROMKey</code></td>
@@ -1267,7 +1306,7 @@ case object PSDTestModeBroadcastKey extends Field(
 </tr>
 </tbody>
 </table>
-<p>例えば、<code>RocketTileParams</code>は以下のような定義になっている。ちょうどSystem Verilogの<code>package</code>のようなものと解釈すれば良い？</p>
+<p>For example, <code>RocketTileParams</code> is defined as follows: <code>RocketTileParams</code> is just like <code>package</code> in System Verilog?</p>
 <pre><code class="scala">case class RocketCoreParams(
   bootFreqHz: BigInt = 0,
   useVM: Boolean = true,
@@ -1276,12 +1315,12 @@ case object PSDTestModeBroadcastKey extends Field(
 ...
 </code></pre>
 
-<p>ではもう一度<code>DualCoreConfig</code>の定義に立ち戻って...</p>
+<p>Now let's go back to the definition of <code>DualCoreConfig</code> again...</p>
 <ul>
-<li><code>DualCoreConfig</code>は<code>Config</code>クラスを継承したもの。<code>Config</code>クラスはViewに基づいた辞書テーブルの変換関数の集合と考えて良い。これらの辞書テーブルの変換関数の集合は、最終的に<code>Parameter</code>として集約されデザインに渡される。</li>
+<li><code>DualCoreConfig</code> inherits from the <code>Config</code> class. You can think of the <code>Config</code> class as a set of dictionary table conversion functions based on the View. These sets of dictionary table conversion functions are finally aggregated as <code>Parameter</code> and passed to the design.</li>
 </ul>
-<p><img alt="dualcoreconfig.PNG" src="../dualcoreconfig.PNG" /></p>
-<p>各モジュールで、ここで定義したパラメータを呼び出して具体的な値を入手する。</p>
+<p><img src="dualcoreconfig.PNG" alt="dualcoreconfig" style="zoom:67%;" /></p>
+<p>In each module, call the parameters defined here to get the concrete values.</p>
 <ul>
 <li><code>src/main/scala/rocket/RocketCore.scala</code></li>
 </ul>
@@ -1321,7 +1360,7 @@ class Rocket(tile: RocketTile)(implicit p: Parameters) extends CoreModule()(p)
   def minLatency: Int = (minDivLatency ++ minMulLatency).min
 
   val io = IO(new MultiplierIO(width, log2Up(nXpr)))
-...
+... 
   val req = Reg(chiselTypeOf(io.req.bits))
   val count = Reg(UInt(log2Ceil(
     ((cfg.divUnroll != 0).option(w/cfg.divUnroll + 1).toSeq ++
@@ -1329,24 +1368,24 @@ class Rocket(tile: RocketTile)(implicit p: Parameters) extends CoreModule()(p)
 
 </code></pre>
 
-<h3 id="here-site-up"><code>here()</code>, <code>site()</code>, <code>up()</code>などの使い方</h3>
+<h3 id="how-to-use-here-site-up-etc">How to use <code>here()</code>, <code>site()</code>, <code>up()</code>, etc.</h3>
 <ul>
-<li><code>Config</code>で使用しているパラメータを計算するにあたり、さらに別のパラメータの値を使用したい場合どうするか。Verilogでいう以下のようなことを実現したい場合を考える。</li>
+<li>If you want to use the value of another parameter to calculate a parameter used in <code>Config</code>, you can do the following in Verilog.</li>
 </ul>
 <pre><code class="verilog">localparam param1 = 100;
 localparam param2 = param1 * 100;
 </code></pre>
 
-<p>これをChiselで実現しようしようとすると以下のようになるだろう。<code>BusWidthBytes</code>パラメータを使用してアドレスサイズの計算をしている。</p>
+<p>If you try to achieve this in Chisel, it will look like this. The <code>BusWidthBytes</code> parameter is used to calculate the address size.</p>
 <pre><code class="scala">class Bus128BitConfig extends Config((site, here, up) =&gt; {
   case BusWidthBytes =&gt; 128 / 8
-  // BusWidthBytes はcase classなので整数ではない
+  // BusWidthBytes is a case class, so it is not an integer
   case AddrSize =&gt; 0x100 * BusWidthBytes
 })
 
 class Bus64BitConfig extends Config((site, here, up) =&gt; {
   case BusWidthBytes =&gt; 64 / 8
-  // BusWidthBytes はcase classなので整数ではない
+  // BusWidthBytes is a case class, so it is not an integer
   case AddrSize =&gt; 0x200 * BusWidthBytes
 })
 
@@ -1359,11 +1398,11 @@ class Bus64BitConfig extends Config((site, here, up) =&gt; {
 [error]   (x: Short)Int &lt;and&gt;
 [error]   (x: Byte)Int
 [error]  cannot be applied to (core_complex.BusWidthBytes.type)
-[error]   case AddrSize =&gt; 0x100 * BusWidthBytes  // &lt;-- BusWidthBytes は数値じゃない！
+[error]   case AddrSize =&gt; 0x100 * BusWidthBytes  // &lt;-- BusWidthBytes is not a number!
 [error]                          ^
 </code></pre>
 
-<p>ようするに<code>BusWidthBytes</code>自体がcase classなので、値として直接使用することができない。そこで、同じ<code>Config</code>内の値を参照するための<code>here()</code>などの情報を使用して辞書サーチをする。</p>
+<p>As you can see, <code>BusWidthBytes</code> itself is a case class, so you can't use it directly as a value. So, we use information such as <code>here()</code> to refer to a value in the same <code>Config</code> for dictionary search.</p>
 <pre><code class="scala">class Bus128BitConfig extends Config((site, here, up) =&gt; {
   case BusWidthBytes =&gt; 128 / 8
   case AddrSize =&gt; 0x100 * here(BusWidthBytes)
@@ -1403,7 +1442,7 @@ class Bus128BitConfig extends Config((site, here, up) =&gt; {
   case BusWidthBytes =&gt; 128 / 8
   case AddrSize =&gt; 0x100 * here(BusWidthBytes)
 })
-// BaseConfigで構成したTLRAM, 13ビットのバス幅で構成される
+// TLRAM configured with Bus128BitConfig, with a 12-bit bus width
 module TLRAM(
   input          clock,
   input          reset,
@@ -1418,7 +1457,7 @@ module TLRAM(
 </code></pre>
 
 <ul>
-<li><code>up()</code>を使用するケース：以下では、<code>Adder()</code>と<code>Mul()</code>の2つのモジュールを定義している。<code>p(BitWidth)</code>で入出力ビット数を定義している。<code>Adder()</code>と<code>Mul()</code>のビット幅を全く別物で定義したい場合どうするかという問題を考える。</li>
+<li>The case of using <code>up()</code>: In the following, two modules, <code>Adder()</code> and <code>Mul()</code>, are defined. The number of input/output bits is defined by <code>p(BitWidth)</code>. We consider the problem of what to do if we want to define completely different bit widths for <code>Adder()</code> and <code>Mul()</code>.</li>
 </ul>
 <pre><code class="scala">class Adder()(implicit p: Parameters) extends Module {
   val bitwidth = p(BitWidth)
@@ -1443,7 +1482,7 @@ class Mul()(implicit p: Parameters) extends Module {
 }
 </code></pre>
 
-<p>この時、<code>Adder()</code>と<code>Mul()</code>のパラメータは以下のように定義している。<code>Adder()</code>は64ビット、<code>Mul()</code>は128ビットの入力ビット幅でインスタンス化するものとする。</p>
+<p>At this time, the parameters of <code>Adder()</code> and <code>Mul()</code> are defined as follows. <code>Adder()</code> is assumed to be instantiated with 64 bits, and <code>Mul()</code> with 128 bits input bit width.</p>
 <pre><code class="scala">case object AdderBitWidth extends Field[Int]
 case object MulBitWidth extends Field[Int]
 
@@ -1453,7 +1492,7 @@ class DefaultConfig() extends Config((site, here, up) =&gt; {
 })
 </code></pre>
 
-<p><code>Adder()</code>と<code>Mul()</code>をインスタンス時にそれぞれのパラメータをオーバライドするわけだが、<code>adder_param</code>と<code>mul_param</code>を新たに定義して渡すことになる。</p>
+<p>We override the parameters of <code>Adder()</code> and <code>Mul()</code> when we instantiate them, but we have to define and pass <code>adder_param</code> and <code>mul_param</code> anew.</p>
 <pre><code class="scala">  val Adder_mod = Module(new Adder()(adder_params))
   Adder_mod.io.a := io.a
   Adder_mod.io.b := io.b
@@ -1465,7 +1504,7 @@ class DefaultConfig() extends Config((site, here, up) =&gt; {
   io.mul_c := mul_mod.io.c
 </code></pre>
 
-<p>ここで、<code>adder_params</code>は上記の<code>DefaultConfig</code>を引き継ぎつつ、<code>BitWidth</code>パラメータを継承前の<code>DefaultConfig</code>で使用しているパラメータで引き継ぐ。この時に<code>up()</code>を使用する。これにより、`</p>
+<p>Here, <code>adder_params</code> is inherited from the above <code>DefaultConfig</code>, while the <code>BitWidth</code> parameter is inherited from the parameter used in the previous <code>DefaultConfig</code>. Use <code>up()</code> at this time. This will create:</p>
 <pre><code class="scala">  val adder_params = p.alter((site, here, up) =&gt; {
     case BitWidth =&gt; up(AdderBitWidth)
   })
@@ -1475,8 +1514,8 @@ class DefaultConfig() extends Config((site, here, up) =&gt; {
   })
 </code></pre>
 
-<p><code>adder_params</code>の<code>BitWidth</code>は<code>DefaultConfig</code>の<code>AdderBitWidth</code>を引き継ぎ、<code>mul_params</code>の<code>BitWidth</code>は<code>DefaultConfig</code>の<code>MulBitWidth</code>を引き継ぐことになる。これにより、同じ<code>BitWidth</code>パラメータでも別々のパラメータを引き継ぐことが可能になる。</p>
-<p>結果は以下の通り、<code>Adder</code>の入力ビット幅は<code>AddrBitWidth</code>を引き継いで64ビットとなり、<code>Mul</code>の入力ビット幅は<code>MulBitWidth</code>を引き継いで128ビットとなった。</p>
+<p>The <code>BitWidth</code> of <code>adder_params</code> will inherit the <code>AdderBitWidth</code> of <code>DefaultConfig</code>, and the <code>BitWidth</code> of <code>mul_params</code> will inherit the <code>MulBitWidth</code> of <code>DefaultConfig</code>. This makes it possible to inherit different parameters for the same <code>BitWidth</code> parameter.</p>
+<p>The results are as follows: the input bit width of <code>Adder</code> is 64 bits, inherited from <code>AddrBitWidth</code>, and the input bit width of <code>Mul</code> is 128 bits, inherited from <code>MulBitWidth</code>.</p>
 <pre><code class="verilog">module Adder(
   input  [63:0] io_a,
   input  [63:0] io_b,
@@ -1493,12 +1532,12 @@ module Mul(
 endmodule
 </code></pre>
 
-<h1 id="_1">まとめ</h1>
+<h1 id="summary">Summary</h1>
 <ul>
-<li>Chiselの活用ポイント → コア中ではなくネットワーク部。柔軟性が求められる部分。</li>
-<li>Diplomacyを使って自作CPUのバスネットワークに接続する</li>
-<li>Rocket-Chipのバス部分は大量のDiplomacyバス構成で構築されている</li>
-<li><code>Config</code>/<code>Parameter</code>でより柔軟なパラメタライズを行う</li>
+<li>Chisel usage points → Network part, not in the core. The part where flexibility is required.</li>
+<li>Using Diplomacy to connect to the bus network of your own CPU</li>
+<li>The bus part of Rocket-Chip is built with a lot of Diplomacy bus configuration.</li>
+<li>More flexible parameterization with <code>Config</code>/<code>Parameter</code>.</li>
 </ul>
                 
                   
@@ -1520,7 +1559,7 @@ endmodule
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../chisel_tilelink/" title="9. TileLinkとDiplomacyリファレンス" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../diplomacy_more_more_deep_dive/" title="ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1529,19 +1568,19 @@ endmodule
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                9. TileLinkとDiplomacyリファレンス
+                ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
               </span>
             </div>
           </a>
         
         
-          <a href="../diplomacy_more_more_deep_dive_en/" title="Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../memo/" title="Chisel v.s. Verilog" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive
+                Chisel v.s. Verilog
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

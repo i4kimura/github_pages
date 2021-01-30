@@ -720,7 +720,7 @@ $ make CONFIG=RoCCExampleConfig 	# Generate a configuration with RoCC (Rocket Cu
 
 ![image-20201213122345167](rocket_chip_configurabilty.PNG)
 
-<div align="center">Figure. In the Rocket-Chip + SoC configuration, each module is designed to be highly independent.</div></div>
+<div align="center">Figure. In the Rocket-Chip + SoC configuration, each module is designed to be highly independent.</div>
 
 - `src/main/scala/system/Configs.scala`
 

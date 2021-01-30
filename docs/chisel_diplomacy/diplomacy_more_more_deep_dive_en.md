@@ -304,7 +304,7 @@ class AdderDriver(width: Int, numOutputs: Int)(implicit p: Parameters) extends L
 // AdderDriverNode is created by inheriting from the SourceNode class
 class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
   extends SourceNode(AdderNodeImp)(widths)
-````
+```
 
 - `SourceNode` is used for the node that will be the master.
 - `SinkNode` is used for nodes that are slaves.
@@ -321,7 +321,7 @@ There are two important elements in `node`.
 
 - `edge` : Contains a set of parameters for connecting nodes of Diplomacy. These parameters are communicated between the nodes to make the final inter-node parameter adjustment (Diplomacy).
 
-````scala
+```scala
 object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam, UInt] {
   // Edge : Contains a set of parameters for connecting Diplomacy nodes.
   def edge(pd: DownwardParam, pu: UpwardParam, p: Parameters, sourceInfo: SourceInfo) = {
@@ -334,7 +334,7 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 
   def render(e: EdgeParam) = RenderedEdge("blue", s "width = ${e.width}")
 }
-````
+```
 
 #### 2. `LazyModuleImp` : The part that implements the circuit based on the information of node.
 
@@ -714,7 +714,7 @@ $ make CONFIG=DefaultConfig 		# Generate RV64GC configuration.
 $ make CONFIG=RV32Config			# generate RV32GC configuration
 $ make CONFIG=DualCoreConfig 		# Generate SoC with 2-core configuration.
 $ make CONFIG=RoCCExampleConfig 	# Generate a configuration with RoCC (Rocket Custom Coprocessor).
-````
+```
 
 ### Because each function is divided while maintaining Modularity.
 

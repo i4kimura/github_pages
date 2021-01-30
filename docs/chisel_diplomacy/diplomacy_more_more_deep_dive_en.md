@@ -928,9 +928,9 @@ module TLRAM(
 );
 ```
 
-一方で、`site()`を使用するとより上位のConfigを使用するようになる。例えば`Default2Config`では以下のように構成している。
+On the other hand, using `site()` will use a higher level Config. For example, `Default2Config` is configured as follows.
 
-- `sites()`を使用するケース：`Bus128BitConfig`で`site()`を使用すると`BaseConfig`を参照する。つまり`AddrSize`は`0x100 * (256/8)`になるはずだ。
+- Case of using `sites()`: `Bus128BitConfig` refers to `BaseConfig` when `site()` is used. So the AddrSize should be `0x100 * (256/8)`.
 
 ```scala
 class Default2Config extends Config(

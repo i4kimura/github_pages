@@ -787,25 +787,26 @@ class AdderDriver(width: Int, numOutputs: Int)(implicit p: Parameters) extends L
 // AdderDriverNode is created by inheriting from the SourceNode class
 class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
   extends SourceNode(AdderNodeImp)(widths)
-````
+</code></pre>
 
-- `SourceNode` is used for the node that will be the master.
-- `SinkNode` is used for nodes that are slaves.
-- `AdapterNode` connects multiple masters and multiple slaves. The number of masters and slaves should be the same.
-- `NexusNode` is used to connect multiple masters and multiple slaves. The number of masters and slaves does not have to be the same.
-
-#### 1. node : for connecting between modules
-
-`node` is a communication port for communication between modules in Diplomacy. It has the role of exchanging various parameters between `nodes` and mediating the parameters.
-
-There are two important elements in `node`.
-
-- `bundle` : Contains the I/O ports connected by Diplomacy. In this case, it just contains a bundle of signals for sending random values.
-
-- `edge` : Contains a set of parameters for connecting nodes of Diplomacy. These parameters are communicated between the nodes to make the final inter-node parameter adjustment (Diplomacy).
-
-````scala
-object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam, UInt] {
+<ul>
+<li><code>SourceNode</code> is used for the node that will be the master.</li>
+<li><code>SinkNode</code> is used for nodes that are slaves.</li>
+<li><code>AdapterNode</code> connects multiple masters and multiple slaves. The number of masters and slaves should be the same.</li>
+<li><code>NexusNode</code> is used to connect multiple masters and multiple slaves. The number of masters and slaves does not have to be the same.</li>
+</ul>
+<h4 id="1-node-for-connecting-between-modules">1. node : for connecting between modules</h4>
+<p><code>node</code> is a communication port for communication between modules in Diplomacy. It has the role of exchanging various parameters between <code>nodes</code> and mediating the parameters.</p>
+<p>There are two important elements in <code>node</code>.</p>
+<ul>
+<li>
+<p><code>bundle</code> : Contains the I/O ports connected by Diplomacy. In this case, it just contains a bundle of signals for sending random values.</p>
+</li>
+<li>
+<p><code>edge</code> : Contains a set of parameters for connecting nodes of Diplomacy. These parameters are communicated between the nodes to make the final inter-node parameter adjustment (Diplomacy).</p>
+</li>
+</ul>
+<pre><code class="scala">object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam, UInt] {
   // Edge : Contains a set of parameters for connecting Diplomacy nodes.
   def edge(pd: DownwardParam, pu: UpwardParam, p: Parameters, sourceInfo: SourceInfo) = {
     if (pd.width &lt; pu.width) EdgeParam(pd.width) else EdgeParam(pu.width)
@@ -817,14 +818,13 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 
   def render(e: EdgeParam) = RenderedEdge(&quot;blue&quot;, s &quot;width = ${e.width}&quot;)
 }
-````
+</code></pre>
 
-#### 2. `LazyModuleImp` : The part that implements the circuit based on the information of node.
-
-2. `LazyModuleImp` : The part that implements the circuit based on the information of `node`.
-
-```scala
-  val node = new AdderDriverNode(Seq.fill(numOutputs)(DownwardParam(width)))
+<h4 id="2-lazymoduleimp-the-part-that-implements-the-circuit-based-on-the-information-of-node">2. <code>LazyModuleImp</code> : The part that implements the circuit based on the information of node.</h4>
+<ol>
+<li><code>LazyModuleImp</code> : The part that implements the circuit based on the information of <code>node</code>.</li>
+</ol>
+<pre><code class="scala">  val node = new AdderDriverNode(Seq.fill(numOutputs)(DownwardParam(width)))
 
   lazy val module = new LazyModuleImp(this) {
     // Extract bit width information from all node edges
@@ -1203,18 +1203,18 @@ trait CanHaveMasterAXI4MemPort { this: BaseSubsystem =&gt;
 $ make CONFIG=RV32Config            # generate RV32GC configuration
 $ make CONFIG=DualCoreConfig        # Generate SoC with 2-core configuration.
 $ make CONFIG=RoCCExampleConfig     # Generate a configuration with RoCC (Rocket Custom Coprocessor).
-````
+</code></pre>
 
-### Because each function is divided while maintaining Modularity.
+<h3 id="because-each-function-is-divided-while-maintaining-modularity">Because each function is divided while maintaining Modularity.</h3>
+<p><img alt="image-20201213122345167" src="../rocket_chip_configurabilty.PNG" /></p>
+<div align="center">Figure. In the Rocket-Chip + SoC configuration, each module is designed to be highly independent.</div>
 
-![image-20201213122345167](rocket_chip_configurabilty.PNG)
+</div>
 
-&lt;div align=&quot;center&quot;&gt;Figure. In the Rocket-Chip + SoC configuration, each module is designed to be highly independent.&lt;/div&gt;&lt;/div&gt;
-
-- `src/main/scala/system/Configs.scala`
-
-```scala
-class BaseConfig extends Config(
+<ul>
+<li><code>src/main/scala/system/Configs.scala</code></li>
+</ul>
+<pre><code class="scala">class BaseConfig extends Config(
   new WithDefaultMemPort() ++
   new WithDefaultMMIOPort() ++
   new WithDefaultSlavePort() ++

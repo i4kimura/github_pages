@@ -1418,9 +1418,9 @@ module TLRAM(
 );
 </code></pre>
 
-<p>一方で、<code>site()</code>を使用するとより上位のConfigを使用するようになる。例えば<code>Default2Config</code>では以下のように構成している。</p>
+<p>On the other hand, using <code>site()</code> will use a higher level Config. For example, <code>Default2Config</code> is configured as follows.</p>
 <ul>
-<li><code>sites()</code>を使用するケース：<code>Bus128BitConfig</code>で<code>site()</code>を使用すると<code>BaseConfig</code>を参照する。つまり<code>AddrSize</code>は<code>0x100 * (256/8)</code>になるはずだ。</li>
+<li>Case of using <code>sites()</code>: <code>Bus128BitConfig</code> refers to <code>BaseConfig</code> when <code>site()</code> is used. So the AddrSize should be <code>0x100 * (256/8)</code>.</li>
 </ul>
 <pre><code class="scala">class Default2Config extends Config(
   new BaseConfig ++

@@ -533,7 +533,7 @@
 <li>X86 (Studying via implementation of QEMU with Rust)</li>
 <li>MIPS (Studied through implementation Instruction Set Simulator)</li>
 <li>ARM (Studying ...)</li>
-<li><span style="color: red">RISC-V</span> </li>
+<li><span style="color: red">RISC-V</span></li>
 <li>My work : Hardware development</li>
 <li>General Processor, Accelerator, and so on ...</li>
 <li>HDL skill: Verilog, System Verilog (except UVM), Chisel</li>
@@ -593,24 +593,18 @@ cond=&gt;inputoutput: Verilog
 st(right)-&gt;op1(right)-&gt;io(right)-&gt;sub1(right)-&gt;cond
 cond(yes)-&gt;e
 cond(no)-&gt;op1
-````
+</code></pre>
 
-[^circt]: As a replacement for FIRRTL, a Chris Lattner-led tool called &quot;CIRCT&quot; has been developed using LLVM and MLIR https://github.com/llvm/circt
-
-
-# What's good about Chisel?
-
-- You can use the features of Scala, a software description language.
-- → This results in Verilog engineers &lt;span style=&quot;color:red&quot;&gt;sometimes having to write seemingly incomprehensible and unintelligible statements&lt;/span&gt;.
-
-## Example: FIR Filter
-
-&lt;img src=&quot;fir_filter.PNG&quot; alt=&quot;image-20201130103837053&quot; style=&quot;zoom:50%;&quot; /&gt;
-
-### Answer 1. By beginner
-
-```scala
-// stage size is temporary 4
+<p>[^circt]: As a replacement for FIRRTL, a Chris Lattner-led tool called "CIRCT" has been developed using LLVM and MLIR https://github.com/llvm/circt</p>
+<h1 id="whats-good-about-chisel">What's good about Chisel?</h1>
+<ul>
+<li>You can use the features of Scala, a software description language.</li>
+<li>→ This results in Verilog engineers <span style="color:red">sometimes having to write seemingly incomprehensible and unintelligible statements</span>.</li>
+</ul>
+<h2 id="example-fir-filter">Example: FIR Filter</h2>
+<p><img alt="fir_filter.PNG" src="../fir_filter.PNG" /></p>
+<h3 id="answer-1-by-beginner">Answer 1. By beginner</h3>
+<pre><code class="scala">// stage size is temporary 4
 class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -620,7 +614,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
   val x_n1 = RegNext(io.in, 0.U)
   val x_n2 = RegNext(x_n1, 0.U)
   val x_n3 = RegNext(x_n2, 0.U)
-  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) + 
+  io.out := io.in * b0.U(8.W) + x_n1 * b1.U(8.W) +
              x_n2 * b2.U(8.W) + x_n3 * b3.U(8.W)
 }
 </code></pre>
@@ -705,7 +699,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 </code></pre>
 
 <h1 id="back-on-topic-why-use-chisel">Back on topic: Why use Chisel?</h1>
-<p><img src="msyksphinz_chisel_tweet.PNG" alt="image-20201130110219979" style="zoom:67%;" /></p>
+<p><img alt="msyksphinz_chisel_tweet.PNG" src="../msyksphinz_chisel_tweet.PNG" /></p>
 <h4 id="rant-if-you-want-to-make-regular-hardware-verilog-is-definitely-more-convenient"><span style="color:red">Rant: If you want to make regular hardware, Verilog is definitely more convenient: ！！！！ </span>.</h4>
 <ul>
 <li>Easier to write tests? → Isn't UVM more sophisticated?</li>
@@ -728,7 +722,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li>Parameter Negotiation Framework for generating parameterized protocol implementation.</li>
 </ul>
-<p><img src="diplomacy.PNG" alt="diplomacy" style="zoom:67%;" /></p>
+<p><img alt="diplomacy.PNG" src="../diplomacy.PNG" /></p>
 <h1 id="where-did-diplomacy-come-from">Where did Diplomacy come from?</h1>
 <ul>
 <li>Andrew Waterman's PhD Thesis</li>
@@ -757,14 +751,14 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li>https://scs.sifive.com/core-designer/</li>
 </ul>
-<p><img src="coreip_generator.PNG" alt="coreip_generator" style="zoom:67%;" /></p>
+<p><img alt="coreip_generator.PNG" src="../coreip_generator.PNG" /></p>
 <h1 id="if-you-want-to-develop-with-chisel-diplomacy-use-intellij-idea">If you want to develop with Chisel + Diplomacy, use IntelliJ IDEA!</h1>
 <p><span style="color:red">Auto Completion feature is mandatory.</span></p>
 <p><img alt="image-20201212012922069" src="../intellij_auto_completion.PNG" /></p>
 <h1 id="misunderstandings-diplomacy-can-only-be-used-with-tilelink">Misunderstandings: Diplomacy can only be used with TileLink?</h1>
 <p>No, Diplomacy is a Chisel library, so you don't need to use TileLink to use it.</p>
 <h2 id="example-adder-for-multiple-inputs-connected-with-diplomacy">Example: Adder for Multiple Inputs connected with Diplomacy</h2>
-<p><img src="multiple_inputs_adder.PNG" alt="image-20201202110535440" style="zoom:67%;" /></p>
+<p><img alt="multiple_inputs_adder.PNG" src="../multiple_inputs_adder.PNG" /></p>
 <p>Here are the three modules that we need to decipher</p>
 <ul>
 <li><code>AdderDriver</code> : A driver to send random values to the adder.</li>
@@ -850,13 +844,13 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 </code></pre>
 
 <h3 id="if-you-use-diplomacy-use-yed-to-check-the-node-graph-diagram">If you use Diplomacy, use yEd to check the node graph diagram!</h3>
-<p><img src="yed_adder_node_graph.PNG" alt="yed_ adder_node_graph" style="zoom:50%;" /></p>
+<p><img alt="yed_adder_node_graph.PNG" src="../yed_adder_node_graph.PNG" /></p>
 <div align="center">Figure. Diagram of the Adder graph generated by yEd.</div>
 
 <ul>
 <li>A more complex example: Node connection diagram for a 4-core configuration in Freedom-SoC.</li>
 </ul>
-<p><img src="freedom_diplomacy_node.PNG" alt="freedom_diplomacy_" style="zoom:67%;" /></p>
+<p><img alt="freedom_diplomacy_node.PNG" src="../freedom_diplomacy_node.PNG" /></p>
 <div align="center">Figure. Connection diagram of freedom SoC nodes</div>
 
 <h1 id="home-made-cpu-using-tilelink-various-bus-connections">Home-made CPU using TileLink + various bus connections</h1>
@@ -920,8 +914,8 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 
 <h3 id="create-a-soc-using-coretop-with-tilelink-module">Create a SoC using CoreTop with TileLink module.</h3>
 <p>Create a <code>CoreTop</code> and a <code>CoreComplex</code> module with a memory module and connect them.</p>
-<pre><code class="scala">class core_complex[Conf &lt;: RVConfig] 
-  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters) 
+<pre><code class="scala">class core_complex[Conf &lt;: RVConfig]
+  (conf: Conf, numCores: Int, ramBeatBytes: Int, txns: Int)(implicit p: Parameters)
   extends LazyModule {
   // Data loader for data access to memory from outside.
   val loader = LazyModule(new loader(&quot;loader&quot;))
@@ -936,7 +930,7 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
   // Connect the instruction fetch port and data port of the CPU core to the crossbar
   xbar.node := loader.node
   core.foreach { case (core) =&gt; {
-    // 
+    //
     xbar.node := TLDelayer(0.1) := core.inst_node
     xbar.node := TLDelayer(0.1) := core.data_node
   }
@@ -963,7 +957,7 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 <ul>
 <li>Example of Diplomacy node configuration with 4-core configuration</li>
 </ul>
-<p><img src="multicore_diplomacy_node.PNG" alt="multicore_diplomacy_node" style="zoom:50%;" /></p>
+<p><img alt="multicore_diplomacy_node.PNG" src="../multicore_diplomacy_node.PNG" /></p>
 <div align="center">Figure. Diplomacy connection diagram for a four-core configuration.</div>
 
 <h1 id="lets-learn-how-to-connect-the-bus-using-rockettile-as-an-example">Let's learn how to connect the bus using RocketTile as an example.</h1>
@@ -977,7 +971,7 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 </ul>
 <h2 id="lets-look-at-the-diplomacy-configuration-of-defaultconfig-of-rocket-chip">Let's look at the Diplomacy configuration of <code>DefaultConfig</code> of Rocket-Chip.</h2>
 <p>The bus connection of Rocket-Chip is basically configured using TileLink and Diplomacy.</p>
-<p><img src="rocket_chip_diplomacy_node.PNG" alt="image-20201213114731343" style="zoom:60%;" /></p>
+<p><img alt="rocket_chip_diplomacy_node.PNG" src="../rocket_chip_diplomacy_node.PNG" /></p>
 <p>Let's break down little more.</p>
 <p>Let's take a look at the bus connections.</p>
 <h2 id="connect-devices-using-diplomacy-with-rockettile">Connect devices using Diplomacy with RocketTile</h2>
@@ -1043,35 +1037,35 @@ object AdderNodeImp extends SimpleNodeImp[DownwardParam, UpwardParam, EdgeParam,
 <h2 id="verilog-structure-of-rockettile">Verilog structure of RocketTile</h2>
 <pre><code class="verilog">module RocketTile( // @[:freechips.rocketchip.system.DefaultConfig.fir@200426.2]
 
-  TLXbar_8 tlMasterXbar (); 
+  TLXbar_8 tlMasterXbar ();
 
-  IntXbar_4 intXbar (); 
+  IntXbar_4 intXbar ();
 
-  DCache dcache (); 
+  DCache dcache ();
 
-  Frontend frontend (); 
+  Frontend frontend ();
 
   TLBuffer_9 buffer ();
 
-  IntSyncCrossingSink intsink (); 
+  IntSyncCrossingSink intsink ();
 
-  IntSyncCrossingSink_1 intsink_1 (); 
+  IntSyncCrossingSink_1 intsink_1 ();
 
-  IntSyncCrossingSink_2 intsink_2 (); 
+  IntSyncCrossingSink_2 intsink_2 ();
 
-  IntSyncCrossingSink_2 intsink_3 (); 
+  IntSyncCrossingSink_2 intsink_3 ();
 
-  FPU fpuOpt (); 
+  FPU fpuOpt ();
 
-  HellaCacheArbiter dcacheArb (); 
+  HellaCacheArbiter dcacheArb ();
 
-  PTW ptw (); 
+  PTW ptw ();
 
-  Rocket core (); 
+  Rocket core ();
 </code></pre>
 
 <p>I made a diagram by extracting the important parts. <span style="color:blue">Blue is LazyModule</span>, <span style="color:red">Red is NormalModule</span>.</p>
-<p><img src="rocket_tile.PNG" alt="image-20201211233635970" style="zoom:100%;" /></p>
+<p><img alt="rocket_tile.PNG" src="../rocket_tile.PNG" /></p>
 <p>So, how can we decipher this from Scala? Let's take a look at some examples to see how the nodes are connected.</p>
 <ul>
 <li>Let's take a look at <code>RocketTile.scala</code>.</li>
@@ -1121,7 +1115,7 @@ class RocketTileModuleImp(outer: RocketTile) extends BaseTileModuleImp(outer)
 <ul>
 <li>FPU Connection  (we are not using Diplomacy here)</li>
 </ul>
-<p><img src="fpu_diplomacy.PNG" alt="image-20201211235345464" style="zoom:67%;" /></p>
+<p><img alt="fpu_diplomacy.PNG" src="../fpu_diplomacy.PNG" /></p>
 <ul>
 <li>DCache Connection</li>
 </ul>
@@ -1319,7 +1313,7 @@ case object PSDTestModeBroadcastKey extends Field(
 <ul>
 <li><code>DualCoreConfig</code> inherits from the <code>Config</code> class. You can think of the <code>Config</code> class as a set of dictionary table conversion functions based on the View. These sets of dictionary table conversion functions are finally aggregated as <code>Parameter</code> and passed to the design.</li>
 </ul>
-<p><img src="dualcoreconfig.PNG" alt="dualcoreconfig" style="zoom:67%;" /></p>
+<p><img alt="dualcoreconfig.PNG" src="../dualcoreconfig.PNG" /></p>
 <p>In each module, call the parameters defined here to get the concrete values.</p>
 <ul>
 <li><code>src/main/scala/rocket/RocketCore.scala</code></li>
@@ -1360,7 +1354,7 @@ class Rocket(tile: RocketTile)(implicit p: Parameters) extends CoreModule()(p)
   def minLatency: Int = (minDivLatency ++ minMulLatency).min
 
   val io = IO(new MultiplierIO(width, log2Up(nXpr)))
-... 
+...
   val req = Reg(chiselTypeOf(io.req.bits))
   val count = Reg(UInt(log2Ceil(
     ((cfg.divUnroll != 0).option(w/cfg.divUnroll + 1).toSeq ++

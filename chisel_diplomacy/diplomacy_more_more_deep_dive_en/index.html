@@ -558,12 +558,12 @@
 <li>A hardware building language based on Scala.</li>
 <li>Not a high-level synthesis language.</li>
 <li>SiFive's RISC-V IP use Chisel</li>
-<li>Rocket-Chip : https://github.com/chipsalliance/rocket-chip</li>
+<li>Rocket-Chip : <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
 <li>
-<p>BOOM : https://github.com/riscv-boom/riscv-boom</p>
+<p>BOOM : <a href="https://github.com/riscv-boom/riscv-boom">https://github.com/riscv-boom/riscv-boom</a></p>
 </li>
 <li>
-<p>Chisel Basics : "Chiselを始めたい人に読んで欲しい本" https://nextpublishing.jp/book/12162.html</p>
+<p>Chisel Basics : "Chiselを始めたい人に読んで欲しい本" <a href="https://nextpublishing.jp/book/12162.html">https://nextpublishing.jp/book/12162.html</a></p>
 </li>
 </ul>
 <h1 id="how-chisel-generates-verilog">How Chisel generates Verilog</h1>
@@ -649,7 +649,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li><span style="color:red">Can't understand?</span></li>
 </ul>
-<p>https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</p>
+<p><a href="https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb">https://github.com/freechipsproject/chisel-bootcamp/blob/master/2.5_exercise.ipynb</a></p>
 <pre><code class="scala">class MyManyDynamicElementVecFir(length: Int) extends Module {
   val io = IO(new Bundle {
     val in = Input(UInt(8.W))
@@ -727,14 +727,14 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <ul>
 <li>Andrew Waterman's PhD Thesis</li>
 <li>Design of the RISC-V Instruction Set Architecture</li>
-<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</li>
+<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-1.pdf</a></li>
 <li>Yunsup Lee's PhD Thesis</li>
 <li>Decoupled Vector-Fetch Architecture with a Scalarizing Compiler</li>
-<li>https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</li>
+<li><a href="https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf">https://people.eecs.berkeley.edu/~krste/papers/EECS-2016-117.pdf</a></li>
 <li>Henry Cook's PhD Thesis</li>
 <li><span style="color:red">Productive Design of Extensible On-Chip Memory Hierarchies</span>.</li>
 <li>The basic idea of Diplomacy is described in this paper</li>
-<li>https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</li>
+<li><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf">https://www2.eecs.berkeley.edu/Pubs/TechRpts/2016/EECS-2016-89.pdf</a></li>
 </ul>
 <h1 id="what-we-want-to-achieve-with-diplomacy">What we want to achieve with Diplomacy</h1>
 <ul>
@@ -749,7 +749,7 @@ class My4ElementFir(b0: Int, b1: Int, b2: Int, b3: Int) extends Module {
 <p><img alt="image-20201130123338375" src="../diplomacy_SoC_variation.PNG" /></p>
 <h3 id="one-example-sifives-core-ip-generator">One example: SiFive's Core IP Generator</h3>
 <ul>
-<li>https://scs.sifive.com/core-designer/</li>
+<li><a href="https://scs.sifive.com/core-designer/">https://scs.sifive.com/core-designer/</a></li>
 </ul>
 <p><img alt="coreip_generator.PNG" src="../coreip_generator.PNG" /></p>
 <h1 id="if-you-want-to-develop-with-chisel-diplomacy-use-intellij-idea">If you want to develop with Chisel + Diplomacy, use IntelliJ IDEA!</h1>
@@ -860,13 +860,13 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 </ul>
 <h4 id="cpu-core-i-made-rv64-with-simple-5-stage-pipeline">CPU core I made: RV64 with simple 5-stage pipeline.</h4>
 <p>I made a CPU core that can run <code>riscv-tests</code> for now, though I haven't tested it properly.</p>
-<p>https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core">https://github.com/msyksphinz-self/chisel-soc/tree/main/src/main/scala/core</a></p>
 <p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/m/msyksphinz/20181224/20181224131915.png" alt="RISC-V pipeline processor designed with Chisel without any waveforms. I designed a pipeline processor - FPGA development diary" style="zoom:50%;" /></p>
 <ul>
 <li>The fetch bus / data bus is very simple (non-TileLink / non-AXI bus)</li>
 </ul>
-<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17 (link to <code>InstBus</code>)</p>
-<p>https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30 (link to <code>DataBus</code>)</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L17</a> (link to <code>InstBus</code>)</p>
+<p><a href="https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30">https://github.com/msyksphinz-self/chisel-soc/blob/main/src/main/scala/core/cpu_bus.scala#L30</a> (link to <code>DataBus</code>)</p>
 <h3 id="how-do-i-integrate-my-homebrew-cpu-into-tilelink-to-build-a-soc">How do I integrate my homebrew CPU into TileLink to build a SoC?</h3>
 <ol>
 <li>wrap your own CPU with LazyModule. 2.</li>
@@ -962,7 +962,7 @@ class AdderDriverNode(widths: Seq[DownwardParam])(implicit valName: ValName)
 
 <h1 id="lets-learn-how-to-connect-the-bus-using-rockettile-as-an-example">Let's learn how to connect the bus using RocketTile as an example.</h1>
 <ul>
-<li>Typical CPU implementation of RISC-V: Rocket-Chip https://github.com/chipsalliance/rocket-chip</li>
+<li>Typical CPU implementation of RISC-V: Rocket-Chip <a href="https://github.com/chipsalliance/rocket-chip">https://github.com/chipsalliance/rocket-chip</a></li>
 </ul>
 <h3 id="rocket-chip-generator-do-you-know-why-its-named-generator">Rocket-Chip Generator: Do you know why it's named "Generator"?</h3>
 <ul>

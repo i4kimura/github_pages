@@ -644,7 +644,7 @@
 <p>VerilatorによるRTLのコンパイル・シミュレーションの基本的なフロー</p>
 <p>これはコンパイル型RTLシミュレータならば（割と）一般的なフロー（だと思う）。</p>
 <pre><code class="flow">sv=&gt;inputoutput: SystemVerilog
-verilator=&gt;subroutine: Verilator 
+verilator=&gt;subroutine: Verilator
 cppfile=&gt;inputoutput: 変換後C++ファイル
 clangcompile=&gt;subroutine: コンパイル
 bin=&gt;inputoutput: 実行ファイル
@@ -820,7 +820,7 @@ $ dot -Tpng Vadd_ff_065_orderg_done.dot -o Vadd_ff_065_orderg_done.png
      // コメント：以下のループは、回路が安定するまで(__Vchangeが0になるまで)続けられる。
      do {
          VL_DEBUG_IF(VL_DBG_MSGF(&quot;+ Clock loop\n&quot;););
-         // コメント：これが回路の評価の実体 
+         // コメント：これが回路の評価の実体
          _eval(vlSymsp);
          if (VL_UNLIKELY(++__VclockLoop &gt; 100)) {
              /* ... 中略 ...*/
@@ -913,7 +913,7 @@ $ dot -Tpng Vadd_ff_065_orderg_done.dot -o Vadd_ff_065_orderg_done.png
 
 <p>つまり、クロックが変化しないと回路の再評価が行われないわけだから、<code>timescale 1ns/1ps</code>のようなノリ（クセ）で以下のように書くのはあまり意味ない？波形ファイルも増大してしまうだけ...？</p>
 <pre><code class="cpp">    // こういう用心深い操作は不要だった！？
-    // 10回のeval()のうち1回だけクロックを動かす    
+    // 10回のeval()のうち1回だけクロックを動かす
     if ((time_counter % 5) == 0) {
       dut-&gt;i_clk = !dut-&gt;i_clk; // Toggle clock
     }
@@ -924,14 +924,14 @@ $ dot -Tpng Vadd_ff_065_orderg_done.dot -o Vadd_ff_065_orderg_done.png
 
 <h2 id="verilatorast">VerilatorのAST変換フローを追いかける</h2>
 <p>VerilatorはSystemVerilogをParseすると、それを内部の独自AST（Abstract Syntax Tree）に置き換える。例えば以下のようなイメージ。</p>
-<p><img src="ast.PNG" alt="image-20210529105329563" style="zoom:50%;" /></p>
+<p><img alt="image-20210529105329563" src="../ast.PNG" /></p>
 <p>ASTが表現できる構文は決まっていて、SystemVerilogの構文から別の構文への変換していくのが、上記のPASSの役割となる。</p>
 <p>例えば以下のような<code>while / break</code>文を考える（Verilatorは<code>initial</code>での<code>while / break</code>も受け入れられる）。</p>
 <pre><code class="verilog">module while_jump;
 int i;
 initial begin
   while(i &lt; 100) begin
-    if (i == 10) 
+    if (i == 10)
         break;
     i++;
   end
@@ -973,7 +973,7 @@ endmodule
      }
 </code></pre>
 
-<p><img src="ast2.PNG" alt="image-20210529105431140" style="zoom:50%;" /></p>
+<p><img alt="" src="../ast2.PNG" /></p>
 <p>こんな感じで、SystemVerilogの構文をC++に落とし込みやすいASTに変換していく。</p>
 <h1 id="verilator_3">おまけ：Verilator自体のデバッグ</h1>
 <p>（こういう人はあまりいないと思うが）Verilatorの中身を見たい、デバッグをしたいというときはデバッグビルドしたVerilatorを使うのがよろしい。</p>
@@ -1096,22 +1096,22 @@ sv-&gt;verilator(right)-&gt;ast-&gt;vercpp(right)-&gt;cppfile-&gt;clangcompile(r
 <p>LLVMのBitCodeのように、なるべくバイナリ形式のままメモリ中に保持させたまま変換し、C++ファイルを経由しないままバイナリを出力する方が良い気がしている。</p>
 <h2 id="rtl">（発表者が最近注目している）RTLシミュレーション技術の動向</h2>
 <p>LLVMの技術をベースとして、「<span style="color:red">より抽象度の高い</span>」中間言語を出力しよう、というのが昨今の流れ。LLVM IRでは表現能力がまだまだ低く、「<span style="color:red">各言語向けに独自のLLVM IRが開発されてしまう</span>」始末。以下の図が最近の動向をすべて表現しているような。</p>
-<p><img src="mlir.PNG" alt="image-20210529105536964" style="zoom:50%;" /></p>
+<p><img alt="" src="../mlir.PNG" /></p>
 <h3 id="mlir">MLIRを使ったアプローチ</h3>
 <p>Chris Lattner（LLVMの開発者、Googleを経て現在SiFive）が提唱する新しい中間言語フォーマット：<span style="color:red">MLIR（Multi-Layer Intermediate Representation）</span>を使ったアプローチ。より上位のIRを表現するために、より抽象的な記述を可能にするIR。ベースとなるMLIRの表現に対して、「方言：Dialect」を追加することで拡張性を担保する。</p>
 <p>https://mlir.llvm.org/docs/Dialects/</p>
-<p><img src="mlir_dialect.PNG" style="zoom:50%;" /></p>
+<p><img alt="" src="../mlir_dialect.PNG" /></p>
 <p>これを使えば、「C++ファイルを介することなくSystemVerilogを実行バイナリに変換することや、MLIRの表現を維持したままRTLシミュレーションが可能なのでは？」というのが最近思っていること。</p>
 <p>と思っていたらそういうアプローチはすでにいろいろある。（Verilatorを使っていれば）やはり考えることは皆一緒なのか。</p>
 <h3 id="llhd">LLHD</h3>
 <p>もともと、「RTL設計のための統一した言語を作成しよう」という所から始まっているハードウェア開発共通言語フォーマットのプロジェクト。LLVM IRがベースとなっている。SystemVerilogをParseしてLLHDに変換し、シミュレーションまで実行できる"Moore"というRTLシミュレータまで開発している。</p>
 <p>https://llhd.io/</p>
-<p><img src="llhd.PNG" alt="image-20210529105611618" style="zoom:33%;" /></p>
+<p><img alt="" src="../llhd.PNG" /></p>
 <p><span style="color:red">LLHDは圧倒的な読みにくい。</span>これでRTLに変わる共通フォーマットを狙おうなんて100万年早すぎる。</p>
-<p><img src="llhd_reference.PNG" alt="image-20210523114514671" style="zoom: 50%;" /></p>
+<p><img alt="" src="../llhd_reference.PNG" /></p>
 <h3 id="circt">CIRCT</h3>
 <p>Chris Lattnerが始めたプロジェクト。もともとは「<span style="color:red">FIRRTL（Chiselというハードウェア記述言語が使っている中間表現。なぜか変換のためにScalaで書かれたコンパイラを使っている）遅ええ！</span>」みたいなところから始まっているが、最終的に共通フォーマットをもってシミュレーションまでできる環境を作ろうとしているように見える。</p>
-<p><img src="circt.PNG" alt="image-20210529105719116" style="zoom:40%;" /></p>
+<p><img alt="" src="../circt.PNG" /></p>
 <h2 id="_4">まとめ</h2>
 <ul>
 <li>Verilatorの内部構造の一部を紹介し、SystemVerilogをC++に変換するための処理についてその概観を眺めた。</li>

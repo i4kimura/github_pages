@@ -1,0 +1,1184 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Verilatorの内部構造解析 - FPGA開発日記 カテゴリ別記事インデックス</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#verilator" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              FPGA開発日記 カテゴリ別記事インデックス
+            </span>
+            <span class="md-header-nav__topic">
+              Verilatorの内部構造解析
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="FPGA開発日記 カテゴリ別記事インデックス" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    FPGA開発日記 カテゴリ別記事インデックス
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../30os/" title="オペレーティングシステム" class="md-nav__link">
+      オペレーティングシステム
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../cpu/" title="CPU" class="md-nav__link">
+      CPU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../dsl_ruby/" title="DSLでビルドツールを自作する" class="md-nav__link">
+      DSLでビルドツールを自作する
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../gpgpu/" title="GPGPU 記事一覧" class="md-nav__link">
+      GPGPU 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../isca_2019/" title="Isca 2019" class="md-nav__link">
+      Isca 2019
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../llvm/" title="LLVM" class="md-nav__link">
+      LLVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../lowrisc_llvm/" title="RISC-V LLVMバックエンドのステップバイステップガイド" class="md-nav__link">
+      RISC-V LLVMバックエンドのステップバイステップガイド
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../machine_learning/" title="機械学習 / TensorFlow" class="md-nav__link">
+      機械学習 / TensorFlow
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../mastering_bitcoin/" title="Bitcoin 記事一覧" class="md-nav__link">
+      Bitcoin 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../qemu/" title="QEMU" class="md-nav__link">
+      QEMU
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quantum_computing/" title="量子コンピュータ / Q# 記事一覧" class="md-nav__link">
+      量子コンピュータ / Q# 記事一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../riscv/" title="RISC-V" class="md-nav__link">
+      RISC-V
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../rust/" title="Rust" class="md-nav__link">
+      Rust
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../vivado_hls/" title="Vivado-HLS" class="md-nav__link">
+      Vivado-HLS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../zero_deep_3/" title="ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる" class="md-nav__link">
+      ゼロから作るDeep Learning ③ のPython実装をRubyで作り直してみる
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+    
+    <label class="md-nav__link" for="nav-17">
+      Chisel diplomacy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-17">
+        Chisel diplomacy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chisel_diplomacy/chisel_basic/" title="Chisel basic" class="md-nav__link">
+      Chisel basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chisel_diplomacy/chisel_tilelink/" title="9. TileLinkとDiplomacyリファレンス" class="md-nav__link">
+      9. TileLinkとDiplomacyリファレンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chisel_diplomacy/diplomacy_more_more_deep_dive/" title="ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説" class="md-nav__link">
+      ハードウェア記述言語Chiselを<span style="color: red">もっともっと</span>活用するためのDiplomacy概説
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chisel_diplomacy/diplomacy_more_more_deep_dive_en/" title="Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive" class="md-nav__link">
+      Hardware Description Language Chisel & Diplomacy <span style="color:red">Deeper</span> dive
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chisel_diplomacy/memo/" title="Chisel v.s. Verilog" class="md-nav__link">
+      Chisel v.s. Verilog
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+    
+    <label class="md-nav__link" for="nav-18">
+      Cq
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-18">
+        Cq
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cq/hifive_unleashed/" title="【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿" class="md-nav__link">
+      【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19" checked>
+    
+    <label class="md-nav__link" for="nav-19">
+      Verilator
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-19">
+        Verilator
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Verilatorの内部構造解析
+      </label>
+    
+    <a href="./" title="Verilatorの内部構造解析" class="md-nav__link md-nav__link--active">
+      Verilatorの内部構造解析
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verilator_1" title="～Verilator解析を通じて感じる「最近面白そうと思っている技術」～" class="md-nav__link">
+    ～Verilator解析を通じて感じる「最近面白そうと思っている技術」～
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verilator_1" title="～Verilator解析を通じて感じる「最近面白そうと思っている技術」～" class="md-nav__link">
+    ～Verilator解析を通じて感じる「最近面白そうと思っている技術」～
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="verilator">Verilatorの内部構造解析</h1>
+<h3 id="verilator_1">～Verilator解析を通じて感じる「<span style="color:red">最近面白そうと思っている技術</span>」～</h3>
+<ul>
+<li>発表者：msyksphinz (FPGA開発日記著者)</li>
+<li>@msyksphinz_dev</li>
+<li>https://msyksphinz.hatenablog.com</li>
+</ul>
+<h1 id="_1">発表者について</h1>
+<ul>
+<li>好きなコト：コンピュータアーキテクチャ・低レイヤプログラミング</li>
+<li>MIPS (趣味の命令セットシミュレータ作りはMIPSから始まった)</li>
+<li>ARM (勉強中...)</li>
+<li>
+<p><span style="color: red">RISC-V</span> (一応、黎明期からのウォッチャー)</p>
+</li>
+<li>
+<p>ハードウェア開発が一応本業</p>
+</li>
+<li>汎用CPU・アクセラレータ、など...</li>
+<li>使えるハードウェア記述言語 : Verilog, SystemVerilog (UVM除く), Chisel</li>
+<li>学生の時に最初に勉強したHDLはVHDL (もう忘れた)</li>
+<li>
+<p>学生の頃はXilinxのSpartan-3 にMIPSを自作しては載せて遊んでいた(そういう世代)。</p>
+</li>
+<li>
+<p>低レイヤプログラミング</p>
+</li>
+<li>仕事は最初汎用CPUの性能解析と検証から始めたので、低レイヤプログラミングはある程度できる(つもり)</li>
+<li><span style="color:red">QEMU、LLVM</span>あたりが好き</li>
+<li>新しいISAを覚えるときは、<span style="color:blue">まず命令セットシミュレータを作るところから！</span></li>
+</ul>
+<h1 id="verilator_2">本日のお題：Verilator</h1>
+<p>発表者がVerilatorを調べ始めたきっかけ：</p>
+<ul>
+<li>Verilatorを使って巨大な自作CPUコンパイルすると遅いな。</li>
+<li>ひどいときは一晩掛かる。</li>
+<li>なんでこんなに遅いんだろう？</li>
+<li>Verilatorの内部構造調べるか。</li>
+</ul>
+<p>VerilatorによるRTLのコンパイル・シミュレーションの基本的なフロー</p>
+<p>これはコンパイル型RTLシミュレータならば（割と）一般的なフロー（だと思う）。</p>
+<pre><code class="flow">sv=&gt;inputoutput: SystemVerilog
+verilator=&gt;subroutine: Verilator 
+cppfile=&gt;inputoutput: 変換後C++ファイル
+clangcompile=&gt;subroutine: コンパイル
+bin=&gt;inputoutput: 実行ファイル
+
+sv(right)-&gt;verilator(right)-&gt;cppfile(right)-&gt;clangcompile(right)-&gt;bin
+</code></pre>
+
+<h2 id="verilatorverilator">Verilatorが注目を浴びる理由(私がVerilatorを使わざるを得ない理由)</h2>
+<p><span style="color:red">EDAベンダはクソ</span>
+RTLのコンパイラ・シミュレータなどなど高額のライセンス料金で吹っ掛けてくる。
+不具合だらけのツールを高額で売り付けてサポートで金をとる。</p>
+<p><span style="color:red">一回EDAベンダは全部滅びればいいと思っている。私の将来の夢はEDAベンダを全部潰すこと。</span></p>
+<p>... というのは冗談として、仕事以外で（つまり無償で）デジタルハードウェアエンジニアが使うことができるRTLシミュレーションツールって、一応列挙すると、</p>
+<ul>
+<li>Model Sim Intel Starter Edition</li>
+<li>Vivado Simulator</li>
+<li>Verilator</li>
+</ul>
+<p>くらいではないかと思っている。それぞれの使ってみた感想を以下に示す。</p>
+<ul>
+<li>ModelSim Intel Starter Edition</li>
+<li><span style="color:red">メリット：4値が使える。波形デバッガが（まあまあ）使える</span></li>
+<li><span style="color:blue">デメリット：64ビットバイナリはQuestaSimのみ提供（有償）であり、DPI-Cなどで64ビットバイナリ（CPU設計の場合はISSやlibelfなど）が使えず、まともなデバッガとして使えない</span></li>
+<li>Vivado Simulator</li>
+<li><span style="color:red">メリット：4値が使える。64ビットバイナリは使える。DPI-Cも64ビットバイナリが使える。UVMも（制限があるが）使える！</span></li>
+<li><span style="color:blue">デメリット：波形デバッガが死ぬほど重たく、使いにくい</span></li>
+<li>Verilator</li>
+<li><span style="color:red">メリット：64ビットバイナリが使える。DPI-Cも64ビットバイナリが使える。シミュレーションが速い</span></li>
+<li><span style="color:blue">デメリット：GTKWaveは（慣れれば）使い物になる。デザインコンパイル速度が遅い</span></li>
+</ul>
+<p>... という訳で、4値を使った込み入ったデバッグをしたいときはModelSim Starter Edition、機能実装やリグレッションテストはVerilatorを使っている、という状況。</p>
+<h2 id="verilatorsystemverilog">VerilatorのSystemVerilogコンパイルとシミュレーション</h2>
+<p>一つのVerilogファイルをコンパイルするとどれだけのファイルが生成される？</p>
+<ul>
+<li><code>add_ff.sv</code></li>
+</ul>
+<pre><code class="verilog">module add_ff
+  (
+   input logic         i_clk,
+   input logic         i_reset_n,
+   input logic [31:0]  in_a,
+   input logic [31:0]  in_b,
+   output logic [31:0] out_c
+   );
+
+always_ff @ (posedge i_clk, negedge i_reset_n) begin
+  if (!i_reset_n) begin
+    out_c &lt;= 32'h0;
+  end else begin
+    out_c &lt;= in_a + in_b;
+  end
+end
+
+endmodule // add_ff
+</code></pre>
+
+<pre><code class="sh">$ verilator --cc --exe add_ff.sv
+</code></pre>
+
+<pre><code>.
+|-- add_ff.sv
+`-- obj_dir
+    |-- Vadd_ff.cpp
+    |-- Vadd_ff.h
+    |-- Vadd_ff.mk
+    |-- Vadd_ff__Slow.cpp
+    |-- Vadd_ff__Syms.cpp
+    |-- Vadd_ff__Syms.h
+    |-- Vadd_ff__ver.d
+    |-- Vadd_ff__verFiles.dat
+    `-- Vadd_ff_classes.mk
+</code></pre>
+
+<ul>
+<li><span style="color:reD"><code>Vadd_ff.h</code> : <code>add_ff</code>のメインクラスとなるC++クラスが宣言されている</span></li>
+<li><span style="color:red"><code>Vadd_ff.cpp</code> : <code>add_ff</code>の実装コード</span></li>
+<li><code>Vadd_ff.mk</code> : 生成されたC++コードをコンパイルするためのMakefile</li>
+<li><code>Vadd_ff_Slow.cpp</code> : 頻繁に実行されることのないルーチンが生成される。コンストラクタ、デストラクタなど。</li>
+<li><code>Vadd_ff__ver.d</code> : 依存関係ファイル（Automakeとかで使うやつ？）</li>
+<li><code>Vadd_ff_verFiles.dat</code> : タイムススタンプ</li>
+<li><code>Vadd_ff_Syms.{h,cpp}</code> : シンボルテーブル。ほとんどのケースでは使わない？</li>
+</ul>
+<h2 id="-debug"><code>--debug</code>オプションで生成される回路構成ツリー</h2>
+<p><code>--debug</code>オプションをつけると、Verilatorは大量の回路構造ツリーを生成する。Graphviz用の<code>.dot</code>ファイルも同時に生成されている。</p>
+<pre><code class="sh"># --debugオプションを付けると大量のデバッグ情報を生成する
+$ verilator --debug --cc --exe add_ff.sv
+$ ls obj_dir/*.tree
+</code></pre>
+
+<p>以下のような中間デバッグファイルが出力される。<code>dot</code>ファイルもあるので内部構造を観察することができる。</p>
+<pre><code class="sh"># 生成されたdotファイルをPNGファイルに変換して観察する。
+$ dot -Tpng Vadd_ff_065_orderg_done.dot -o Vadd_ff_065_orderg_done.png
+</code></pre>
+
+<p><img alt="image-20210515112555319" src="../verilator_dot.PNG" /></p>
+<p>Verilatorは受け取ったSystemVerilogファイルをParseし、構造を変えながら最適化し、最終的にC++ファイルを出力する。</p>
+<p><code>--debug</code>オプションを付属すると、どのようなPASSが適用されるのかを確認することができる。</p>
+<p>以下のような大量のPASSがASTに対して適用され、回路構造を等価に保ちつつC++ファイルを生成できるように変化させている。
+<span style="color:red">⇒ VerilatorはSystemVerilogエミュレーションにおけるLLVMのようだ（筆者の感想）</span></p>
+<pre><code>- V3LinkDot.h:37:     linkDotPrimary:
+- V3LinkJump.cpp:292: linkJump:
+- V3LinkInc.cpp:248:  linkIncrements:
+- V3Param.cpp:1202:   param:
+- V3LinkDot.h:42:     linkDotParamed:
+- V3Dead.cpp:465:     deadifyModules:
+- V3Width.cpp:6163:   width:
+- V3Width.cpp:6206:   widthCommit:
+- V3Const.cpp:2659:   constifyAllLive:
+- V3Undriven.cpp:462: undrivenAll:
+- V3AssertPre.cpp:207:assertPreAll:
+- V3Assert.cpp:474:   assertAll:
+- V3LinkLevel.cpp:130:wrapTop:
+- V3Const.cpp:2632:   constifyAllLint:
+- V3SplitVar.cpp:1257:splitVariable:
+- V3Inst.cpp:610:     dearrayAll:
+- V3LinkDot.h:47:     linkDotArrayed:
+- V3Begin.cpp:293:    debeginAll:
+- V3Tristate.cpp:1420:tristateAll:
+- V3Unknown.cpp:488:  unknownAll:
+- V3Inline.cpp:712:   inlineAll:
+- V3LinkDot.h:47:     linkDotArrayed:
+- V3Const.cpp:2669:   constifyAll:
+- V3Dead.cpp:471:     deadifyDTypes:
+- V3Inst.cpp:604:     instAll:
+- V3Const.cpp:2669:   constifyAll:
+- V3Scope.cpp:404:    scopeAll:
+- V3LinkDot.h:52:     linkDotScope:
+- V3Class.cpp:156:    classAll:
+...
+</code></pre>
+
+<h2 id="_2">どのように回路をシミュレーションするか？</h2>
+<p>上記のSystemVerilogデザインをシミュレーションする場合、以下のようなC++コードによりシミュレーションを行うことになる。</p>
+<pre><code class="cpp">   // DUTをインスタンス化する
+   Vadd_ff *dut = new Vadd_ff();
+   int cycle = 0;
+   while (time_counter &lt; 1000) {
+     dut-&gt;i_clk = !dut-&gt;i_clk; // Toggle clock
+     if (!dut-&gt;i_clk) {
+       dut-&gt;in_a = dut-&gt;in_a + 1;
+       dut-&gt;in_b = dut-&gt;in_b + 1;
+     }
+
+     // DUTの評価：ここがVerilatorのシミュレーションのキモとなるところ
+     dut-&gt;eval();
+     tfp-&gt;dump(time_counter);
+
+     time_counter++;
+   }
+</code></pre>
+
+<h3 id="dut-gteval"><code>dut-&gt;eval()</code>の中身は？</h3>
+<ul>
+<li><code>Vadd_ff.h</code>：<code>Vadd_ff</code>クラスには<code>eval()</code>メソッドが生成されている</li>
+</ul>
+<pre><code class="cpp">     /// Evaluate the model.  Application must call when inputs change.
+     void eval() { eval_step(); }
+     /// Evaluate when calling multiple units/models per time step.
+     void eval_step();
+</code></pre>
+
+<ul>
+<li><code>Vadd_ff.cpp</code>：<code>eval()</code>は<code>eval_step()</code>を呼ぶ。<code>eval_step()</code>の中身。</li>
+</ul>
+<p>組み合わせ回路・順序回路の評価は<code>private</code>なメソッド<code>_eval()</code>で行われていると考えて良い。</p>
+<pre><code class="cpp"> void Vadd_ff::eval_step() {
+    /* ... 中略 ...*/
+     // Initialize
+     if (VL_UNLIKELY(!vlSymsp-&gt;__Vm_didInit)) _eval_initial_loop(vlSymsp);
+     // Evaluate till stable
+     int __VclockLoop = 0;
+     QData __Vchange = 1;
+     // コメント：以下のループは、回路が安定するまで(__Vchangeが0になるまで)続けられる。
+     do {
+         VL_DEBUG_IF(VL_DBG_MSGF(&quot;+ Clock loop\n&quot;););
+         // コメント：これが回路の評価の実体 
+         _eval(vlSymsp);
+         if (VL_UNLIKELY(++__VclockLoop &gt; 100)) {
+             /* ... 中略 ...*/
+         } else {
+             /* ... 中略 ... */
+             __Vchange = _change_request(vlSymsp);
+         }
+     } while (VL_UNLIKELY(__Vchange));
+ }
+
+</code></pre>
+
+<ul>
+<li><code>_eval()</code>の内部：前のステートと<code>clock()</code>が変われば回路の評価を行う。</li>
+</ul>
+<pre><code class="cpp"> void Vadd_ff::_eval(Vadd_ff__Syms* __restrict vlSymsp) {
+     VL_DEBUG_IF(VL_DBG_MSGF(&quot;+    Vadd_ff::_eval\n&quot;); );
+     Vadd_ff* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp-&gt;TOPp;
+     // Body
+     // コメント：クロックの変化をこれで検出している。
+     // リセット状態ではないことをこれで検出している。
+     if ((((IData)(vlTOPp-&gt;i_clk) &amp; (~ (IData)(vlTOPp-&gt;__Vclklast__TOP__i_clk)))
+          | ((~ (IData)(vlTOPp-&gt;i_reset_n)) &amp; (IData)(vlTOPp-&gt;__Vclklast__TOP__i_reset_n)))) {
+         // _sequent__TOP__1()内部で回路の評価。
+         vlTOPp-&gt;_sequent__TOP__1(vlSymsp);
+     }
+     // Final
+     // clkとresetの過去の状態を更新。次のステート変更のために使用する。
+     vlTOPp-&gt;__Vclklast__TOP__i_clk = vlTOPp-&gt;i_clk;
+     vlTOPp-&gt;__Vclklast__TOP__i_reset_n = vlTOPp-&gt;i_reset_n;
+ }
+</code></pre>
+
+<p><code>sequent_TOP__1()</code>の中身は以下のようになっている。<code>in_a + in_b</code>の評価が行われるのはこの段階。</p>
+<pre><code class="cpp"> VL_INLINE_OPT void Vadd_ff::_sequent__TOP__1(Vadd_ff__Syms* __restrict vlSymsp) {
+     VL_DEBUG_IF(VL_DBG_MSGF(&quot;+    Vadd_ff::_sequent__TOP__1\n&quot;); );
+     Vadd_ff* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp-&gt;TOPp;
+     // Body
+     // in_a + in_b の評価が行われているのがココになる。
+     vlTOPp-&gt;out_c = ((IData)(vlTOPp-&gt;i_reset_n) ? (vlTOPp-&gt;in_a
+                                                    + vlTOPp-&gt;in_b)
+                       : 0U);
+ }
+</code></pre>
+
+<p>それ以外にも例えば以下のFFを2回通すようなやつ：</p>
+<pre><code class="verilog"> module madd_pipe
+   (
+    input logic         i_clk,
+    input logic         i_reset_n,
+    input logic [31:0]  in_a,
+    input logic [31:0]  in_b,
+    input logic [31:0]  in_c,
+    output logic [31:0] out
+    );
+
+ logic [31: 0]          r_tmp;
+
+ always_ff @ (posedge i_clk, negedge i_reset_n) begin
+   if (!i_reset_n) begin
+     r_tmp &lt;= 'h0;
+     out   &lt;= 'h0;
+   end else begin
+     r_tmp &lt;= in_a * in_b;
+     out   &lt;= in_c + r_tmp;
+   end
+ end
+
+ endmodule // add_ff
+</code></pre>
+
+<p><code>_sequent__TOP__1()</code>の中身は以下のようになっている。<code>out</code>と<code>r_tmp</code>の実行順序が逆ならばこの2つのFFは突き抜けてしまうが、そうならないようにデータフローを上手く解析している様子。</p>
+<pre><code class="cpp"> VL_INLINE_OPT void Vmadd_pipe::_sequent__TOP__1(Vmadd_pipe__Syms* __restrict vlSymsp) {
+     VL_DEBUG_IF(VL_DBG_MSGF(&quot;+    Vmadd_pipe::_sequent__TOP__1\n&quot;); );
+     Vmadd_pipe* const __restrict vlTOPp VL_ATTR_UNUSED = vlSymsp-&gt;TOPp;
+     // Body
+     if (vlTOPp-&gt;i_reset_n) {
+         // out &lt;= in_c + r_tmpの実体
+         vlTOPp-&gt;out = (vlTOPp-&gt;in_c + vlTOPp-&gt;madd_pipe__DOT__r_tmp);
+         // r_tmp &lt;= in_a * in_b の実体
+         vlTOPp-&gt;madd_pipe__DOT__r_tmp = (vlTOPp-&gt;in_a
+                                          * vlTOPp-&gt;in_b);
+         // vlTOPp-&gt;r_tmp の評価 → vlTOPp-&gt;out の順に評価してしまうと2つのFFで値が突き抜けてしまう。
+     } else {
+         vlTOPp-&gt;out = 0U;
+         vlTOPp-&gt;madd_pipe__DOT__r_tmp = 0U;
+     }
+ }
+</code></pre>
+
+<p>つまり、クロックが変化しないと回路の再評価が行われないわけだから、<code>timescale 1ns/1ps</code>のようなノリ（クセ）で以下のように書くのはあまり意味ない？波形ファイルも増大してしまうだけ...？</p>
+<pre><code class="cpp">    // こういう用心深い操作は不要だった！？
+    // 10回のeval()のうち1回だけクロックを動かす    
+    if ((time_counter % 5) == 0) {
+      dut-&gt;i_clk = !dut-&gt;i_clk; // Toggle clock
+    }
+    // DUTの評価
+    dut-&gt;eval();
+    if (dump_fst_enable) tfp-&gt;dump(time_counter);
+</code></pre>
+
+<h2 id="verilatorast">VerilatorのAST変換フローを追いかける</h2>
+<p>VerilatorはSystemVerilogをParseすると、それを内部の独自AST（Abstract Syntax Tree）に置き換える。例えば以下のようなイメージ。</p>
+<p><img src="ast.PNG" alt="image-20210529105329563" style="zoom:50%;" /></p>
+<p>ASTが表現できる構文は決まっていて、SystemVerilogの構文から別の構文への変換していくのが、上記のPASSの役割となる。</p>
+<p>例えば以下のような<code>while / break</code>文を考える（Verilatorは<code>initial</code>での<code>while / break</code>も受け入れられる）。</p>
+<pre><code class="verilog">module while_jump;
+int i;
+initial begin
+  while(i &lt; 100) begin
+    if (i == 10) 
+        break;
+    i++;
+  end
+end
+endmodule
+</code></pre>
+
+<p>Verilatorには<code>visit()</code>というメソッド群が用意されていて、ASTをParseしながら必要に応じて処理を適用するようになっている。</p>
+<pre><code class="cpp">119:    // VISITORS
+// それぞれのvisitorはAstの種類毎に定義されている
+120:    virtual void visit(AstNodeModule* nodep) override {
+130:    virtual void visit(AstNodeFTask* nodep) override {
+135:    virtual void visit(AstNodeBlock* nodep) override {
+145:    virtual void visit(AstRepeat* nodep) override {
+173:    virtual void visit(AstWait* nodep) override {
+184:    virtual void visit(AstWhile* nodep) override {
+198:    virtual void visit(AstReturn* nodep) override {
+226:    virtual void visit(AstBreak* nodep) override {
+238:    virtual void visit(AstContinue* nodep) override {
+251:    virtual void visit(AstDisable* nodep) override {
+276:    virtual void visit(AstVarRef* nodep) override {
+279:    virtual void visit(AstConst*) override {}
+280:    virtual void visit(AstNode* nodep) override { iterateChildren(nodep); }
+</code></pre>
+
+<p>例えば<code>AstWhile</code>に出会うと、<code>visit(AstWhile *nodep)</code>が呼び出される（そしてこれ以降のAstがWhile文の内部であるというフラグが付けられる）。</p>
+<p>次に<code>break</code>に遭遇すると、<code>visit(AstBreak *nodep)</code>が呼び出される（この時点で<code>AstWhile()</code>で設定されているはずのフラグが設定されていない場合はアウト）。<code>findAddLabel()</code>により<code>while</code>文の最後までジャンプするASTが付け加えられる。</p>
+<pre><code class="cpp">     virtual void visit(AstBreak* nodep) override {
+         iterateChildren(nodep);
+         if (!m_loopp) {
+             nodep-&gt;v3error(&quot;break isn't underneath a loop&quot;);
+         } else {
+             // Jump to the end of the loop
+             AstJumpLabel* labelp = findAddLabel(m_loopp, false);
+             nodep-&gt;addNextHere(new AstJumpGo(nodep-&gt;fileline(), labelp));
+         }
+         nodep-&gt;unlinkFrBack();
+         VL_DO_DANGLING(pushDeletep(nodep), nodep);
+     }
+</code></pre>
+
+<p><img src="ast2.PNG" alt="image-20210529105431140" style="zoom:50%;" /></p>
+<p>こんな感じで、SystemVerilogの構文をC++に落とし込みやすいASTに変換していく。</p>
+<h1 id="verilator_3">おまけ：Verilator自体のデバッグ</h1>
+<p>（こういう人はあまりいないと思うが）Verilatorの中身を見たい、デバッグをしたいというときはデバッグビルドしたVerilatorを使うのがよろしい。</p>
+<p>Verilatorはビルド時にOptオプションとDbgオプションの両方でオブジェクトを生成している。</p>
+<pre><code class="sh">verilator/src/obj_opt           # デバッグ情報無しのオブジェクトファイル
+             /obj_dbg           # デバッグ情報付きのオブジェクトファイル
+verilator/bin/verilator_bin     # デバッグ情報無しのVerilatorバイナリ
+         /bin/verilator_bin_dbg # デバッグ情報付きのVerilatorバイナリ
+</code></pre>
+
+<p><code>verilator</code>コマンド自体はPerlで記述された<code>verilator_bin{_dbg}</code>を呼び出すラッパーなので、オプションを通じてどちらのバイナリを呼び出すか制御できる（ハズ）。</p>
+<pre><code class="sh">$ verilator --debug     # (たぶん)--debugコマンドでVerilator_bin_dbgを呼び出す
+</code></pre>
+
+<h1 id="verilator_4">（私が思う）Verilatorの不満要素</h1>
+<h2 id="_3">コンパイル時間の遅さ</h2>
+<p>これは別にVerilatorが悪いわけではないのだけれども。</p>
+<h3 id="highly-configurable-out-of-order-risc-v">例：Highly Configurable Out-of-Order RISC-Vプロセッサ</h3>
+<p>All System Verilogで（趣味で）書いているアウトオブオーダのRISC-Vプロセッサ。
+1つのSystemVerilogからパラメータで10種類の構成をサポートしている。検証はVerilatorを使っている。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Tiny</th>
+<th>Small</th>
+<th>Standard</th>
+<th>Big</th>
+<th>Giant</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サポートISA</td>
+<td>RV32 / RV64</td>
+<td>RV32 / RV64</td>
+<td>RV32 / RV64</td>
+<td>RV32 / RV64</td>
+<td>RV32 / RV64</td>
+<td></td>
+</tr>
+<tr>
+<td>データキャッシュ：データ幅</td>
+<td>128</td>
+<td>256</td>
+<td>256</td>
+<td>256</td>
+<td>512</td>
+<td></td>
+</tr>
+<tr>
+<td>最大同時命令ディスパッチ数</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>算術演算命令最大同時実行数</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>ロードストア命令最大同時実行数</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>ROBエントリ数</td>
+<td>8</td>
+<td>16</td>
+<td>32</td>
+<td>64</td>
+<td>128</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="systemverilogc">（それなりに巨大な）SystemVerilogデザインからC++の生成時間</h3>
+<p>Clang++を使っても、それなりに遅い。VCS（は自宅では使えないので試行していないが）はもっとコンパイル時間速いのに...</p>
+<p><span style="color:red">現状デザイントータルで1万行くらいしかないのに、VerilatorでC++に変換したら263万行になった... ぐろいなあ...</span>
+※参考：LLVM内部の全C++コードが260万行くらい。</p>
+<ul>
+<li>Clang++</li>
+<li>rv64_small 3:40.81</li>
+<li>rv64_standard 5:35.10</li>
+<li>rv64_big 9:43.64</li>
+<li>GCC</li>
+<li>rv64_small 5:56.09</li>
+<li>rv64_standard 8:07.60</li>
+<li>rv64_big 終了せず</li>
+</ul>
+<p><img alt="image-20210529105508869" src="../clang_gcc.PNG" /></p>
+<p>これは別にVerilatorが悪い訳では無くて、Verilatorが生成したC++ファイルのコンパイルに時間を食っている、という話。
+コア数とコア能力を増やせば解決する話ではあるが...<span style="color:red">力こそパワー</span></p>
+<p>まあCPUを1個作るだけで302個もC++ファイルが生成されているので仕方ない話ではある。</p>
+<pre><code class="flow">sv=&gt;inputoutput: SystemVerilog
+verilator=&gt;subroutine: Verilator SV Parser
+ast=&gt;inputoutput: 内部AST
+vercpp=&gt;subroutine: ASTからC++への変換処理
+cppfile=&gt;inputoutput: 変換後C++ファイル
+clangcompile=&gt;subroutine: コンパイル
+bin=&gt;inputoutput: 実行ファイル
+
+sv-&gt;verilator(right)-&gt;ast-&gt;vercpp(right)-&gt;cppfile-&gt;clangcompile(right)-&gt;bin
+</code></pre>
+
+<p><span style="color:red">Verilatorの目的がSystemVerilogのシミュレーションを行うことであれば、C++を出力すること自体に意味はないのでは？</span></p>
+<p>LLVMのBitCodeのように、なるべくバイナリ形式のままメモリ中に保持させたまま変換し、C++ファイルを経由しないままバイナリを出力する方が良い気がしている。</p>
+<h2 id="rtl">（発表者が最近注目している）RTLシミュレーション技術の動向</h2>
+<p>LLVMの技術をベースとして、「<span style="color:red">より抽象度の高い</span>」中間言語を出力しよう、というのが昨今の流れ。LLVM IRでは表現能力がまだまだ低く、「<span style="color:red">各言語向けに独自のLLVM IRが開発されてしまう</span>」始末。以下の図が最近の動向をすべて表現しているような。</p>
+<p><img src="mlir.PNG" alt="image-20210529105536964" style="zoom:50%;" /></p>
+<h3 id="mlir">MLIRを使ったアプローチ</h3>
+<p>Chris Lattner（LLVMの開発者、Googleを経て現在SiFive）が提唱する新しい中間言語フォーマット：<span style="color:red">MLIR（Multi-Layer Intermediate Representation）</span>を使ったアプローチ。より上位のIRを表現するために、より抽象的な記述を可能にするIR。ベースとなるMLIRの表現に対して、「方言：Dialect」を追加することで拡張性を担保する。</p>
+<p>https://mlir.llvm.org/docs/Dialects/</p>
+<p><img src="mlir_dialect.PNG" style="zoom:50%;" /></p>
+<p>これを使えば、「C++ファイルを介することなくSystemVerilogを実行バイナリに変換することや、MLIRの表現を維持したままRTLシミュレーションが可能なのでは？」というのが最近思っていること。</p>
+<p>と思っていたらそういうアプローチはすでにいろいろある。（Verilatorを使っていれば）やはり考えることは皆一緒なのか。</p>
+<h3 id="llhd">LLHD</h3>
+<p>もともと、「RTL設計のための統一した言語を作成しよう」という所から始まっているハードウェア開発共通言語フォーマットのプロジェクト。LLVM IRがベースとなっている。SystemVerilogをParseしてLLHDに変換し、シミュレーションまで実行できる"Moore"というRTLシミュレータまで開発している。</p>
+<p>https://llhd.io/</p>
+<p><img src="llhd.PNG" alt="image-20210529105611618" style="zoom:33%;" /></p>
+<p><span style="color:red">LLHDは圧倒的な読みにくい。</span>これでRTLに変わる共通フォーマットを狙おうなんて100万年早すぎる。</p>
+<p><img src="llhd_reference.PNG" alt="image-20210523114514671" style="zoom: 50%;" /></p>
+<h3 id="circt">CIRCT</h3>
+<p>Chris Lattnerが始めたプロジェクト。もともとは「<span style="color:red">FIRRTL（Chiselというハードウェア記述言語が使っている中間表現。なぜか変換のためにScalaで書かれたコンパイラを使っている）遅ええ！</span>」みたいなところから始まっているが、最終的に共通フォーマットをもってシミュレーションまでできる環境を作ろうとしているように見える。</p>
+<p><img src="circt.PNG" alt="image-20210529105719116" style="zoom:40%;" /></p>
+<h2 id="_4">まとめ</h2>
+<ul>
+<li>Verilatorの内部構造の一部を紹介し、SystemVerilogをC++に変換するための処理についてその概観を眺めた。</li>
+<li>Verilatorにより生成されたC++ファイルの内部構造を観察し、
+  SystemVerilogがC++でどのようにシミュレーションされるのかについて観察した。</li>
+<li>Verilatorの弱点と、それを補うための将来の動向
+  （コンパイラ技術と現代のRTLシミュレーション研究開発動向）について紹介した。</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../cq/hifive_unleashed/" title="【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                【供養】 CQ出版インターフェース2019年オープンソースRISC-V特集時にボツとなったHiFive Unleashed特集原稿
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
